@@ -127,7 +127,12 @@ We want to test if we can control the movement of Mario using the keys “a” a
 ## Creating a Script
 Right click inside the **Scripts** folder in the **Project** window, create a new C# script `PlayerController.cs`. Here we will programmatically control Mario. Open the script with an editor of your choice.
 
-**Let's attempt to move Mario via the script.** Firstly, Add `Rigidbody2D` component in the **Inspector** and set `Gravity Scale` to `0`, and increase `Linear Drag` to `3`. You are free to play with other values.
+**Let's attempt to move Mario via the script.** Firstly, Add `Rigidbody2D` component in the **Inspector** and set:
+- `Gravity Scale` to `0`, 
+- `Linear Drag` to `3`
+- `BodyType` to `Dynamic`
+
+You are free to play with other parameters.
 
 We can then control this component from the script. Paste the following inside `PlayerController.cs`:
 ```java
@@ -170,7 +175,418 @@ The manual for all event functions can be found [here](https://docs.unity3d.com/
  
 Usually we don’t touch all of them. One of the more common ones to implement are: `Start, Update, FixedUpdate, LateUpdate, OnTrigger, OnCollision, OnMouse OnDestroy`, and some internal animation state machines if you use `AnimationControllers`. We will learn that in the next series. 
 
+## RigidBody2D Setting
+Now back to the issue how Mario's movement doesn't seem quite right. He seems to be *sliding*. We would expect him to stop the moment we lift the key, wouldn’t we?
+
+Setting the `BodyType` to `Dynamic` allows the **physics engine to simulate** forces, collisions, etc on the body. Since we’re adding Force to Mario’s body, it will obviously “glide” until the drag forces it to stop. 
+> Setting BodyType to `Kinematic` allows movement unders simulation but under very specific user control, that is you want to compute its behavior yourself -- simulating Physics under your own rule instead of relying on Unity's Physics engine. Read more the documentation [here](https://docs.unity3d.com/Manual/class-Rigidbody2D.html).
+
+# Improving Mario GameObject
+## Stop Mario
+To prevent this “sliding” feature that’s not very intuitive for platformer game like this, we need to
+-   Set its velocity to 0 when key “a” or “d” is lifted up
+-   **Clamp** his speed to a maximum value so he doesn’t run faster and faster when we hold that “a” or “d” button.
+   
+Add the global variable `max_speed` and implement `FixedUpdate()` in `PlayerController.cs`.
+
+```java
+  public float max_speed = 10;
+  // FixedUpdate may be called once per frame. See documentation for details.
+  void FixedUpdate()
+ 
+      if (Input.GetKeyUp("a") || Input.GetKeyUp("d")){
+          // stop
+          mario_body.velocity = Vector2.zero;
+      }
+    
+      // dynamic rigidbody
+      moveHorizontal = Input.GetAxis("Horizontal");
+      if (Mathf.Abs(moveHorizontal) > 0){
+          Vector2 movement = new Vector2(moveHorizontal, 0);
+          if (mario_body.velocity.magnitude < max_speed)
+                  mario_body.AddForce(movement * speed);
+      }
+  }
+
+```
+
+## Make Mario Jump
+Let’s make him jump to a fixed height whenever we press the **Spacebar** key once. We can leverage on the physics engine for this, but we need to enable gravity. Otherwise we have to make the Kinematics computation ourselves.
+> Nobody’s stopping you to do that, but due to time constraints let’s not reinvent the wheel. 
+
+**Set `GravityScale` to `1`.** If you press play now, Mario will fall to **oblivion**.
+
+We need to add some sort of a “floor” to prevent him from falling down. 
+- Create a new 2D Sprite gameobject and name it Ground. Add the components:
+	1. `BoxCollider2D`
+	2.  `Rigidbody2D`
+- Add a Tag called “Ground”
+- Set its Position and match the components setting as shown.
+
+![settingground](https://www.dropbox.com/s/vzoy004dark139h/12.png?raw=1)
+
+Now we implement the `Collider` **callback** function called `OnCollision2D` in `PlayerController.cs`. The idea is that if Mario is on the ground, and if spacebar is pressed, we will add an [Impulse](https://docs.unity3d.com/ScriptReference/ForceMode2D.Impulse.html) force upwards. Pressing spacebar again **will not cause Mario to double jump.**
+
+We need to have some kind of **state** variable for this. Add the following code to  `PlayerController.cs`:
+
+```java
+  private bool onground_state = true;
+
+  // called when the cube hits the floor
+  void OnCollisionEnter2D(Collision2D col)
+  {
+      if (col.gameObject.CompareTag("Ground")) onground_state = true;
+  }
+```
+
+and the following inside `FixedUpdate()` method:
+```java
+      if (Input.GetKeyDown("space") && onground_state){
+          mario_body.AddForce(Vector2.up * up_speed, ForceMode2D.Impulse);
+          onground_state = false;
+      }
+```
+
+You can improve the controls and adjust the parameters: `Speed`, `Up_speed`, and `Max_speed` accordingly to get the right “**feel**”. It can take quite a lot of time to get the **kinesthetics** right, but it is an important part of your journey in making a good game.
+
+Focus more on these details instead of “expanding” your game. We don’t require you to create a 1-hour long game, but rather a short and well designed game.
+> Invest your time wisely. 
+
+## Flip Mario
+Now let’s fix mario’s facing. If he is going to the left, he should be facing the left side and vice versa.
+
+![mariofacing](https://www.dropbox.com/s/4f8rpx0gbejcu8g/13.png?raw=1)
+  
+The direction he’s facing should conform to the **last pressed key**.
+
+We can do this by enabling the `flipX` property of its `SpriteRenderer` whenever key “a” is pressed, and disabling it whenever key “d” is pressed. Add these two global variables to the script:
+
+```java
+  private SpriteRenderer mario_sprite;
+  private bool faceright_state = true;
+```
+
+**We have to control the `SpriteRenderer` component via the script.** You can pretty much get any component via `GetComponent<type>()` method in the script attached to the game object.  Instantiate the `mario_sprite` under the `Start()` method:
+```java
+mario_sprite = GetComponent<SpriteRenderer>();
+```
+
+Finally, implement the following under `Update` and not `FixedUpdate` since this logic has nothing to do with the Physics Engine:
+```java
+      // toggle state
+      if (Input.GetKeyDown("a") && faceright_state){
+          faceright_state = false;
+          mario_sprite.flipX = true;
+      }
+
+      if (Input.GetKeyDown("d") && !faceright_state){
+          faceright_state = true;
+          mario_sprite.flipX = false;
+      }
+```
+
+Your Mario will now face right and left accordingly as "a" or "d" is pressed.
+
+
+# Importing Multiple Sprites
+Right now our ground is simply “invisible”.  We need a sprite for it. In fact, we need **a lot of sprites for this game**, e.g: the tile, enemies, obstacles, etc. We do not want to import them one by one. One way to import sprites quickly is to arrange **multiple sprites in a single image**, arranged nicely in area of `x` by `x` pixels. You can extract them all quickly using **Unity Sprite Editor**:
+- Drag your 2D Tilemap asset to the Asset/Sprites folder. 
+- In the inspector, set the SpriteMode into multiple
+- Click **Sprite Editor**
+
+A Sprite Editor window will pop up and you can simply **slice** the sprites accordingly, and **apply** the changes. Notice that now your single sprite becomes many smaller ones that you can use for your GameObject's renderer. 
+
+![sprites](https://www.dropbox.com/s/8iaxk3eqtr3rh3y/15.png?raw=1)
+
+Set the `SpriteRenderer` component of `Ground` object to contain the following settings. We simply want to draw one of the sprites over it in `Tiled` fashion, so it repeats itself along the X axis.
+
+![groundtile](https://www.dropbox.com/s/jxlsm4y2rj2ga7e/16.png?raw=1)
+
+Don't forget to **adjust** the Camera's `Transform` so that the ground is nicely flushed to the bottom of the screen.
+
+![cameraview](https://www.dropbox.com/s/jv98nj8ek5dtcmg/17.png?raw=1)
+
+> You can also adjust the background color to be something else that’s more aesthetically pleasing. In the Camera's inspector, change its `BackgroundColor`. We will learn later on how to create a better background, such as parallax background. Experiment with other camera settings as well, as as its Viewport Rect, Culling Mask, Clear Flags, etc.
+
+# Adding Obstacle
+Now its time to create the Enemy. 
+* Create a 2D Object >> Sprite onto the scene, name it `Enemy`
+* Put `gomba1` as its sprite, edit its `Transform` and you should see the following on your scene. 
+* Change its **Tag** to `Enemy` (create it).
+
+![enemysetting](https://www.dropbox.com/s/1usyufw0le5g4tb/18.png?raw=1)
+
+## Create Prefabs
+Drag the `Enemy` GameObject to the folder we created earlier called “Prefabs”. Notice how the logo of the cube will become **blue**. **Prefab is basically a reusable game object**.  From now on, you can **change the prefab master** by **clicking on the prefab in this Prefab folder**, and all of your copies placed on **any Scene** will reflect the change.
+> This is particularly good for items that are instantiated many times in the scene, such as this `Enemy`.
+
+![enemyprefab](https://www.dropbox.com/s/3inpelslglj6h43/19_a.png?raw=1)
+
+## Move the enemy
+
+Let’s say we need the enemy to patrol left and right up to a certain offset X from its starting position. Create a new script called `EnemyController.cs`. Instantiate the following variables and implement the `Start()` function. Add also the following two methods:
+
+```java
+  private float original_x;
+  private float max_offset = 5.0f;
+  private float enemy_patroltime = 2.0f;
+  private int moveRight = -1;
+
+  private Vector2 target_position;
+  private Vector2 velocity;
+
+  private Rigidbody2D enemy_body;
+
+  void Start()
+  {
+      enemy_body = GetComponent<Rigidbody2D>();
+      // get the starting position
+      original_x = transform.position.x;
+      ComputeVelocity();
+  }
+  void ComputeVelocity(){
+      velocity = new Vector2((moveRight)*max_offset / enemy_patroltime, 0);
+  }
+  void MoveGomba(){
+      enemy_body.MovePosition(enemy_body.position + velocity * Time.fixedDeltaTime);
+  }
+```
+
+The idea is to allow the enemy to patrol up to `5.0` units to *the left and to the right*, and **change** direction accordingly when the max offset distance is reached. We also want to control its `speed`.
+
+We can compute the **required** velocity by dividing supposed distance travelled with time, and then compute the position at each `Time.fixedDeltaTime`. Then, we can move the enemy to the calculated position: **`original_position_vector + velocity_vector * delta_time`**
+
+Finally, since we do not need to perform a full-blown physics simulation on the enemy, **we can set its `RigidBody2D` `BodyType` to `Kinematic`.** We are simply moving it to patrol around desired location, and perhaps later on to detect “collision”.
+
+Then implement `FixedUpdate()` method in `EnemyController.cs`.
+
+```java
+   void FixedUpdate()
+  {
+      if (Mathf.Abs(enemy_body.position.x - original_x) < max_offset)
+      {// move gomba
+          MoveGomba();
+      }
+      else{
+          // change direction
+          moveRight *= -1;
+          ComputeVelocity();
+          MoveGomba();
+      }
+  }
+```
+
+The idea:
+
+-   `If` Gomba isn’t too far away from its starting position yet, move it to the designated direction
+-   `Else`, flip direction
+
+## Collision with Enemy
+ Add a `Collider` component to the `Enemy` GameObject. Its inspector should now contain these components:
+
+![enemyinspector](https://www.dropbox.com/s/uoi7gyriemocnr5/20.png?raw=1)
+
+Now intuitively, we want our character to be “**damaged**” when it collides with the Enemy, but **not for the two bodies to push each other or simulate Physics.** The way to do this is to set the collider attached at the enemy’s GameObject as [Trigger] (https://docs.unity3d.com/540/Documentation/ScriptReference/Collider-isTrigger.html) (tick that `IsTrigger` option in `BoxCollider2D` element). 
+
+If a `Collider` collides with another `Collider` that is a `Trigger`, then “collision effect” will **not** be computed, and rather the callback `OnTriggerEnter` will be invoked (on **both** GameObject).
+
+Implement the callback function `OnTriggerEnter2D` in `PlayerController.cs`:
+> You can implement it in `EnemyController.cs` as well, and probably trigger an `Event` but for now let's choose the simple way first. 
+
+```java
+  void OnTriggerEnter2D(Collider2D other)
+  {
+      if (other.gameObject.CompareTag("Enemy"))
+      {
+          Debug.Log("Collided with Gomba!");
+      }
+  }
+```
+
+By now, you should see the message “*Collided with Gomba*” printed out in the console whenever Mario collides with Gomba.
+
+# UI Elements
+Of course any game should have some kind of “start” button and a scoring system. To have our game looks something like the screenshot below (right), we need 3 GameObjects:
+-   Panel
+-   Button
+-   Text (for Score)
+    
+Create following GameObject hierarchy as shown in the middle image and rename them accordingly. Right click at the hierarchy, then click **UI >> Panel**, etc. 
+![uielements](https://www.dropbox.com/s/5fhsw55xqynrdoo/21.png?raw=1)
+
+
+The `UI GameObject` is the parent object of all other UI GameObjects in this scene. We need to first determine which **coordinate system** to use. 
+* Set the `RenderMode` of its Canvas element as `Screen Space - Overlay` so that the coordinate system is mapped to the preview of the game.
+
+> If you set it as `WorldSpace` then you need to use absolute coordinates to position the text and the button.
+
+## Panel
+The Panel serves as an “overlay” above all game objects in the scene. Click on it and see the Inspector. Edit its color and alpha to have a transparent layer over your game screen space. 
+
+## Score Text
+Then, play around with the `ScoreText` setting:
+-   Change font size,
+-   PosX, PosY,
+-   Change font,
+-   Alignment, etc…
+-   *Horizontal Overflow*: Wrap is handy to prevent “missing” text when the font is too big for the text box.
+
+## Button
+For `Button`, you can download your own button image and change its text. Otherwise, use the default Unity button image. You can also **dictate how it should look like when pressed or remain selected**. Most importantly, you can choose the callback function when button is clicked. Also don’t forget to modify the **text (child of Button)**.
+
+Here's the inspector setting of all GameObjects mentioned above. 
+
+![setting UI](https://www.dropbox.com/s/hwgpvn5lniykgg9/22.png?raw=1)
+  
+
+## UI Menu Logic: Button Callback
+
+We want the entire overlay to disappear when the Start Game button is clicked. We need a function that will be called whenever the button is pressed. 
+
+Create a C# script named `MenuController.cs` and attach it to `UI` GameObject (that parent object). We want the game to not start at all before the button is pressed, so we need to do this in the `Awake()` function (recall Unity event functions):
+
+```java
+  void Awake()
+  {
+      Time.timeScale = 0.0f;
+  }
+```
+Then, implement a **callback** function for the button called `StartButtonClicked()`. Here we iterate each children of **UI** and **disable** them so they're not rendered on the Scene anymore:
+
+```java
+  public void StartButtonClicked()
+  {
+      foreach (Transform eachChild in transform)
+      {
+          if (eachChild.name != "Score")
+          {
+              Debug.Log("Child found. Name: " + eachChild.name);
+              // disable them
+              eachChild.gameObject.SetActive(false);
+              Time.timeScale = 1.0f;
+          }
+      }
+  }
+```
+In the above, we basically set the `timescale` of the game to `0` in the beginning and set it to `1` *after button is pressed*. We also iterate through all of UI’s children and *disable* all of 
+them except the `ScoreText`.
+
+### Transform
+The `transform` component of any GameObject is implemented as a **hierarchical** data structure.
+-   Using `transform` component we can traverse GameObject hierarchies in our scene quite conveniently,
+-   We can find a particular GameObject which we know is a *child* of some known GameObject reference.
+    
+**The reason why transform is implemented as a hierarchy is because when we transform any parent object, the change is reflected on ALL of its children.**
+
+Each transformation from the parent is **propagated** to the children recursively, forming a transformation **stack** for each children (and all their children too) under a gameObject.
+
+Here's some quick info from Unity’s official documentation:
+> Unity internally represents each transform hierarchy, i.e. a root and all it's deep children, with its own packed data structure. This data structure is resized when the number of transforms in it exceeds its capacity.
+    
+If you’re interested to read up more about the mathematical details of **hierarchical transformation**, refer to [this document](https://www.dropbox.com/s/74npldxm0ga8000/03_CoordinatesAndTransformations.pdf?dl=1).
+
+## Final Touches for UI Logic
+
+To stitch all the logic together:
+-   Attach `MenuController.cs` to **UI** GameObject.
+-   Then on **Button** GameObject, navigate the Inspector under Button element, and click the **circle** at the OnClick() callback. 
+- Find **UI** GameObject under the **Scene** tab (not Assets!) 
+-   Afterwards, the function StartButtonClicked will appear in the dropdown menu.
+
+![callbackonclick](https://www.dropbox.com/s/x3um77h4y1r8dql/23.png?raw=1)
+
+>Remember to implement the callback function for the button as a `public` method else you won’t see it in the dropdown.
+
+# Scoring System
+A game will not be complete without some kind of scoring or reward system. One way to “**count**” a score is to count how many time Mario has *successfully jumped over Gomba*. To do this, we need to know where Gomba is at all times, and of course the **reference** to the **ScoreText** GameObject.
+
+  
+Add these variables in `PlayerController.cs`:
+```java
+public Transform EnemyLocation;
+public Text ScoreText;
+private int score = 0;
+private bool countscore_state = false;
+```
+
+Then in the `Update()` function of `PlayerController.cs,` add the following check:
+```java
+     // when jumping, and Gomba is near Mario and we haven't registered our score
+      if (!onground_state && countscore_state)
+      {
+          if (Mathf.Abs(transform.position.x - EnemyLocation.position.x) < 0.5f)
+          {
+              countscore_state = false;
+              score++;
+              Debug.Log(score);
+          }
+      }
+```
+> We need that `countscore_state` to **not** increment the score *too many times*, but only once per jump because we know that Mario is unable to perform double jump.
+
+Set `countscore_state` to be true when “space” key is pressed under the `Update()` function:
+```java
+      if (Input.GetKeyDown("space") && onground_state)
+      {
+          mario_body.AddForce(Vector2.up * up_speed, ForceMode2D.Impulse);
+          onground_state = false;
+          countscore_state = true; //check if Gomba is underneath
+      }
+```
+
+Finally, we need to check when Mario lands on the ground. We can do this by checking collision with the **Ground**:
+
+```java
+  void OnCollisionEnter2D(Collision2D col)
+  {
+      if (col.gameObject.CompareTag("Ground"))
+      {
+          onground_state = true; // back on ground
+          countscore_state = false; // reset score state
+          ScoreText.text = "Score: " + score.ToString();
+      };
+  }
+```
+> Note: we use Tag here to easily find GameObjects on the scene. Surely there's fancier ways out there, using Inherintance and whatnot. However during development stage and considering that our peers are mostly beginner, let's just use the most convenient tools available. Your gaming computers shall not have any performance problems for this simple small game. 
+
+Finally, we can conveniently **link up** **ScoreText** and **Enemy** **Transform** object references in **Mario's** inspector. Click the circle and select the appropriate GameObjects from the Scene tab. 
+![link](https://www.dropbox.com/s/9y5g4ov68jbwoaw/24.png?raw=1)
+
+
+You can adjust `Speed, Up_speed,` and `Max_speed`, as well as **Mario’s** `Mass` and `GravityScale` to make the movement feels natural. 
+
+* The ScoreText should increase whenever Mario successfully jumps over Gomba and 
+* The game shall stop abruptly when Mario collides with Gomba. 
+
+![final](https://www.dropbox.com/s/sdi5a58pjmybfs5/25.png?raw=1)
+
+# Checkoff
+Implement a restart mechanism when game is ***over***. 
+
+You’re free to implement it in any way. *It will not affect your checkoff score.* The grading for this lab is **binary** (completed / not completed). 
+
+Demonstrate your implementation to our instructor or TA and obtain a lab checkoff by the Friday of Week 8, 23:59. Note that you will still be tested over the **learning objectives** from this Lab for the Lab quiz. 
+
+# Next
+It's been hours but we are nowhere near a completed game (unless of course you have prior experience with Unity):
+-   There’s **no game manager** of any sort, and `score` is sloppily stored in `PlayerController.cs`
+-   No **platforms** implemented yet (it's a platformer game!)
+-   No **sound effect** or **animation** (lack of visual feedback)
+-   There’s no *centralised* way for keeping track of **states** (score, player state, etc)
+-   The “Enemy” is kinda predictable or boring.
+- ...etc
+- 
+We will try to improve our game and learn some common C# coding practices in the next few parts.
+
+
+
+
+
+
+
+
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQ2OTUzMTAyXX0=
+eyJoaXN0b3J5IjpbMTk2NTk3MDkwMV19
 -->
