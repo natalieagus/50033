@@ -16,7 +16,7 @@ header_feature_image: assets/background.png
 # Blog
 excerpt: false                                           # Or "truncate" (first 250 characters), "false" to disable
 post_navigation: true
-color_image: /assets/img/lineart.png                    # A bit transparent for color posts.
+# color_image: /assets/img/lineart.png                    # A bit transparent for color posts.
 
 # Features
 # More in the _data folder for social icons, share buttons, author and language
