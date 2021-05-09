@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Unity for Newborns
+feature-img: "assets/background_1.png"
 ---
 * TOC
 {:toc}
@@ -588,5 +589,5 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTU2Nzk3ODIzXX0=
+eyJoaXN0b3J5IjpbMTg0MjQ4OTQ2NF19
 -->
