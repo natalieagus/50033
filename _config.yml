@@ -9,7 +9,7 @@ avatar: assets/logo.png                         # Empty for no avatar in navbar
 favicon: assets/logo.png                            # Icon displayed in the tab
 
 # Header and footer text
-header_text: "A collection of Unity Tutorials" # Change Blog header text
+header_text: "A collection of 50.033 Unity Lab Tutorials" # Change Blog header text
 footer_text: >
   Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
 header_feature_image: assets/background.png
