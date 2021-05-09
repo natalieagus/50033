@@ -4,7 +4,7 @@ url: "https://natalieagus.github.io"
 
 # THEME-SPECIFIC CONFIGURATION
 title: "50.033 Game Design and Development"                               # site's title
-description: "A website for 50.033 Labs      # used by search engines
+description: "A website for 50.033 Labs"      # used by search engines
 avatar: assets/img/triangle.png                         # Empty for no avatar in navbar
 favicon: assets/favicon.ico                             # Icon displayed in the tab
 
