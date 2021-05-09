@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Unity for Newborns
-color: rgb(186,225,255)
 ---
 * TOC
 {:toc}
@@ -589,5 +588,5 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTcwMjU3NzU3XX0=
+eyJoaXN0b3J5IjpbLTIxMzkyMzYyMTJdfQ==
 -->
