@@ -5,8 +5,8 @@ url: "https://natalieagus.github.io"
 # THEME-SPECIFIC CONFIGURATION
 title: "50.033 Game Design and Development"                               # site's title
 description: "A website for 50.033 Labs"      # used by search engines
-avatar: assets/img/triangle.png                         # Empty for no avatar in navbar
-favicon: assets/favicon.ico                             # Icon displayed in the tab
+avatar: assets/logo.png                         # Empty for no avatar in navbar
+favicon: assets/logo.png                            # Icon displayed in the tab
 
 # Header and footer text
 header_text: "A collection of Unity Tutorials" # Change Blog header text
