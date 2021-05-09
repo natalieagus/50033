@@ -12,7 +12,7 @@ favicon: assets/logo.png                            # Icon displayed in the tab
 header_text: "A collection of Unity Tutorials" # Change Blog header text
 footer_text: >
   Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
-
+header_feature_image: assets/background.png
 # Blog
 excerpt: false                                           # Or "truncate" (first 250 characters), "false" to disable
 post_navigation: true
