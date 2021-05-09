@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Unity for Newborns
-feature-img: "assets/background_1.png"
 ---
 * TOC
 {:toc}
@@ -576,7 +575,7 @@ It's been hours but we are nowhere near a completed game (unless of course you h
 -   There’s no *centralised* way for keeping track of **states** (score, player state, etc)
 -   The “Enemy” is kinda predictable or boring.
 - ...etc
-- 
+
 We will try to improve our game and learn some common C# coding practices in the next few parts.
 
 
@@ -589,5 +588,5 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzOTMwOTM4MTldfQ==
+eyJoaXN0b3J5IjpbOTU2Nzk3ODIzXX0=
 -->
