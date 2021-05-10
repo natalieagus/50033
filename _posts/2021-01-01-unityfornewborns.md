@@ -10,7 +10,7 @@ The contents of these labs are made to teach and stress some learning points and
 
 By no means we claim that they are the best practice, in fact some of the ways may be convoluted and they won’t be done exactly this way by experienced coder but we can’t teach the “best practices” right away because it relies on many prior knowledge.
 
-Experienced coders: keep in mind that you too were once a ^noob. You made mistakes.
+Experienced coders: keep in mind that you too were once a *noob*. You made mistakes.
 
 *If you realise that some parts are troublesome or ineffective, then good for you. It means that you’re **smart** and **experienced**, and from now on you can embark on the journey to customize it to a more fitting way: simpler, better, more efficient, whatever it is. You can tell our teaching team your personal opinion, and constructive criticism is always welcome after class. We however expect a certain kind of mutual respect during the lab hours.*
 
@@ -588,5 +588,5 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3ODA3NDg3ODYsOTU2Nzk3ODIzXX0=
+eyJoaXN0b3J5IjpbNzQ2MTY1NzUyLDk1Njc5NzgyM119
 -->
