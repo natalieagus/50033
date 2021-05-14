@@ -137,13 +137,13 @@ You are free to play with other parameters.
 We can then control this component from the script. Paste the following inside `PlayerController.cs`:
 ```java
 public float speed;
-private Rigidbody2D mario_body;
+private Rigidbody2D MarioBody;
 // Start is called before the first frame update
 void  Start()
 {
 	// Set to be 30 FPS
 	Application.targetFrameRate =  30;
-	mario_body = GetComponent<Rigidbody2D>();
+	MarioBody = GetComponent<Rigidbody2D>();
 }
 ```
 
@@ -154,7 +154,7 @@ void  FixedUpdate()
 {
 	float moveHorizontal = Input.GetAxis("Horizontal");
 	Vector2 movement = new Vector2(moveHorizontal, 0);
-	mario_body.AddForce(movement * speed);
+	MarioBody.AddForce(movement * speed);
 }
 ```
   
@@ -196,15 +196,15 @@ Add the global variable `max_speed` and implement `FixedUpdate()` in `PlayerCont
  
       if (Input.GetKeyUp("a") || Input.GetKeyUp("d")){
           // stop
-          mario_body.velocity = Vector2.zero;
+          MarioBody.velocity = Vector2.zero;
       }
     
       // dynamic rigidbody
       moveHorizontal = Input.GetAxis("Horizontal");
       if (Mathf.Abs(moveHorizontal) > 0){
           Vector2 movement = new Vector2(moveHorizontal, 0);
-          if (mario_body.velocity.magnitude < max_speed)
-                  mario_body.AddForce(movement * speed);
+          if (MarioBody.velocity.magnitude < max_speed)
+                  MarioBody.AddForce(movement * speed);
       }
   }
 
@@ -242,7 +242,7 @@ We need to have some kind of **state** variable for this. Add the following code
 and the following inside `FixedUpdate()` method:
 ```java
       if (Input.GetKeyDown("space") && onground_state){
-          mario_body.AddForce(Vector2.up * up_speed, ForceMode2D.Impulse);
+          MarioBody.AddForce(Vector2.up * up_speed, ForceMode2D.Impulse);
           onground_state = false;
       }
 ```
@@ -528,7 +528,7 @@ Set `countscore_state` to be true when “space” key is pressed under the `Upd
 ```java
       if (Input.GetKeyDown("space") && onground_state)
       {
-          mario_body.AddForce(Vector2.up * up_speed, ForceMode2D.Impulse);
+          MarioBody.AddForce(Vector2.up * up_speed, ForceMode2D.Impulse);
           onground_state = false;
           countscore_state = true; //check if Gomba is underneath
       }
@@ -588,5 +588,6 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzQ2MTY1NzUyLDk1Njc5NzgyM119
+eyJoaXN0b3J5IjpbOTc3ODMxMTI0LDc0NjE2NTc1Miw5NTY3OT
+c4MjNdfQ==
 -->
