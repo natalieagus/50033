@@ -187,10 +187,10 @@ To prevent this “sliding” feature that’s not very intuitive for platformer
 -   Set its velocity to 0 when key “a” or “d” is lifted up
 -   **Clamp** his speed to a maximum value so he doesn’t run faster and faster when we hold that “a” or “d” button.
    
-Add the global variable `MaxSpeed` and implement `FixedUpdate()` in `PlayerController.cs`.
+Add the global variable `maxSpeed` and implement `FixedUpdate()` in `PlayerController.cs`.
 
 ```java
-  public float MaxSpeed = 10;
+  public float maxSpeed = 10;
   // FixedUpdate may be called once per frame. See documentation for details.
   void FixedUpdate()
  
@@ -203,7 +203,7 @@ Add the global variable `MaxSpeed` and implement `FixedUpdate()` in `PlayerContr
       moveHorizontal = Input.GetAxis("Horizontal");
       if (Mathf.Abs(moveHorizontal) > 0){
           Vector2 movement = new Vector2(moveHorizontal, 0);
-          if (MarioBody.velocity.magnitude < MaxSpeed)
+          if (MarioBody.velocity.magnitude < maxSpeed)
                   MarioBody.AddForce(movement * speed);
       }
   }
@@ -242,12 +242,12 @@ We need to have some kind of **state** variable for this. Add the following code
 and the following inside `FixedUpdate()` method:
 ```java
       if (Input.GetKeyDown("space") && OngroundState){
-          MarioBody.AddForce(Vector2.up * UpSpeed, ForceMode2D.Impulse);
+          MarioBody.AddForce(Vector2.up * upSpeed, ForceMode2D.Impulse);
           OngroundState = false;
       }
 ```
 
-You can improve the controls and adjust the parameters: `Speed`, `UpSpeed`, and `MaxSpeed` accordingly to get the right “**feel**”. It can take quite a lot of time to get the **kinesthetics** right, but it is an important part of your journey in making a good game.
+You can improve the controls and adjust the parameters: `Speed`, `upSpeed`, and `maxSpeed` accordingly to get the right “**feel**”. It can take quite a lot of time to get the **kinesthetics** right, but it is an important part of your journey in making a good game.
 
 Focus more on these details instead of “expanding” your game. We don’t require you to create a 1-hour long game, but rather a short and well designed game.
 > Invest your time wisely. 
@@ -422,7 +422,7 @@ The `UI GameObject` is the parent object of all other UI GameObjects in this sce
 The Panel serves as an “overlay” above all game objects in the scene. Click on it and see the Inspector. Edit its color and alpha to have a transparent layer over your game screen space. 
 
 ## Score Text
-Then, play around with the `ScoreText` setting:
+Then, play around with the `scoreText` setting:
 -   Change font size,
 -   PosX, PosY,
 -   Change font,
@@ -467,7 +467,7 @@ Then, implement a **callback** function for the button called `StartButtonClicke
   }
 ```
 In the above, we basically set the `timescale` of the game to `0` in the beginning and set it to `1` *after button is pressed*. We also iterate through all of UI’s children and *disable* all of 
-them except the `ScoreText`.
+them except the `scoreText`.
 
 ### Transform
 The `transform` component of any GameObject is implemented as a **hierarchical** data structure.
@@ -526,7 +526,7 @@ Set `CountScoreState` to be true when “space” key is pressed under the `Upda
 ```java
       if (Input.GetKeyDown("space") && OngroundState)
       {
-          MarioBody.AddForce(Vector2.up * UpSpeed, ForceMode2D.Impulse);
+          MarioBody.AddForce(Vector2.up * upSpeed, ForceMode2D.Impulse);
           OngroundState = false;
           CountScoreState = true; //check if Gomba is underneath
       }
@@ -541,19 +541,19 @@ Finally, we need to check when Mario lands on the ground. We can do this by chec
       {
           OngroundState = true; // back on ground
           CountScoreState = false; // reset score state
-          ScoreText.text = "Score: " + score.ToString();
+          scoreText.text = "Score: " + score.ToString();
       };
   }
 ```
 > Note: we use Tag here to easily find GameObjects on the scene. Surely there's fancier ways out there, using Inherintance and whatnot. However during development stage and considering that our peers are mostly beginner, let's just use the most convenient tools available. Your gaming computers shall not have any performance problems for this simple small game. 
 
-Finally, we can conveniently **link up** **ScoreText** and **Enemy** **Transform** object references in **Mario's** inspector. Click the circle and select the appropriate GameObjects from the Scene tab. 
+Finally, we can conveniently **link up** **scoreText** and **Enemy** **Transform** object references in **Mario's** inspector. Click the circle and select the appropriate GameObjects from the Scene tab. 
 ![link](https://www.dropbox.com/s/9y5g4ov68jbwoaw/24.png?raw=1)
 
 
-You can adjust `Speed, UpSpeed,` and `MaxSpeed`, as well as **Mario’s** `Mass` and `GravityScale` to make the movement feels natural. 
+You can adjust `Speed, upSpeed,` and `maxSpeed`, as well as **Mario’s** `Mass` and `GravityScale` to make the movement feels natural. 
 
-* The ScoreText should increase whenever Mario successfully jumps over Gomba and 
+* The scoreText should increase whenever Mario successfully jumps over Gomba and 
 * The game shall stop abruptly when Mario collides with Gomba. 
 
 ![final](https://www.dropbox.com/s/sdi5a58pjmybfs5/25.png?raw=1)
@@ -586,6 +586,6 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNDExMTA0MzYsMTQwODc3NDExNiw3ND
-YxNjU3NTIsOTU2Nzk3ODIzXX0=
+eyJoaXN0b3J5IjpbLTc3Mzc0MjA1MiwxNDA4Nzc0MTE2LDc0Nj
+E2NTc1Miw5NTY3OTc4MjNdfQ==
 -->
