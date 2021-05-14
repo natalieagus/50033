@@ -327,10 +327,10 @@ Drag the `Enemy` GameObject to the folder we created earlier called “Prefabs�
 Let’s say we need the enemy to patrol left and right up to a certain offset X from its starting position. Create a new script called `EnemyController.cs`. Instantiate the following variables and implement the `Start()` function. Add also the following two methods:
 
 ```java
-  private float original_x;
-  private float max_offset = 5.0f;
-  private float enemy_patroltime = 2.0f;
-  private int moveRight = -1;
+  private float OriginalX;
+  private float MaxOffset = 5.0f;
+  private float EnemyPatroltime = 2.0f;
+  private int MoveRight = -1;
 
   private Vector2 target_position;
   private Vector2 velocity;
@@ -341,11 +341,11 @@ Let’s say we need the enemy to patrol left and right up to a certain offset X 
   {
       enemy_body = GetComponent<Rigidbody2D>();
       // get the starting position
-      original_x = transform.position.x;
+      OriginalX = transform.position.x;
       ComputeVelocity();
   }
   void ComputeVelocity(){
-      velocity = new Vector2((moveRight)*max_offset / enemy_patroltime, 0);
+      velocity = new Vector2((MoveRight)*MaxOffset / EnemyPatroltime, 0);
   }
   void MoveGomba(){
       enemy_body.MovePosition(enemy_body.position + velocity * Time.fixedDeltaTime);
@@ -363,7 +363,7 @@ Then implement `FixedUpdate()` method in `EnemyController.cs`.
 ```java
    void FixedUpdate()
   {
-      if (Mathf.Abs(enemy_body.position.x - original_x) < max_offset)
+      if (Mathf.Abs(enemy_body.position.x - OriginalX) < MaxOffset)
       {// move gomba
           MoveGomba();
       }
@@ -588,6 +588,6 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQwODc3NDExNiw3NDYxNjU3NTIsOTU2Nz
-k3ODIzXX0=
+eyJoaXN0b3J5IjpbLTY0ODY0NTg0OCwxNDA4Nzc0MTE2LDc0Nj
+E2NTc1Miw5NTY3OTc4MjNdfQ==
 -->
