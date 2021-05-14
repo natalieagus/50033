@@ -574,9 +574,10 @@ Demonstrate your implementation to our instructor or TA and obtain a lab checkof
 
 # Next
 It's been hours but we are nowhere near a completed game (unless of course you have prior experience with Unity):
--   There’s **no game manager** of any sort, and `score` is sloppily stored in `PlayerController.cs`
--   No **platforms** implemented yet (it's a platformer game!)
+
 -   No **sound effect** or **animation** (lack of visual feedback)
+-  No **platforms** implemented yet (it's a platformer game!)
+-  There’s **no game manager** of any sort, and `score` is sloppily stored in `PlayerController.cs`
 -   There’s no *centralised* way for keeping track of **states** (score, player state, etc)
 -   The “Enemy” is kinda predictable or boring.
 - ...etc
@@ -593,7 +594,7 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA3MDQxMjg4Nyw3MDAzMDc4MjQsLTQwOT
+eyJoaXN0b3J5IjpbLTIxOTEzMTg3OSw3MDAzMDc4MjQsLTQwOT
 MzODAsMTQwODc3NDExNiw3NDYxNjU3NTIsOTU2Nzk3ODIzXX0=
 
 -->
