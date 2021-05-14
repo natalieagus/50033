@@ -242,12 +242,12 @@ We need to have some kind of **state** variable for this. Add the following code
 and the following inside `FixedUpdate()` method:
 ```java
       if (Input.GetKeyDown("space") && OngroundState){
-          MarioBody.AddForce(Vector2.up * up_speed, ForceMode2D.Impulse);
+          MarioBody.AddForce(Vector2.up * UpSpeed, ForceMode2D.Impulse);
           OngroundState = false;
       }
 ```
 
-You can improve the controls and adjust the parameters: `Speed`, `Up_speed`, and `Max_speed` accordingly to get the right “**feel**”. It can take quite a lot of time to get the **kinesthetics** right, but it is an important part of your journey in making a good game.
+You can improve the controls and adjust the parameters: `Speed`, `UpSpeed`, and `Max_speed` accordingly to get the right “**feel**”. It can take quite a lot of time to get the **kinesthetics** right, but it is an important part of your journey in making a good game.
 
 Focus more on these details instead of “expanding” your game. We don’t require you to create a 1-hour long game, but rather a short and well designed game.
 > Invest your time wisely. 
@@ -528,7 +528,7 @@ Set `CountScoreState` to be true when “space” key is pressed under the `Upda
 ```java
       if (Input.GetKeyDown("space") && OngroundState)
       {
-          MarioBody.AddForce(Vector2.up * up_speed, ForceMode2D.Impulse);
+          MarioBody.AddForce(Vector2.up * UpSpeed, ForceMode2D.Impulse);
           OngroundState = false;
           CountScoreState = true; //check if Gomba is underneath
       }
@@ -553,7 +553,7 @@ Finally, we can conveniently **link up** **ScoreText** and **Enemy** **Transform
 ![link](https://www.dropbox.com/s/9y5g4ov68jbwoaw/24.png?raw=1)
 
 
-You can adjust `Speed, Up_speed,` and `Max_speed`, as well as **Mario’s** `Mass` and `GravityScale` to make the movement feels natural. 
+You can adjust `Speed, UpSpeed,` and `Max_speed`, as well as **Mario’s** `Mass` and `GravityScale` to make the movement feels natural. 
 
 * The ScoreText should increase whenever Mario successfully jumps over Gomba and 
 * The game shall stop abruptly when Mario collides with Gomba. 
@@ -588,6 +588,6 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg2NzM4MjIwNyw3NDYxNjU3NTIsOTU2Nz
-k3ODIzXX0=
+eyJoaXN0b3J5IjpbLTE4NzQ3ODcxODMsNzQ2MTY1NzUyLDk1Nj
+c5NzgyM119
 -->
