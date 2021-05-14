@@ -147,10 +147,10 @@ void  Start()
 }
 ```
 
-Then set `speed` to `70` in the Inspector. Afterwards, implement the **event callback** `Update` as shown:
+Then set `speed` to `70` in the Inspector. Afterwards, implement the **event callback** `FixedUpdate` as shown:
 
 ```java
-void  Update()
+void  FixedUpdate()
 {
 	float moveHorizontal = Input.GetAxis("Horizontal");
 	Vector2 movement = new Vector2(moveHorizontal, 0);
@@ -586,6 +586,6 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1OTQ4MzEyLC00MDkzMzgwLDE0MDg3Nz
-QxMTYsNzQ2MTY1NzUyLDk1Njc5NzgyM119
+eyJoaXN0b3J5IjpbLTQwOTMzODAsLTQwOTMzODAsMTQwODc3ND
+ExNiw3NDYxNjU3NTIsOTU2Nzk3ODIzXX0=
 -->
