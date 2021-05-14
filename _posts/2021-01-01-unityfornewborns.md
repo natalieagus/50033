@@ -331,15 +331,13 @@ Let’s say we need the enemy to patrol left and right up to a certain offset X 
   private float maxOffset = 5.0f;
   private float enemyPatroltime = 2.0f;
   private int moveRight = -1;
-
-  private Vector2 targetPosition;
   private Vector2 velocity;
 
-  private Rigidbody2D enemy_body;
+  private Rigidbody2D enemyBody;
 
   void Start()
   {
-      enemy_body = GetComponent<Rigidbody2D>();
+      enemyBody = GetComponent<Rigidbody2D>();
       // get the starting position
       originalX = transform.position.x;
       ComputeVelocity();
@@ -348,7 +346,7 @@ Let’s say we need the enemy to patrol left and right up to a certain offset X 
       velocity = new Vector2((moveRight)*maxOffset / enemyPatroltime, 0);
   }
   void MoveGomba(){
-      enemy_body.MovePosition(enemy_body.position + velocity * Time.fixedDeltaTime);
+      enemyBody.MovePosition(enemyBody.position + velocity * Time.fixedDeltaTime);
   }
 ```
 
@@ -498,13 +496,13 @@ To stitch all the logic together:
 >Remember to implement the callback function for the button as a `public` method else you won’t see it in the dropdown.
 
 # Scoring System
-A game will not be complete without some kind of scoring or reward system. One way to “**count**” a score is to count how many time Mario has *successfully jumped over Gomba*. To do this, we need to know where Gomba is at all times, and of course the **reference** to the **ScoreText** GameObject.
+A game will not be complete without some kind of scoring or reward system. One way to “**count**” a score is to count how many time Mario has *successfully jumped over Gomba*. To do this, we need to know where Gomba is at all times, and of course the **reference** to the **scoreText** GameObject.
 
   
 Add these variables in `PlayerController.cs`:
 ```java
-public Transform EnemyLocation;
-public Text ScoreText;
+public Transform enemyLocation;
+public Text scoreText;
 private int score = 0;
 private bool CountScoreState = false;
 ```
@@ -514,7 +512,7 @@ Then in the `Update()` function of `PlayerController.cs,` add the following chec
      // when jumping, and Gomba is near Mario and we haven't registered our score
       if (!OngroundState && CountScoreState)
       {
-          if (Mathf.Abs(transform.position.x - EnemyLocation.position.x) < 0.5f)
+          if (Mathf.Abs(transform.position.x - enemyLocation.position.x) < 0.5f)
           {
               CountScoreState = false;
               score++;
@@ -588,6 +586,6 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMTk3ODg0NSwxNDA4Nzc0MTE2LDc0Nj
-E2NTc1Miw5NTY3OTc4MjNdfQ==
+eyJoaXN0b3J5IjpbLTEwNDExMTA0MzYsMTQwODc3NDExNiw3ND
+YxNjU3NTIsOTU2Nzk3ODIzXX0=
 -->
