@@ -561,7 +561,9 @@ You can adjust `speed, upSpeed,` and `maxSpeed`, as well as **Mario’s** `Mass`
 # Script Execution Order
 We can tell Unity which scripts to execute first, that is Unity will call the `Awake()` functions it needs to invoke in the order that you want, and then repeatedly call `Update()` in the same order. 
 
-Go to Edit >> Project Settings then select the Script Execution Order category. 
+Go to Edit >> Project Settings then select the Script Execution Order category. You may choose to add any script you want. In this case, we want the menu script to be run first before the enemy's script. 
+
+
 
 # Checkoff
 Implement a restart mechanism when game is ***over***. 
@@ -591,7 +593,7 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY4NjMwNTU4Myw3MDAzMDc4MjQsLTQwOT
+eyJoaXN0b3J5IjpbLTYyOTA5OTY0MCw3MDAzMDc4MjQsLTQwOT
 MzODAsMTQwODc3NDExNiw3NDYxNjU3NTIsOTU2Nzk3ODIzXX0=
 
 -->
