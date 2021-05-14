@@ -230,20 +230,20 @@ Now we implement the `Collider` **callback** function called `OnCollision2D` in 
 We need to have some kind of **state** variable for this. Add the following code to  `PlayerController.cs`:
 
 ```java
-  private bool onground_state = true;
+  private bool OngroundState = true;
 
   // called when the cube hits the floor
   void OnCollisionEnter2D(Collision2D col)
   {
-      if (col.gameObject.CompareTag("Ground")) onground_state = true;
+      if (col.gameObject.CompareTag("Ground")) OngroundState = true;
   }
 ```
 
 and the following inside `FixedUpdate()` method:
 ```java
-      if (Input.GetKeyDown("space") && onground_state){
+      if (Input.GetKeyDown("space") && OngroundState){
           MarioBody.AddForce(Vector2.up * up_speed, ForceMode2D.Impulse);
-          onground_state = false;
+          OngroundState = false;
       }
 ```
 
@@ -263,7 +263,7 @@ We can do this by enabling the `flipX` property of its `SpriteRenderer` whenever
 
 ```java
   private SpriteRenderer MarioSprite;
-  private bool faceright_state = true;
+  private bool FaceRightState = true;
 ```
 
 **We have to control the `SpriteRenderer` component via the script.** You can pretty much get any component via `GetComponent<type>()` method in the script attached to the game object.  Instantiate the `MarioSprite` under the `Start()` method:
@@ -274,13 +274,13 @@ MarioSprite = GetComponent<SpriteRenderer>();
 Finally, implement the following under `Update` and not `FixedUpdate` since this logic has nothing to do with the Physics Engine:
 ```java
       // toggle state
-      if (Input.GetKeyDown("a") && faceright_state){
-          faceright_state = false;
+      if (Input.GetKeyDown("a") && FaceRightState){
+          FaceRightState = false;
           MarioSprite.flipX = true;
       }
 
-      if (Input.GetKeyDown("d") && !faceright_state){
-          faceright_state = true;
+      if (Input.GetKeyDown("d") && !FaceRightState){
+          FaceRightState = true;
           MarioSprite.flipX = false;
       }
 ```
@@ -506,31 +506,31 @@ Add these variables in `PlayerController.cs`:
 public Transform EnemyLocation;
 public Text ScoreText;
 private int score = 0;
-private bool countscore_state = false;
+private bool CountScoreState = false;
 ```
 
 Then in the `Update()` function of `PlayerController.cs,` add the following check:
 ```java
      // when jumping, and Gomba is near Mario and we haven't registered our score
-      if (!onground_state && countscore_state)
+      if (!OngroundState && CountScoreState)
       {
           if (Mathf.Abs(transform.position.x - EnemyLocation.position.x) < 0.5f)
           {
-              countscore_state = false;
+              CountScoreState = false;
               score++;
               Debug.Log(score);
           }
       }
 ```
-> We need that `countscore_state` to **not** increment the score *too many times*, but only once per jump because we know that Mario is unable to perform double jump.
+> We need that `CountScoreState` to **not** increment the score *too many times*, but only once per jump because we know that Mario is unable to perform double jump.
 
-Set `countscore_state` to be true when “space” key is pressed under the `Update()` function:
+Set `CountScoreState` to be true when “space” key is pressed under the `Update()` function:
 ```java
-      if (Input.GetKeyDown("space") && onground_state)
+      if (Input.GetKeyDown("space") && OngroundState)
       {
           MarioBody.AddForce(Vector2.up * up_speed, ForceMode2D.Impulse);
-          onground_state = false;
-          countscore_state = true; //check if Gomba is underneath
+          OngroundState = false;
+          CountScoreState = true; //check if Gomba is underneath
       }
 ```
 
@@ -541,8 +541,8 @@ Finally, we need to check when Mario lands on the ground. We can do this by chec
   {
       if (col.gameObject.CompareTag("Ground"))
       {
-          onground_state = true; // back on ground
-          countscore_state = false; // reset score state
+          OngroundState = true; // back on ground
+          CountScoreState = false; // reset score state
           ScoreText.text = "Score: " + score.ToString();
       };
   }
@@ -588,6 +588,6 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkzNTUyNzAyNSw3NDYxNjU3NTIsOTU2Nz
+eyJoaXN0b3J5IjpbLTg2NzM4MjIwNyw3NDYxNjU3NTIsOTU2Nz
 k3ODIzXX0=
 -->
