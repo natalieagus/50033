@@ -356,10 +356,10 @@ We can compute the **required** velocity by dividing supposed distance travelled
 
 Finally, since we do not need to perform a full-blown physics simulation on the enemy, **we can set its `RigidBody2D` `BodyType` to `Kinematic`.** We are simply moving it to patrol around desired location, and perhaps later on to detect “collision”.
 
-Then implement `FixedUpdate()` method in `EnemyController.cs`.
+Then implement `Update()` method in `EnemyController.cs`.
 
 ```java
-   void FixedUpdate()
+   void Update()
   {
       if (Mathf.Abs(enemy_body.position.x - originalX) < maxOffset)
       {// move gomba
@@ -586,6 +586,6 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQwOTMzODAsLTQwOTMzODAsMTQwODc3ND
-ExNiw3NDYxNjU3NTIsOTU2Nzk3ODIzXX0=
+eyJoaXN0b3J5IjpbNzAwMzA3ODI0LC00MDkzMzgwLDE0MDg3Nz
+QxMTYsNzQ2MTY1NzUyLDk1Njc5NzgyM119
 -->
