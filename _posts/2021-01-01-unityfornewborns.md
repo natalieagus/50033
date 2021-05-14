@@ -563,7 +563,7 @@ We can tell Unity which scripts to execute first, that is Unity will call the `A
 
 Go to Edit >> Project Settings then select the Script Execution Order category. You may choose to add any script you want. In this case, we want the menu script to be run first before the enemy's script. 
 
-
+![execorder](https://www.dropbox.com/s/8mefcfyvz0iujpa/26.png?raw=1)
 
 # Checkoff
 Implement a restart mechanism when game is ***over***. 
@@ -593,7 +593,7 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYyOTA5OTY0MCw3MDAzMDc4MjQsLTQwOT
+eyJoaXN0b3J5IjpbMTA3MDQxMjg4Nyw3MDAzMDc4MjQsLTQwOT
 MzODAsMTQwODc3NDExNiw3NDYxNjU3NTIsOTU2Nzk3ODIzXX0=
 
 -->
