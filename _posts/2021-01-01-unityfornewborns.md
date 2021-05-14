@@ -262,13 +262,13 @@ The direction he’s facing should conform to the **last pressed key**.
 We can do this by enabling the `flipX` property of its `SpriteRenderer` whenever key “a” is pressed, and disabling it whenever key “d” is pressed. Add these two global variables to the script:
 
 ```java
-  private SpriteRenderer mario_sprite;
+  private SpriteRenderer MarioSprite;
   private bool faceright_state = true;
 ```
 
-**We have to control the `SpriteRenderer` component via the script.** You can pretty much get any component via `GetComponent<type>()` method in the script attached to the game object.  Instantiate the `mario_sprite` under the `Start()` method:
+**We have to control the `SpriteRenderer` component via the script.** You can pretty much get any component via `GetComponent<type>()` method in the script attached to the game object.  Instantiate the `MarioSprite` under the `Start()` method:
 ```java
-mario_sprite = GetComponent<SpriteRenderer>();
+MarioSprite = GetComponent<SpriteRenderer>();
 ```
 
 Finally, implement the following under `Update` and not `FixedUpdate` since this logic has nothing to do with the Physics Engine:
@@ -276,12 +276,12 @@ Finally, implement the following under `Update` and not `FixedUpdate` since this
       // toggle state
       if (Input.GetKeyDown("a") && faceright_state){
           faceright_state = false;
-          mario_sprite.flipX = true;
+          MarioSprite.flipX = true;
       }
 
       if (Input.GetKeyDown("d") && !faceright_state){
           faceright_state = true;
-          mario_sprite.flipX = false;
+          MarioSprite.flipX = false;
       }
 ```
 
@@ -588,6 +588,6 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTc3ODMxMTI0LDc0NjE2NTc1Miw5NTY3OT
-c4MjNdfQ==
+eyJoaXN0b3J5IjpbMTkzNTUyNzAyNSw3NDYxNjU3NTIsOTU2Nz
+k3ODIzXX0=
 -->
