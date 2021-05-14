@@ -263,7 +263,7 @@ We can do this by enabling the `flipX` property of its `SpriteRenderer` whenever
 
 ```java
   private SpriteRenderer marioSprite;
-  private bool FaceRightState = true;
+  private bool faceRightState = true;
 ```
 
 **We have to control the `SpriteRenderer` component via the script.** You can pretty much get any component via `GetComponent<type>()` method in the script attached to the game object.  Instantiate the `MarioSprite` under the `Start()` method:
@@ -274,13 +274,13 @@ MarioSprite = GetComponent<SpriteRenderer>();
 Finally, implement the following under `Update` and not `FixedUpdate` since this logic has nothing to do with the Physics Engine:
 ```java
       // toggle state
-      if (Input.GetKeyDown("a") && FaceRightState){
-          FaceRightState = false;
+      if (Input.GetKeyDown("a") && faceRightState){
+          faceRightState = false;
           marioSprite.flipX = true;
       }
 
-      if (Input.GetKeyDown("d") && !FaceRightState){
-          FaceRightState = true;
+      if (Input.GetKeyDown("d") && !faceRightState){
+          faceRightState = true;
           marioSprite.flipX = false;
       }
 ```
@@ -504,31 +504,31 @@ Add these variables in `PlayerController.cs`:
 public Transform enemyLocation;
 public Text scoreText;
 private int score = 0;
-private bool CountScoreState = false;
+private bool countScoreState = false;
 ```
 
 Then in the `Update()` function of `PlayerController.cs,` add the following check:
 ```java
      // when jumping, and Gomba is near Mario and we haven't registered our score
-      if (!onGroundState && CountScoreState)
+      if (!onGroundState && countScoreState)
       {
           if (Mathf.Abs(transform.position.x - enemyLocation.position.x) < 0.5f)
           {
-              CountScoreState = false;
+              countScoreState = false;
               score++;
               Debug.Log(score);
           }
       }
 ```
-> We need that `CountScoreState` to **not** increment the score *too many times*, but only once per jump because we know that Mario is unable to perform double jump.
+> We need that `countScoreState` to **not** increment the score *too many times*, but only once per jump because we know that Mario is unable to perform double jump.
 
-Set `CountScoreState` to be true when “space” key is pressed under the `Update()` function:
+Set `countScoreState` to be true when “space” key is pressed under the `Update()` function:
 ```java
       if (Input.GetKeyDown("space") && onGroundState)
       {
           marioBody.AddForce(Vector2.up * upSpeed, ForceMode2D.Impulse);
           onGroundState = false;
-          CountScoreState = true; //check if Gomba is underneath
+          countScoreState = true; //check if Gomba is underneath
       }
 ```
 
@@ -540,7 +540,7 @@ Finally, we need to check when Mario lands on the ground. We can do this by chec
       if (col.gameObject.CompareTag("Ground"))
       {
           onGroundState = true; // back on ground
-          CountScoreState = false; // reset score state
+          countScoreState = false; // reset score state
           scoreText.text = "Score: " + score.ToString();
       };
   }
@@ -586,6 +586,6 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg4OTIwNzMwMCwxNDA4Nzc0MTE2LDc0Nj
-E2NTc1Miw5NTY3OTc4MjNdfQ==
+eyJoaXN0b3J5IjpbLTQwOTMzODAsMTQwODc3NDExNiw3NDYxNj
+U3NTIsOTU2Nzk3ODIzXX0=
 -->
