@@ -230,20 +230,20 @@ Now we implement the `Collider` **callback** function called `OnCollision2D` in 
 We need to have some kind of **state** variable for this. Add the following code to  `PlayerController.cs`:
 
 ```java
-  private bool OngroundState = true;
+  private bool onGroundState = true;
 
   // called when the cube hits the floor
   void OnCollisionEnter2D(Collision2D col)
   {
-      if (col.gameObject.CompareTag("Ground")) OngroundState = true;
+      if (col.gameObject.CompareTag("Ground")) onGroundState = true;
   }
 ```
 
 and the following inside `FixedUpdate()` method:
 ```java
-      if (Input.GetKeyDown("space") && OngroundState){
+      if (Input.GetKeyDown("space") && onGroundState){
           marioBody.AddForce(Vector2.up * upSpeed, ForceMode2D.Impulse);
-          OngroundState = false;
+          onGroundState = false;
       }
 ```
 
@@ -262,7 +262,7 @@ The direction he’s facing should conform to the **last pressed key**.
 We can do this by enabling the `flipX` property of its `SpriteRenderer` whenever key “a” is pressed, and disabling it whenever key “d” is pressed. Add these two global variables to the script:
 
 ```java
-  private SpriteRenderer MarioSprite;
+  private SpriteRenderer marioSprite;
   private bool FaceRightState = true;
 ```
 
@@ -276,12 +276,12 @@ Finally, implement the following under `Update` and not `FixedUpdate` since this
       // toggle state
       if (Input.GetKeyDown("a") && FaceRightState){
           FaceRightState = false;
-          MarioSprite.flipX = true;
+          marioSprite.flipX = true;
       }
 
       if (Input.GetKeyDown("d") && !FaceRightState){
           FaceRightState = true;
-          MarioSprite.flipX = false;
+          marioSprite.flipX = false;
       }
 ```
 
@@ -510,7 +510,7 @@ private bool CountScoreState = false;
 Then in the `Update()` function of `PlayerController.cs,` add the following check:
 ```java
      // when jumping, and Gomba is near Mario and we haven't registered our score
-      if (!OngroundState && CountScoreState)
+      if (!onGroundState && CountScoreState)
       {
           if (Mathf.Abs(transform.position.x - enemyLocation.position.x) < 0.5f)
           {
@@ -524,10 +524,10 @@ Then in the `Update()` function of `PlayerController.cs,` add the following chec
 
 Set `CountScoreState` to be true when “space” key is pressed under the `Update()` function:
 ```java
-      if (Input.GetKeyDown("space") && OngroundState)
+      if (Input.GetKeyDown("space") && onGroundState)
       {
           marioBody.AddForce(Vector2.up * upSpeed, ForceMode2D.Impulse);
-          OngroundState = false;
+          onGroundState = false;
           CountScoreState = true; //check if Gomba is underneath
       }
 ```
@@ -539,7 +539,7 @@ Finally, we need to check when Mario lands on the ground. We can do this by chec
   {
       if (col.gameObject.CompareTag("Ground"))
       {
-          OngroundState = true; // back on ground
+          onGroundState = true; // back on ground
           CountScoreState = false; // reset score state
           scoreText.text = "Score: " + score.ToString();
       };
@@ -586,6 +586,6 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI1ODgxMjM4OCwxNDA4Nzc0MTE2LDc0Nj
+eyJoaXN0b3J5IjpbLTg4OTIwNzMwMCwxNDA4Nzc0MTE2LDc0Nj
 E2NTc1Miw5NTY3OTc4MjNdfQ==
 -->
