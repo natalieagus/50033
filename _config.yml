@@ -1,44 +1,42 @@
-# # SITE CONFIGURATION
-# baseurl: "/50033"
-# url: "https://natalieagus.github.io"
+# SITE CONFIGURATION
+baseurl: "/50033"
+url: "https://natalieagus.github.io"
 
-# # THEME-SPECIFIC CONFIGURATION
-# title: "50.033 Game Design and Development"                               # site's title
-# description: "A website for 50.033 Labs"      # used by search engines
-# avatar: assets/logo.png                         # Empty for no avatar in navbar
-# favicon: assets/logo.png                            # Icon displayed in the tab
+# THEME-SPECIFIC CONFIGURATION
+title: "50.033 Game Design and Development"                               # site's title
+description: "A website for 50.033 Labs"      # used by search engines
+avatar: assets/logo.png                         # Empty for no avatar in navbar
+favicon: assets/logo.png                            # Icon displayed in the tab
 
-# # Header and footer text
-# header_text: "A collection of 50.033 Unity Lab Tutorials" # Change Blog header text
-# footer_text: >
-#   Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
-# header_feature_image: assets/background.png
-# # Blog
-# excerpt: false                                           # Or "truncate" (first 250 characters), "false" to disable
-# post_navigation: true
-# # color_image: /assets/img/lineart.png                    # A bit transparent for color posts.
+# Header and footer text
+header_text: "A collection of 50.033 Unity Lab Tutorials" # Change Blog header text
+footer_text: >
+  Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+header_feature_image: assets/background.png
+# Blog
+excerpt: false                                           # Or "truncate" (first 250 characters), "false" to disable
+post_navigation: true
+# color_image: /assets/img/lineart.png                    # A bit transparent for color posts.
 
-# # Features
-# # More in the _data folder for social icons, share buttons, author and language
-# # For layout customization, go to the "_sass > base" folder, and check "_variables.scss"
-# katex: true                                             # Enable if using math markup
-# mermaid: true                                           # Enable mermaid-js for sequence and diagrams
-# google_analytics:                                       # Tracking ID, e.g. "UA-000000-01"
-# cookie_consent: false                                   # To respect the usage of cookies
-# disqus_shortname:                                       # Your discus shortname for comments
-# cusdis_app_id:                                          # Your cusdis data-app-id
-# color_theme: auto                                       # auto, dark or light
+# Features
+# More in the _data folder for social icons, share buttons, author and language
+# For layout customization, go to the "_sass > base" folder, and check "_variables.scss"
+katex: true                                             # Enable if using math markup
+mermaid: true                                           # Enable mermaid-js for sequence and diagrams
+google_analytics:                                       # Tracking ID, e.g. "UA-000000-01"
+cookie_consent: false                                   # To respect the usage of cookies
+disqus_shortname:                                       # Your discus shortname for comments
+cusdis_app_id:                                          # Your cusdis data-app-id
+color_theme: auto                                       # auto, dark or light
 
-# # PAGINATION
-# paginate: 5
-# paginate_path: "/blog/page:num"
+# PAGINATION
+paginate: 5
+paginate_path: "/blog/page:num"
 
 
-# # BUILD SETTINGS
-# plugins: [jekyll-paginate, jekyll-seo-tag, jekyll-feed]
-# exclude: [".jekyll-cache", ".idea", "vendor/*", "assets/node_modules/*"]
+# BUILD SETTINGS
+plugins: [jekyll-paginate, jekyll-seo-tag, jekyll-feed]
+exclude: [".jekyll-cache", ".idea", "vendor/*", "assets/node_modules/*"]
 
-# # theme: type-on-strap                                  # if using the theme as a jekyll theme gem
-# remote_theme: sylhare/Type-on-Strap    
-
-theme: jekyll-theme-tactile
+# theme: type-on-strap                                  # if using the theme as a jekyll theme gem
+remote_theme: sylhare/Type-on-Strap    
