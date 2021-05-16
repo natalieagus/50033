@@ -143,7 +143,7 @@ void  Start()
 {
 	// Set to be 30 FPS
 	Application.targetFrameRate =  30;
-	MarioBody = GetComponent<Rigidbody2D>();
+	marioBody = GetComponent<Rigidbody2D>();
 }
 ```
 
@@ -154,7 +154,7 @@ void  FixedUpdate()
 {
 	float moveHorizontal = Input.GetAxis("Horizontal");
 	Vector2 movement = new Vector2(moveHorizontal, 0);
-	MarioBody.AddForce(movement * speed);
+	marioBody.AddForce(movement * speed);
 }
 ```
   
@@ -203,8 +203,8 @@ Add the global variable `maxSpeed` and implement `FixedUpdate()` in `PlayerContr
       moveHorizontal = Input.GetAxis("Horizontal");
       if (Mathf.Abs(moveHorizontal) > 0){
           Vector2 movement = new Vector2(moveHorizontal, 0);
-          if (MarioBody.velocity.magnitude < maxSpeed)
-                  MarioBody.AddForce(movement * speed);
+          if (marioBody.velocity.magnitude < maxSpeed)
+                  marioBody.AddForce(movement * speed);
       }
   }
 
@@ -594,7 +594,7 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxOTEzMTg3OSw3MDAzMDc4MjQsLTQwOT
-MzODAsMTQwODc3NDExNiw3NDYxNjU3NTIsOTU2Nzk3ODIzXX0=
-
+eyJoaXN0b3J5IjpbLTcxMDI4NjM3NSwtMjE5MTMxODc5LDcwMD
+MwNzgyNCwtNDA5MzM4MCwxNDA4Nzc0MTE2LDc0NjE2NTc1Miw5
+NTY3OTc4MjNdfQ==
 -->
