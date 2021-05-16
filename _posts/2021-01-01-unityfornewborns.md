@@ -1,3 +1,4 @@
+
 ---
 layout: post
 title: Unity for Newborns
@@ -29,7 +30,7 @@ Experienced coders: keep in mind that you too were once a *noob*. You made mista
 # The Classic Mario Game
 ![Mario](https://www.dropbox.com/s/ym7mp79vgc7hpcf/mario.png?raw=1)
 
-The goal of this simple lab is to recreate basics this classic platformer game: **Mario**, step by step and complete it by the end of Week 4. We will try to rebuild World 1-1 as closely as possible, although due to constraints of time, some features may be omitted. In Week 5 & 6, we upgrade our skills to explore Unity3D.
+The goal of this simple lab is to recreate the classic platformer game: **Mario**, step by step and complete it by the end of Week 4. In Week 5 & 6, we upgrade our skills to explore Unity3D.
 
 # Preparation
 Download the assets [here](something). This is your starter asset that you can import to your project and complete the lab. It contains all required images, sound files, etc so we can safe time searching all these stuffs. 
@@ -579,7 +580,7 @@ It's been hours but we are nowhere near a completed game (unless of course you h
 -  No **platforms** implemented yet (it's a platformer game!)
 -  There’s **no game manager** of any sort, and `score` is sloppily stored in `PlayerController.cs`
 -   There’s no *centralised* way for keeping track of **states** (score, player state, etc)
--   The “Enemy” is kinda predictable or boring, and Mario's scoring system doesn't work that way. 
+-   The “Enemy” is kinda predictable or boring.
 - ...etc
 
 We will try to improve our game and learn some common C# coding practices in the next few parts.
@@ -594,7 +595,12 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNjEzNTU3NjMsLTcxMDI4NjM3NSwtMj
-E5MTMxODc5LDcwMDMwNzgyNCwtNDA5MzM4MCwxNDA4Nzc0MTE2
-LDc0NjE2NTc1Miw5NTY3OTc4MjNdfQ==
+eyJoaXN0b3J5IjpbLTcxMDI4NjM3NSwtMjE5MTMxODc5LDcwMD
+MwNzgyNCwtNDA5MzM4MCwxNDA4Nzc0MTE2LDc0NjE2NTc1Miw5
+NTY3OTc4MjNdfQ==
+-->
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE4MTY3MjU1OTcsLTIwNjEzNTU3NjMsLT
+cxMDI4NjM3NSwtMjE5MTMxODc5LDcwMDMwNzgyNCwtNDA5MzM4
+MCwxNDA4Nzc0MTE2LDc0NjE2NTc1Miw5NTY3OTc4MjNdfQ==
 -->
