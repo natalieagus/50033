@@ -32,7 +32,7 @@ Experienced coders: keep in mind that you too were once a *noob*. You made mista
 The goal of this simple 4-week lab is to recreate basics this classic platformer game: **Mario**, step by step and complete it by the end of Week 4. We will try to rebuild World 1-1 as closely as possible, although due to constraints of time, some features may be omitted. In Week 5 & 6, we upgrade our skills to explore Unity3D.
 
 # Preparation
-Download the assets [here](something). This is your starter asset that you can import to your project and complete the lab. It contains all required images, sound files, etc so we can safe time searching all these stuffs. 
+**Download the starter asset** from your **course handout**, under "Class Calendar" heading, *Week 1 Session 3 row.* This is a starter asset that you can import to your project and complete the lab. It contains all required images, sound files, etc so we can safe time searching all these stuffs. 
 
 Note for experts in Unity: If you're already an expert in Unity, you're welcome to implement the final state of the project in any way you want, and implement the Checkoff. Jump to the [Checkoff heading](https://natalieagus.github.io/50033/2021/01/01/unityfornewborns.html#checkoff) right away for more information. 
 
@@ -598,6 +598,6 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjMzNTg1MTQwLC0xMDE4MzczOTE5LC0xMz
-k5NjExMzgxLC0yMDYxMzU1NzYzXX0=
+eyJoaXN0b3J5IjpbLTMyMTk5MDc1OCwyMzM1ODUxNDAsLTEwMT
+gzNzM5MTksLTEzOTk2MTEzODEsLTIwNjEzNTU3NjNdfQ==
 -->
