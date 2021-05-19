@@ -20,8 +20,8 @@ title: Unity for Babies
 
 
 # Introduction
-We will continue where we left off last week, 
+We will continue where we left off [last week](https://natalieagus.github.io/50033/2021/01/01/unityfornewborns.html) by trying to polish our game 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY0NTI5MDczOCwtMjAxMDY1NTc4MSwtMz
-Y2MDg2NzkwLDk1NzczNTk5MV19
+eyJoaXN0b3J5IjpbODUwMTA3OTYzLC0yMDEwNjU1NzgxLC0zNj
+YwODY3OTAsOTU3NzM1OTkxXX0=
 -->
