@@ -16,14 +16,14 @@ Experienced coders: keep in mind that you too were once a *noob*. You made mista
 
 # Learning Objectives: 2D Basics
 
--   Unity editor: layout, arrangements of project files
--   Edit scene, add GameObject & elements, create prefabs
--   C# scripting basics   
--   Physics simulation basics: RigidBody2D, Collider2D
--   Binding keys for input
--   UI elements: Canvas, Text, Button
--   Unity Life Cycle introduction and callback functions: Update(), Start(), OnTriggerEnter(), etc.
--   Basic experience on events: OnClick() for Button
+-   **Unity editor basics**: layout, arrangements of project files
+-   Edit **scene**, add **GameObject** & elements, create **prefabs**
+-   C# **scripting** basics   
+-   **Unity Life Cycle** introduction and callback functions: Update(), Start(), OnTriggerEnter(), etc.
+-   Physics **simulation** basics: RigidBody2D, Collider2D
+-   **Binding** keys for input
+-   **UI elements**: Canvas, Text, Button
+-   Basic experience on **events**: OnClick() for Button
 
 
 # The Classic Mario Game
@@ -594,6 +594,6 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzOTk2MTEzODEsLTIwNjEzNTU3NjNdfQ
-==
+eyJoaXN0b3J5IjpbLTEyNzg1NzkxNCwtMTM5OTYxMTM4MSwtMj
+A2MTM1NTc2M119
 -->
