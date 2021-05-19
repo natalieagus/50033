@@ -19,8 +19,9 @@ title: Unity for Babies
 -  Creating physics materials and scripting
 
 
-
+# Introduction
+We will continue where we left off last week, 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NjE5MjMxNjksLTIwMTA2NTU3ODEsLT
-M2NjA4Njc5MCw5NTc3MzU5OTFdfQ==
+eyJoaXN0b3J5IjpbMTY0NTI5MDczOCwtMjAxMDY1NTc4MSwtMz
+Y2MDg2NzkwLDk1NzczNTk5MV19
 -->
