@@ -29,7 +29,7 @@ Experienced coders: keep in mind that you too were once a *noob*. You made mista
 # The Classic Mario Game
 ![Mario](https://www.dropbox.com/s/ym7mp79vgc7hpcf/mario.png?raw=1)
 
-The goal of this simple lab is to recreate basics this classic platformer game: **Mario**, step by step and complete it by the end of Week 4. We will try to rebuild World 1-1 as closely as possible, although due to constraints of time, some features may be omitted. In Week 5 & 6, we upgrade our skills to explore Unity3D.
+The goal of this simple 4-week lab is to recreate basics this classic platformer game: **Mario**, step by step and complete it by the end of Week 4. We will try to rebuild World 1-1 as closely as possible, although due to constraints of time, some features may be omitted. In Week 5 & 6, we upgrade our skills to explore Unity3D.
 
 # Preparation
 Download the assets [here](something). This is your starter asset that you can import to your project and complete the lab. It contains all required images, sound files, etc so we can safe time searching all these stuffs. 
@@ -594,6 +594,6 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNzg1NzkxNCwtMTM5OTYxMTM4MSwtMj
-A2MTM1NTc2M119
+eyJoaXN0b3J5IjpbLTU0NzE4NjM3LC0xMzk5NjExMzgxLC0yMD
+YxMzU1NzYzXX0=
 -->
