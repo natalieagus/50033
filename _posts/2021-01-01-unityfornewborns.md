@@ -566,7 +566,7 @@ Go to Edit >> Project Settings then select the Script Execution Order category. 
 ![execorder](https://www.dropbox.com/s/8mefcfyvz0iujpa/26.png?raw=1)
 
 # Checkoff
-Implement a restart mechanism when game is ***over***. You need to reset everything: score, player position, etc. 
+See the lab recording (the playlist for all recordings can be found in our course handout) to know the final state of the project before proceeding to Implement a **restart** mechanism when game is ***over***. You need to reset everything: score, player position, etc. 
 
 You’re free to implement it in any way. *It will not affect your checkoff score.* The grading for this lab is **binary** (completed / not completed). 
 
@@ -594,6 +594,6 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU0NzE4NjM3LC0xMzk5NjExMzgxLC0yMD
-YxMzU1NzYzXX0=
+eyJoaXN0b3J5IjpbMTU5ODk4NzU2OCwtMTM5OTYxMTM4MSwtMj
+A2MTM1NTc2M119
 -->
