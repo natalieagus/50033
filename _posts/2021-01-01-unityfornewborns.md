@@ -34,7 +34,7 @@ The goal of this simple 4-week lab is to recreate basics this classic platformer
 # Preparation
 Download the assets [here](something). This is your starter asset that you can import to your project and complete the lab. It contains all required images, sound files, etc so we can safe time searching all these stuffs. 
 
-Note for experts in Unity: If you're already an expert in Unity, you're welcome to implement the final state of the project in any way you want, and implement the Checkoff. See the Checkoff heading right away for more information. 
+Note for experts in Unity: If you're already an expert in Unity, you're welcome to implement the final state of the project in any way you want, and implement the Checkoff. Jump to the [Checkoff heading](https://natalieagus.github.io/50033/2021/01/01/unityfornewborns.html#checkoff) right away for more information. 
 
 ## Create New Project
 Before we begin, create a **new unity project**.
@@ -598,6 +598,6 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMTgzNzM5MTksLTEzOTk2MTEzODEsLT
-IwNjEzNTU3NjNdfQ==
+eyJoaXN0b3J5IjpbMjMzNTg1MTQwLC0xMDE4MzczOTE5LC0xMz
+k5NjExMzgxLC0yMDYxMzU1NzYzXX0=
 -->
