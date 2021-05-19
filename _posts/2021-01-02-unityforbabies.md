@@ -6,19 +6,20 @@ title: Unity for Babies
 {:toc}
 
 
-# Learning Objectives: 2D Basics
+# Learning Objectives: Basic Game Components
 
--   Unity editor: layout, arrangements of project files
--   Edit scene, add GameObject & elements, create prefabs
--   C# scripting basics   
--   Physics simulation basics: RigidBody2D, Collider2D
--   Binding keys for input
--   UI elements: Canvas, Text, Button
--   Unity Life Cycle introduction and callback functions: Update(), Start(), OnTriggerEnter(), etc.
--   Basic experience on events: OnClick() for Button
+-   Setting script execution order
+-   Creating animator and animation clip
+-   Transition between animations
+-   Setting up parameters and triggers for animation
+-   Timing animations and creating events
+-   Coroutines: to execute methods over a number of frames or seconds
+-   Exploring the 2D physics engine: Colliders, 2D effectors, 2D joints
+-   Adding sound effects
+- Creating physics materials and scripting
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM4ODkyMzc5MCwtMjAxMDY1NTc4MSwtMz
+eyJoaXN0b3J5IjpbMTg1NTQzNDQwNywtMjAxMDY1NTc4MSwtMz
 Y2MDg2NzkwLDk1NzczNTk5MV19
 -->
