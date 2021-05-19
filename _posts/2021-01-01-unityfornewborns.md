@@ -34,6 +34,8 @@ The goal of this simple 4-week lab is to recreate basics this classic platformer
 # Preparation
 Download the assets [here](something). This is your starter asset that you can import to your project and complete the lab. It contains all required images, sound files, etc so we can safe time searching all these stuffs. 
 
+Note for experts in Unity: If you're already an expert in Unity, you're welcome to implement the final state of the project in any way you want, and implement the Checkoff. See the Checkoff heading right away for more information. 
+
 ## Create New Project
 Before we begin, create a **new unity project**.
 
@@ -566,9 +568,11 @@ Go to Edit >> Project Settings then select the Script Execution Order category. 
 ![execorder](https://www.dropbox.com/s/8mefcfyvz0iujpa/26.png?raw=1)
 
 # Checkoff
-See the lab recording (the playlist for all recordings can be found in our course handout) to know the final state of the project before proceeding to Implement a **restart** mechanism when game is ***over***. You need to reset everything: score, player position, etc. 
+See the lab recording (the playlist for all recordings can be found in our course handout) to know the final state of the project before proceeding to implement the checkoff. 
 
-You’re free to implement it in any way. *It will not affect your checkoff score.* The grading for this lab is **binary** (completed / not completed). 
+Once you've implemented everything in this handout, then for checkoff you're required to implement a **restart** mechanism when game is ***over***. You need to reset everything: score, player position, etc. 
+
+*You’re free to implement it in any way*. *It will not affect your checkoff score.* The grading for this lab is **binary** (completed / not completed). 
 
 Demonstrate your implementation to our instructor or TA and obtain a lab checkoff by the Friday of Week 8, 23:59. Note that you will still be tested over the **learning objectives** from this Lab for the Lab quiz. 
 
@@ -594,6 +598,6 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU5ODk4NzU2OCwtMTM5OTYxMTM4MSwtMj
-A2MTM1NTc2M119
+eyJoaXN0b3J5IjpbLTEwMTgzNzM5MTksLTEzOTk2MTEzODEsLT
+IwNjEzNTU3NjNdfQ==
 -->
