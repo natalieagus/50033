@@ -22,11 +22,13 @@ title: Unity for Babies
 # Introduction
 We will continue where we left off [last week](https://natalieagus.github.io/50033/2021/01/01/unityfornewborns.html) by trying to polish our game a little bit better with sound effects, animation, and platforms. As usual, Unity pros can jump straight to the [Checkoff](https://natalieagus.github.io/50033/2021/01/02/unityforbabies.html#checkoff) heading to find out more information about the required final state of this Lab without having to read all the details. 
 
-<video src="https://www.dropbox.com/s/p6vl1m8731xy31v/dissolve.mp4" width="320" height="200" controls preload></video>
+<video width="320"  height="240"  controls>  
+<source src="https://www.dropbox.com/s/p6vl1m8731xy31v/dissolve.mp4"  type="video/mp4">  
+</video>
 
 # Checkoff
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0OTI5MzQ5NjYsMzE0OTA5NDY4LC0zMz
-g0Nzc4NzUsLTIwMTA2NTU3ODEsLTM2NjA4Njc5MCw5NTc3MzU5
-OTFdfQ==
+eyJoaXN0b3J5IjpbLTIwOTQwODE5MTQsLTE0OTI5MzQ5NjYsMz
+E0OTA5NDY4LC0zMzg0Nzc4NzUsLTIwMTA2NTU3ODEsLTM2NjA4
+Njc5MCw5NTc3MzU5OTFdfQ==
 -->
