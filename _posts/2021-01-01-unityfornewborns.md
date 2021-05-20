@@ -211,6 +211,7 @@ Add the global variable `maxSpeed` and implement `FixedUpdate()` in `PlayerContr
   }
 
 ```
+*Note:  if Mario still slides, try to export the game and check if it is not due to some lag in debug mode.* 
 
 ## Make Mario Jump
 Let’s make him jump to a fixed height whenever we press the **Spacebar** key once. We can leverage on the physics engine for this, but we need to enable gravity. Otherwise we have to make the Kinematics computation ourselves.
@@ -600,7 +601,7 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTA5MzE4MDQsLTc1NzA0OTQ1NywtODc4MT
-U5MjE3LC0zMjE5OTA3NTgsMjMzNTg1MTQwLC0xMDE4MzczOTE5
-LC0xMzk5NjExMzgxLC0yMDYxMzU1NzYzXX0=
+eyJoaXN0b3J5IjpbLTIwNjMwMjk4NjIsLTc1NzA0OTQ1NywtOD
+c4MTU5MjE3LC0zMjE5OTA3NTgsMjMzNTg1MTQwLC0xMDE4Mzcz
+OTE5LC0xMzk5NjExMzgxLC0yMDYxMzU1NzYzXX0=
 -->
