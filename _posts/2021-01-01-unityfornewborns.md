@@ -151,7 +151,7 @@ void  Start()
 }
 ```
 
-Then set `speed` to `70` in the Inspector. Afterwards, implement the **event callback** `FixedUpdate` as shown:
+Add the script to  Mario (Add Component >> `PlayerController` script) then set `speed` to `70` in the Inspector. Afterwards, implement the **event callback** `FixedUpdate` as shown:
 
 ```java
 void  FixedUpdate()
@@ -601,8 +601,8 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NDM0NTQ3NjEsMTIwNjU4MzUxNSwtNz
-U3MDQ5NDU3LC04NzgxNTkyMTcsLTMyMTk5MDc1OCwyMzM1ODUx
-NDAsLTEwMTgzNzM5MTksLTEzOTk2MTEzODEsLTIwNjEzNTU3Nj
-NdfQ==
+eyJoaXN0b3J5IjpbMjQ2NDA5MTAwLC0xNTQzNDU0NzYxLDEyMD
+Y1ODM1MTUsLTc1NzA0OTQ1NywtODc4MTU5MjE3LC0zMjE5OTA3
+NTgsMjMzNTg1MTQwLC0xMDE4MzczOTE5LC0xMzk5NjExMzgxLC
+0yMDYxMzU1NzYzXX0=
 -->
