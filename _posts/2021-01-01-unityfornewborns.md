@@ -364,7 +364,7 @@ Then implement `Update()` method in `EnemyController.cs`.
 ```java
    void Update()
   {
-      if (Mathf.Abs(enemy_body.position.x - originalX) < maxOffset)
+      if (Mathf.Abs(enemyBody.position.x - originalX) < maxOffset)
       {// move gomba
           MoveGomba();
       }
@@ -601,8 +601,8 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjQ2NDA5MTAwLC0xNTQzNDU0NzYxLDEyMD
-Y1ODM1MTUsLTc1NzA0OTQ1NywtODc4MTU5MjE3LC0zMjE5OTA3
-NTgsMjMzNTg1MTQwLC0xMDE4MzczOTE5LC0xMzk5NjExMzgxLC
-0yMDYxMzU1NzYzXX0=
+eyJoaXN0b3J5IjpbMTQ1OTIyNDczNSwyNDY0MDkxMDAsLTE1ND
+M0NTQ3NjEsMTIwNjU4MzUxNSwtNzU3MDQ5NDU3LC04NzgxNTky
+MTcsLTMyMTk5MDc1OCwyMzM1ODUxNDAsLTEwMTgzNzM5MTksLT
+EzOTk2MTEzODEsLTIwNjEzNTU3NjNdfQ==
 -->
