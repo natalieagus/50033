@@ -25,10 +25,10 @@ We will continue where we left off [last week](https://natalieagus.github.io/500
 
 # Checkoff
 
-
+![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEwODc2MzU1OCwtMTg1NDUzMzY4Niw2Nj
-Q3MDExNzYsLTE0OTI5MzQ5NjYsMzE0OTA5NDY4LC0zMzg0Nzc4
-NzUsLTIwMTA2NTU3ODEsLTM2NjA4Njc5MCw5NTc3MzU5OTFdfQ
-==
+eyJoaXN0b3J5IjpbLTEyNTg1NjIxMzIsLTE4NTQ1MzM2ODYsNj
+Y0NzAxMTc2LC0xNDkyOTM0OTY2LDMxNDkwOTQ2OCwtMzM4NDc3
+ODc1LC0yMDEwNjU1NzgxLC0zNjYwODY3OTAsOTU3NzM1OTkxXX
+0=
 -->
