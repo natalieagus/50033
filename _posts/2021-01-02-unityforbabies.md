@@ -24,8 +24,11 @@ We will continue where we left off [last week](https://natalieagus.github.io/500
 
 
 # Checkoff
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NTQ1MzM2ODYsNjY0NzAxMTc2LC0xND
-kyOTM0OTY2LDMxNDkwOTQ2OCwtMzM4NDc3ODc1LC0yMDEwNjU1
-NzgxLC0zNjYwODY3OTAsOTU3NzM1OTkxXX0=
+eyJoaXN0b3J5IjpbMTEwODc2MzU1OCwtMTg1NDUzMzY4Niw2Nj
+Q3MDExNzYsLTE0OTI5MzQ5NjYsMzE0OTA5NDY4LC0zMzg0Nzc4
+NzUsLTIwMTA2NTU3ODEsLTM2NjA4Njc5MCw5NTc3MzU5OTFdfQ
+==
 -->
