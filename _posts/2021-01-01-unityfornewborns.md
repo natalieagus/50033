@@ -198,7 +198,7 @@ Add the global variable `maxSpeed` and implement `FixedUpdate()` in `PlayerContr
   // FixedUpdate may be called once per frame. See documentation for details.
   void FixedUpdate()
       // dynamic rigidbody
-      moveHorizontal = Input.GetAxis("Horizontal");
+      float moveHorizontal = Input.GetAxis("Horizontal");
       if (Mathf.Abs(moveHorizontal) > 0){
           Vector2 movement = new Vector2(moveHorizontal, 0);
           if (marioBody.velocity.magnitude < maxSpeed)
@@ -601,7 +601,8 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIwNjU4MzUxNSwtNzU3MDQ5NDU3LC04Nz
-gxNTkyMTcsLTMyMTk5MDc1OCwyMzM1ODUxNDAsLTEwMTgzNzM5
-MTksLTEzOTk2MTEzODEsLTIwNjEzNTU3NjNdfQ==
+eyJoaXN0b3J5IjpbLTE1NDM0NTQ3NjEsMTIwNjU4MzUxNSwtNz
+U3MDQ5NDU3LC04NzgxNTkyMTcsLTMyMTk5MDc1OCwyMzM1ODUx
+NDAsLTEwMTgzNzM5MTksLTEzOTk2MTEzODEsLTIwNjEzNTU3Nj
+NdfQ==
 -->
