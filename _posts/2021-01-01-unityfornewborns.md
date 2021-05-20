@@ -571,7 +571,7 @@ Go to Edit >> Project Settings then select the Script Execution Order category. 
 
 # Checkoff
 See the lab recording (the playlist for all recordings can be found in our course handout) to know the final state of the project before proceeding to implement the checkoff. The gif below also summarises the desired end state for this lab:
-
+![checkoff1](https://www.dropbox.com/s/05k8w5sa2qvm66o/checkoff1.gif?raw=1)
 
 Once you've implemented everything in this handout, then for **checkoff** you're required to ==implement a **restart** mechanism when game is ***over***==. You need to reset everything: score, player position, etc. 
 
@@ -601,7 +601,7 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDU2MzMxOTQ4LC04NzgxNTkyMTcsLTMyMT
-k5MDc1OCwyMzM1ODUxNDAsLTEwMTgzNzM5MTksLTEzOTk2MTEz
-ODEsLTIwNjEzNTU3NjNdfQ==
+eyJoaXN0b3J5IjpbMTE5NDMwMjgxNywtODc4MTU5MjE3LC0zMj
+E5OTA3NTgsMjMzNTg1MTQwLC0xMDE4MzczOTE5LC0xMzk5NjEx
+MzgxLC0yMDYxMzU1NzYzXX0=
 -->
