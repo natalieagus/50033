@@ -24,13 +24,14 @@ We will continue where we left off [last week](https://natalieagus.github.io/500
 
 ![demo](https://www.dropbox.com/s/p6vl1m8731xy31v/dissolve.mp4?raw=1)
 
-<video width="320"  height="240"  controls>  
-<source src="https://www.dropbox.com/s/p6vl1m8731xy31v/dissolve.mp4?raw=1"  type="video/mp4">  
+<video width="320" height="240" controls>
+  <source type="video/mp4" src="https://www.dropbox.com/s/p6vl1m8731xy31v/dissolve.mp4">
 </video>
+
 
 # Checkoff
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MTE2ODMzNDIsLTE0OTI5MzQ5NjYsMz
-E0OTA5NDY4LC0zMzg0Nzc4NzUsLTIwMTA2NTU3ODEsLTM2NjA4
-Njc5MCw5NTc3MzU5OTFdfQ==
+eyJoaXN0b3J5IjpbLTIwMzkwMjczNSwtMTQ5MjkzNDk2NiwzMT
+Q5MDk0NjgsLTMzODQ3Nzg3NSwtMjAxMDY1NTc4MSwtMzY2MDg2
+NzkwLDk1NzczNTk5MV19
 -->
