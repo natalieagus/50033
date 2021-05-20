@@ -187,7 +187,7 @@ Setting the `BodyType` to `Dynamic` allows the **physics engine to simulate** fo
 
 # Improving Mario GameObject
 ## Stop Mario
-To prevent this “sliding” feature that’s not very intuitive for platformer game like this, we need to
+To prevent this “sliding” feature that’s not very intuitive for platform game like this, we need to
 -   Set its velocity to 0 when key “a” or “d” is lifted up
 -   **Clamp** his speed to a maximum value so he doesn’t run faster and faster when we hold that “a” or “d” button.
    
@@ -202,7 +202,7 @@ Add the global variable `maxSpeed` and implement `FixedUpdate()` in `PlayerContr
           // stop
           marioBody.velocity = Vector2.zero;
       }
-    
+    else{
       // dynamic rigidbody
       moveHorizontal = Input.GetAxis("Horizontal");
       if (Mathf.Abs(moveHorizontal) > 0){
@@ -221,9 +221,9 @@ Let’s make him jump to a fixed height whenever we press the **Spacebar** key o
 **Set `GravityScale` to `1`.** If you press play now, Mario will fall to **oblivion**.
 
 We need to add some sort of a “floor” to prevent him from falling down. 
-- Create a new 2D Sprite gameobject and name it Ground. Add the components:
+- Create a new 2D Sprite GameObject and name it Ground. Add the components:
 	1. `BoxCollider2D`
-	2.  `Rigidbody2D`
+	2.  `Rigidbody2D` (set to `static` type)
 - Add a Tag called “Ground”
 - Set its Position and match the components setting as shown.
 
@@ -602,7 +602,7 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc1NzA0OTQ1NywtODc4MTU5MjE3LC0zMj
-E5OTA3NTgsMjMzNTg1MTQwLC0xMDE4MzczOTE5LC0xMzk5NjEx
-MzgxLC0yMDYxMzU1NzYzXX0=
+eyJoaXN0b3J5IjpbMTIxNTQxNzkwMCwtNzU3MDQ5NDU3LC04Nz
+gxNTkyMTcsLTMyMTk5MDc1OCwyMzM1ODUxNDAsLTEwMTgzNzM5
+MTksLTEzOTk2MTEzODEsLTIwNjEzNTU3NjNdfQ==
 -->
