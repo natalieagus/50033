@@ -525,7 +525,7 @@ Then in the `Update()` function of `PlayerController.cs,` add the following chec
 ```
 > We need that `countScoreState` to **not** increment the score *too many times*, but only once per jump because we know that Mario is unable to perform double jump.
 
-Set `countScoreState` to be true when “space” key is pressed under the `Update()` function:
+Set `countScoreState` to be true when “space” key is pressed under the `FixedUpdate()` function:
 ```java
       if (Input.GetKeyDown("space") && onGroundState)
       {
@@ -601,8 +601,9 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ1OTIyNDczNSwyNDY0MDkxMDAsLTE1ND
-M0NTQ3NjEsMTIwNjU4MzUxNSwtNzU3MDQ5NDU3LC04NzgxNTky
-MTcsLTMyMTk5MDc1OCwyMzM1ODUxNDAsLTEwMTgzNzM5MTksLT
-EzOTk2MTEzODEsLTIwNjEzNTU3NjNdfQ==
+eyJoaXN0b3J5IjpbLTE3NTY3MzEzNzEsMTQ1OTIyNDczNSwyND
+Y0MDkxMDAsLTE1NDM0NTQ3NjEsMTIwNjU4MzUxNSwtNzU3MDQ5
+NDU3LC04NzgxNTkyMTcsLTMyMTk5MDc1OCwyMzM1ODUxNDAsLT
+EwMTgzNzM5MTksLTEzOTk2MTEzODEsLTIwNjEzNTU3NjNdfQ==
+
 -->
