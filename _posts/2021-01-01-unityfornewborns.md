@@ -202,13 +202,14 @@ Add the global variable `maxSpeed` and implement `FixedUpdate()` in `PlayerContr
           // stop
           marioBody.velocity = Vector2.zero;
       }
-    else{
-      // dynamic rigidbody
-      moveHorizontal = Input.GetAxis("Horizontal");
-      if (Mathf.Abs(moveHorizontal) > 0){
-          Vector2 movement = new Vector2(moveHorizontal, 0);
-          if (marioBody.velocity.magnitude < maxSpeed)
-                  marioBody.AddForce(movement * speed);
+     else{
+	      // dynamic rigidbody
+	      moveHorizontal = Input.GetAxis("Horizontal");
+	      if (Mathf.Abs(moveHorizontal) > 0){
+	          Vector2 movement = new Vector2(moveHorizontal, 0);
+	          if (marioBody.velocity.magnitude < maxSpeed)
+	                  marioBody.AddForce(movement * speed);
+	      }
       }
   }
 
@@ -602,7 +603,7 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIxNTQxNzkwMCwtNzU3MDQ5NDU3LC04Nz
+eyJoaXN0b3J5IjpbMjA3MDI3MzYyNSwtNzU3MDQ5NDU3LC04Nz
 gxNTkyMTcsLTMyMTk5MDc1OCwyMzM1ODUxNDAsLTEwMTgzNzM5
 MTksLTEzOTk2MTEzODEsLTIwNjEzNTU3NjNdfQ==
 -->
