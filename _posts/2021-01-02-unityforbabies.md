@@ -96,14 +96,13 @@ Pay attention to the following settings:
 2. **Has Exit Time**: Make sure this is unticked, so that transition happens **immediately**. Otherwise, we need to wait for the entire clip to finish (however many frames you set it to be). 
 3. **The transition timeline**: It tells us whether to fade or mix between the current clip and the next clip. Right now the setting is such that we transit **abruptly**. There's no time overlap between the two clips. 
  
-Now you can set the other transition arrows as such:
-1. 
+
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA1Mjc5OTQ1NiwxODQzMjA1NDY2LC0xMj
-U4NTYyMTMyLC0xODU0NTMzNjg2LDY2NDcwMTE3NiwtMTQ5Mjkz
-NDk2NiwzMTQ5MDk0NjgsLTMzODQ3Nzg3NSwtMjAxMDY1NTc4MS
-wtMzY2MDg2NzkwLDk1NzczNTk5MV19
+eyJoaXN0b3J5IjpbODg2NTM4OSwxODQzMjA1NDY2LC0xMjU4NT
+YyMTMyLC0xODU0NTMzNjg2LDY2NDcwMTE3NiwtMTQ5MjkzNDk2
+NiwzMTQ5MDk0NjgsLTMzODQ3Nzg3NSwtMjAxMDY1NTc4MSwtMz
+Y2MDg2NzkwLDk1NzczNTk5MV19
 -->
