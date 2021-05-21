@@ -36,14 +36,14 @@ To begin animating a GameObject, we need:
 * and several **Animation Clips** to be managed by the controller. 
 
 Right click inside the Animation folder in your Assets, and create an Animator Controller. 
-
+![animatorcreate](https://www.dropbox.com/s/7h9rz8w0bwuoc9q/1.png?raw=1)
 
 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQwNTk5OTI5OSwxODQzMjA1NDY2LC0xMj
+eyJoaXN0b3J5IjpbMTgxMTk1NjQyNywxODQzMjA1NDY2LC0xMj
 U4NTYyMTMyLC0xODU0NTMzNjg2LDY2NDcwMTE3NiwtMTQ5Mjkz
 NDk2NiwzMTQ5MDk0NjgsLTMzODQ3Nzg3NSwtMjAxMDY1NTc4MS
 wtMzY2MDg2NzkwLDk1NzczNTk5MV19
