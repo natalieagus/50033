@@ -143,15 +143,19 @@ At the end of the day, your Mario should smoothly move around as shown. Ignore t
 
 ![gifmario](https://www.dropbox.com/s/1rgwxmjvq2mkz2e/move.gif?raw=1)
 
+## Triggering Events in Animation Clips
+Notice how the jump sound effect is sorta *cut* because the transition between jump animation state and run/idle animation state is abrupt? In other words, the AudioSource is already disabled ***before*** the clip finished playing. 
+
+We can improve this by adding events in the jump clip instead of enabling/disabling the AudioSource. First, we need to write the method that will be 
 
 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNjEyOTU1NTMsMTY0NjUxMzM1NCw4OD
-Y1Mzg5LDE4NDMyMDU0NjYsLTEyNTg1NjIxMzIsLTE4NTQ1MzM2
-ODYsNjY0NzAxMTc2LC0xNDkyOTM0OTY2LDMxNDkwOTQ2OCwtMz
-M4NDc3ODc1LC0yMDEwNjU1NzgxLC0zNjYwODY3OTAsOTU3NzM1
-OTkxXX0=
+eyJoaXN0b3J5IjpbMTAxOTE3Mzk4LC0yMDYxMjk1NTUzLDE2ND
+Y1MTMzNTQsODg2NTM4OSwxODQzMjA1NDY2LC0xMjU4NTYyMTMy
+LC0xODU0NTMzNjg2LDY2NDcwMTE3NiwtMTQ5MjkzNDk2NiwzMT
+Q5MDk0NjgsLTMzODQ3Nzg3NSwtMjAxMDY1NTc4MSwtMzY2MDg2
+NzkwLDk1NzczNTk5MV19
 -->
