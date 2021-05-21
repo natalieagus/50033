@@ -30,7 +30,12 @@ Mario's animation is broken down into **four** main state:
 
 The Mario sprite given in the starter asset already contain the corresponding sprite that's suitable for each state, mainly `mario_idle, mario_jump, mario_run1, mario_run2, mario_run3,`and `mario_skid`. 
 
-To begin animating a game object, we  an **Animator** element and several**Animation Clips** to be managed by the controller. 
+To begin animating a GameObject, we need:
+* An **Animator** element  attached to the GameObject,
+* An **Animator Controller**, 
+* and several **Animation Clips** to be managed by the controller. 
+
+Right click inside the Animation folder in your Assets, and create an Animator Controller. 
 
 
 
@@ -38,8 +43,8 @@ To begin animating a game object, we  an **Animator** element and several**Anima
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4ODcwMTMsMTg0MzIwNTQ2NiwtMTI1OD
-U2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3MDExNzYsLTE0OTI5MzQ5
-NjYsMzE0OTA5NDY4LC0zMzg0Nzc4NzUsLTIwMTA2NTU3ODEsLT
-M2NjA4Njc5MCw5NTc3MzU5OTFdfQ==
+eyJoaXN0b3J5IjpbLTQwNTk5OTI5OSwxODQzMjA1NDY2LC0xMj
+U4NTYyMTMyLC0xODU0NTMzNjg2LDY2NDcwMTE3NiwtMTQ5Mjkz
+NDk2NiwzMTQ5MDk0NjgsLTMzODQ3Nzg3NSwtMjAxMDY1NTc4MS
+wtMzY2MDg2NzkwLDk1NzczNTk5MV19
 -->
