@@ -35,10 +35,12 @@ To begin animating a GameObject, we need:
 * An **Animator Controller**, 
 * and several **Animation Clips** to be managed by the controller. 
 
+## Animator Controller
 Right click inside the Animation folder in your Assets, and create an Animator Controller. Name it `MarioController`. 
 
 ![animatorcreate](https://www.dropbox.com/s/7h9rz8w0bwuoc9q/1.png?raw=1)
 
+## Animator Element
 Then, **add an Animator element** to Mario, and load `MarioController` as the Animator controller, as shown:
 
 ![animatormario](https://www.dropbox.com/s/b5zrnkagarfylrm/2.png?raw=1) 
@@ -48,6 +50,7 @@ Open the **Animation tab** and you can see some kind of *state machine*. This wi
 
 ![animator](https://www.dropbox.com/s/cnnqaf8sdy3rurw/3.png?raw=1)
 
+## Animation Clips
 Now let's create some clips. The first clip we need to do is to *animate Mario running*. Click the **Animation tab** instead, and click on the *Create* button. 
 ![createclip](https://www.dropbox.com/s/04twws9hdbj9w9d/4.png?raw=1)
 
@@ -70,6 +73,7 @@ Do the same to obtain the skidding, jumping, and idle animation. For idle animat
 
 ![animclips](https://www.dropbox.com/s/b7zn99la5t9j2id/7.png?raw=1)
 
+## Sound Element
 For the jumping animation, we need to do more than just a sprite change. We want to have a **sound effect** as well:
 1. Add AudioSource element to Mario, and load the sound `smb_jump-small` to the AudioClip. Disable it and ensure that Play On Awake is also disabled
 2. During the first frame of the clip, enable it and also click Play On Awake
@@ -90,6 +94,7 @@ To enable correct transition conditions, we need to create **parameters**. These
 Here's all the parameters that you should have in the end:
 ![params](https://www.dropbox.com/s/jzs519y7evy8it0/9.png?raw=1) 
 
+### Conditional Transitions
 Now it's time to manage the transitions. Let's consider the transition from **idle** state into **run** state. This transition should happen if Mario's speed is larger than a certain number. Click on the arrow pointing from idle state to run state, and set its inspector to be the following:
 
 ![transit1](https://www.dropbox.com/s/b4q3f7rnaenp2mo/10.png?raw=1)
@@ -114,7 +119,7 @@ For the rest of the transition arrows, make use of the parameters in a way that 
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEzNTc2MDYyNiwxNjQ2NTEzMzU0LDg4Nj
+eyJoaXN0b3J5IjpbMTM3MzIyMTcxNSwxNjQ2NTEzMzU0LDg4Nj
 UzODksMTg0MzIwNTQ2NiwtMTI1ODU2MjEzMiwtMTg1NDUzMzY4
 Niw2NjQ3MDExNzYsLTE0OTI5MzQ5NjYsMzE0OTA5NDY4LC0zMz
 g0Nzc4NzUsLTIwMTA2NTU3ODEsLTM2NjA4Njc5MCw5NTc3MzU5
