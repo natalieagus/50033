@@ -35,15 +35,18 @@ To begin animating a GameObject, we need:
 * An **Animator Controller**, 
 * and several **Animation Clips** to be managed by the controller. 
 
-Right click inside the Animation folder in your Assets, and create an Animator Controller. 
+Right click inside the Animation folder in your Assets, and create an Animator Controller. Name it `MarioController`. 
+
 ![animatorcreate](https://www.dropbox.com/s/7h9rz8w0bwuoc9q/1.png?raw=1)
+
+Then, add an Animator element to Mario, and load `MarioController` as the Animator controller. Open the Animation tab so you can see some kind of state machine. This will the place for us to dictate which Animation Clip to play under certain conditions. 
 
 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgxMTk1NjQyNywxODQzMjA1NDY2LC0xMj
+eyJoaXN0b3J5IjpbMTYwODUxOTI1OCwxODQzMjA1NDY2LC0xMj
 U4NTYyMTMyLC0xODU0NTMzNjg2LDY2NDcwMTE3NiwtMTQ5Mjkz
 NDk2NiwzMTQ5MDk0NjgsLTMzODQ3Nzg3NSwtMjAxMDY1NTc4MS
 wtMzY2MDg2NzkwLDk1NzczNTk5MV19
