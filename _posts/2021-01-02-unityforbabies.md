@@ -10,9 +10,9 @@ title: Unity for Babies
 
 -   Creating animator and animation clip   
 -   Transition between animations
--   Setting up parameters and triggers for animation
+-   Setting up parameters for animation
 -   Timing animations and creating events
--   Coroutines: to execute methods over a number of frames or seconds
+-   UsinCoroutines: to execute methods over a number of frames or seconds
 -   Exploring the 2D physics engine: Colliders, 2D effectors, 2D joints
 -   Adding sound effects
 - Creating physics materials and scripting
@@ -143,20 +143,20 @@ At the end of the day, your Mario should smoothly move around as shown. Ignore t
 
 ![gifmario](https://www.dropbox.com/s/1rgwxmjvq2mkz2e/move.gif?raw=1)
 
-## Triggering Events in Animation Clips
+## Adding Events in Animation Clips
 Notice how the jump sound effect is sorta got *cut* because the transition between jump animation state and run/idle animation state is **abrupt**? In other words, the AudioSource may already disabled ***before*** the clip finished playing, so the jump sound effect doesn't play fully. 
 
-We can improve this by adding **events** in the jump clip instead of primitively enabling/disabling the AudioSource like we did above. First, we need to write the function that will handle this jumping event. 
+We can improve this by adding **events** in the jump clip instead of primitively enabling/disabling the AudioSource like we did above. First, we need to write the function that will **handle** this jumping event that we about to create. 
 
-Open PlayerController.cs and add the following function:
+Open `PlayerController.cs` and add the following function:
 ```java
 void  PlayJumpSound(){
 	marioAudio.Play();
 }
 ```
-where `marioAudio` is a private variable of type `AudioSource` **(declare it yourself!)**, which you set via `GetComponent<AudioSource>` in the `Start()` function. You should be familiar with this by now. 
+where `marioAudio` is a private variable of type `AudioSource` **(declare it yourself!)**, which you set via `GetComponent<AudioSource>` in the `Start()` function. You should be familiar with this by now. Make sure the AudioSource component in Mario is now **enabled**, but **untick** the **Play On Awake** property. 
 
-Make sure the AudioSource component in Mario is now **enabled**, but **untick** the **Play On Awake** property. Now you can **add an event** in the jump animation clip by clicking the **Add Event** button in the desired frame (frame 0 in this case). In the inspector, select the `PlayJumpSound()` function. 
+Now you can **add an event** in the jump animation clip by clicking the **Add Event** button in the desired frame (frame 0 in this case). In the inspector, select the `PlayJumpSound()` function. 
 
 It will *automatically* detect all custom functions of the scripts attached to the same GameObject that has the Animator as well. 
 
@@ -167,9 +167,9 @@ It will *automatically* detect all custom functions of the scripts attached to t
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIxMTI5NDY3MSw2ODczMjk3NCwtMjA2MT
-I5NTU1MywxNjQ2NTEzMzU0LDg4NjUzODksMTg0MzIwNTQ2Niwt
-MTI1ODU2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3MDExNzYsLTE0OT
-I5MzQ5NjYsMzE0OTA5NDY4LC0zMzg0Nzc4NzUsLTIwMTA2NTU3
-ODEsLTM2NjA4Njc5MCw5NTc3MzU5OTFdfQ==
+eyJoaXN0b3J5IjpbLTExNzgwMzE1NDgsNjg3MzI5NzQsLTIwNj
+EyOTU1NTMsMTY0NjUxMzM1NCw4ODY1Mzg5LDE4NDMyMDU0NjYs
+LTEyNTg1NjIxMzIsLTE4NTQ1MzM2ODYsNjY0NzAxMTc2LC0xND
+kyOTM0OTY2LDMxNDkwOTQ2OCwtMzM4NDc3ODc1LC0yMDEwNjU1
+NzgxLC0zNjYwODY3OTAsOTU3NzM1OTkxXX0=
 -->
