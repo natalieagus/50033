@@ -87,13 +87,15 @@ To enable correct transition conditions, we need to create **parameters**. These
 Here's all the parameters that you should have in the end:
 ![params](https://www.dropbox.com/s/jzs519y7evy8it0/9.png?raw=1) 
 
-Now it's time to manage the transitions. Let's consider 
+Now it's time to manage the transitions. Let's consider the transition from **idle** state into **run** state. This transition should happen if Mario's speed is larger than a certain number. Click on the arrow pointing from idle state to run state, and set its inspector to be the following:
+
+![transit1](https://www.dropbox.com/s/b4q3f7rnaenp2mo/10.png?raw=1)
 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUzNDA2NTA1MCwxODQzMjA1NDY2LC0xMj
+eyJoaXN0b3J5IjpbLTQ2NzU1MzA2MywxODQzMjA1NDY2LC0xMj
 U4NTYyMTMyLC0xODU0NTMzNjg2LDY2NDcwMTE3NiwtMTQ5Mjkz
 NDk2NiwzMTQ5MDk0NjgsLTMzODQ3Nzg3NSwtMjAxMDY1NTc4MS
 wtMzY2MDg2NzkwLDk1NzczNTk5MV19
