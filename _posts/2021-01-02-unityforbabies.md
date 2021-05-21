@@ -154,14 +154,16 @@ void  PlayJumpSound(){
 	marioAudio.Play();
 }
 ```
-where `marioAudio` is a private variable of type `AudioSource`, which you set via `GetComponent<AudioSource>` in the `Start()` function. You should be familiar with this by now. 
+where `marioAudio` is a private variable of type `AudioSource` **(declare it yourself!)**, which you set via `GetComponent<AudioSource>` in the `Start()` function. You should be familiar with this by now. 
+
+Make sure the AudioSource component in Mario is now **enabled**, but **untick** the **Play On Awake** property. 
 
 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA5Nzc3ODc1NiwtMjA2MTI5NTU1MywxNj
+eyJoaXN0b3J5IjpbMTcxNzgwNjIyNSwtMjA2MTI5NTU1MywxNj
 Q2NTEzMzU0LDg4NjUzODksMTg0MzIwNTQ2NiwtMTI1ODU2MjEz
 MiwtMTg1NDUzMzY4Niw2NjQ3MDExNzYsLTE0OTI5MzQ5NjYsMz
 E0OTA5NDY4LC0zMzg0Nzc4NzUsLTIwMTA2NTU3ODEsLTM2NjA4
