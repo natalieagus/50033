@@ -75,10 +75,13 @@ For the jumping animation, we need to do more than just a sprite change. We want
 2. During the first frame of the clip, enable it and also click Play On Awake
 3. During the fourth frame of the clip, disable it. 
 
+
+## Transition
 Now head to the Animator tab, and you now see all the clips as separate **states**. We need to now draw the *transitions*. You can right click on each state to make transition, and click on the destination state. Make something like this:
 
 ![statemachine](https://www.dropbox.com/s/q9fidx7lu8u9gpk/8.png?raw=1)
 
+### Animator Parameters
 To enable correct transition conditions, we need to create **parameters**. These parameters will be used to trigger transition between each animation clip (motion). Create these three parameters:
 1. `onGround` of type `bool`
 2. `xSpeed` of type `float`
@@ -104,13 +107,16 @@ You can read more about transition properties [here](https://docs.unity3d.com/Ma
  
 For the rest of the transition arrows, make use of the parameters in a way that you seem fit, for example, transition between jump and run should happen when `onGround` is `false` and when `xSpeed` is greater than `0.01`, and so on. 
 
+## Controlling Animator Parameters via Script
+
 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY0NjUxMzM1NCw4ODY1Mzg5LDE4NDMyMD
-U0NjYsLTEyNTg1NjIxMzIsLTE4NTQ1MzM2ODYsNjY0NzAxMTc2
-LC0xNDkyOTM0OTY2LDMxNDkwOTQ2OCwtMzM4NDc3ODc1LC0yMD
-EwNjU1NzgxLC0zNjYwODY3OTAsOTU3NzM1OTkxXX0=
+eyJoaXN0b3J5IjpbMTEzNTc2MDYyNiwxNjQ2NTEzMzU0LDg4Nj
+UzODksMTg0MzIwNTQ2NiwtMTI1ODU2MjEzMiwtMTg1NDUzMzY4
+Niw2NjQ3MDExNzYsLTE0OTI5MzQ5NjYsMzE0OTA5NDY4LC0zMz
+g0Nzc4NzUsLTIwMTA2NTU3ODEsLTM2NjA4Njc5MCw5NTc3MzU5
+OTFdfQ==
 -->
