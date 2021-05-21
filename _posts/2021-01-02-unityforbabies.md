@@ -68,14 +68,16 @@ To create more clip, click the dropdown containing the animation clip name (e.g:
 
 Do the same to obtain the skidding, jumping, and idle animation. For idle animation, you simply don't have to record anything. Below is the screenshot of suggested animation clips:
 
+![animclips](https://www.dropbox.com/s/b7zn99la5t9j2id/7.png?raw=1)
 
+For the jumping animation, we need to do more than just 
 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYyMDEwNjczMiwxODQzMjA1NDY2LC0xMj
-U4NTYyMTMyLC0xODU0NTMzNjg2LDY2NDcwMTE3NiwtMTQ5Mjkz
-NDk2NiwzMTQ5MDk0NjgsLTMzODQ3Nzg3NSwtMjAxMDY1NTc4MS
-wtMzY2MDg2NzkwLDk1NzczNTk5MV19
+eyJoaXN0b3J5IjpbODYxODE2MDg5LDE4NDMyMDU0NjYsLTEyNT
+g1NjIxMzIsLTE4NTQ1MzM2ODYsNjY0NzAxMTc2LC0xNDkyOTM0
+OTY2LDMxNDkwOTQ2OCwtMzM4NDc3ODc1LC0yMDEwNjU1NzgxLC
+0zNjYwODY3OTAsOTU3NzM1OTkxXX0=
 -->
