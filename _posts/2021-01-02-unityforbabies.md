@@ -96,14 +96,14 @@ Pay attention to the following settings:
 2. **Has Exit Time**: Make sure this is unticked, so that transition happens **immediately**. Otherwise, we need to wait for the entire clip to finish (however many frames you set it to be). 
 3. **The transition graph**: It tells us whether to fade or mix between the current clip and the next clip *if exit time is enabled*. Right now the setting is such that we transit **abruptly** so the graph doesn't matter. 
 
-
+Let's take a look at another transition where we want to have an *exit* time, that is the transition between skidding state and running state. 
  
 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkyMjY5MTE4MCw4ODY1Mzg5LDE4NDMyMD
+eyJoaXN0b3J5IjpbMTIzNzMxMzY4Nyw4ODY1Mzg5LDE4NDMyMD
 U0NjYsLTEyNTg1NjIxMzIsLTE4NTQ1MzM2ODYsNjY0NzAxMTc2
 LC0xNDkyOTM0OTY2LDMxNDkwOTQ2OCwtMzM4NDc3ODc1LC0yMD
 EwNjU1NzgxLC0zNjYwODY3OTAsOTU3NzM1OTkxXX0=
