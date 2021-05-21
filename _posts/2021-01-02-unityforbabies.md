@@ -146,16 +146,24 @@ At the end of the day, your Mario should smoothly move around as shown. Ignore t
 ## Triggering Events in Animation Clips
 Notice how the jump sound effect is sorta *cut* because the transition between jump animation state and run/idle animation state is abrupt? In other words, the AudioSource is already disabled ***before*** the clip finished playing. 
 
-We can improve this by adding events in the jump clip instead of enabling/disabling the AudioSource. First, we need to write the method that will be 
+We can improve this by adding events in the jump clip instead of enabling/disabling the AudioSource. First, we need to write the function that will be executed once a **jumping** event is invoked. 
+
+Open PlayerController.cs and add the following function:
+```java
+void  PlayJumpSound(){
+	marioAudio.Play();
+}
+```
+where `marioAudio` is a private variable of type `AudioSource`, which you set via `GetComponent<AudioSource>` in the `Start()` function. You should be familiar with this by now. 
 
 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAxOTE3Mzk4LC0yMDYxMjk1NTUzLDE2ND
-Y1MTMzNTQsODg2NTM4OSwxODQzMjA1NDY2LC0xMjU4NTYyMTMy
-LC0xODU0NTMzNjg2LDY2NDcwMTE3NiwtMTQ5MjkzNDk2NiwzMT
-Q5MDk0NjgsLTMzODQ3Nzg3NSwtMjAxMDY1NTc4MSwtMzY2MDg2
-NzkwLDk1NzczNTk5MV19
+eyJoaXN0b3J5IjpbMTA5Nzc3ODc1NiwtMjA2MTI5NTU1MywxNj
+Q2NTEzMzU0LDg4NjUzODksMTg0MzIwNTQ2NiwtMTI1ODU2MjEz
+MiwtMTg1NDUzMzY4Niw2NjQ3MDExNzYsLTE0OTI5MzQ5NjYsMz
+E0OTA5NDY4LC0zMzg0Nzc4NzUsLTIwMTA2NTU3ODEsLTM2NjA4
+Njc5MCw5NTc3MzU5OTFdfQ==
 -->
