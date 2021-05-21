@@ -156,7 +156,7 @@ void  PlayJumpSound(){
 ```
 where `marioAudio` is a private variable of type `AudioSource` **(declare it yourself!)**, which you set via `GetComponent<AudioSource>` in the `Start()` function. You should be familiar with this by now. 
 
-Make sure the AudioSource component in Mario is now **enabled**, but **untick** the **Play On Awake** property. Now you can add an event in the jump animation clip by clicking the **Add Event button** in the desired frame (frame 0 in this case):
+Make sure the AudioSource component in Mario is now **enabled**, but **untick** the **Play On Awake** property. Now you can add an event in the jump animation clip by clicking the **Add Event button** in the desired frame (frame 0 in this case). In the inspector, select the PlayJumpSound() function. It will *automatically* detect all custom functions of the scripts attached to the same GameObject that has the Animator as well. 
 
 ![event](https://www.dropbox.com/s/vj7bjq9mhokplqo/12a.png?raw=1)
 
@@ -165,9 +165,9 @@ Make sure the AudioSource component in Mario is now **enabled**, but **untick** 
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEwODE2NDcwLC0yMDYxMjk1NTUzLDE2ND
-Y1MTMzNTQsODg2NTM4OSwxODQzMjA1NDY2LC0xMjU4NTYyMTMy
-LC0xODU0NTMzNjg2LDY2NDcwMTE3NiwtMTQ5MjkzNDk2NiwzMT
-Q5MDk0NjgsLTMzODQ3Nzg3NSwtMjAxMDY1NTc4MSwtMzY2MDg2
-NzkwLDk1NzczNTk5MV19
+eyJoaXN0b3J5IjpbNjg3MzI5NzQsLTIwNjEyOTU1NTMsMTY0Nj
+UxMzM1NCw4ODY1Mzg5LDE4NDMyMDU0NjYsLTEyNTg1NjIxMzIs
+LTE4NTQ1MzM2ODYsNjY0NzAxMTc2LC0xNDkyOTM0OTY2LDMxND
+kwOTQ2OCwtMzM4NDc3ODc1LC0yMDEwNjU1NzgxLC0zNjYwODY3
+OTAsOTU3NzM1OTkxXX0=
 -->
