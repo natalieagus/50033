@@ -75,13 +75,15 @@ For the jumping animation, we need to do more than just a sprite change. We want
 2. During the first frame of the clip, enable it and also click Play On Awake
 3. During the fourth frame of the clip, disable it. 
 
-Now head to the Animator tab, and you now see all the clips as separate **states**. We need 
+Now head to the Animator tab, and you now see all the clips as separate **states**. We need to now draw the *transitions*. You can right click on each state to make transition, and click on the destination state. Make something like this:
+
+![enter image description here](https://www.dropbox.com/s/q9fidx7lu8u9gpk/8.png?raw=1)
 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUxMjUyMjU2NiwxODQzMjA1NDY2LC0xMj
+eyJoaXN0b3J5IjpbMjA1MzUwNDM1MiwxODQzMjA1NDY2LC0xMj
 U4NTYyMTMyLC0xODU0NTMzNjg2LDY2NDcwMTE3NiwtMTQ5Mjkz
 NDk2NiwzMTQ5MDk0NjgsLTMzODQ3Nzg3NSwtMjAxMDY1NTc4MS
 wtMzY2MDg2NzkwLDk1NzczNTk5MV19
