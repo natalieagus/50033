@@ -58,13 +58,13 @@ The values on the right side represents the frame (60 frames per second). We can
 1. Click on Frame 0, and then change Mario's sprite into `mario_run1`
 2. Click on Frame 5, and then change Mario's sprite into `mario_run2`
 3. Click on Frame 10, then again change Mario's sprite into `mario_run3`
-4. Click on Frame 15, 
+4. Click on Frame 15, and keep Mario's sprite to 
 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk1NTY2MTI3NiwxODQzMjA1NDY2LC0xMj
+eyJoaXN0b3J5IjpbMTU2NjA2MDcyMCwxODQzMjA1NDY2LC0xMj
 U4NTYyMTMyLC0xODU0NTMzNjg2LDY2NDcwMTE3NiwtMTQ5Mjkz
 NDk2NiwzMTQ5MDk0NjgsLTMzODQ3Nzg3NSwtMjAxMDY1NTc4MS
 wtMzY2MDg2NzkwLDk1NzczNTk5MV19
