@@ -134,19 +134,23 @@ And the following line anywhere inside the `Update()` function to always update 
 ```java
 marioAnimator.SetFloat("xSpeed", Mathf.Abs(marioBody.velocity.x));
 ```
-To hande Mario's jumping state, set the animator's `onGround` parameter to match the current `onGroundState` value whenever it's changed in the script, e.g:
+To handle Mario's jumping state, set the animator's `onGround` parameter to match the current `onGroundState` value whenever it's changed in the script, e.g:
 ```java
 marioAnimator.SetBool("onGround", onGroundState);
 ```
+At the end of the day, your Mario should smoothly move around as shown. Ignore the Camera's auto follow feature for now. We will do that later.
+
+![gifmario](https://www.dropbox.com/sh/xse61uvkuq6kurf/AAAdzGj3by32_vYimSbYt7JVa?raw=1)
+
 
 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMDE0MTQzNTMsMTY0NjUxMzM1NCw4OD
-Y1Mzg5LDE4NDMyMDU0NjYsLTEyNTg1NjIxMzIsLTE4NTQ1MzM2
-ODYsNjY0NzAxMTc2LC0xNDkyOTM0OTY2LDMxNDkwOTQ2OCwtMz
-M4NDc3ODc1LC0yMDEwNjU1NzgxLC0zNjYwODY3OTAsOTU3NzM1
-OTkxXX0=
+eyJoaXN0b3J5IjpbNDgxOTc2MTQ3LDE2NDY1MTMzNTQsODg2NT
+M4OSwxODQzMjA1NDY2LC0xMjU4NTYyMTMyLC0xODU0NTMzNjg2
+LDY2NDcwMTE3NiwtMTQ5MjkzNDk2NiwzMTQ5MDk0NjgsLTMzOD
+Q3Nzg3NSwtMjAxMDY1NTc4MSwtMzY2MDg2NzkwLDk1NzczNTk5
+MV19
 -->
