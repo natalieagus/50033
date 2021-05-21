@@ -8,7 +8,6 @@ title: Unity for Babies
 
 # Learning Objectives: Basic Game Components
 
--   Setting script execution order
 -   Creating animator and animation clip   
 -   Transition between animations
 -   Setting up parameters and triggers for animation
@@ -16,7 +15,7 @@ title: Unity for Babies
 -   Coroutines: to execute methods over a number of frames or seconds
 -   Exploring the 2D physics engine: Colliders, 2D effectors, 2D joints
 -   Adding sound effects
-   Creating physics materials and scripting
+- Creating physics materials and scripting
 
 
 # Introduction
@@ -29,8 +28,8 @@ We will continue where we left off [last week](https://natalieagus.github.io/500
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjg2NDQ4Nzc3LC0xMjU4NTYyMTMyLC0xOD
-U0NTMzNjg2LDY2NDcwMTE3NiwtMTQ5MjkzNDk2NiwzMTQ5MDk0
-NjgsLTMzODQ3Nzg3NSwtMjAxMDY1NTc4MSwtMzY2MDg2NzkwLD
-k1NzczNTk5MV19
+eyJoaXN0b3J5IjpbLTEzODQxNTc5MjYsLTEyNTg1NjIxMzIsLT
+E4NTQ1MzM2ODYsNjY0NzAxMTc2LC0xNDkyOTM0OTY2LDMxNDkw
+OTQ2OCwtMzM4NDc3ODc1LC0yMDEwNjU1NzgxLC0zNjYwODY3OT
+AsOTU3NzM1OTkxXX0=
 -->
