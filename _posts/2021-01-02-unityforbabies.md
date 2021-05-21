@@ -48,13 +48,16 @@ Open the **Animation tab** and you can see some kind of *state machine*. This wi
 
 ![animator](https://www.dropbox.com/s/cnnqaf8sdy3rurw/3.png?raw=1)
 
-Now let's create some clips. The first clip we need to do 
+Now let's create some clips. The first clip we need to do is to animate Mario running. Click the **Animation tab** instead, and click on the *Create* button. 
+![c](https://www.dropbox.com/s/04twws9hdbj9w9d/4.png?raw=1)
+
+
 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY2NTQ3NTc4NSwxODQzMjA1NDY2LC0xMj
+eyJoaXN0b3J5IjpbMjAzNDEyMDAzMCwxODQzMjA1NDY2LC0xMj
 U4NTYyMTMyLC0xODU0NTMzNjg2LDY2NDcwMTE3NiwtMTQ5Mjkz
 NDk2NiwzMTQ5MDk0NjgsLTMzODQ3Nzg3NSwtMjAxMDY1NTc4MS
 wtMzY2MDg2NzkwLDk1NzczNTk5MV19
