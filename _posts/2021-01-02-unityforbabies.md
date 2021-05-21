@@ -12,7 +12,7 @@ title: Unity for Babies
 -   Transition between animations
 -   Setting up parameters for animation
 -   Timing animations and creating events
--   UsinCoroutines: to execute methods over a number of frames or seconds
+-   Using coroutines: to execute methods over a number of frames or seconds
 -   Exploring the 2D physics engine: Colliders, 2D effectors, 2D joints
 -   Adding sound effects
 - Creating physics materials and scripting
@@ -167,9 +167,9 @@ It will *automatically* detect all custom functions of the scripts attached to t
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNzgwMzE1NDgsNjg3MzI5NzQsLTIwNj
-EyOTU1NTMsMTY0NjUxMzM1NCw4ODY1Mzg5LDE4NDMyMDU0NjYs
-LTEyNTg1NjIxMzIsLTE4NTQ1MzM2ODYsNjY0NzAxMTc2LC0xND
-kyOTM0OTY2LDMxNDkwOTQ2OCwtMzM4NDc3ODc1LC0yMDEwNjU1
-NzgxLC0zNjYwODY3OTAsOTU3NzM1OTkxXX0=
+eyJoaXN0b3J5IjpbLTcwNTQ2NDU5Nyw2ODczMjk3NCwtMjA2MT
+I5NTU1MywxNjQ2NTEzMzU0LDg4NjUzODksMTg0MzIwNTQ2Niwt
+MTI1ODU2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3MDExNzYsLTE0OT
+I5MzQ5NjYsMzE0OTA5NDY4LC0zMzg0Nzc4NzUsLTIwMTA2NTU3
+ODEsLTM2NjA4Njc5MCw5NTc3MzU5OTFdfQ==
 -->
