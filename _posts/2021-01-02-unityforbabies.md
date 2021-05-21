@@ -94,13 +94,16 @@ Now it's time to manage the transitions. Let's consider the transition from **id
 Pay attention to the following settings:
 1. **Conditions**: Utilises the *Parameters* to trigger this transition. It is right now set to be triggered when `xSpeed` parameter value is greater than 0.01. We will of course control this value via `PlayerController.cs` script later on. 
 2. **Has Exit Time**: Make sure this is unticked, so that transition happens **immediately**. Otherwise, we need to wait for the entire clip to finish (however many frames you set it to be). 
-3. **The transition timeline**: It tells us whether to fade or mix between the current clip and the next clip. Right now the setting is such that we transit **abruptly**. There's no time overlap 
+3. **The transition timeline**: It tells us whether to fade or mix between the current clip and the next clip. Right now the setting is such that we transit **abruptly**. There's no time overlap between the two clips. 
+ 
+Now you can set the other transition arrows as such:
+1. 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NDIzMzQwMDksMTg0MzIwNTQ2NiwtMT
-I1ODU2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3MDExNzYsLTE0OTI5
-MzQ5NjYsMzE0OTA5NDY4LC0zMzg0Nzc4NzUsLTIwMTA2NTU3OD
-EsLTM2NjA4Njc5MCw5NTc3MzU5OTFdfQ==
+eyJoaXN0b3J5IjpbMjA1Mjc5OTQ1NiwxODQzMjA1NDY2LC0xMj
+U4NTYyMTMyLC0xODU0NTMzNjg2LDY2NDcwMTE3NiwtMTQ5Mjkz
+NDk2NiwzMTQ5MDk0NjgsLTMzODQ3Nzg3NSwtMjAxMDY1NTc4MS
+wtMzY2MDg2NzkwLDk1NzczNTk5MV19
 -->
