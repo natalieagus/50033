@@ -44,14 +44,17 @@ Then, **add an Animator element** to Mario, and load `MarioController` as the An
 ![animatormario](https://www.dropbox.com/s/b5zrnkagarfylrm/2.png?raw=1) 
 
 
-Open the **Animation tab** so you can see some kind of state machine. This will the place for us to dictate which Animation Clip to play under certain conditions. 
+Open the **Animation tab** and you can see some kind of *state machine*. This will the place for us to edit the Animator and dictate which Animation Clip to play under certain condition. 
 
+![animator](https://www.dropbox.com/s/cnnqaf8sdy3rurw/3.png?raw=1)
+
+Now let's create some clips. The first clip we need to do 
 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MTMwNTY4NiwxODQzMjA1NDY2LC0xMj
+eyJoaXN0b3J5IjpbMTY2NTQ3NTc4NSwxODQzMjA1NDY2LC0xMj
 U4NTYyMTMyLC0xODU0NTMzNjg2LDY2NDcwMTE3NiwtMTQ5Mjkz
 NDk2NiwzMTQ5MDk0NjgsLTMzODQ3Nzg3NSwtMjAxMDY1NTc4MS
 wtMzY2MDg2NzkwLDk1NzczNTk5MV19
