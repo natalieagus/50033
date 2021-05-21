@@ -125,8 +125,8 @@ marioAnimator  =  GetComponent<Animator>();
 
 Now our job is to manipulate the Animator's parameters when Mario's jumping, running, or skidding. Mario will only skid as long as the key `a` or `d` is **pressed** down. To handle the skidding, enable the `onSkid` trigger under the `Update()` function:
 
-```java
 
+```java
 
 ```
 
@@ -135,7 +135,7 @@ Now our job is to manipulate the Animator's parameters when Mario's jumping, run
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NzYwOTM5NzQsMTY0NjUxMzM1NCw4OD
+eyJoaXN0b3J5IjpbLTEwODQ3NjE3NzgsMTY0NjUxMzM1NCw4OD
 Y1Mzg5LDE4NDMyMDU0NjYsLTEyNTg1NjIxMzIsLTE4NTQ1MzM2
 ODYsNjY0NzAxMTc2LC0xNDkyOTM0OTY2LDMxNDkwOTQ2OCwtMz
 M4NDc3ODc1LC0yMDEwNjU1NzgxLC0zNjYwODY3OTAsOTU3NzM1
