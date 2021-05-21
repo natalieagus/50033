@@ -80,13 +80,20 @@ Now head to the Animator tab, and you now see all the clips as separate **states
 ![statemachine](https://www.dropbox.com/s/q9fidx7lu8u9gpk/8.png?raw=1)
 
 To enable correct transition conditions, we need to create **parameters**. These parameters will be used to trigger transition between each animation clip (motion). Create these three parameters:
-1.  
+1. `onGround` bool
+2. `xSpeed` float
+3. `onSkid` trigger
+
+Here's all the parameters that you should have in the end:
+![params](https://www.dropbox.com/s/jzs519y7evy8it0/9.png?raw=1) 
+
+Now it's time to manage the transitions. Let's consider 
 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY5MDk3NDQyMiwxODQzMjA1NDY2LC0xMj
+eyJoaXN0b3J5IjpbMTUzNDA2NTA1MCwxODQzMjA1NDY2LC0xMj
 U4NTYyMTMyLC0xODU0NTMzNjg2LDY2NDcwMTE3NiwtMTQ5Mjkz
 NDk2NiwzMTQ5MDk0NjgsLTMzODQ3Nzg3NSwtMjAxMDY1NTc4MS
 wtMzY2MDg2NzkwLDk1NzczNTk5MV19
