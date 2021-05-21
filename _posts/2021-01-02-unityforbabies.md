@@ -70,14 +70,17 @@ Do the same to obtain the skidding, jumping, and idle animation. For idle animat
 
 ![animclips](https://www.dropbox.com/s/b7zn99la5t9j2id/7.png?raw=1)
 
-For the jumping animation, we need to do more than just 
+For the jumping animation, we need to do more than just a sprite change:
+1. Add AudioSource element to Mario, and load the sound `smb_jump-small` to the AudioClip.
+2. Disable it and ensure that Play On Awake is also disabled
+3. During the first frame of the clip, enable it and also 
 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODYxODE2MDg5LDE4NDMyMDU0NjYsLTEyNT
-g1NjIxMzIsLTE4NTQ1MzM2ODYsNjY0NzAxMTc2LC0xNDkyOTM0
-OTY2LDMxNDkwOTQ2OCwtMzM4NDc3ODc1LC0yMDEwNjU1NzgxLC
-0zNjYwODY3OTAsOTU3NzM1OTkxXX0=
+eyJoaXN0b3J5IjpbLTEyMjE3Mzc5NjUsMTg0MzIwNTQ2NiwtMT
+I1ODU2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3MDExNzYsLTE0OTI5
+MzQ5NjYsMzE0OTA5NDY4LC0zMzg0Nzc4NzUsLTIwMTA2NTU3OD
+EsLTM2NjA4Njc5MCw5NTc3MzU5OTFdfQ==
 -->
