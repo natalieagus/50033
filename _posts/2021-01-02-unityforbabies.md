@@ -156,16 +156,18 @@ void  PlayJumpSound(){
 ```
 where `marioAudio` is a private variable of type `AudioSource` **(declare it yourself!)**, which you set via `GetComponent<AudioSource>` in the `Start()` function. You should be familiar with this by now. 
 
-Make sure the AudioSource component in Mario is now **enabled**, but **untick** the **Play On Awake** property. 
+Make sure the AudioSource component in Mario is now **enabled**, but **untick** the **Play On Awake** property. Now you can add an event in the jump animation clip by clicking the **Add Event button** in the desired frame (frame 0 in this case):
+
+![event](https://www.dropbox.com/s/vj7bjq9mhokplqo/12a.png?raw=1)
 
 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcxNzgwNjIyNSwtMjA2MTI5NTU1MywxNj
-Q2NTEzMzU0LDg4NjUzODksMTg0MzIwNTQ2NiwtMTI1ODU2MjEz
-MiwtMTg1NDUzMzY4Niw2NjQ3MDExNzYsLTE0OTI5MzQ5NjYsMz
-E0OTA5NDY4LC0zMzg0Nzc4NzUsLTIwMTA2NTU3ODEsLTM2NjA4
-Njc5MCw5NTc3MzU5OTFdfQ==
+eyJoaXN0b3J5IjpbMTEwODE2NDcwLC0yMDYxMjk1NTUzLDE2ND
+Y1MTMzNTQsODg2NTM4OSwxODQzMjA1NDY2LC0xMjU4NTYyMTMy
+LC0xODU0NTMzNjg2LDY2NDcwMTE3NiwtMTQ5MjkzNDk2NiwzMT
+Q5MDk0NjgsLTMzODQ3Nzg3NSwtMjAxMDY1NTc4MSwtMzY2MDg2
+NzkwLDk1NzczNTk5MV19
 -->
