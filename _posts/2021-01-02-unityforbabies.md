@@ -96,17 +96,19 @@ Pay attention to the following settings:
 2. **Has Exit Time**: Make sure this is unticked, so that transition happens **immediately**. Otherwise, we need to wait for the entire clip to finish (however many frames you set it to be). 
 3. **The transition graph**: It tells us whether to fade or mix between the current clip and the next clip *if exit time is enabled*. Right now the setting is such that we transit **abruptly** so the graph doesn't matter. 
 
-Let's take a look at another transition where we want to have an *exit* time, that is the transition between skidding state and running state. What we want is for the entire skidding state to complete (all frames played) before transitioning to the running state. The transition itself takes **no time**. Y
+Let's take a look at another transition where we **want  to have an *exit* time**, that is the transition between **skidding state** and **running state**. What we want is for the entire skidding state to **complete** (all frames played) before transitioning to the running state. The transition itself takes **no time**. 
+
+You can read more about transition properties [here](https://docs.unity3d.com/Manual/class-Transition.html). 
 
 ![transit2](https://www.dropbox.com/s/5quef0fzzdnapcw/11.png?raw=1)
  
-
+For the rest of the transition arrows, make use of the parameters in a way that you seem fit, for
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0NzQ4OTA0MCw4ODY1Mzg5LDE4NDMyMD
-U0NjYsLTEyNTg1NjIxMzIsLTE4NTQ1MzM2ODYsNjY0NzAxMTc2
-LC0xNDkyOTM0OTY2LDMxNDkwOTQ2OCwtMzM4NDc3ODc1LC0yMD
-EwNjU1NzgxLC0zNjYwODY3OTAsOTU3NzM1OTkxXX0=
+eyJoaXN0b3J5IjpbNTE2NzY4ODY0LDg4NjUzODksMTg0MzIwNT
+Q2NiwtMTI1ODU2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3MDExNzYs
+LTE0OTI5MzQ5NjYsMzE0OTA5NDY4LC0zMzg0Nzc4NzUsLTIwMT
+A2NTU3ODEsLTM2NjA4Njc5MCw5NTc3MzU5OTFdfQ==
 -->
