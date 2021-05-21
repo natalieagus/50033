@@ -113,13 +113,21 @@ You can read more about transition properties [here](https://docs.unity3d.com/Ma
 For the rest of the transition arrows, make use of the parameters in a way that you seem fit, for example, transition between jump and run should happen when `onGround` is `false` and when `xSpeed` is greater than `0.01`, and so on. 
 
 ## Controlling Animator Parameters via Script
+Open PlayerController.cs script that you have attached on Mario and add the Animator variable:
+```java
+private  Animator marioAnimator;
+```
+
+Then under `Start()` method, 
+
+
 
 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM3MzIyMTcxNSwxNjQ2NTEzMzU0LDg4Nj
+eyJoaXN0b3J5IjpbLTYyNzE2OTY1NSwxNjQ2NTEzMzU0LDg4Nj
 UzODksMTg0MzIwNTQ2NiwtMTI1ODU2MjEzMiwtMTg1NDUzMzY4
 Niw2NjQ3MDExNzYsLTE0OTI5MzQ5NjYsMzE0OTA5NDY4LC0zMz
 g0Nzc4NzUsLTIwMTA2NTU3ODEsLTM2NjA4Njc5MCw5NTc3MzU5
