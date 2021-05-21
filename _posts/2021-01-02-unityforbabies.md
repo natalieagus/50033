@@ -30,15 +30,16 @@ Mario's animation is broken down into **four** main state:
 
 The Mario sprite given in the starter asset already contain the corresponding sprite that's suitable for each state, mainly `mario_idle, mario_jump, mario_run1, mario_run2, mario_run3,`and `mario_skid`. 
 
-To begin animating a game object, we always an Animati
+To begin animating a game object, we  an **Animator** element and several**Animation Clips** to be managed by the controller. 
+
 
 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjYxMTgwMjI1LDE4NDMyMDU0NjYsLTEyNT
-g1NjIxMzIsLTE4NTQ1MzM2ODYsNjY0NzAxMTc2LC0xNDkyOTM0
-OTY2LDMxNDkwOTQ2OCwtMzM4NDc3ODc1LC0yMDEwNjU1NzgxLC
-0zNjYwODY3OTAsOTU3NzM1OTkxXX0=
+eyJoaXN0b3J5IjpbLTE4ODcwMTMsMTg0MzIwNTQ2NiwtMTI1OD
+U2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3MDExNzYsLTE0OTI5MzQ5
+NjYsMzE0OTA5NDY4LC0zMzg0Nzc4NzUsLTIwMTA2NTU3ODEsLT
+M2NjA4Njc5MCw5NTc3MzU5OTFdfQ==
 -->
