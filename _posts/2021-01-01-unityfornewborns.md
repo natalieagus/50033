@@ -571,7 +571,7 @@ In the screenshot below, we want the menu script to be run first before the enem
 ![execorder](https://www.dropbox.com/s/8mefcfyvz0iujpa/26.png?raw=1)
 
 # Checkoff
-See the lab recording (the playlist for all recordings can be found in our course handout) to know the final state of the project before proceeding to implement the checkoff. The gif below also summarises the desired end state for this lab:
+Review our lab recording (the playlist for all recordings can be found in our course handout) to know the final state of the project before proceeding to implement the checkoff. The gif below also summarises the desired end state for this lab:
 
 ![checkoff1](https://www.dropbox.com/s/05k8w5sa2qvm66o/checkoff1.gif?raw=1)
 
@@ -603,9 +603,9 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0Mzk2NTMwOSw3Njk2MTUxMDcsMTQ1OT
-IyNDczNSwyNDY0MDkxMDAsLTE1NDM0NTQ3NjEsMTIwNjU4MzUx
-NSwtNzU3MDQ5NDU3LC04NzgxNTkyMTcsLTMyMTk5MDc1OCwyMz
-M1ODUxNDAsLTEwMTgzNzM5MTksLTEzOTk2MTEzODEsLTIwNjEz
-NTU3NjNdfQ==
+eyJoaXN0b3J5IjpbLTE5MTM3NjIyODksNzY5NjE1MTA3LDE0NT
+kyMjQ3MzUsMjQ2NDA5MTAwLC0xNTQzNDU0NzYxLDEyMDY1ODM1
+MTUsLTc1NzA0OTQ1NywtODc4MTU5MjE3LC0zMjE5OTA3NTgsMj
+MzNTg1MTQwLC0xMDE4MzczOTE5LC0xMzk5NjExMzgxLC0yMDYx
+MzU1NzYzXX0=
 -->
