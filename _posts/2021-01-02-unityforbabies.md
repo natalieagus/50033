@@ -64,13 +64,16 @@ At the end, you should see something like on the Animation tab. Click play on th
 
 ![run](https://www.dropbox.com/s/fslieknnpwvywdn/6a.png?raw=1)
 
-To create more clip, click the dropdown on the left, just under the record button. 
+To create more clip, click the dropdown containing the animation clip name (e.g: *Run* in the screenshot above) on the left, just under the record button. 
+
+Do the same to obtain the skidding, jumping, and idle animation. For idle animation, you simply don't have to record anything, e.g:
+
 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMTIxODc2MzEsMTg0MzIwNTQ2NiwtMT
+eyJoaXN0b3J5IjpbLTE1OTI2MzcyMTksMTg0MzIwNTQ2NiwtMT
 I1ODU2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3MDExNzYsLTE0OTI5
 MzQ5NjYsMzE0OTA5NDY4LC0zMzg0Nzc4NzUsLTIwMTA2NTU3OD
 EsLTM2NjA4Njc5MCw5NTc3MzU5OTFdfQ==
