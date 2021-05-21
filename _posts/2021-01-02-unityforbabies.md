@@ -118,8 +118,12 @@ Open PlayerController.cs script that you have attached on Mario and add the Anim
 private  Animator marioAnimator;
 ```
 
-Then under `Start()` method, 
+Then under `Start()` method, get its component as usual. This gives us reference to its current animator:
+```java
+marioAnimator  =  GetComponent<Animator>();
+```
 
+Now our job is to manipulate the Animator's parameters when Mario's jumping, running, or skidding. To handle the skidding, enable the onSkid trigger under the Update
 
 
 
@@ -127,7 +131,7 @@ Then under `Start()` method,
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYyNzE2OTY1NSwxNjQ2NTEzMzU0LDg4Nj
+eyJoaXN0b3J5IjpbLTM3OTcwMjk4NCwxNjQ2NTEzMzU0LDg4Nj
 UzODksMTg0MzIwNTQ2NiwtMTI1ODU2MjEzMiwtMTg1NDUzMzY4
 Niw2NjQ3MDExNzYsLTE0OTI5MzQ5NjYsMzE0OTA5NDY4LC0zMz
 g0Nzc4NzUsLTIwMTA2NTU3ODEsLTM2NjA4Njc5MCw5NTc3MzU5
