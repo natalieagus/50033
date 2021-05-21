@@ -80,9 +80,9 @@ Now head to the Animator tab, and you now see all the clips as separate **states
 ![statemachine](https://www.dropbox.com/s/q9fidx7lu8u9gpk/8.png?raw=1)
 
 To enable correct transition conditions, we need to create **parameters**. These parameters will be used to trigger transition between each animation clip (motion). Create these three parameters:
-1. `onGround` of type bool
+1. `onGround` of type `bool`
 2. `xSpeed` of type `float`
-3. `onSkid` of type trigger (a boolean parameter that is reset by the controller when consumed by a transition)
+3. `onSkid` of type `trigger` (a boolean parameter that is **reset** by the controller when consumed by a transition)
 
 Here's all the parameters that you should have in the end:
 ![params](https://www.dropbox.com/s/jzs519y7evy8it0/9.png?raw=1) 
@@ -103,11 +103,13 @@ You can read more about transition properties [here](https://docs.unity3d.com/Ma
 ![transit2](https://www.dropbox.com/s/5quef0fzzdnapcw/11.png?raw=1)
  
 For the rest of the transition arrows, make use of the parameters in a way that you seem fit, for example, transition between jump and run should happen when `onGround` is `false` and when `xSpeed` is greater than `0.01`, and so on. 
+
+
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ4NjI5NzUwNiw4ODY1Mzg5LDE4NDMyMD
+eyJoaXN0b3J5IjpbMTY0NjUxMzM1NCw4ODY1Mzg5LDE4NDMyMD
 U0NjYsLTEyNTg1NjIxMzIsLTE4NTQ1MzM2ODYsNjY0NzAxMTc2
 LC0xNDkyOTM0OTY2LDMxNDkwOTQ2OCwtMzM4NDc3ODc1LC0yMD
 EwNjU1NzgxLC0zNjYwODY3OTAsOTU3NzM1OTkxXX0=
