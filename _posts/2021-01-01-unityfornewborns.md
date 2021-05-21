@@ -579,7 +579,7 @@ Once you've implemented everything in this handout, then for **checkoff** you're
 
 *You’re free to implement it in any way*. *It will not affect your checkoff score.* The grading for this lab is **binary** (completed / not completed). 
 
-***Read the course handout to find out how to submit the checkoff for each lab.*** 
+***Read the course handout to find out the checkoff procedure for each lab.*** 
 
 # Next
 It's been hours but we are nowhere near a completed game (unless of course you have prior experience with Unity):
@@ -603,9 +603,9 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NDM5NzkxMzMsNzY5NjE1MTA3LDE0NT
-kyMjQ3MzUsMjQ2NDA5MTAwLC0xNTQzNDU0NzYxLDEyMDY1ODM1
-MTUsLTc1NzA0OTQ1NywtODc4MTU5MjE3LC0zMjE5OTA3NTgsMj
-MzNTg1MTQwLC0xMDE4MzczOTE5LC0xMzk5NjExMzgxLC0yMDYx
-MzU1NzYzXX0=
+eyJoaXN0b3J5IjpbLTQ0Mzk2NTMwOSw3Njk2MTUxMDcsMTQ1OT
+IyNDczNSwyNDY0MDkxMDAsLTE1NDM0NTQ3NjEsMTIwNjU4MzUx
+NSwtNzU3MDQ5NDU3LC04NzgxNTkyMTcsLTMyMTk5MDc1OCwyMz
+M1ODUxNDAsLTEwMTgzNzM5MTksLTEzOTk2MTEzODEsLTIwNjEz
+NTU3NjNdfQ==
 -->
