@@ -54,14 +54,15 @@ Now let's create some clips. The first clip we need to do is to *animate Mario r
 Now, click the **record** button, and you should see that the window turns red. 
 ![record](https://www.dropbox.com/s/ik8cj703rc8z389/5.png?raw=1)
 
-The values on the right side represents the frame (60 frames per second). We can tell the clip 
+The values on the right side represents the frame (60 frames per second). We can change any element on Mario and it will be automatically recorded. For example, we can do the following actions:
+1. Click on Frame 0, and then change 
 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1ODA4MzEzMjIsMTg0MzIwNTQ2NiwtMT
-I1ODU2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3MDExNzYsLTE0OTI5
-MzQ5NjYsMzE0OTA5NDY4LC0zMzg0Nzc4NzUsLTIwMTA2NTU3OD
-EsLTM2NjA4Njc5MCw5NTc3MzU5OTFdfQ==
+eyJoaXN0b3J5IjpbMTk5MTUwMTgxMSwxODQzMjA1NDY2LC0xMj
+U4NTYyMTMyLC0xODU0NTMzNjg2LDY2NDcwMTE3NiwtMTQ5Mjkz
+NDk2NiwzMTQ5MDk0NjgsLTMzODQ3Nzg3NSwtMjAxMDY1NTc4MS
+wtMzY2MDg2NzkwLDk1NzczNTk5MV19
 -->
