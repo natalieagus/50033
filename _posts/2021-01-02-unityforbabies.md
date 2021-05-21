@@ -91,12 +91,15 @@ Now it's time to manage the transitions. Let's consider the transition from **id
 
 ![transit1](https://www.dropbox.com/s/b4q3f7rnaenp2mo/10.png?raw=1)
 
+Pay attention to the following settings:
+1. **Conditions**: Utilises the *Parameters* to trigger this transition. It is right now set to be triggered when `xSpeed` parameter value is greater than 0.01. We will of course control this value via `PlayerController.cs` script later on. 
+2. **Has Exit Time**: Mak
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ2NzU1MzA2MywxODQzMjA1NDY2LC0xMj
-U4NTYyMTMyLC0xODU0NTMzNjg2LDY2NDcwMTE3NiwtMTQ5Mjkz
-NDk2NiwzMTQ5MDk0NjgsLTMzODQ3Nzg3NSwtMjAxMDY1NTc4MS
-wtMzY2MDg2NzkwLDk1NzczNTk5MV19
+eyJoaXN0b3J5IjpbLTEyMzgwODk0MjMsMTg0MzIwNTQ2NiwtMT
+I1ODU2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3MDExNzYsLTE0OTI5
+MzQ5NjYsMzE0OTA5NDY4LC0zMzg0Nzc4NzUsLTIwMTA2NTU3OD
+EsLTM2NjA4Njc5MCw5NTc3MzU5OTFdfQ==
 -->
