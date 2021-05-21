@@ -130,16 +130,21 @@ Now our job is to manipulate the Animator's parameters when Mario's jumping, run
 if (Mathf.Abs(marioBody.velocity.x) >  1.0) marioAnimator.SetTrigger("onSkid");
 ```
 
-And the following line anywhere inside the `Update()` function to always update the `xSpeed` parameter to match Mario's current speed in the x direction.
+And the following line anywhere inside the `Update()` function to always update the `xSpeed` parameter to match Mario's current speed along the x-axis.
 ```java
 marioAnimator.SetFloat("xSpeed", Mathf.Abs(marioBody.velocity.x));
 ```
+To hande Mario's jumping state, set the animator's `onGround` parameter to match the current `onGroundState` value whenever it's changed in the script, e.g:
+```java
+marioAnimator.SetBool("onGround", onGroundState);
+```
+
 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MDg0MDI3NzEsMTY0NjUxMzM1NCw4OD
+eyJoaXN0b3J5IjpbLTEyMDE0MTQzNTMsMTY0NjUxMzM1NCw4OD
 Y1Mzg5LDE4NDMyMDU0NjYsLTEyNTg1NjIxMzIsLTE4NTQ1MzM2
 ODYsNjY0NzAxMTc2LC0xNDkyOTM0OTY2LDMxNDkwOTQ2OCwtMz
 M4NDc3ODc1LC0yMDEwNjU1NzgxLC0zNjYwODY3OTAsOTU3NzM1
