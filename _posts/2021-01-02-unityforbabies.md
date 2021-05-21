@@ -113,21 +113,22 @@ You can read more about transition properties [here](https://docs.unity3d.com/Ma
 For the rest of the transition arrows, make use of the parameters in a way that you seem fit, for example, transition between jump and run should happen when `onGround` is `false` and when `xSpeed` is greater than `0.01`, and so on. 
 
 ## Controlling Animator Parameters via Script
-Open PlayerController.cs script that you have attached on Mario and add the Animator variable:
+Open `PlayerController.cs` script that you have attached on Mario and add the Animator variable:
 ```java
 private  Animator marioAnimator;
 ```
 
-Then under `Start()` method, get its component as usual. This gives us reference to its current animator:
+Then under `Start()` method, get its component as usual. This gives us **reference** to its current animator:
 ```java
 marioAnimator  =  GetComponent<Animator>();
 ```
 
-Now our job is to manipulate the Animator's parameters when Mario's jumping, running, or skidding. Mario will only skid as long as the key `a` or `d` is **pressed** down. To handle the skidding, enable the `onSkid` trigger under the `Update()` function, inside the clauses where you check `a` or `d` is pressed:
+Now our job is to **manipulate the Animator's parameters**: `onGround, xSpeed,` and `onSkid` when Mario's jumping, running, or skidding respectively. Mario will only skid as long as the key `a` or `d` is **pressed** down. To handle the skidding, enable the `onSkid` trigger under the `Update()` function, inside the clauses where you check `a` or `d` is pressed:
 
 
 ```java
-if (Mathf.Abs(marioBody.velocity.x) >  1.0) marioAnimator.SetTrigger("onSkid");
+if (Mathf.Abs(marioBody.velocity.x) >  1.0) 
+	marioAnimator.SetTrigger("onSkid");
 ```
 
 And the following line anywhere inside the `Update()` function to always update the `xSpeed` parameter to match Mario's current speed along the x-axis.
@@ -140,7 +141,7 @@ marioAnimator.SetBool("onGround", onGroundState);
 ```
 At the end of the day, your Mario should smoothly move around as shown. Ignore the Camera's auto follow feature for now. We will do that later.
 
-![gifmario](https://www.dropbox.com/sh/xse61uvkuq6kurf/AAAdzGj3by32_vYimSbYt7JVa?raw=1)
+![gifmario](https://www.dropbox.com/s/1rgwxmjvq2mkz2e/move.gif?raw=1)
 
 
 
@@ -148,9 +149,9 @@ At the end of the day, your Mario should smoothly move around as shown. Ignore t
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDgxOTc2MTQ3LDE2NDY1MTMzNTQsODg2NT
-M4OSwxODQzMjA1NDY2LC0xMjU4NTYyMTMyLC0xODU0NTMzNjg2
-LDY2NDcwMTE3NiwtMTQ5MjkzNDk2NiwzMTQ5MDk0NjgsLTMzOD
-Q3Nzg3NSwtMjAxMDY1NTc4MSwtMzY2MDg2NzkwLDk1NzczNTk5
-MV19
+eyJoaXN0b3J5IjpbLTIwNjEyOTU1NTMsMTY0NjUxMzM1NCw4OD
+Y1Mzg5LDE4NDMyMDU0NjYsLTEyNTg1NjIxMzIsLTE4NTQ1MzM2
+ODYsNjY0NzAxMTc2LC0xNDkyOTM0OTY2LDMxNDkwOTQ2OCwtMz
+M4NDc3ODc1LC0yMDEwNjU1NzgxLC0zNjYwODY3OTAsOTU3NzM1
+OTkxXX0=
 -->
