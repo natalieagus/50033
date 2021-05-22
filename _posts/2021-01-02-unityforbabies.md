@@ -284,7 +284,7 @@ You should have something like this in the end:
 
 Now **delete** it from the Scene since we will only spawn it from the script and not in the beginning of the game. 
 
-## Scripting HittableSimple Prefab
+## I
 Double click on the `HittableSimple` **Prefab** (not the one on your scene!), and add a new C# Script component to its `EdgeDetector` GameObject, name the script: `QuestionBoxController.cs`. 
 
 The logic for this script is:
@@ -326,11 +326,11 @@ void  OnCollisionEnter2D(Collision2D col)
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyODI3OTQ4MjgsMTI4NTU0MDg5NSwxMD
-AwMDkwOTc0LC02MzcyNjE4NDAsMjAzNDA4OTA2NSwtNDI3NTg2
-NDQyLC03MDU0NjQ1OTcsNjg3MzI5NzQsLTIwNjEyOTU1NTMsMT
-Y0NjUxMzM1NCw4ODY1Mzg5LDE4NDMyMDU0NjYsLTEyNTg1NjIx
-MzIsLTE4NTQ1MzM2ODYsNjY0NzAxMTc2LC0xNDkyOTM0OTY2LD
-MxNDkwOTQ2OCwtMzM4NDc3ODc1LC0yMDEwNjU1NzgxLC0zNjYw
-ODY3OTBdfQ==
+eyJoaXN0b3J5IjpbLTE1MDU2ODQzMjcsLTEyODI3OTQ4MjgsMT
+I4NTU0MDg5NSwxMDAwMDkwOTc0LC02MzcyNjE4NDAsMjAzNDA4
+OTA2NSwtNDI3NTg2NDQyLC03MDU0NjQ1OTcsNjg3MzI5NzQsLT
+IwNjEyOTU1NTMsMTY0NjUxMzM1NCw4ODY1Mzg5LDE4NDMyMDU0
+NjYsLTEyNTg1NjIxMzIsLTE4NTQ1MzM2ODYsNjY0NzAxMTc2LC
+0xNDkyOTM0OTY2LDMxNDkwOTQ2OCwtMzM4NDc3ODc1LC0yMDEw
+NjU1NzgxXX0=
 -->
