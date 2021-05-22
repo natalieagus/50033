@@ -338,14 +338,14 @@ The gif below summarises the required behavior of the spawned mushroom:
 You probably can do all the above except the **first**: move the mushroom at constant speed (either to the left or to the right) and the last point (to give initial impulse force upwards). 
 
 ## Rigidbody2D MovePosition
-To do the first point, we need to compute the supposed position of the mushroom in the next frame. Given `float speed`, current `Vector2 position` of the Mushroom, and `Vector2 currentDirection`  (`{1,0}` or `{-1,0}`, indicating movement towards the right or the left), we can compute the mushroom's next position as:
+To do the first point, we need to compute the supposed position of the mushroom in the next frame. Given `float speed`, current `Vector2 currentPosition` of the Mushroom, and `Vector2 currentDirection`  (`{1,0}` or `{-1,0}`, indicating movement towards the right or the left), we can compute the mushroom's next position as:
 
-```
-
-
+```java
+Vector2 nextPosition = currentPosition + speed * currentDirection * Time.fixedDeltaTime;
 ``` 
+where `Time.fixedDeltaTime` is simply th**e interval in seconds** at which Physics frame rate updates. 
 
-
+Afterwards, we can set the 
 
 
 
@@ -354,11 +354,11 @@ To do the first point, we need to compute the supposed position of the mushroom 
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMzc4NDAzNDYsLTE4OTUyOTE1NzQsLT
-cwMzcxOTIyMCwtODMxNjI5MTk0LDEyODIxNDIwNjUsLTEyODI3
-OTQ4MjgsMTI4NTU0MDg5NSwxMDAwMDkwOTc0LC02MzcyNjE4ND
-AsMjAzNDA4OTA2NSwtNDI3NTg2NDQyLC03MDU0NjQ1OTcsNjg3
-MzI5NzQsLTIwNjEyOTU1NTMsMTY0NjUxMzM1NCw4ODY1Mzg5LD
-E4NDMyMDU0NjYsLTEyNTg1NjIxMzIsLTE4NTQ1MzM2ODYsNjY0
-NzAxMTc2XX0=
+eyJoaXN0b3J5IjpbLTg0NjU3NzI2NywtMTg5NTI5MTU3NCwtNz
+AzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0MjA2NSwtMTI4Mjc5
+NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5NzQsLTYzNzI2MTg0MC
+wyMDM0MDg5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODcz
+Mjk3NCwtMjA2MTI5NTU1MywxNjQ2NTEzMzU0LDg4NjUzODksMT
+g0MzIwNTQ2NiwtMTI1ODU2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3
+MDExNzZdfQ==
 -->
