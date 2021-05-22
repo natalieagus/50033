@@ -431,7 +431,12 @@ IEnumerator Fade() {
 	} 
 }
 ```
-Without `yield return null`, Unity runs the loop **countless amount of time in one frame**, therefore *blocking* the editor. Therefore, we have to use `yield return` to return the control back to Unity and return back at the `for` loop in the next frame.  as if it gains control back even for a split second the editor will not block.
+Without `yield return null`, Unity runs the loop **fully for the amount of time in one frame**, therefore blocking the editor and the intermediate values will never be seen. The object will disappear instantly.
+
+In order to see the fading effect, the effect of each loop must be seen per frame -- rendered out to the viewer. 
+
+Therefore, we have to use `yield return` to return the control back to Unity and return back at the `for` loop in the next frame.  
+
 
 Then we can call the Coroutine inside `OnCollisionEnter2D`, right after we instantiate the mushroom:
 ```java
@@ -478,11 +483,11 @@ void  OnCollisionEnter2D(Collision2D col)
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc3MTk2NDcyOCwxNDE4NDQzNjU0LC0xOD
-k1MjkxNTc0LC03MDM3MTkyMjAsLTgzMTYyOTE5NCwxMjgyMTQy
-MDY1LC0xMjgyNzk0ODI4LDEyODU1NDA4OTUsMTAwMDA5MDk3NC
-wtNjM3MjYxODQwLDIwMzQwODkwNjUsLTQyNzU4NjQ0MiwtNzA1
-NDY0NTk3LDY4NzMyOTc0LC0yMDYxMjk1NTUzLDE2NDY1MTMzNT
-QsODg2NTM4OSwxODQzMjA1NDY2LC0xMjU4NTYyMTMyLC0xODU0
-NTMzNjg2XX0=
+eyJoaXN0b3J5IjpbNTYwNjcyNzAyLDE0MTg0NDM2NTQsLTE4OT
+UyOTE1NzQsLTcwMzcxOTIyMCwtODMxNjI5MTk0LDEyODIxNDIw
+NjUsLTEyODI3OTQ4MjgsMTI4NTU0MDg5NSwxMDAwMDkwOTc0LC
+02MzcyNjE4NDAsMjAzNDA4OTA2NSwtNDI3NTg2NDQyLC03MDU0
+NjQ1OTcsNjg3MzI5NzQsLTIwNjEyOTU1NTMsMTY0NjUxMzM1NC
+w4ODY1Mzg5LDE4NDMyMDU0NjYsLTEyNTg1NjIxMzIsLTE4NTQ1
+MzM2ODZdfQ==
 -->
