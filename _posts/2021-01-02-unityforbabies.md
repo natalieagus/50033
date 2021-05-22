@@ -317,7 +317,7 @@ void  OnCollisionEnter2D(Collision2D col)
 }
 ```
 
-This will allow you to spawn the Mushroom right above the box when it's
+This will allow you to spawn the Mushroom right above the box when it's hit by Mario.  
 
 
 
@@ -327,7 +327,7 @@ This will allow you to spawn the Mushroom right above the box when it's
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA2NzY0MTI2OCwtODMxNjI5MTk0LDEyOD
+eyJoaXN0b3J5IjpbLTkxNjc3NzQ3OCwtODMxNjI5MTk0LDEyOD
 IxNDIwNjUsLTEyODI3OTQ4MjgsMTI4NTU0MDg5NSwxMDAwMDkw
 OTc0LC02MzcyNjE4NDAsMjAzNDA4OTA2NSwtNDI3NTg2NDQyLC
 03MDU0NjQ1OTcsNjg3MzI5NzQsLTIwNjEyOTU1NTMsMTY0NjUx
