@@ -204,7 +204,7 @@ Another interesting component of Unity's physics engine is the [joints](https://
 
 ![bouncehit](https://www.dropbox.com/s/zud51vgb1ofiux1/bouncehit.gif?raw=1)
 
-Follow these steps:
+Follow these steps to create that Springy Question-box:
 1. Create an **empty** GameObject with **two children** GameObjects. Name them:
 	* **HittableSimple**
 		* **TopCollider**
@@ -483,11 +483,11 @@ void  OnCollisionEnter2D(Collision2D col)
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMTQ4Mjg1NzcsMTQxODQ0MzY1NCwtMT
-g5NTI5MTU3NCwtNzAzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0
-MjA2NSwtMTI4Mjc5NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5Nz
-QsLTYzNzI2MTg0MCwyMDM0MDg5MDY1LC00Mjc1ODY0NDIsLTcw
-NTQ2NDU5Nyw2ODczMjk3NCwtMjA2MTI5NTU1MywxNjQ2NTEzMz
-U0LDg4NjUzODksMTg0MzIwNTQ2NiwtMTI1ODU2MjEzMiwtMTg1
-NDUzMzY4Nl19
+eyJoaXN0b3J5IjpbLTEzMjczMjYwMDMsLTIwMTQ4Mjg1NzcsMT
+QxODQ0MzY1NCwtMTg5NTI5MTU3NCwtNzAzNzE5MjIwLC04MzE2
+MjkxOTQsMTI4MjE0MjA2NSwtMTI4Mjc5NDgyOCwxMjg1NTQwOD
+k1LDEwMDAwOTA5NzQsLTYzNzI2MTg0MCwyMDM0MDg5MDY1LC00
+Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODczMjk3NCwtMjA2MTI5NT
+U1MywxNjQ2NTEzMzU0LDg4NjUzODksMTg0MzIwNTQ2NiwtMTI1
+ODU2MjEzMl19
 -->
