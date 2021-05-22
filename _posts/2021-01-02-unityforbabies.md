@@ -299,9 +299,9 @@ Declare the following variables in `QuestionBoxController.cs`:
 ```java
 public  Rigidbody2D rigidBody;
 public  SpringJoint2D springJoint;
-public  GameObject consummablePrefab;
+public  GameObject consummablePrefab; // the spawned mushroom prefab
 public  SpriteRenderer spriteRenderer;
-public  Sprite usedQuestionBox;
+public  Sprite usedQuestionBox; // the sprite that indicates empty box instead of a question mark
 private bool hit =  false;
 ```
 
@@ -415,9 +415,9 @@ IEnumerator  DisableHittable(){
 	yield  return  null;
 	}
 ```
-The instruction `yield return new <something>` returns control to Unity until that `<something>` condition happens. We can wait for a few seconds:  `yield return new WaitForSeconds(0.1f)`, or [wait until end of frame](https://docs.unity3d.com/ScriptReference/WaitForEndOfFrame.html), etc. It will continue with the next instruction under the `WaitUntil`.  
+The instruction `yield return new <something>` returns control to Unity until that `<something>` condition happens. We can wait for a few seconds:  `yield return new WaitForSeconds(0.1f)`, or [wait until end of frame](https://docs.unity3d.com/ScriptReference/WaitForEndOfFrame.html), etc. It will continue with the **next** instruction when resumed, which is `spriteRenderer.sprite  =  usedQuestionBox;` for the above example. 
 
-and call the Coroutine inside `OnCollisionEnter2D`, right after you instantiate the mushroom:
+Then we can call the Coroutine inside `OnCollisionEnter2D`, right after we instantiate the mushroom:
 ```java
 void  OnCollisionEnter2D(Collision2D col)
 {
@@ -438,16 +438,18 @@ void  OnCollisionEnter2D(Collision2D col)
 
 
 
+
+
  
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzY0Mzc0NDA3LC0xODk1MjkxNTc0LC03MD
-M3MTkyMjAsLTgzMTYyOTE5NCwxMjgyMTQyMDY1LC0xMjgyNzk0
-ODI4LDEyODU1NDA4OTUsMTAwMDA5MDk3NCwtNjM3MjYxODQwLD
-IwMzQwODkwNjUsLTQyNzU4NjQ0MiwtNzA1NDY0NTk3LDY4NzMy
-OTc0LC0yMDYxMjk1NTUzLDE2NDY1MTMzNTQsODg2NTM4OSwxOD
-QzMjA1NDY2LC0xMjU4NTYyMTMyLC0xODU0NTMzNjg2LDY2NDcw
-MTE3Nl19
+eyJoaXN0b3J5IjpbMTc3NTc2MDkxNSwtMTg5NTI5MTU3NCwtNz
+AzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0MjA2NSwtMTI4Mjc5
+NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5NzQsLTYzNzI2MTg0MC
+wyMDM0MDg5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODcz
+Mjk3NCwtMjA2MTI5NTU1MywxNjQ2NTEzMzU0LDg4NjUzODksMT
+g0MzIwNTQ2NiwtMTI1ODU2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3
+MDExNzZdfQ==
 -->
