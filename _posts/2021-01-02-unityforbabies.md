@@ -169,7 +169,9 @@ Now that our Mario can move around smoothly with proper animations, it's time we
 
 Make that brick into a prefab so that you can have a master copy because we are going to spawn many of these in the scene. 
 
-> You might notice that Mario's animation doesn't get reset to "idle" state after he jumps onto the brick, because it is now colliding with a brick and not ground. Fix your PlayerController.cs to consider the case where he can jump onto obstacles like this as well. A cheap and easy way will be to add a Tag to the brick, e.g: `Obstacle` and add that check as well when resetting the `onGround` animator parameter. 
+> You might notice that Mario's animation doesn't get reset to "idle" state after he jumps onto the brick, because it is now colliding with a brick and not ground. Fix `PlayerController.cs` to consider the case where he can jump onto obstacles like this as well. 
+>
+>A cheap and easy way will be to add a **new** Tag to the brick, e.g: `Obstacles` and add that check as well when resetting the `onGround` animator parameter. 
 
 ## Effector2D
 Suppose you want to create a platform that allows only one-way collision. You can upgrade your 2DColliders to be used with a new component called **[effectors](https://docs.unity3d.com/Manual/Effectors2D.html)**. 
@@ -185,9 +187,9 @@ To demonstrate how this works, let's create a platform where the character can "
 
 You should have something like this now:
 
-![platform](https://www.dropbox.com/s/9czxo7ivjz2jzbb/14a.png?raw=1)
+![platform](https://www.dropbox.com/s/p3kfnt7dojisu2k/14.png?raw=1)
 
-Try jumping on the brick and on the platform. You should notice that Mario can't jump onto the brick from underneath it, while he can do so on the platform. 
+Try jumping onto the brick and onto the platform **from right underneath the platform**. You should notice that Mario can't jump onto the brick from underneath it, while he can do so on the platform. 
 
 
 
@@ -195,9 +197,10 @@ Try jumping on the brick and on the platform. You should notice that Mario can't
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcwOTYxMDc2NiwtNzA1NDY0NTk3LDY4Nz
-MyOTc0LC0yMDYxMjk1NTUzLDE2NDY1MTMzNTQsODg2NTM4OSwx
-ODQzMjA1NDY2LC0xMjU4NTYyMTMyLC0xODU0NTMzNjg2LDY2ND
-cwMTE3NiwtMTQ5MjkzNDk2NiwzMTQ5MDk0NjgsLTMzODQ3Nzg3
-NSwtMjAxMDY1NTc4MSwtMzY2MDg2NzkwLDk1NzczNTk5MV19
+eyJoaXN0b3J5IjpbLTEwMzYwMjIwNTIsLTcwNTQ2NDU5Nyw2OD
+czMjk3NCwtMjA2MTI5NTU1MywxNjQ2NTEzMzU0LDg4NjUzODks
+MTg0MzIwNTQ2NiwtMTI1ODU2MjEzMiwtMTg1NDUzMzY4Niw2Nj
+Q3MDExNzYsLTE0OTI5MzQ5NjYsMzE0OTA5NDY4LC0zMzg0Nzc4
+NzUsLTIwMTA2NTU3ODEsLTM2NjA4Njc5MCw5NTc3MzU5OTFdfQ
+==
 -->
