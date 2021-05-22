@@ -433,12 +433,9 @@ IEnumerator Fade() {
 ```
 Without `yield return null`, Unity runs the loop **fully for the amount of time in one frame**, therefore blocking the editor and the intermediate values will never be seen. The object will disappear instantly.
 
-In order to see the fading effect, the effect of each loop must be seen per frame -- rendered out to the viewer. 
+> Hence, in order to see the fading effect, the effect of each loop must be seen per frame -- rendered out to the viewer. Using `yield return null` returns the control back to Unity, and the instruction (`for` loop check) will be executed back in the next frame.  
 
-Therefore, we have to use `yield return` to return the control back to Unity and return back at the `for` loop in the next frame.  
-
-
-Then we can call the Coroutine inside `OnCollisionEnter2D`, right after we instantiate the mushroom:
+Now back to our game, we can call the Coroutine inside `OnCollisionEnter2D`, right after we instantiate the mushroom inside `QuestionBoxController.cs`:
 ```java
 void  OnCollisionEnter2D(Collision2D col)
 {
@@ -451,6 +448,7 @@ void  OnCollisionEnter2D(Collision2D col)
 }
 ```
 
+###
 One problem with the above implementation is that we cannot know for sure if the box has bounced up (has moved) *sufficiently high* before `ObjectMovedAndStopped()` returns **true**, depending on *where* Mario hits the box. It can be the case that Mario so very slightly collides with the question box's edge but didn't give sufficient energy to bounce the spring attached to the hittable box. 
 
 To fix this quickly, we can add more upwards force when collision is detected, and be sure that the `HittableSimple` box bounces at least of a certain amount regardless of Mario's momentum. The complete `OnCollisionEnter2D` implementation is as follows:
@@ -483,7 +481,7 @@ void  OnCollisionEnter2D(Collision2D col)
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTYwNjcyNzAyLDE0MTg0NDM2NTQsLTE4OT
+eyJoaXN0b3J5IjpbMjc3MzUwMTI1LDE0MTg0NDM2NTQsLTE4OT
 UyOTE1NzQsLTcwMzcxOTIyMCwtODMxNjI5MTk0LDEyODIxNDIw
 NjUsLTEyODI3OTQ4MjgsMTI4NTU0MDg5NSwxMDAwMDkwOTc0LC
 02MzcyNjE4NDAsMjAzNDA4OTA2NSwtNDI3NTg2NDQyLC03MDU0
