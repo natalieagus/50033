@@ -276,8 +276,14 @@ Create a new 2D GameObject >> Sprites >> Square, name it `ConsummableMushroomSim
 * Change the Sprite property into any mushroom, e.g: `items_0`
 * Add Rigidbody2D component (`Dynamic` type, with `Gravity Scale` of 10) 
 * Add BoxCollider2D component and edit the collider to match the sprite
+* Create a new `Layer` called `Spawned` and assign it to the mushroom
 * Change its scale to be of the right size, then drag it to the Prefab folder 
-* Create a new `Layer` cal
+
+You should have something like this in the end:
+![mushroom](https://www.dropbox.com/s/i1es9tpw03m6x4o/18.png?raw=1)
+
+Now **delete** it from the Scene since we will only spawn it from the script and not in the beginning of the game. 
+
 
 
 
@@ -287,10 +293,10 @@ Create a new 2D GameObject >> Sprites >> Square, name it `ConsummableMushroomSim
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTY2MDk0NDYsLTYzNzI2MTg0MCwyMDM0MD
-g5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODczMjk3NCwt
-MjA2MTI5NTU1MywxNjQ2NTEzMzU0LDg4NjUzODksMTg0MzIwNT
-Q2NiwtMTI1ODU2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3MDExNzYs
-LTE0OTI5MzQ5NjYsMzE0OTA5NDY4LC0zMzg0Nzc4NzUsLTIwMT
-A2NTU3ODEsLTM2NjA4Njc5MCw5NTc3MzU5OTFdfQ==
+eyJoaXN0b3J5IjpbLTI3NDg4NDA5MSwtNjM3MjYxODQwLDIwMz
+QwODkwNjUsLTQyNzU4NjQ0MiwtNzA1NDY0NTk3LDY4NzMyOTc0
+LC0yMDYxMjk1NTUzLDE2NDY1MTMzNTQsODg2NTM4OSwxODQzMj
+A1NDY2LC0xMjU4NTYyMTMyLC0xODU0NTMzNjg2LDY2NDcwMTE3
+NiwtMTQ5MjkzNDk2NiwzMTQ5MDk0NjgsLTMzODQ3Nzg3NSwtMj
+AxMDY1NTc4MSwtMzY2MDg2NzkwLDk1NzczNTk5MV19
 -->
