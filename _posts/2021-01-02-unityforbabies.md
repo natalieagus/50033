@@ -387,6 +387,29 @@ IEnumerator  functionName(){
 ```
 and call it like this: `StartCoroutine(functionName());`.
 
+Paste the following Coroutine and regular function inside `QuestionBoxController.cs`:
+```java
+bool  ObjectMovedAndStopped(){
+	return  Mathf.Abs(rigidBody.velocity.magnitude)<0.01;
+}
+
+IEnumerator  DisableHittable(){
+	if (!ObjectMovedAndStopped()){
+		yield  return  new  WaitUntil(() =>  ObjectMovedAndStopped());
+	}
+
+	//continues here when the ObjectMovedAndStopped() returns true
+	spriteRenderer.sprite  =  usedQuestionBox;
+	rigidBody.bodyType  =  RigidbodyType2D.Static;
+
+	//reset box position
+	this.transform.localPosition  =  Vector3.zero;
+	springJoint.enabled  =  false;
+	yield  return  null;
+	}
+```
+
+
 
 
 
@@ -399,11 +422,11 @@ and call it like this: `StartCoroutine(functionName());`.
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc3ODUwNDUxNSwtMTg5NTI5MTU3NCwtNz
-AzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0MjA2NSwtMTI4Mjc5
-NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5NzQsLTYzNzI2MTg0MC
-wyMDM0MDg5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODcz
-Mjk3NCwtMjA2MTI5NTU1MywxNjQ2NTEzMzU0LDg4NjUzODksMT
-g0MzIwNTQ2NiwtMTI1ODU2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3
-MDExNzZdfQ==
+eyJoaXN0b3J5IjpbMzQ0Mjg2MzAxLC0xODk1MjkxNTc0LC03MD
+M3MTkyMjAsLTgzMTYyOTE5NCwxMjgyMTQyMDY1LC0xMjgyNzk0
+ODI4LDEyODU1NDA4OTUsMTAwMDA5MDk3NCwtNjM3MjYxODQwLD
+IwMzQwODkwNjUsLTQyNzU4NjQ0MiwtNzA1NDY0NTk3LDY4NzMy
+OTc0LC0yMDYxMjk1NTUzLDE2NDY1MTMzNTQsODg2NTM4OSwxOD
+QzMjA1NDY2LC0xMjU4NTYyMTMyLC0xODU0NTMzNjg2LDY2NDcw
+MTE3Nl19
 -->
