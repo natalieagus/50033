@@ -196,7 +196,7 @@ Try jumping onto the brick and onto the platform **from right underneath the pla
 ## PhysicsJoint2D 
 Another interesting component of Unity's physics engine is the [joints](https://docs.unity3d.com/ScriptReference/Joint2D.html). It will safe you so much time if you want to implement any basic joints: hinge, spring, slider, wheel, etc. For example, the following is possible due to SpringJoint2D applied:
 
-
+![bouncehit](https://www.dropbox.com/s/zud51vgb1ofiux1/bouncehit.gif?raw=1)
 
 ## Layer 
 On the top right hand corner of any GameObject inspector, notice there's a property called `Layer`. Just like a Tag, you can create your own Layer. It will be used by the Physics engine to determine **who can collide with each other.** 
@@ -211,10 +211,10 @@ Go to Edit >> Project Settings >> Physics2D. You should see some kind of Collisi
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAzNDA4OTA2NSwtNDI3NTg2NDQyLC03MD
-U0NjQ1OTcsNjg3MzI5NzQsLTIwNjEyOTU1NTMsMTY0NjUxMzM1
-NCw4ODY1Mzg5LDE4NDMyMDU0NjYsLTEyNTg1NjIxMzIsLTE4NT
-Q1MzM2ODYsNjY0NzAxMTc2LC0xNDkyOTM0OTY2LDMxNDkwOTQ2
-OCwtMzM4NDc3ODc1LC0yMDEwNjU1NzgxLC0zNjYwODY3OTAsOT
-U3NzM1OTkxXX0=
+eyJoaXN0b3J5IjpbLTQ2OTUyMjM3NiwyMDM0MDg5MDY1LC00Mj
+c1ODY0NDIsLTcwNTQ2NDU5Nyw2ODczMjk3NCwtMjA2MTI5NTU1
+MywxNjQ2NTEzMzU0LDg4NjUzODksMTg0MzIwNTQ2NiwtMTI1OD
+U2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3MDExNzYsLTE0OTI5MzQ5
+NjYsMzE0OTA5NDY4LC0zMzg0Nzc4NzUsLTIwMTA2NTU3ODEsLT
+M2NjA4Njc5MCw5NTc3MzU5OTFdfQ==
 -->
