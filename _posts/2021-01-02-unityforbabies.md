@@ -246,20 +246,23 @@ In order do have fine-grained collision tuning, we need to define the `Layer` of
 * Create a new layer called `QuestionBox` and assign it to the `EdgeDetector` GameObject
 * Assign the `Obstacles` layer you have created earlier to the `TopCollider` GameObject
 
-Go to **Edit >> Project Settings >> Physics2D**. You should see some kind of Collision Matrix depending on how many different Layers you have set in your project. Right now you must only have the basics + `Obstacles` that you have created above:
+Then, go to **Edit >> Project Settings >> Physics2D**. You should see some kind of Collision Matrix depending on how many different Layers you have set in your project. Right now you must only have the basics + `Obstacles` that you have created above. 
+
+<mark>**Untick** collision between QuestionBox and Obstacles to disable collisions between the two.</mark>
 
 ![layers](https://www.dropbox.com/s/j0yq5gq038jh41m/15.png?raw=1)
 
+Now you can test your spring. While in Play mode, you can dynamically change the pro
 
 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzM0NTQ2NzEsMjAzNDA4OTA2NSwtNDI3NT
-g2NDQyLC03MDU0NjQ1OTcsNjg3MzI5NzQsLTIwNjEyOTU1NTMs
-MTY0NjUxMzM1NCw4ODY1Mzg5LDE4NDMyMDU0NjYsLTEyNTg1Nj
-IxMzIsLTE4NTQ1MzM2ODYsNjY0NzAxMTc2LC0xNDkyOTM0OTY2
-LDMxNDkwOTQ2OCwtMzM4NDc3ODc1LC0yMDEwNjU1NzgxLC0zNj
-YwODY3OTAsOTU3NzM1OTkxXX0=
+eyJoaXN0b3J5IjpbLTc5NzM3NjQ4LDIwMzQwODkwNjUsLTQyNz
+U4NjQ0MiwtNzA1NDY0NTk3LDY4NzMyOTc0LC0yMDYxMjk1NTUz
+LDE2NDY1MTMzNTQsODg2NTM4OSwxODQzMjA1NDY2LC0xMjU4NT
+YyMTMyLC0xODU0NTMzNjg2LDY2NDcwMTE3NiwtMTQ5MjkzNDk2
+NiwzMTQ5MDk0NjgsLTMzODQ3Nzg3NSwtMjAxMDY1NTc4MSwtMz
+Y2MDg2NzkwLDk1NzczNTk5MV19
 -->
