@@ -287,11 +287,13 @@ Now **delete** it from the Scene since we will only spawn it from the script and
 ## Editing Prefab
 Double click on the `HittableSimple` **Prefab** (not the one on your scene!), and add a new C# Script component to its `EdgeDetector` GameObject, name the script: `QuestionBoxController.cs`. 
 
-The logic for this script is simple:
+The logic for this script is:
 1.  If the EdgeDetector has collided with Mario, then it has to *bounce* 
 2.  And spawn the `ConsummableMushroomSimple` instantly, exactly **once** 
 3. *When the box has finished bouncing*, it has to change Sprite (so player wont hit it again)
-4. And we have to disable the Spring
+4. And we have to disable the Spring as well (the box turns into a stationary object, just like the regular Brick) 
+
+It is easy to do (1) and (2) above, as you might've guessed: simply write something inside OnCollisionEnter2D callback. Doing (3) requires us to *check* if the QuestionBox has turned stationary *after* briefly bouncing from
 
 
 
@@ -300,7 +302,7 @@ The logic for this script is simple:
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYxODI2OTE2OCwtNjM3MjYxODQwLDIwMz
+eyJoaXN0b3J5IjpbMTQ2NTg5MDcxMCwtNjM3MjYxODQwLDIwMz
 QwODkwNjUsLTQyNzU4NjQ0MiwtNzA1NDY0NTk3LDY4NzMyOTc0
 LC0yMDYxMjk1NTUzLDE2NDY1MTMzNTQsODg2NTM4OSwxODQzMj
 A1NDY2LC0xMjU4NTYyMTMyLC0xODU0NTMzNjg2LDY2NDcwMTE3
