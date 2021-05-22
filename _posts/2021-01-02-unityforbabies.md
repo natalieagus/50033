@@ -415,6 +415,7 @@ IEnumerator  DisableHittable(){
 	yield  return  null;
 	}
 ```
+The instruction `yield return new <something>` returns control to Unity until that `<something>` condition happens. We can wait for a few seconds:  `yield return new WaitForSeconds
 
 and call the Coroutine inside `OnCollisionEnter2D`, right after you instantiate the mushroom:
 ```java
@@ -442,7 +443,7 @@ void  OnCollisionEnter2D(Collision2D col)
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcwMTEzNzkzNSwtMTg5NTI5MTU3NCwtNz
+eyJoaXN0b3J5IjpbMjAzNzAxMzk4NiwtMTg5NTI5MTU3NCwtNz
 AzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0MjA2NSwtMTI4Mjc5
 NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5NzQsLTYzNzI2MTg0MC
 wyMDM0MDg5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODcz
