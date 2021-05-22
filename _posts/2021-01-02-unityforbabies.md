@@ -338,7 +338,7 @@ The gif below summarises the required behavior of the spawned mushroom:
 You probably can do all the above except the **first**: move the mushroom at constant speed (either to the left or to the right) and the last point (to give initial impulse force upwards). 
 
 ## Rigidbody2D MovePosition
-To do the first point, we need to compute the supposed position of the mushroom in the next frame. Given `float speed`, current `Vector2 currentPosition` of the Mushroom, and `Vector2 currentDirection`  (`{1,0}` or `{-1,0}`, indicating movement towards the right or the left), we can compute the mushroom's next position as:
+To do the first point, we need to compute the supposed position of the mushroom in the next frame in the mushroom's script (whatever you name the script to be). Given `float speed`, current `Vector2 currentPosition` of the Mushroom, and `Vector2 currentDirection`  (`{1,0}` or `{-1,0}`, indicating movement towards the right or the left), we can compute the mushroom's next position as:
 
 ```java
 Vector2 nextPosition = currentPosition + speed * currentDirection * Time.fixedDeltaTime;
@@ -351,16 +351,17 @@ Vector2 nextPosition = currentPosition + speed * currentDirection * Time.fixedDe
 rigidBody.MovePosition(nextPosition);
 ``` 
 
-Note: although not written, it is explicit for you to **declare** `rigidBody` as `this` mushroom's rigidBody and instantiate it at the `Start` method using `GetComponent<r
+<mark>Note: although not written, it is explicit for you to **declare** `rigidBody` as `this` mushroom's rigidBody and instantiate it at the `Start` method using `GetComponent<Rigidbody2D>()` as usual. </mark>
 
-
+## Rigidbody2D AddForce
+Finally, it will be nice to add an impulse force upwards for the mushroom so it looks like it springs out of the box. Under the mushroom script's `Start
 
 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk2MTAyNzU1OSwtMTg5NTI5MTU3NCwtNz
+eyJoaXN0b3J5IjpbMTU2ODA3NTY0MCwtMTg5NTI5MTU3NCwtNz
 AzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0MjA2NSwtMTI4Mjc5
 NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5NzQsLTYzNzI2MTg0MC
 wyMDM0MDg5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODcz
