@@ -342,9 +342,9 @@ You probably can do all the above except the **first**: move the mushroom at con
 To do the first point, we need to compute the supposed position of the mushroom in the next frame in the mushroom's script (whatever you name the script to be). Given `float speed`, current `Vector2 currentPosition` of the Mushroom, and `Vector2 currentDirection`  (`{1,0}` or `{-1,0}`, indicating movement towards the right or the left), we can compute the mushroom's next position as:
 
 ```java
-Vector2 nextPosition = currentPosition + speed * currentDirection * Time.fixedDeltaTime;
+Vector2 nextPosition = currentPosition + speed * currentDirection.normalize() * Time.fixedDeltaTime;
 ``` 
-where `Time.fixedDeltaTime` is simply th**e interval in seconds** at which Physics frame rate updates. 
+where `Time.fixedDeltaTime` is simply the **interval in seconds** at which Physics frame rate updates. 
 
 Afterwards, we can set the mushroom's Rigidbody2D position directly to be this `nextPosition` under `FixedUpdate()`:
  ```java
@@ -376,14 +376,14 @@ If you use `ForceMode2D.Force`, you might observe straight away that the effect 
 In other words, `ForceMode2D.Impulse` tells the Unity Physics engine that you want to apply this much force **NOW**, where `ForceMode2D.Force` means that you want to apply this much force in total IF we were to call the `addForce()` method continuously, for exactly 50 times over 1 second. 
 
 # Coroutines
-Finally, we need to **disable** the `HittableSimple`'s spring and Rigidbody2D after it has finished bouncing. 
+Finally, we need to **disable** the `HittableSimple`'s spring and Rigidbody2D ***after*** it has finished bouncing. The problem with this is that we do not know *when* exactly the box has finished bouncing. We can continuously check under its script's `Update()` method after `hit == true`, or we can use 
 
  
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ5MjM4MDk3MiwtMTg5NTI5MTU3NCwtNz
+eyJoaXN0b3J5IjpbLTc5OTA0MDc0OCwtMTg5NTI5MTU3NCwtNz
 AzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0MjA2NSwtMTI4Mjc5
 NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5NzQsLTYzNzI2MTg0MC
 wyMDM0MDg5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODcz
