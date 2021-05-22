@@ -305,7 +305,17 @@ public  Sprite usedQuestionBox;
 private  bool hit =  false;
 ```
 
-Then implement `OnCollisionEnter2D`  
+Then implement `OnCollisionEnter2D`  callback function:
+```java
+void  OnCollisionEnter2D(Collision2D col)
+{
+	if (col.gameObject.CompareTag("Player") &&  !hit){
+		hit  =  true;
+		// spawn the mushroom prefab slightly above the box
+		Instantiate(consummablePrefab, new  Vector3(this.transform.position.x, this.transform.position.y  +  1.0f, this.transform.position.z), Quaternion.identity);
+	}
+}
+```
 
 
 
@@ -316,7 +326,7 @@ Then implement `OnCollisionEnter2D`
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNTI5MjY1NzYsMTI4NTU0MDg5NSwxMD
+eyJoaXN0b3J5IjpbLTEyODI3OTQ4MjgsMTI4NTU0MDg5NSwxMD
 AwMDkwOTc0LC02MzcyNjE4NDAsMjAzNDA4OTA2NSwtNDI3NTg2
 NDQyLC03MDU0NjQ1OTcsNjg3MzI5NzQsLTIwNjEyOTU1NTMsMT
 Y0NjUxMzM1NCw4ODY1Mzg5LDE4NDMyMDU0NjYsLTEyNTg1NjIx
