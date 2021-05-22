@@ -371,19 +371,21 @@ If you use `ForceMode2D.Force`, you might observe straight away that the effect 
 > By default on desktop, **Unity** runs the FixedUpdate at 50 **FPS** and the **Update** at 60 **FPS**
 
 **However it DOES NOT mean that the physics engine continuously apply this force over 1 whole second.** It will apply **only over the exact frames** when you call it, e.g: over **0.02 seconds** if you only call it for a single frame.
-> Therefore, if you were to call `rigidBody.AddForce(Vector2.up  *  20, ForceMode2D.Force)` continuously  **FIFTY** times (over 1 second), then the **total amount of force applied** on the mushroom body would've been the same as calling `rigidBody.AddForce(Vector2.up  *  20, ForceMode2D.Impulse)` for **ONE** time. 
+> Therefore, if you were to call `rigidBody.AddForce(Vector2.up  *  20, ForceMode2D.Force)` continuously for **FIFTY** times (over 1 second), then the **total amount of force applied** on the mushroom body would've been the same as calling `rigidBody.AddForce(Vector2.up  *  20, ForceMode2D.Impulse)` for **ONE** frame (one time). 
 
-In other words, `ForceMode2D.Impulse` tells the Unity Physics engine that you want to apply this much force **NOW**. 
+In other words, `ForceMode2D.Impulse` tells the Unity Physics engine that you want to apply this much force **NOW**, where `ForceMode2D.Force` means that you want to apply this much force in total IF we were to call the `addForce()` method continuously, for exactly 50 times over 1 second. 
+
+
  
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk4NzkyNDgwOSwtMTg5NTI5MTU3NCwtNz
-AzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0MjA2NSwtMTI4Mjc5
-NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5NzQsLTYzNzI2MTg0MC
-wyMDM0MDg5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODcz
-Mjk3NCwtMjA2MTI5NTU1MywxNjQ2NTEzMzU0LDg4NjUzODksMT
-g0MzIwNTQ2NiwtMTI1ODU2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3
-MDExNzZdfQ==
+eyJoaXN0b3J5IjpbNjU5MzI3NDM1LC0xODk1MjkxNTc0LC03MD
+M3MTkyMjAsLTgzMTYyOTE5NCwxMjgyMTQyMDY1LC0xMjgyNzk0
+ODI4LDEyODU1NDA4OTUsMTAwMDA5MDk3NCwtNjM3MjYxODQwLD
+IwMzQwODkwNjUsLTQyNzU4NjQ0MiwtNzA1NDY0NTk3LDY4NzMy
+OTc0LC0yMDYxMjk1NTUzLDE2NDY1MTMzNTQsODg2NTM4OSwxOD
+QzMjA1NDY2LC0xMjU4NTYyMTMyLC0xODU0NTMzNjg2LDY2NDcw
+MTE3Nl19
 -->
