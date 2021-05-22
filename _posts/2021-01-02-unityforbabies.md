@@ -448,10 +448,10 @@ void  OnCollisionEnter2D(Collision2D col)
 }
 ```
 
-###
+## Has the Question Box moved?
 One problem with the above implementation is that we cannot know for sure if the box has bounced up (has moved) *sufficiently high* before `ObjectMovedAndStopped()` returns **true**, depending on *where* Mario hits the box. It can be the case that Mario so very slightly collides with the question box's edge but didn't give sufficient energy to bounce the spring attached to the hittable box. 
 
-To fix this quickly, we can add more upwards force when collision is detected, and be sure that the `HittableSimple` box bounces at least of a certain amount regardless of Mario's momentum. The complete `OnCollisionEnter2D` implementation is as follows:
+To fix this quickly, we can add **more** upwards force when collision is detected, and be sure that the `HittableSimple` box bounces at least of a certain amount regardless of Mario's momentum. The complete `OnCollisionEnter2D` implementation is as follows:
 
 ```java
 void  OnCollisionEnter2D(Collision2D col)
@@ -467,7 +467,7 @@ void  OnCollisionEnter2D(Collision2D col)
 	}
 }
 ```
-
+> Note that this is not the only way to implement the entire bouncing effect of the box. There's a lot of other alternatives out there, which you are free to choose and implement. The specific method of using SpringJoint2D, 
 
 
 
@@ -481,11 +481,11 @@ void  OnCollisionEnter2D(Collision2D col)
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjc3MzUwMTI1LDE0MTg0NDM2NTQsLTE4OT
-UyOTE1NzQsLTcwMzcxOTIyMCwtODMxNjI5MTk0LDEyODIxNDIw
-NjUsLTEyODI3OTQ4MjgsMTI4NTU0MDg5NSwxMDAwMDkwOTc0LC
-02MzcyNjE4NDAsMjAzNDA4OTA2NSwtNDI3NTg2NDQyLC03MDU0
-NjQ1OTcsNjg3MzI5NzQsLTIwNjEyOTU1NTMsMTY0NjUxMzM1NC
-w4ODY1Mzg5LDE4NDMyMDU0NjYsLTEyNTg1NjIxMzIsLTE4NTQ1
-MzM2ODZdfQ==
+eyJoaXN0b3J5IjpbLTE4NjUwMzE3OTIsMTQxODQ0MzY1NCwtMT
+g5NTI5MTU3NCwtNzAzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0
+MjA2NSwtMTI4Mjc5NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5Nz
+QsLTYzNzI2MTg0MCwyMDM0MDg5MDY1LC00Mjc1ODY0NDIsLTcw
+NTQ2NDU5Nyw2ODczMjk3NCwtMjA2MTI5NTU1MywxNjQ2NTEzMz
+U0LDg4NjUzODksMTg0MzIwNTQ2NiwtMTI1ODU2MjEzMiwtMTg1
+NDUzMzY4Nl19
 -->
