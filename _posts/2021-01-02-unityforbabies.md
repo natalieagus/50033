@@ -338,7 +338,7 @@ The gif below summarises the required behavior of the spawned mushroom:
 You probably can do all the above except the **first**: move the mushroom at constant speed (either to the left or to the right) and the last point (to give initial impulse force upwards). 
 
 ## Rigidbody2D MovePosition
-To do the first point, we need to compute the 
+To do the first point, we need to compute the supposed position of the mushroom in the next frame. Given `float speed`, current `Vector2 position` of the Mushroom, and `Vector2 currentDirection`
 
 
 
@@ -349,7 +349,7 @@ To do the first point, we need to compute the
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI0ODE3Mzk1NywtMTg5NTI5MTU3NCwtNz
+eyJoaXN0b3J5IjpbMjA1NDQ3NDcxNiwtMTg5NTI5MTU3NCwtNz
 AzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0MjA2NSwtMTI4Mjc5
 NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5NzQsLTYzNzI2MTg0MC
 wyMDM0MDg5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODcz
