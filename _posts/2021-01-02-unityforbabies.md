@@ -167,12 +167,12 @@ Now that our Mario can move around smoothly with proper animations, it's time we
 
 ![jumpon](https://www.dropbox.com/s/idppnefnujk71tj/13.png?raw=1)
 
-Drag that brick into the prefab
+Make that brick into a prefab 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3MTEyNDA5OCwtNzA1NDY0NTk3LDY4Nz
+eyJoaXN0b3J5IjpbMTMyOTQyNDg0NCwtNzA1NDY0NTk3LDY4Nz
 MyOTc0LC0yMDYxMjk1NTUzLDE2NDY1MTMzNTQsODg2NTM4OSwx
 ODQzMjA1NDY2LC0xMjU4NTYyMTMyLC0xODU0NTMzNjg2LDY2ND
 cwMTE3NiwtMTQ5MjkzNDk2NiwzMTQ5MDk0NjgsLTMzODQ3Nzg3
