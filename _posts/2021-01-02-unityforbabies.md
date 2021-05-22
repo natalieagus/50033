@@ -218,6 +218,7 @@ Follow these steps:
 	* Rigidbody2D: with Body Type of `static` (we don't want it to be affected by Physics, we will only use it as an anchor for the SpringJoint in EdgeDetector GameObject). 
 	* BoxCollider2D: edit the Collider to align nicely with the question box sprite
 
+### SpringJoint2D
 Now time to configure the SpringJoint2D inside EdgeDetector GameObject. It has a few properties, but we mainly are interested in setting up the Spring's anchor. If you're not familiar with how Spring works, you basically need to endpoints to make a spring, its called:
 1. **Anchor**: Where the end point of the joint connects to _this_ object.
 2. **Connected Anchor**: Where the end point of the joint connects to the _other_ object. 
@@ -227,15 +228,17 @@ You also need to configure:
 2. **Damping Ratio and Frequency**: to set the behaviour of the spring (hopefully now you find the stuffs taught in your Freshmore year useful). 
 
 To create a nice bouncy spring,
-1.**Set** the TopCollider's Rigidbody2D as the Connected Rigid Body property of the spring. 
+1. **Set** the TopCollider's Rigidbody2D as the Connected Rigid Body property of the spring. 
 2. **Tick** Auto Configure Connected Anchor and Auto Configure Distance properties. 
-3. Set Damping Ratio to 1, and Frequency to 3 
-4. Ensure that EdgeDetector's mass is very small at 0.0001 as we set above, because we don't want so much force to nudge it, or allow it to *sink* when the game starts. 
+3. Set `Damping Ratio` to 1, and `Frequency` to 3 
+4. Ensure that EdgeDetector's RigidBody2D **mass** is very small at 0.0001 as we set above, because we don't want so much force to nudge it, or allow it to *sink* when the game starts. 
 
+You should have these settings at the end:
 
-
+![springsetting](https://www.dropbox.com/s/uzzedzzgjkrzjyi/16.png?raw=1)
 
 ## Layer 
+Before we can test 
 On the top right hand corner of any GameObject inspector, notice there's a property called `Layer`. Just like a Tag, you can create your own Layer. It will be used by the Physics engine to determine **who can collide with each other.** 
 
 Go to Edit >> Project Settings >> Physics2D. You should see some kind of Collision Matrix depending on how many different Layers you have set in your project. Right now you must only have the basics + `Obstacles` that you have created above:
@@ -248,7 +251,7 @@ Go to Edit >> Project Settings >> Physics2D. You should see some kind of Collisi
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAyNDg3MjUyMCwyMDM0MDg5MDY1LC00Mj
+eyJoaXN0b3J5IjpbMTk1NjgzNjE3NCwyMDM0MDg5MDY1LC00Mj
 c1ODY0NDIsLTcwNTQ2NDU5Nyw2ODczMjk3NCwtMjA2MTI5NTU1
 MywxNjQ2NTEzMzU0LDg4NjUzODksMTg0MzIwNTQ2NiwtMTI1OD
 U2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3MDExNzYsLTE0OTI5MzQ5
