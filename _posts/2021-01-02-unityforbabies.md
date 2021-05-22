@@ -226,7 +226,13 @@ You also need to configure:
 1. **Distance**: the spring will try its best to keep the length of the spring (distance between Anchor and Connected Anchor) to be that value that you set. 
 2. **Damping Ratio and Frequency**: to set the behaviour of the spring (hopefully now you find the stuffs taught in your Freshmore year useful). 
 
-Now set the TopCollider's Rigidbody2D as the Connected Rigid Body property of the spring. Click Auto Configure Connected Anchor and Auto Configure Distance properties. 
+To create a nice bouncy spring,
+1.**Set** the TopCollider's Rigidbody2D as the Connected Rigid Body property of the spring. 
+2. **Tick** Auto Configure Connected Anchor and Auto Configure Distance properties. 
+3. Set Damping Ratio to 1, and Frequency to 3 
+4. Ensure that EdgeDetector's mass is very small at 0.0001 as we set above, because we don't want so much force to nudge it, or al
+5. 
+
 
 ## Layer 
 On the top right hand corner of any GameObject inspector, notice there's a property called `Layer`. Just like a Tag, you can create your own Layer. It will be used by the Physics engine to determine **who can collide with each other.** 
@@ -241,7 +247,7 @@ Go to Edit >> Project Settings >> Physics2D. You should see some kind of Collisi
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIyNDE4MjU5OSwyMDM0MDg5MDY1LC00Mj
+eyJoaXN0b3J5IjpbLTYxNzc2MDg4NiwyMDM0MDg5MDY1LC00Mj
 c1ODY0NDIsLTcwNTQ2NDU5Nyw2ODczMjk3NCwtMjA2MTI5NTU1
 MywxNjQ2NTEzMzU0LDg4NjUzODksMTg0MzIwNTQ2NiwtMTI1OD
 U2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3MDExNzYsLTE0OTI5MzQ5
