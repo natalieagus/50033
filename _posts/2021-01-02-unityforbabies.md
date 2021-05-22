@@ -170,15 +170,15 @@ Now that our Mario can move around smoothly with proper animations, it's time we
 Make that brick into a prefab so that you can have a master copy because we are going to spawn many of these in the scene.
 
 ## Effector2D
-Suppose you want to create a platform that 
+Suppose you want to create a platform that allows only one-way collision. You can beef up your Colliders with a new component called **[effectors](https://docs.unity3d.com/Manual/Effectors2D.html)**. 
+
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNTQ4Mjg2NzksLTcwNTQ2NDU5Nyw2OD
-czMjk3NCwtMjA2MTI5NTU1MywxNjQ2NTEzMzU0LDg4NjUzODks
-MTg0MzIwNTQ2NiwtMTI1ODU2MjEzMiwtMTg1NDUzMzY4Niw2Nj
-Q3MDExNzYsLTE0OTI5MzQ5NjYsMzE0OTA5NDY4LC0zMzg0Nzc4
-NzUsLTIwMTA2NTU3ODEsLTM2NjA4Njc5MCw5NTc3MzU5OTFdfQ
-==
+eyJoaXN0b3J5IjpbMjY0NTE0NTAxLC03MDU0NjQ1OTcsNjg3Mz
+I5NzQsLTIwNjEyOTU1NTMsMTY0NjUxMzM1NCw4ODY1Mzg5LDE4
+NDMyMDU0NjYsLTEyNTg1NjIxMzIsLTE4NTQ1MzM2ODYsNjY0Nz
+AxMTc2LC0xNDkyOTM0OTY2LDMxNDkwOTQ2OCwtMzM4NDc3ODc1
+LC0yMDEwNjU1NzgxLC0zNjYwODY3OTAsOTU3NzM1OTkxXX0=
 -->
