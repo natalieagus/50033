@@ -317,7 +317,7 @@ void  OnCollisionEnter2D(Collision2D col)
 }
 ```
 
-This will allow you to spawn the Mushroom 
+This will allow you to spawn the Mushroom right above the box when it's
 
 
 
@@ -327,11 +327,11 @@ This will allow you to spawn the Mushroom
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgzMTYyOTE5NCwxMjgyMTQyMDY1LC0xMj
-gyNzk0ODI4LDEyODU1NDA4OTUsMTAwMDA5MDk3NCwtNjM3MjYx
-ODQwLDIwMzQwODkwNjUsLTQyNzU4NjQ0MiwtNzA1NDY0NTk3LD
-Y4NzMyOTc0LC0yMDYxMjk1NTUzLDE2NDY1MTMzNTQsODg2NTM4
-OSwxODQzMjA1NDY2LC0xMjU4NTYyMTMyLC0xODU0NTMzNjg2LD
-Y2NDcwMTE3NiwtMTQ5MjkzNDk2NiwzMTQ5MDk0NjgsLTMzODQ3
-Nzg3NV19
+eyJoaXN0b3J5IjpbMTA2NzY0MTI2OCwtODMxNjI5MTk0LDEyOD
+IxNDIwNjUsLTEyODI3OTQ4MjgsMTI4NTU0MDg5NSwxMDAwMDkw
+OTc0LC02MzcyNjE4NDAsMjAzNDA4OTA2NSwtNDI3NTg2NDQyLC
+03MDU0NjQ1OTcsNjg3MzI5NzQsLTIwNjEyOTU1NTMsMTY0NjUx
+MzM1NCw4ODY1Mzg5LDE4NDMyMDU0NjYsLTEyNTg1NjIxMzIsLT
+E4NTQ1MzM2ODYsNjY0NzAxMTc2LC0xNDkyOTM0OTY2LDMxNDkw
+OTQ2OF19
 -->
