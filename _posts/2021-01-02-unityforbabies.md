@@ -191,6 +191,9 @@ You should have something like this now:
 
 Try jumping onto the brick and onto the platform **from right underneath the platform**. You should notice that Mario can't jump onto the brick from underneath it, while he can do so on the platform. 
 
+<mark> You shall experiment with other effectors as well 
+
+## 
 ## Layer 
 On the top right hand corner of any GameObject inspector, notice there's a property called `Layer`. Just like a Tag, you can create your own Layer. It will be used by the Physics engine to determine **who can collide with each other.** 
 
@@ -198,16 +201,15 @@ Go to Edit >> Project Settings >> Physics2D. You should see some kind of Collisi
 
 ![layers](https://www.dropbox.com/s/j0yq5gq038jh41m/15.png?raw=1)
 
-Sample use case:
 
 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4ODYwNTMzOSwtNzA1NDY0NTk3LDY4Nz
-MyOTc0LC0yMDYxMjk1NTUzLDE2NDY1MTMzNTQsODg2NTM4OSwx
-ODQzMjA1NDY2LC0xMjU4NTYyMTMyLC0xODU0NTMzNjg2LDY2ND
-cwMTE3NiwtMTQ5MjkzNDk2NiwzMTQ5MDk0NjgsLTMzODQ3Nzg3
-NSwtMjAxMDY1NTc4MSwtMzY2MDg2NzkwLDk1NzczNTk5MV19
+eyJoaXN0b3J5IjpbMTUxMjA2NDIyLC03MDU0NjQ1OTcsNjg3Mz
+I5NzQsLTIwNjEyOTU1NTMsMTY0NjUxMzM1NCw4ODY1Mzg5LDE4
+NDMyMDU0NjYsLTEyNTg1NjIxMzIsLTE4NTQ1MzM2ODYsNjY0Nz
+AxMTc2LC0xNDkyOTM0OTY2LDMxNDkwOTQ2OCwtMzM4NDc3ODc1
+LC0yMDEwNjU1NzgxLC0zNjYwODY3OTAsOTU3NzM1OTkxXX0=
 -->
