@@ -254,6 +254,12 @@ Then, go to **Edit >> Project Settings >> Physics2D**. You should see some kind 
 
 Now you can test your spring. While in Play mode, you can dynamically change the properties of the SpringJoint2D. Spend some time to play around with it to see how it works. You can also go to your Scene tab and dynamically drag around the TopCollider. Experiment around by unticking the auto configure distance and auto configure anchor properties to get a hang on how the spring works:
 
+![bouncyspring](https://www.dropbox.com/s/82kvfabqsmg0vqz/spring.gif?raw=1)
+
+Save the Hittable s
+## Physics Material
+To get a more **bouncy** impact, you can create Physics Materials and apply it on the Rigidbody of the EdgeDetector. 
+
 
 
 
@@ -261,10 +267,10 @@ Now you can test your spring. While in Play mode, you can dynamically change the
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTU5NzUxMDc1LC02MzcyNjE4NDAsMjAzND
-A4OTA2NSwtNDI3NTg2NDQyLC03MDU0NjQ1OTcsNjg3MzI5NzQs
-LTIwNjEyOTU1NTMsMTY0NjUxMzM1NCw4ODY1Mzg5LDE4NDMyMD
-U0NjYsLTEyNTg1NjIxMzIsLTE4NTQ1MzM2ODYsNjY0NzAxMTc2
-LC0xNDkyOTM0OTY2LDMxNDkwOTQ2OCwtMzM4NDc3ODc1LC0yMD
-EwNjU1NzgxLC0zNjYwODY3OTAsOTU3NzM1OTkxXX0=
+eyJoaXN0b3J5IjpbLTEwODA4OTEzNSwtNjM3MjYxODQwLDIwMz
+QwODkwNjUsLTQyNzU4NjQ0MiwtNzA1NDY0NTk3LDY4NzMyOTc0
+LC0yMDYxMjk1NTUzLDE2NDY1MTMzNTQsODg2NTM4OSwxODQzMj
+A1NDY2LC0xMjU4NTYyMTMyLC0xODU0NTMzNjg2LDY2NDcwMTE3
+NiwtMTQ5MjkzNDk2NiwzMTQ5MDk0NjgsLTMzODQ3Nzg3NSwtMj
+AxMDY1NTc4MSwtMzY2MDg2NzkwLDk1NzczNTk5MV19
 -->
