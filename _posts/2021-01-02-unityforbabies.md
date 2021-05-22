@@ -412,9 +412,12 @@ IEnumerator  DisableHittable(){
 	//reset box position
 	this.transform.localPosition  =  Vector3.zero;
 	springJoint.enabled  =  false; // disable spring
+	yield return null; 
 }
 ```
 The instruction `yield return new <something>` returns control to Unity until that `<something>` condition happens. We can wait for a few seconds:  `yield return new WaitForSeconds(0.1f)`, or [wait until end of frame](https://docs.unity3d.com/ScriptReference/WaitForEndOfFrame.html), etc. It will continue with the **next** instruction when resumed, which is `spriteRenderer.sprite  =  usedQuestionBox;` for the above example. 
+
+When you use iterations (IEnumerator) without returns, Unity runs it **countless amount of time in one frame**, blocking the editor. Therefore, we have to use yield return to return the control back to unity as if it gains control back even for a split second the editor will not block.
 
 Then we can call the Coroutine inside `OnCollisionEnter2D`, right after we instantiate the mushroom:
 ```java
@@ -461,11 +464,11 @@ void  OnCollisionEnter2D(Collision2D col)
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDQ0Mzc0ODExLC0xODk1MjkxNTc0LC03MD
-M3MTkyMjAsLTgzMTYyOTE5NCwxMjgyMTQyMDY1LC0xMjgyNzk0
-ODI4LDEyODU1NDA4OTUsMTAwMDA5MDk3NCwtNjM3MjYxODQwLD
-IwMzQwODkwNjUsLTQyNzU4NjQ0MiwtNzA1NDY0NTk3LDY4NzMy
-OTc0LC0yMDYxMjk1NTUzLDE2NDY1MTMzNTQsODg2NTM4OSwxOD
-QzMjA1NDY2LC0xMjU4NTYyMTMyLC0xODU0NTMzNjg2LDY2NDcw
-MTE3Nl19
+eyJoaXN0b3J5IjpbOTkwMTEyOTcsLTE4OTUyOTE1NzQsLTcwMz
+cxOTIyMCwtODMxNjI5MTk0LDEyODIxNDIwNjUsLTEyODI3OTQ4
+MjgsMTI4NTU0MDg5NSwxMDAwMDkwOTc0LC02MzcyNjE4NDAsMj
+AzNDA4OTA2NSwtNDI3NTg2NDQyLC03MDU0NjQ1OTcsNjg3MzI5
+NzQsLTIwNjEyOTU1NTMsMTY0NjUxMzM1NCw4ODY1Mzg5LDE4ND
+MyMDU0NjYsLTEyNTg1NjIxMzIsLTE4NTQ1MzM2ODYsNjY0NzAx
+MTc2XX0=
 -->
