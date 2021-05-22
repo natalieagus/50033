@@ -369,12 +369,15 @@ rigidBody.AddForce(Vector2.up  *  20, ForceMode2D.Force);
 If you use `ForceMode2D.Force`, you might observe straight away that the effect is not immediate because the net amount of upwards force `Vector2.up  *  20` applied on the mushroom is as if **it is supposed to be applied** **over one second** (50 **physics** frame).
 > By default on desktop, **Unity** runs the FixedUpdate at 50 **FPS** and the **Update** at 60 **FPS**
 
-However it doesn't mean that the physics engin
+
+However it doesn't mean that the physics engine continuously apply this force over 1 whole second. It will only apply over a **single frame** where you call it, e.g: over 0.02 seconds if you only call it for a single frame.
+* If you were to call `rigidBody.AddForce(Vector2.up  *  20, ForceMode2D.Force)` for 50 times (over 1 second), then the amount of total force applied on the mushroom body would've been the same as 
+ 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MjAxOTY2ODAsLTE4OTUyOTE1NzQsLT
+eyJoaXN0b3J5IjpbLTEwOTI4MTEwMzksLTE4OTUyOTE1NzQsLT
 cwMzcxOTIyMCwtODMxNjI5MTk0LDEyODIxNDIwNjUsLTEyODI3
 OTQ4MjgsMTI4NTU0MDg5NSwxMDAwMDkwOTc0LC02MzcyNjE4ND
 AsMjAzNDA4OTA2NSwtNDI3NTg2NDQyLC03MDU0NjQ1OTcsNjg3
