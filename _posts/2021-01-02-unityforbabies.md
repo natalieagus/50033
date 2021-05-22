@@ -323,7 +323,7 @@ Now create a simple script yourself for the mushroom to dictate its behaviour as
 * It will randomly move to the left or to the right at a **constant speed** 
 * It **will not topple** (Z-rotation is constrained) 
 	> Set its Rigidbody constraint properly
-* However it will **change direction** when colliding with other objects (e.g: the Pipe) 
+* However it will **change direction** when colliding with other objects (e.g: the Pipe. Quickly create some pipe prefabs of your own. You only need BoxCollider2D and a few sprites -- the pipe body and the pipe top -- for that) 
 * It will **stop moving** when it collides with Mario (Player) 
 	> Use `CompareTag()` function for the two points above
 * It will collide normally with `Obstacles` (the bricks) or `Ground`, so it will travel above the bricks or ground normally
@@ -381,11 +381,11 @@ In other words, `ForceMode2D.Impulse` tells the Unity Physics engine that you wa
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjU5MzI3NDM1LC0xODk1MjkxNTc0LC03MD
-M3MTkyMjAsLTgzMTYyOTE5NCwxMjgyMTQyMDY1LC0xMjgyNzk0
-ODI4LDEyODU1NDA4OTUsMTAwMDA5MDk3NCwtNjM3MjYxODQwLD
-IwMzQwODkwNjUsLTQyNzU4NjQ0MiwtNzA1NDY0NTk3LDY4NzMy
-OTc0LC0yMDYxMjk1NTUzLDE2NDY1MTMzNTQsODg2NTM4OSwxOD
-QzMjA1NDY2LC0xMjU4NTYyMTMyLC0xODU0NTMzNjg2LDY2NDcw
-MTE3Nl19
+eyJoaXN0b3J5IjpbLTgxMTQ2MjE1OCwtMTg5NTI5MTU3NCwtNz
+AzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0MjA2NSwtMTI4Mjc5
+NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5NzQsLTYzNzI2MTg0MC
+wyMDM0MDg5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODcz
+Mjk3NCwtMjA2MTI5NTU1MywxNjQ2NTEzMzU0LDg4NjUzODksMT
+g0MzIwNTQ2NiwtMTI1ODU2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3
+MDExNzZdfQ==
 -->
