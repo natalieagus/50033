@@ -416,7 +416,10 @@ IEnumerator  DisableHittable(){
 ```
 The instruction `yield return new <something>` returns control to Unity until that `<something>` condition happens. We can wait for a few seconds:  `yield return new WaitForSeconds(0.1f)`, or [wait until end of frame](https://docs.unity3d.com/ScriptReference/WaitForEndOfFrame.html), etc. It will continue with the **next** instruction when resumed, which is `spriteRenderer.sprite  =  usedQuestionBox;` for the above example. 
 
-When we use iterations (IEnumerator) without returns, Unity runs it **countless amount of time in one frame**, *blocking* the editor. Therefore, we have to use `yield return` to return the control back to unity as if it gains control back even for a split second the editor will not block.
+Another common way to `yield` is `yield return null`.
+> **`yield return null`** waits for the next frame and continue execution from this line
+ 
+ Unity runs it **countless amount of time in one frame**, *blocking* the editor. Therefore, we have to use `yield return` to return the control back to unity as if it gains control back even for a split second the editor will not block.
 
 Then we can call the Coroutine inside `OnCollisionEnter2D`, right after we instantiate the mushroom:
 ```java
@@ -463,11 +466,11 @@ void  OnCollisionEnter2D(Collision2D col)
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0OTE3MjU2NDMsMTQxODQ0MzY1NCwtMT
-g5NTI5MTU3NCwtNzAzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0
-MjA2NSwtMTI4Mjc5NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5Nz
-QsLTYzNzI2MTg0MCwyMDM0MDg5MDY1LC00Mjc1ODY0NDIsLTcw
-NTQ2NDU5Nyw2ODczMjk3NCwtMjA2MTI5NTU1MywxNjQ2NTEzMz
-U0LDg4NjUzODksMTg0MzIwNTQ2NiwtMTI1ODU2MjEzMiwtMTg1
-NDUzMzY4Nl19
+eyJoaXN0b3J5IjpbLTMwMjc4NjA2MCwxNDE4NDQzNjU0LC0xOD
+k1MjkxNTc0LC03MDM3MTkyMjAsLTgzMTYyOTE5NCwxMjgyMTQy
+MDY1LC0xMjgyNzk0ODI4LDEyODU1NDA4OTUsMTAwMDA5MDk3NC
+wtNjM3MjYxODQwLDIwMzQwODkwNjUsLTQyNzU4NjQ0MiwtNzA1
+NDY0NTk3LDY4NzMyOTc0LC0yMDYxMjk1NTUzLDE2NDY1MTMzNT
+QsODg2NTM4OSwxODQzMjA1NDY2LC0xMjU4NTYyMTMyLC0xODU0
+NTMzNjg2XX0=
 -->
