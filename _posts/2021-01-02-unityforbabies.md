@@ -376,14 +376,19 @@ If you use `ForceMode2D.Force`, you might observe straight away that the effect 
 In other words, `ForceMode2D.Impulse` tells the Unity Physics engine that you want to apply this much force **NOW**, where `ForceMode2D.Force` means that you want to apply this much force in total IF we were to call the `addForce()` method continuously, for exactly 50 times over 1 second. 
 
 # Coroutines
-Finally, we need to **disable** the `HittableSimple`'s spring and Rigidbody2D ***after*** it has finished bouncing. The problem with this is that we do not know *when* exactly the box has finished bouncing. We can continuously check under its script's `Update()` method after `hit == true`, or we can use 
+Finally, we need to **disable** the `HittableSimple`'s spring and Rigidbody2D ***after*** it has finished bouncing. The problem with this is that we do not know *when* exactly the box has finished bouncing. We can continuously check under its script's `Update()` method after `hit == true`, or we can use an alternative called **Coroutines**. 
+> A coroutine is like a function that has the ability to **pause** execution and return control to Unity but then to **continue where it left off on the following frame**. A normal function like `Update()` cannot do this and must run into completion before returning control to Unity. 
+
+
+
+
 
  
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAzNTM1NDc2LC0xODk1MjkxNTc0LC03MD
+eyJoaXN0b3J5IjpbLTQ3ODc3ODA0LC0xODk1MjkxNTc0LC03MD
 M3MTkyMjAsLTgzMTYyOTE5NCwxMjgyMTQyMDY1LC0xMjgyNzk0
 ODI4LDEyODU1NDA4OTUsMTAwMDA5MDk3NCwtNjM3MjYxODQwLD
 IwMzQwODkwNjUsLTQyNzU4NjQ0MiwtNzA1NDY0NTk3LDY4NzMy
