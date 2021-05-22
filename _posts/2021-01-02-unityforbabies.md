@@ -430,7 +430,22 @@ void  OnCollisionEnter2D(Collision2D col)
 }
 ```
 
-One problem with the above implementation is that we cannot know for sure if the box has bounced up (has moved) *sufficiently high* before `ObjectMovedAndStopped()` returns **true**, depending on *where* Mario hits the box. It can be the case that Mario so very slightly collides with the question b
+One problem with the above implementation is that we cannot know for sure if the box has bounced up (has moved) *sufficiently high* before `ObjectMovedAndStopped()` returns **true**, depending on *where* Mario hits the box. It can be the case that Mario so very slightly collides with the question box's edge but didn't give sufficient energy to bounce the spring attached to the hittable box. 
+
+To fix this quickly, we can add more upwards force when collision is detected, and be sure that the `HittableSimple` box bounces at least of a certain amount regardless of Mario's momentum. The complete `OnCollisionEnter2D` implementation is as follows:
+
+```java
+void  OnCollisionEnter2D(Collision2D col)
+{
+	if (col.gameObject.CompareTag("Player") &&  !hit){
+		hit  =  true;
+		// move the
+		rigidBody.AddForce(new  Vector2(0, rigidBody.mass*20), ForceMode2D.Impulse);
+		Instantiate(consummablePrefab, new  Vector3(this.transform.position.x, this.transform.position.y  +  1.0f, this.transform.position.z), Quaternion.identity);
+		StartCoroutine(DisableHittable());
+	}
+}
+```
 
 
 
@@ -445,7 +460,7 @@ One problem with the above implementation is that we cannot know for sure if the
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg0Mzc2NjUwNywtMTg5NTI5MTU3NCwtNz
+eyJoaXN0b3J5IjpbLTkxNzczOTI1MCwtMTg5NTI5MTU3NCwtNz
 AzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0MjA2NSwtMTI4Mjc5
 NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5NzQsLTYzNzI2MTg0MC
 wyMDM0MDg5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODcz
