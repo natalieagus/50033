@@ -342,13 +342,13 @@ You probably can do all the above except the **first**: move the mushroom at con
 To do the first point, we need to compute the supposed position of the mushroom in the next frame in the mushroom's script (whatever you name the script to be). Given `float speed`, current `Vector2 currentPosition` of the Mushroom, and `Vector2 currentDirection`  (`{1,0}` or `{-1,0}`, indicating movement towards the right or the left), we can compute the mushroom's next position as:
 
 ```java
-Vector2 nextPosition = currentPosition + speed * currentDirection.normalize() * Time.fixedDeltaTime;
+Vector2 nextPosition = currentPosition + speed * currentDirection.Normalize() * Time.fixedDeltaTime;
 ``` 
 where `Time.fixedDeltaTime` is simply the **interval in seconds** at which Physics frame rate updates. 
 
 Afterwards, we can set the mushroom's Rigidbody2D position directly to be this `nextPosition` under `FixedUpdate()`:
  ```java
-Vector2 nextPosition = currentPosition + speed * currentDirection * Time.fixedDeltaTime;
+Vector2 nextPosition = currentPosition + speed * currentDirection.Normalize() * Time.fixedDeltaTime;
 rigidBody.MovePosition(nextPosition);
 ``` 
 
@@ -383,11 +383,11 @@ Finally, we need to **disable** the `HittableSimple`'s spring and Rigidbody2D **
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc5OTA0MDc0OCwtMTg5NTI5MTU3NCwtNz
-AzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0MjA2NSwtMTI4Mjc5
-NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5NzQsLTYzNzI2MTg0MC
-wyMDM0MDg5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODcz
-Mjk3NCwtMjA2MTI5NTU1MywxNjQ2NTEzMzU0LDg4NjUzODksMT
-g0MzIwNTQ2NiwtMTI1ODU2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3
-MDExNzZdfQ==
+eyJoaXN0b3J5IjpbMjAzNTM1NDc2LC0xODk1MjkxNTc0LC03MD
+M3MTkyMjAsLTgzMTYyOTE5NCwxMjgyMTQyMDY1LC0xMjgyNzk0
+ODI4LDEyODU1NDA4OTUsMTAwMDA5MDk3NCwtNjM3MjYxODQwLD
+IwMzQwODkwNjUsLTQyNzU4NjQ0MiwtNzA1NDY0NTk3LDY4NzMy
+OTc0LC0yMDYxMjk1NTUzLDE2NDY1MTMzNTQsODg2NTM4OSwxOD
+QzMjA1NDY2LC0xMjU4NTYyMTMyLC0xODU0NTMzNjg2LDY2NDcw
+MTE3Nl19
 -->
