@@ -318,8 +318,12 @@ void  OnCollisionEnter2D(Collision2D col)
 ```
 
 This will allow you to spawn the Mushroom right above the box when it's hit by Mario.  
-* Attach this script to `EdgeDetector` GameObject under `HittableSimple` prefab, and link up all the required public variables with all the assets. All assets except `Consummable Prefab` must be those in the Prefab's Scene and not the Assets tab.  You can find the mushroom prefab to link here under the Assets tab. 
-![qnsboxcontroller](https://www.dropbox.com/s/4yc0n1hj13ely1o/19.png?raw=1)
+* Attach this script to `EdgeDetector` GameObject under `HittableSimple` prefab (again, in prefab mode as shown in screenshot below! Not your game scene), 
+* Link up all the required public variables with all the assets. 
+* All assets except `Consummable Prefab` must be those in the Prefab's Scene and not the Assets tab.  
+* You can find the mushroom prefab to link here under the Assets tab. 
+
+![qnsboxcontroller](https://www.dropbox.com/s/r5a7nshbtl94m47/19a.png?raw=1)
 
 Now create a simple script yourself for the mushroom to dictate its behaviour as follows once spawned by the box:
 * It will randomly move to the left or to the right at a **constant speed** 
@@ -424,7 +428,7 @@ IEnumerator  DisableHittable(){
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2OTIwMjgxMCwtMTg5NTI5MTU3NCwtNz
+eyJoaXN0b3J5IjpbLTU4MDgzNTUwNSwtMTg5NTI5MTU3NCwtNz
 AzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0MjA2NSwtMTI4Mjc5
 NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5NzQsLTYzNzI2MTg0MC
 wyMDM0MDg5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODcz
