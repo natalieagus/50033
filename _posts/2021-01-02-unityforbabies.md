@@ -199,7 +199,13 @@ Another interesting component of Unity's physics engine is the [joints](https://
 ![bouncehit](https://www.dropbox.com/s/zud51vgb1ofiux1/bouncehit.gif?raw=1)
 
 Follow these steps:
-1. Create a Sprite as  
+1. Create an empty GameObject with two children GameObjects. Name them:
+	* HittableSimple
+		* TopCollider
+		* EdgeDetector
+2. For the Edge, add two components:
+	* BoxCollider2D 
+	* Rigidbody2D
 
 
 
@@ -216,10 +222,10 @@ Go to Edit >> Project Settings >> Physics2D. You should see some kind of Collisi
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzkwODY1ODc2LDIwMzQwODkwNjUsLTQyNz
-U4NjQ0MiwtNzA1NDY0NTk3LDY4NzMyOTc0LC0yMDYxMjk1NTUz
-LDE2NDY1MTMzNTQsODg2NTM4OSwxODQzMjA1NDY2LC0xMjU4NT
-YyMTMyLC0xODU0NTMzNjg2LDY2NDcwMTE3NiwtMTQ5MjkzNDk2
-NiwzMTQ5MDk0NjgsLTMzODQ3Nzg3NSwtMjAxMDY1NTc4MSwtMz
-Y2MDg2NzkwLDk1NzczNTk5MV19
+eyJoaXN0b3J5IjpbLTE3NjAzODU1MTIsMjAzNDA4OTA2NSwtND
+I3NTg2NDQyLC03MDU0NjQ1OTcsNjg3MzI5NzQsLTIwNjEyOTU1
+NTMsMTY0NjUxMzM1NCw4ODY1Mzg5LDE4NDMyMDU0NjYsLTEyNT
+g1NjIxMzIsLTE4NTQ1MzM2ODYsNjY0NzAxMTc2LC0xNDkyOTM0
+OTY2LDMxNDkwOTQ2OCwtMzM4NDc3ODc1LC0yMDEwNjU1NzgxLC
+0zNjYwODY3OTAsOTU3NzM1OTkxXX0=
 -->
