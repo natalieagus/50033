@@ -218,7 +218,9 @@ Follow these steps:
 	* Rigidbody2D: with Body Type of `static` (we don't want it to be affected by Physics, we will only use it as an anchor for the SpringJoint in EdgeDetector GameObject). 
 	* BoxCollider2D: edit the Collider to align nicely with the question box sprite
 
-Now time to configure the SpringJoint2D inside EdgeDetector GameObject. It has a few properties, but we mainly are interested in setting up the Spring's anchor. If you're not familiar with how Spring works, you basically need to endpoints to make a spring
+Now time to configure the SpringJoint2D inside EdgeDetector GameObject. It has a few properties, but we mainly are interested in setting up the Spring's anchor. If you're not familiar with how Spring works, you basically need to endpoints to make a spring, its called:
+1. Anchor: The place (in terms of X, Y co-ordinates on the **RigidBody**[](https://docs.unity3d.com/Manual/class-Rigidbody.html)  
+) where the end point of the joint connects to _this_ object.
 
 
 
@@ -235,7 +237,7 @@ Go to Edit >> Project Settings >> Physics2D. You should see some kind of Collisi
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE2OTc5OTk0NiwyMDM0MDg5MDY1LC00Mj
+eyJoaXN0b3J5IjpbLTM4NTczMTU2NCwyMDM0MDg5MDY1LC00Mj
 c1ODY0NDIsLTcwNTQ2NDU5Nyw2ODczMjk3NCwtMjA2MTI5NTU1
 MywxNjQ2NTEzMzU0LDg4NjUzODksMTg0MzIwNTQ2NiwtMTI1OD
 U2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3MDExNzYsLTE0OTI5MzQ5
