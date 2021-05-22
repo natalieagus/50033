@@ -366,17 +366,19 @@ You might wonder, why didn't we use this instruction instead:
 ```java
 rigidBody.AddForce(Vector2.up  *  20, ForceMode2D.Force);
 ```
-If you use `ForceMode2D.Force`, you might observe straight away that the effect is not immediate because the upwards force `Vector2.up  *  20` is applied over one second (50 physics frame)
+If you use `ForceMode2D.Force`, you might observe straight away that the effect is not immediate because the net amount of upwards force `Vector2.up  *  20` applied on the mushroom is as if **it is supposed to be applied** **over one second** (50 **physics** frame).
+> By default on desktop, **Unity** runs the FixedUpdate at 50 **FPS** and the **Update** at 60 **FPS**
 
+However it doesn't mean that the physics engin
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjg5NzI5OTcwLC0xODk1MjkxNTc0LC03MD
-M3MTkyMjAsLTgzMTYyOTE5NCwxMjgyMTQyMDY1LC0xMjgyNzk0
-ODI4LDEyODU1NDA4OTUsMTAwMDA5MDk3NCwtNjM3MjYxODQwLD
-IwMzQwODkwNjUsLTQyNzU4NjQ0MiwtNzA1NDY0NTk3LDY4NzMy
-OTc0LC0yMDYxMjk1NTUzLDE2NDY1MTMzNTQsODg2NTM4OSwxOD
-QzMjA1NDY2LC0xMjU4NTYyMTMyLC0xODU0NTMzNjg2LDY2NDcw
-MTE3Nl19
+eyJoaXN0b3J5IjpbLTE1MjAxOTY2ODAsLTE4OTUyOTE1NzQsLT
+cwMzcxOTIyMCwtODMxNjI5MTk0LDEyODIxNDIwNjUsLTEyODI3
+OTQ4MjgsMTI4NTU0MDg5NSwxMDAwMDkwOTc0LC02MzcyNjE4ND
+AsMjAzNDA4OTA2NSwtNDI3NTg2NDQyLC03MDU0NjQ1OTcsNjg3
+MzI5NzQsLTIwNjEyOTU1NTMsMTY0NjUxMzM1NCw4ODY1Mzg5LD
+E4NDMyMDU0NjYsLTEyNTg1NjIxMzIsLTE4NTQ1MzM2ODYsNjY0
+NzAxMTc2XX0=
 -->
