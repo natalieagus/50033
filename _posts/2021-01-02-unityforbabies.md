@@ -205,20 +205,20 @@ Another interesting component of Unity's physics engine is the [joints](https://
 ![bouncehit](https://www.dropbox.com/s/zud51vgb1ofiux1/bouncehit.gif?raw=1)
 
 Follow these steps:
-1. Create an empty GameObject with two children GameObjects. Name them:
+1. Create an **empty** GameObject with **two children** GameObjects. Name them:
 	* HittableSimple
 		* TopCollider
 		* EdgeDetector
-2. For the EdgeDetector, add four components: 
+2. For the `EdgeDetector`, add **four** components: 
 	* SpriteRenderer, with `tile_questionblock_0` as its Sprite
 	* Rigidbody2D: with `Mass=0.0001`, zero Linear and Angular Drag, and Constraints to Freeze `X` position, as well as `Z` rotation. 
 	* EdgeCollider2D: **edit the Collider** to align nicely with the bottom edge of the sprite 
 	* SpringJoint2D (will edit its properties later)
-3. For the TopCollider, add two components:
+3. For the `TopCollider`, add **two** components:
 	* Rigidbody2D: with Body Type of `static` (we don't want it to be affected by Physics, we will only use it as an anchor for the SpringJoint in EdgeDetector GameObject). 
 	* BoxCollider2D: edit the Collider to align nicely with the question box sprite
 
-
+Now time to configure the SpringJoint2D inside EdgeDetector GameObject. It has a few properties, but we mainly are interested in setting up the Spring's anchor
 
 
 
@@ -235,7 +235,7 @@ Go to Edit >> Project Settings >> Physics2D. You should see some kind of Collisi
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTA3MDAwMTY4LDIwMzQwODkwNjUsLTQyNz
+eyJoaXN0b3J5IjpbNTAxNzA0NjIyLDIwMzQwODkwNjUsLTQyNz
 U4NjQ0MiwtNzA1NDY0NTk3LDY4NzMyOTc0LC0yMDYxMjk1NTUz
 LDE2NDY1MTMzNTQsODg2NTM4OSwxODQzMjA1NDY2LC0xMjU4NT
 YyMTMyLC0xODU0NTMzNjg2LDY2NDcwMTE3NiwtMTQ5MjkzNDk2
