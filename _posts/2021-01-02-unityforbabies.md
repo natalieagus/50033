@@ -362,11 +362,12 @@ rigidBody.AddForce(Vector2.up  *  20, ForceMode2D.Impulse);
 ```
 where `20` is just a value which you can change as you like depending on the upwards force effect that you want. 
 
-You might wonder, why didn't we use this instruction instead:
+You might wonder what is the meaning behind `ForceMode2D.Impulse` and why didn't we use this mode instead:
 ```java
 rigidBody.AddForce(Vector2.up  *  20, ForceMode2D.Force);
 ```
-If you use `ForceMode2D.Force`, you might observe straight away that the effect is not immediate because the net amount of upwards force `Vector2.up  *  20` applied on the mushroom is as if **it is supposed to be applied** **over one second** (50 **physics** frame).
+
+If you use `ForceMode2D.Force`, you might observe straight away that the effect is *not immediate* because the net amount of upwards force `Vector2.up  *  20` that's supposed to be applied on the mushroom is set as the amount of **total force** as if **it is supposed to be applied** **over ONE second** (50 **physics** frame).
 > By default on desktop, **Unity** runs the FixedUpdate at 50 **FPS** and the **Update** at 60 **FPS**
 
 **However it doesn't mean that the physics engine continuously apply this force over 1 whole second.** It will only apply over a **single frame** where you call it, e.g: over **0.02 seconds** if you only call it for a single frame.
@@ -378,11 +379,11 @@ In other words, `ForceMode2D.Impulse` tells the Unity Physics engine that you wa
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMTY1MjI2ODAsLTE4OTUyOTE1NzQsLT
-cwMzcxOTIyMCwtODMxNjI5MTk0LDEyODIxNDIwNjUsLTEyODI3
-OTQ4MjgsMTI4NTU0MDg5NSwxMDAwMDkwOTc0LC02MzcyNjE4ND
-AsMjAzNDA4OTA2NSwtNDI3NTg2NDQyLC03MDU0NjQ1OTcsNjg3
-MzI5NzQsLTIwNjEyOTU1NTMsMTY0NjUxMzM1NCw4ODY1Mzg5LD
-E4NDMyMDU0NjYsLTEyNTg1NjIxMzIsLTE4NTQ1MzM2ODYsNjY0
-NzAxMTc2XX0=
+eyJoaXN0b3J5IjpbLTQ5MjE1MTkyNiwtMTg5NTI5MTU3NCwtNz
+AzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0MjA2NSwtMTI4Mjc5
+NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5NzQsLTYzNzI2MTg0MC
+wyMDM0MDg5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODcz
+Mjk3NCwtMjA2MTI5NTU1MywxNjQ2NTEzMzU0LDg4NjUzODksMT
+g0MzIwNTQ2NiwtMTI1ODU2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3
+MDExNzZdfQ==
 -->
