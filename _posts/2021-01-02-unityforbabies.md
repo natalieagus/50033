@@ -21,6 +21,8 @@ title: Unity for Babies
 # Introduction
 We will continue where we left off [last week](https://natalieagus.github.io/50033/2021/01/01/unityfornewborns.html) by trying to polish our game a little bit better with sound effects, animation, and platforms. As usual, Unity pros can jump straight to the [Checkoff](https://natalieagus.github.io/50033/2021/01/02/unityforbabies.html#checkoff) heading to find out more information about the required final state of this Lab without having to read all the details. 
 
+# RigidBody2D Constraints
+Notice how we always need Mario to stand upright, and not toppling when moving too fast. In order to do this, we need to place constraints on Mario's Rigidb
 # Animation 
 Mario's animation is broken down into **four** main state:
 1. Idle state, when he's not moving at all
@@ -205,7 +207,7 @@ Follow these steps:
 		* EdgeDetector
 2. For the EdgeDetector, add four components: 
 	* SpriteRenderer, with `tile_questionblock_0` as its Sprite
-	* Rigidbody2D: with `Mass=0.0001`, zero Linear and Angular Drag 
+	* Rigidbody2D: with `Mass=0.0001`, zero Linear and Angular Drag, and Constraints to Freeze `X` position, as well as `Z` rotation. 
 	* EdgeCollider2D
 	* 
 
@@ -224,10 +226,10 @@ Go to Edit >> Project Settings >> Physics2D. You should see some kind of Collisi
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NjUzNjAxNjgsMjAzNDA4OTA2NSwtND
-I3NTg2NDQyLC03MDU0NjQ1OTcsNjg3MzI5NzQsLTIwNjEyOTU1
-NTMsMTY0NjUxMzM1NCw4ODY1Mzg5LDE4NDMyMDU0NjYsLTEyNT
-g1NjIxMzIsLTE4NTQ1MzM2ODYsNjY0NzAxMTc2LC0xNDkyOTM0
-OTY2LDMxNDkwOTQ2OCwtMzM4NDc3ODc1LC0yMDEwNjU1NzgxLC
-0zNjYwODY3OTAsOTU3NzM1OTkxXX0=
+eyJoaXN0b3J5IjpbLTUyMjk3NDc5NywyMDM0MDg5MDY1LC00Mj
+c1ODY0NDIsLTcwNTQ2NDU5Nyw2ODczMjk3NCwtMjA2MTI5NTU1
+MywxNjQ2NTEzMzU0LDg4NjUzODksMTg0MzIwNTQ2NiwtMTI1OD
+U2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3MDExNzYsLTE0OTI5MzQ5
+NjYsMzE0OTA5NDY4LC0zMzg0Nzc4NzUsLTIwMTA2NTU3ODEsLT
+M2NjA4Njc5MCw5NTc3MzU5OTFdfQ==
 -->
