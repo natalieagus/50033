@@ -290,7 +290,7 @@ Double click on the `HittableSimple` **Prefab** (not the one on your scene!), an
 The logic for this script is:
 1.  If the EdgeDetector has collided with Mario, then it has to *bounce* 
 2.  And spawn the `ConsummableMushroomSimple` instantly, exactly **once** 
-3. *When the box has finished bouncing*, it has to change Sprite (so player wont hit it again)
+3. *When the box has finished bouncing*, it has to change Sprite (so the player wont hit it again)
 4. And we have to disable the Spring as well (the box turns into a stationary object, just like the regular Brick) 
 
 It is easy to do (1) and (2) above, as you might've guessed: simply write something inside `OnCollisionEnter2D` callback. Doing (3) requires us to *check* if the QuestionBox has turned stationary *after* briefly bouncing from being hit by Mario, and this is **not that trivial**, depending on how you choose to solve the problem. We will explain why later. 
@@ -302,7 +302,7 @@ public  SpringJoint2D springJoint;
 public  GameObject consummablePrefab;
 public  SpriteRenderer spriteRenderer;
 public  Sprite usedQuestionBox;
-private  bool hit =  false;
+private bool hit =  false;
 ```
 
 Then implement `OnCollisionEnter2D`  callback function:
@@ -375,13 +375,15 @@ If you use `ForceMode2D.Force`, you might observe straight away that the effect 
 
 In other words, `ForceMode2D.Impulse` tells the Unity Physics engine that you want to apply this much force **NOW**, where `ForceMode2D.Force` means that you want to apply this much force in total IF we were to call the `addForce()` method continuously, for exactly 50 times over 1 second. 
 
+# Coroutines
+Finally, we need to **disable** the `HittableSimple`'s spring and Rigidbody2D after it has finished bouncing. 
 
  
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgxMTQ2MjE1OCwtMTg5NTI5MTU3NCwtNz
+eyJoaXN0b3J5IjpbMTQ5MjM4MDk3MiwtMTg5NTI5MTU3NCwtNz
 AzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0MjA2NSwtMTI4Mjc5
 NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5NzQsLTYzNzI2MTg0MC
 wyMDM0MDg5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODcz
