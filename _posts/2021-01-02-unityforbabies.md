@@ -467,6 +467,9 @@ void  OnCollisionEnter2D(Collision2D col)
 	}
 }
 ```
+
+If everything's implemented correctly, you should have this nice bouncy box effect that's no longer hittable after it was hit once:
+
 > **Disclaimer**: Note that this is not the only way to implement the entire bouncing effect of the box. There's a lot of other alternatives out there, which you are free to choose and implement. These specific methods of using SpringJoint2D, Rigidbody2D methods (addForce, etc), and Coroutines are selected because we want to teach the Unity newbies these concepts by incorporating it into our sample game. 
 
 
@@ -483,11 +486,11 @@ void  OnCollisionEnter2D(Collision2D col)
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjczMjYwMDMsLTIwMTQ4Mjg1NzcsMT
-QxODQ0MzY1NCwtMTg5NTI5MTU3NCwtNzAzNzE5MjIwLC04MzE2
-MjkxOTQsMTI4MjE0MjA2NSwtMTI4Mjc5NDgyOCwxMjg1NTQwOD
-k1LDEwMDAwOTA5NzQsLTYzNzI2MTg0MCwyMDM0MDg5MDY1LC00
-Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODczMjk3NCwtMjA2MTI5NT
-U1MywxNjQ2NTEzMzU0LDg4NjUzODksMTg0MzIwNTQ2NiwtMTI1
-ODU2MjEzMl19
+eyJoaXN0b3J5IjpbMTQ1MDQxNDM4OSwtMTMyNzMyNjAwMywtMj
+AxNDgyODU3NywxNDE4NDQzNjU0LC0xODk1MjkxNTc0LC03MDM3
+MTkyMjAsLTgzMTYyOTE5NCwxMjgyMTQyMDY1LC0xMjgyNzk0OD
+I4LDEyODU1NDA4OTUsMTAwMDA5MDk3NCwtNjM3MjYxODQwLDIw
+MzQwODkwNjUsLTQyNzU4NjQ0MiwtNzA1NDY0NTk3LDY4NzMyOT
+c0LC0yMDYxMjk1NTUzLDE2NDY1MTMzNTQsODg2NTM4OSwxODQz
+MjA1NDY2XX0=
 -->
