@@ -258,14 +258,19 @@ Now you can test your spring. While in Play mode, you can dynamically change the
 
 **Once you're satisfied, save the HittableSimple object as prefab.** 
 
-## Physics Material
-To get a more **bouncy** impact, you can create Physics Materials and apply it on the Rigidbody of the EdgeDetector. Go to the Project tab, and under Materials folder, right click >> Create >> Physic Material. Name it `Bouncy` and set the `Bounciness` property to some positive value, e.g: 0.3.
+## Physic Material
+To get a more **bouncy** impact, you can create `Physics Material` and apply it on the Rigidbody of the EdgeDetector. It dictates the amount of **friction** or **bouncing** effects of colliding objects.  
+
+Go to the Project tab, and under Materials folder, right click >> Create >> Physic Material. Name it `Bouncy` and set the `Bounciness` property to some positive value, e.g: 0.3.
 
 Afterwards, apply this Physic Material onto the Material property in Edge Detector's Rigidbody2D component:
 
 ![bouncymat](https://www.dropbox.com/s/qxyb6ywyfnk8lm2/17.png?raw=1)
 
-Test run to see if the box now feels _bouncier_. 
+Test run to see if the box now looks _bouncier_. 
+
+# Spawning GameObjects at Runtime
+Now what's left is to spawn something at the top of the HittableSimp
 
 
 
@@ -273,10 +278,10 @@ Test run to see if the box now feels _bouncier_.
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM2MDMwODE3NCwtNjM3MjYxODQwLDIwMz
-QwODkwNjUsLTQyNzU4NjQ0MiwtNzA1NDY0NTk3LDY4NzMyOTc0
-LC0yMDYxMjk1NTUzLDE2NDY1MTMzNTQsODg2NTM4OSwxODQzMj
-A1NDY2LC0xMjU4NTYyMTMyLC0xODU0NTMzNjg2LDY2NDcwMTE3
-NiwtMTQ5MjkzNDk2NiwzMTQ5MDk0NjgsLTMzODQ3Nzg3NSwtMj
-AxMDY1NTc4MSwtMzY2MDg2NzkwLDk1NzczNTk5MV19
+eyJoaXN0b3J5IjpbLTE5NDI4NTk2MDQsLTYzNzI2MTg0MCwyMD
+M0MDg5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODczMjk3
+NCwtMjA2MTI5NTU1MywxNjQ2NTEzMzU0LDg4NjUzODksMTg0Mz
+IwNTQ2NiwtMTI1ODU2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3MDEx
+NzYsLTE0OTI5MzQ5NjYsMzE0OTA5NDY4LC0zMzg0Nzc4NzUsLT
+IwMTA2NTU3ODEsLTM2NjA4Njc5MCw5NTc3MzU5OTFdfQ==
 -->
