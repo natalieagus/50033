@@ -194,16 +194,18 @@ Try jumping onto the brick and onto the platform **from right underneath the pla
 ## Layer 
 On the top right hand corner of any GameObject inspector, notice there's a property called `Layer`. Just like a Tag, you can create your own Layer. It will be used by the Physics engine to determine who can collide with each other. 
 
-Go to Edit >> Project Settings >> Physics2D. You should see some kind of Collision Matrix:
+Go to Edit >> Project Settings >> Physics2D. You should see some kind of Collision Matrix depending on how many different Layers you have set in your project. Right now you must only have the basics + `Obstacles` that you have created above:
+
+![layers](https://www.dropbox.com/s/j0yq5gq038jh41m/15.png?raw=1)
 
 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI5Mzc0OTkxOCwtNzA1NDY0NTk3LDY4Nz
-MyOTc0LC0yMDYxMjk1NTUzLDE2NDY1MTMzNTQsODg2NTM4OSwx
-ODQzMjA1NDY2LC0xMjU4NTYyMTMyLC0xODU0NTMzNjg2LDY2ND
-cwMTE3NiwtMTQ5MjkzNDk2NiwzMTQ5MDk0NjgsLTMzODQ3Nzg3
-NSwtMjAxMDY1NTc4MSwtMzY2MDg2NzkwLDk1NzczNTk5MV19
+eyJoaXN0b3J5IjpbODY1NjYwNTQsLTcwNTQ2NDU5Nyw2ODczMj
+k3NCwtMjA2MTI5NTU1MywxNjQ2NTEzMzU0LDg4NjUzODksMTg0
+MzIwNTQ2NiwtMTI1ODU2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3MD
+ExNzYsLTE0OTI5MzQ5NjYsMzE0OTA5NDY4LC0zMzg0Nzc4NzUs
+LTIwMTA2NTU3ODEsLTM2NjA4Njc5MCw5NTc3MzU5OTFdfQ==
 -->
