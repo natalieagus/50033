@@ -320,12 +320,14 @@ void  OnCollisionEnter2D(Collision2D col)
 This will allow you to spawn the Mushroom right above the box when it's hit by Mario.  
 
 Now create a simple script yourself for the mushroom to dictate its behaviour as follows once spawned by the box:
-* It **springs** out of the box once instantiated (upwards)
 * It **will not topple** (Z-rotation is constrained) 
 * It will collide normally with Obstacles (the bricks) or Ground, so it will travel above the bricks or ground normally
 * However it will **change direction** when colliding with other objects (e.g: the Pipe) 
 * It will **stop moving** when it collides with Mario (Player) 
+	> Use tags 
 * It **will not collide** with the `TopCollider` GameObject (child of `HittableSimple`) so as **not** to affect the spring motion of the box
+	> Ensure the mushroom's Layer (whatever you set it to be), do not collide with the `TopCollider`'s Layer
+* It **springs** out of the box once instantiated (upwards)
 
 The gif below summarises the required behavior of the spawned mushroom:
 
@@ -339,7 +341,7 @@ The gif below summarises the required behavior of the spawned mushroom:
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU2NDgwNjc4MiwtNzAzNzE5MjIwLC04Mz
+eyJoaXN0b3J5IjpbLTIxNTgxOTczOCwtNzAzNzE5MjIwLC04Mz
 E2MjkxOTQsMTI4MjE0MjA2NSwtMTI4Mjc5NDgyOCwxMjg1NTQw
 ODk1LDEwMDAwOTA5NzQsLTYzNzI2MTg0MCwyMDM0MDg5MDY1LC
 00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODczMjk3NCwtMjA2MTI5
