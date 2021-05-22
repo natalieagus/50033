@@ -206,9 +206,9 @@ Another interesting component of Unity's physics engine is the [joints](https://
 
 Follow these steps:
 1. Create an **empty** GameObject with **two children** GameObjects. Name them:
-	* HittableSimple
-		* TopCollider
-		* EdgeDetector
+	* **HittableSimple**
+		* **TopCollider**
+		* **EdgeDetector**
 2. For the `EdgeDetector`, add **four** components: 
 	* SpriteRenderer, with `tile_questionblock_0` as its Sprite
 	* Rigidbody2D: with `Mass=0.0001`, zero Linear and Angular Drag, and Constraints to Freeze `X` position, as well as `Z` rotation. 
@@ -237,16 +237,16 @@ You should have these settings at the end:
 
 ![springsetting](https://www.dropbox.com/s/uzzedzzgjkrzjyi/16.png?raw=1)
 
-## Layer and Collision Matri
+## Layer and Collision Matrix for Physics2D 
 **Before we can test**, we need to first ensure that the BoxCollider2D in TopCollider GameObject **does NOT** collide with the EdgeCollider2D in EdgeDetector GameObject.  
 * The former is used to *collide with Mario* when he climbs on top of this box so he can *stand* on the box,
 * while the latter is used to *bounce the box* (excite the spring) when he hits it from below. 
 
-In order do have fine-grained collision tuning, we need to define the `Layer` of each object and set the engine's **Physics2D Collision Matrix**. 
+In order do have fine-grained collision tuning, we need to define the `Layer` of each object and set the engine's **Physics2D Collision Matrix**. On the top right hand corner of any GameObject inspector, notice there's a property called `Layer`. Just like a Tag, you can create your own Layer. It will be used by the Physics engine to determine **who can collide with each other.** 
+* Create a new layer called `QuestionBox` and assign it to the `EdgeDetector` GameObject
+* Assign the `Obstacles` layer you have created earlier to the `TopCollider` GameObject
 
-On the top right hand corner of any GameObject inspector, notice there's a property called `Layer`. Just like a Tag, you can create your own Layer. It will be used by the Physics engine to determine **who can collide with each other.** 
-
-Go to Edit >> Project Settings >> Physics2D. You should see some kind of Collision Matrix depending on how many different Layers you have set in your project. Right now you must only have the basics + `Obstacles` that you have created above:
+Go to **Edit >> Project Settings >> Physics2D**. You should see some kind of Collision Matrix depending on how many different Layers you have set in your project. Right now you must only have the basics + `Obstacles` that you have created above:
 
 ![layers](https://www.dropbox.com/s/j0yq5gq038jh41m/15.png?raw=1)
 
@@ -256,10 +256,10 @@ Go to Edit >> Project Settings >> Physics2D. You should see some kind of Collisi
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYwNDU2NzA0OCwyMDM0MDg5MDY1LC00Mj
-c1ODY0NDIsLTcwNTQ2NDU5Nyw2ODczMjk3NCwtMjA2MTI5NTU1
-MywxNjQ2NTEzMzU0LDg4NjUzODksMTg0MzIwNTQ2NiwtMTI1OD
-U2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3MDExNzYsLTE0OTI5MzQ5
-NjYsMzE0OTA5NDY4LC0zMzg0Nzc4NzUsLTIwMTA2NTU3ODEsLT
-M2NjA4Njc5MCw5NTc3MzU5OTFdfQ==
+eyJoaXN0b3J5IjpbNzM0NTQ2NzEsMjAzNDA4OTA2NSwtNDI3NT
+g2NDQyLC03MDU0NjQ1OTcsNjg3MzI5NzQsLTIwNjEyOTU1NTMs
+MTY0NjUxMzM1NCw4ODY1Mzg5LDE4NDMyMDU0NjYsLTEyNTg1Nj
+IxMzIsLTE4NTQ1MzM2ODYsNjY0NzAxMTc2LC0xNDkyOTM0OTY2
+LDMxNDkwOTQ2OCwtMzM4NDc3ODc1LC0yMDEwNjU1NzgxLC0zNj
+YwODY3OTAsOTU3NzM1OTkxXX0=
 -->
