@@ -24,7 +24,7 @@ We will continue where we left off [last week](https://natalieagus.github.io/500
 # Rigidbody2D Constraints
 Notice how we always need Mario to stand upright, and not toppling when moving too fast. In order to do this, we need to place **constraints** on Mario's Rigidbody2D component:
 * Go to Mario's Inspector window, and look for `Constraints` property under its Rigidbody2D component 
-* Select Freeze Rotation: Z and that's it! 
+* Select `Freeze Rotation: Z` and that's it! 
 
 We can do the same to constrain position as well, which will come handy later when we create movable obstacle for the game.  
 # Animation 
@@ -212,8 +212,10 @@ Follow these steps:
 2. For the EdgeDetector, add four components: 
 	* SpriteRenderer, with `tile_questionblock_0` as its Sprite
 	* Rigidbody2D: with `Mass=0.0001`, zero Linear and Angular Drag, and Constraints to Freeze `X` position, as well as `Z` rotation. 
-	* EdgeCollider2D
-	* 
+	* EdgeCollider2D: edit the Collider to align nicely with the bottom edge of the sprite 
+	* SpringJoint2D (will edit its properties later)
+3. For the TopCollider, add two components:
+	* Rigidbody2D: with Body Type of static (we don't want it to be affected by Physics, we will only use it as an anchor 
 
 
 
@@ -230,7 +232,7 @@ Go to Edit >> Project Settings >> Physics2D. You should see some kind of Collisi
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk4OTEwMDU0LDIwMzQwODkwNjUsLTQyNz
+eyJoaXN0b3J5IjpbMTM2MjExMzM2LDIwMzQwODkwNjUsLTQyNz
 U4NjQ0MiwtNzA1NDY0NTk3LDY4NzMyOTc0LC0yMDYxMjk1NTUz
 LDE2NDY1MTMzNTQsODg2NTM4OSwxODQzMjA1NDY2LC0xMjU4NT
 YyMTMyLC0xODU0NTMzNjg2LDY2NDcwMTE3NiwtMTQ5MjkzNDk2
