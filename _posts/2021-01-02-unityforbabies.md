@@ -419,7 +419,19 @@ The instruction `yield return new <something>` returns control to Unity until th
 Another common way to `yield` is `yield return null`.
 > **`yield return null`** waits for the next frame and continue execution from this line
  
- Unity runs it **countless amount of time in one frame**, *blocking* the editor. Therefore, we have to use `yield return` to return the control back to unity as if it gains control back even for a split second the editor will not block.
+For example, consider this sample code that gradually fades the color of an object,
+```java
+IEnumerator Fade() { 
+	for (float ft = 1f; ft >= 0; ft -= 0.1f) 
+	{ 
+		Color c = renderer.material.color; 
+		c.a = ft; 
+		renderer.material.color = c; 
+		yield return null; 
+	} 
+}
+```
+Without `yield return null`, Unity runs the loop **countless amount of time in one frame**, therefore *blocking* the editor. Therefore, we have to use `yield return` to return the control back to Unity and return back at the `for` loop in the next frame.  as if it gains control back even for a split second the editor will not block.
 
 Then we can call the Coroutine inside `OnCollisionEnter2D`, right after we instantiate the mushroom:
 ```java
@@ -466,7 +478,7 @@ void  OnCollisionEnter2D(Collision2D col)
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwMjc4NjA2MCwxNDE4NDQzNjU0LC0xOD
+eyJoaXN0b3J5IjpbLTc3MTk2NDcyOCwxNDE4NDQzNjU0LC0xOD
 k1MjkxNTc0LC03MDM3MTkyMjAsLTgzMTYyOTE5NCwxMjgyMTQy
 MDY1LC0xMjgyNzk0ODI4LDEyODU1NDA4OTUsMTAwMDA5MDk3NC
 wtNjM3MjYxODQwLDIwMzQwODkwNjUsLTQyNzU4NjQ0MiwtNzA1
