@@ -416,7 +416,20 @@ IEnumerator  DisableHittable(){
 	}
 ```
 
-and call the Coroutine inside Fixex
+and call the Coroutine inside `OnCollisionEnter2D`, right after you instantiate the mushroom:
+```java
+void  OnCollisionEnter2D(Collision2D col)
+{
+	// Debug.Log("OnCollisionEnter2D");
+	if (col.gameObject.CompareTag("Player") &&  !hit){
+		hit  =  true;
+		Instantiate(consummablePrefab, new  Vector3(this.transform.position.x, this.transform.position.y  +  1.0f, this.transform.position.z), Quaternion.identity);
+		StartCoroutine(DisableHittable());
+	}
+}
+```
+
+
 
 
 
@@ -429,11 +442,11 @@ and call the Coroutine inside Fixex
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NTgwNzkzNTIsLTE4OTUyOTE1NzQsLT
-cwMzcxOTIyMCwtODMxNjI5MTk0LDEyODIxNDIwNjUsLTEyODI3
-OTQ4MjgsMTI4NTU0MDg5NSwxMDAwMDkwOTc0LC02MzcyNjE4ND
-AsMjAzNDA4OTA2NSwtNDI3NTg2NDQyLC03MDU0NjQ1OTcsNjg3
-MzI5NzQsLTIwNjEyOTU1NTMsMTY0NjUxMzM1NCw4ODY1Mzg5LD
-E4NDMyMDU0NjYsLTEyNTg1NjIxMzIsLTE4NTQ1MzM2ODYsNjY0
-NzAxMTc2XX0=
+eyJoaXN0b3J5IjpbLTcwMTEzNzkzNSwtMTg5NTI5MTU3NCwtNz
+AzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0MjA2NSwtMTI4Mjc5
+NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5NzQsLTYzNzI2MTg0MC
+wyMDM0MDg5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODcz
+Mjk3NCwtMjA2MTI5NTU1MywxNjQ2NTEzMzU0LDg4NjUzODksMT
+g0MzIwNTQ2NiwtMTI1ODU2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3
+MDExNzZdfQ==
 -->
