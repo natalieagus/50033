@@ -273,7 +273,7 @@ Test run to see if the box now looks _bouncier_.
 Now what's left is to spawn something at the top of the HittableSimple object when Mario hits its bottom edge. We can begin by creating the prefab of the object that we are going to spawn. 
 
 Create a new 2D GameObject >> Sprites >> Square:
-* Change the Sprite property into 
+* Change the Sprite property into any mushroom, e.g: `items_0`
 
 
 
@@ -281,10 +281,10 @@ Create a new 2D GameObject >> Sprites >> Square:
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzOTQ3NjI0NDYsLTYzNzI2MTg0MCwyMD
-M0MDg5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODczMjk3
-NCwtMjA2MTI5NTU1MywxNjQ2NTEzMzU0LDg4NjUzODksMTg0Mz
-IwNTQ2NiwtMTI1ODU2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3MDEx
-NzYsLTE0OTI5MzQ5NjYsMzE0OTA5NDY4LC0zMzg0Nzc4NzUsLT
-IwMTA2NTU3ODEsLTM2NjA4Njc5MCw5NTc3MzU5OTFdfQ==
+eyJoaXN0b3J5IjpbNzc0MjM2NTczLC02MzcyNjE4NDAsMjAzND
+A4OTA2NSwtNDI3NTg2NDQyLC03MDU0NjQ1OTcsNjg3MzI5NzQs
+LTIwNjEyOTU1NTMsMTY0NjUxMzM1NCw4ODY1Mzg5LDE4NDMyMD
+U0NjYsLTEyNTg1NjIxMzIsLTE4NTQ1MzM2ODYsNjY0NzAxMTc2
+LC0xNDkyOTM0OTY2LDMxNDkwOTQ2OCwtMzM4NDc3ODc1LC0yMD
+EwNjU1NzgxLC0zNjYwODY3OTAsOTU3NzM1OTkxXX0=
 -->
