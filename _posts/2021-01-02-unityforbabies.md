@@ -197,7 +197,7 @@ You should have something like this now:
 
 Try jumping onto the brick and onto the platform **from right underneath the platform**. You should notice that Mario can't jump onto the brick from underneath it, while he can do so on the platform. 
 
-<mark> You shall experiment with other effectors and their properties as well so that you know what features are supported or suitable for your game idea: some kind of boost, buoyancy, etc. This is what you can use if you try to implement a pinball game with many different **areas** that can affect the kinematics of the ball </mark>. 
+<mark> You shall experiment with other effectors and their properties as well so that you know what features are supported or suitable for your game idea: some kind of boost, buoyancy, etc. This is what you can use if you try to implement a pinball game with many different areas that can affect the kinematics of the ball </mark>. 
 
 ## PhysicsJoint2D 
 Another interesting component of Unity's physics engine is the [joints](https://docs.unity3d.com/ScriptReference/Joint2D.html). It will safe you so much time if you want to implement any basic joints: hinge, spring, slider, wheel, etc. For example, the following is possible due to **SpringJoint2D** applied:
@@ -486,11 +486,11 @@ If everything's implemented correctly, you should have this nice bouncy box effe
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE5NzI1MjU4MiwtMTMyNzMyNjAwMywtMj
-AxNDgyODU3NywxNDE4NDQzNjU0LC0xODk1MjkxNTc0LC03MDM3
-MTkyMjAsLTgzMTYyOTE5NCwxMjgyMTQyMDY1LC0xMjgyNzk0OD
-I4LDEyODU1NDA4OTUsMTAwMDA5MDk3NCwtNjM3MjYxODQwLDIw
-MzQwODkwNjUsLTQyNzU4NjQ0MiwtNzA1NDY0NTk3LDY4NzMyOT
-c0LC0yMDYxMjk1NTUzLDE2NDY1MTMzNTQsODg2NTM4OSwxODQz
-MjA1NDY2XX0=
+eyJoaXN0b3J5IjpbODAzMjE1ODQ2LDExOTcyNTI1ODIsLTEzMj
+czMjYwMDMsLTIwMTQ4Mjg1NzcsMTQxODQ0MzY1NCwtMTg5NTI5
+MTU3NCwtNzAzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0MjA2NS
+wtMTI4Mjc5NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5NzQsLTYz
+NzI2MTg0MCwyMDM0MDg5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2ND
+U5Nyw2ODczMjk3NCwtMjA2MTI5NTU1MywxNjQ2NTEzMzU0LDg4
+NjUzODldfQ==
 -->
