@@ -406,13 +406,13 @@ IEnumerator  DisableHittable(){
 	}
 
 	//continues here when the ObjectMovedAndStopped() returns true
-	spriteRenderer.sprite  =  usedQuestionBox;
-	rigidBody.bodyType  =  RigidbodyType2D.Static;
+	spriteRenderer.sprite  =  usedQuestionBox; // change sprite to be "used-box" sprite
+	rigidBody.bodyType  =  RigidbodyType2D.Static; // make the box unaffected by Physics
 
 	//reset box position
 	this.transform.localPosition  =  Vector3.zero;
-	springJoint.enabled  =  false;
-	yield  return  null;
+	springJoint.enabled  =  false; // disable spring
+	yield  return  null; // this means the function will not return anymore
 	}
 ```
 The instruction `yield return new <something>` returns control to Unity until that `<something>` condition happens. We can wait for a few seconds:  `yield return new WaitForSeconds(0.1f)`, or [wait until end of frame](https://docs.unity3d.com/ScriptReference/WaitForEndOfFrame.html), etc. It will continue with the **next** instruction when resumed, which is `spriteRenderer.sprite  =  usedQuestionBox;` for the above example. 
@@ -439,9 +439,11 @@ void  OnCollisionEnter2D(Collision2D col)
 {
 	if (col.gameObject.CompareTag("Player") &&  !hit){
 		hit  =  true;
-		// move the
+		// ensure that we move this object sufficiently 
 		rigidBody.AddForce(new  Vector2(0, rigidBody.mass*20), ForceMode2D.Impulse);
+		// spawn mushroom
 		Instantiate(consummablePrefab, new  Vector3(this.transform.position.x, this.transform.position.y  +  1.0f, this.transform.position.z), Quaternion.identity);
+		// begin check to disable object's spring and rigidbody
 		StartCoroutine(DisableHittable());
 	}
 }
@@ -460,7 +462,7 @@ void  OnCollisionEnter2D(Collision2D col)
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkxNzczOTI1MCwtMTg5NTI5MTU3NCwtNz
+eyJoaXN0b3J5IjpbLTE5Njc3NjM3NSwtMTg5NTI5MTU3NCwtNz
 AzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0MjA2NSwtMTI4Mjc5
 NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5NzQsLTYzNzI2MTg0MC
 wyMDM0MDg5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODcz
