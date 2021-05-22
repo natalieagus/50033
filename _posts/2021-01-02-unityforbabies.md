@@ -293,9 +293,19 @@ The logic for this script is:
 3. *When the box has finished bouncing*, it has to change Sprite (so player wont hit it again)
 4. And we have to disable the Spring as well (the box turns into a stationary object, just like the regular Brick) 
 
-It is easy to do (1) and (2) above, as you might've guessed: simply write something inside OnCollisionEnter2D callback. Doing (3) requires us to *check* if the QuestionBox has turned stationary *after* briefly bouncing from being hit by Mario, and this is **not that trivial**, depending on how you choose to solve the problem. We will explain why later. 
+It is easy to do (1) and (2) above, as you might've guessed: simply write something inside `OnCollisionEnter2D` callback. Doing (3) requires us to *check* if the QuestionBox has turned stationary *after* briefly bouncing from being hit by Mario, and this is **not that trivial**, depending on how you choose to solve the problem. We will explain why later. 
 
+Declare the following variables in `QuestionBoxController.cs`:
+```java
+public  Rigidbody2D rigidBody;
+public  SpringJoint2D springJoint;
+public  GameObject consummablePrefab;
+public  SpriteRenderer spriteRenderer;
+public  Sprite usedQuestionBox;
+private  bool hit =  false;
+```
 
+Then implement `OnCollisionEnter2D`  
 
 
 
@@ -306,11 +316,11 @@ It is easy to do (1) and (2) above, as you might've guessed: simply write someth
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI4NTU0MDg5NSwxMDAwMDkwOTc0LC02Mz
-cyNjE4NDAsMjAzNDA4OTA2NSwtNDI3NTg2NDQyLC03MDU0NjQ1
-OTcsNjg3MzI5NzQsLTIwNjEyOTU1NTMsMTY0NjUxMzM1NCw4OD
-Y1Mzg5LDE4NDMyMDU0NjYsLTEyNTg1NjIxMzIsLTE4NTQ1MzM2
-ODYsNjY0NzAxMTc2LC0xNDkyOTM0OTY2LDMxNDkwOTQ2OCwtMz
-M4NDc3ODc1LC0yMDEwNjU1NzgxLC0zNjYwODY3OTAsOTU3NzM1
-OTkxXX0=
+eyJoaXN0b3J5IjpbLTEzNTI5MjY1NzYsMTI4NTU0MDg5NSwxMD
+AwMDkwOTc0LC02MzcyNjE4NDAsMjAzNDA4OTA2NSwtNDI3NTg2
+NDQyLC03MDU0NjQ1OTcsNjg3MzI5NzQsLTIwNjEyOTU1NTMsMT
+Y0NjUxMzM1NCw4ODY1Mzg5LDE4NDMyMDU0NjYsLTEyNTg1NjIx
+MzIsLTE4NTQ1MzM2ODYsNjY0NzAxMTc2LC0xNDkyOTM0OTY2LD
+MxNDkwOTQ2OCwtMzM4NDc3ODc1LC0yMDEwNjU1NzgxLC0zNjYw
+ODY3OTBdfQ==
 -->
