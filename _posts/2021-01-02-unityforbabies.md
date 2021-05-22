@@ -252,7 +252,7 @@ Then, go to **Edit >> Project Settings >> Physics2D**. You should see some kind 
 
 ![layers](https://www.dropbox.com/s/j0yq5gq038jh41m/15.png?raw=1)
 
-Now you can test your spring. While in Play mode, you can dynamically change the properties of the SpringJoint2D. Spend some time to play around with it to see how it works. You can also go to your Scene tab and dynamically drag around the TopCollider. 
+Now you can test your spring. While in Play mode, you can dynamically change the properties of the SpringJoint2D. Spend some time to play around with it to see how it works. You can also go to your Scene tab and dynamically drag around the TopCollider. Experiment around by unticking the auto configure distance and auto configure anchor properties to get a hang on how the spring works:
 
 
 
@@ -261,10 +261,10 @@ Now you can test your spring. While in Play mode, you can dynamically change the
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzNzI2MTg0MCwyMDM0MDg5MDY1LC00Mj
-c1ODY0NDIsLTcwNTQ2NDU5Nyw2ODczMjk3NCwtMjA2MTI5NTU1
-MywxNjQ2NTEzMzU0LDg4NjUzODksMTg0MzIwNTQ2NiwtMTI1OD
-U2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3MDExNzYsLTE0OTI5MzQ5
-NjYsMzE0OTA5NDY4LC0zMzg0Nzc4NzUsLTIwMTA2NTU3ODEsLT
-M2NjA4Njc5MCw5NTc3MzU5OTFdfQ==
+eyJoaXN0b3J5IjpbOTU5NzUxMDc1LC02MzcyNjE4NDAsMjAzND
+A4OTA2NSwtNDI3NTg2NDQyLC03MDU0NjQ1OTcsNjg3MzI5NzQs
+LTIwNjEyOTU1NTMsMTY0NjUxMzM1NCw4ODY1Mzg5LDE4NDMyMD
+U0NjYsLTEyNTg1NjIxMzIsLTE4NTQ1MzM2ODYsNjY0NzAxMTc2
+LC0xNDkyOTM0OTY2LDMxNDkwOTQ2OCwtMzM4NDc3ODc1LC0yMD
+EwNjU1NzgxLC0zNjYwODY3OTAsOTU3NzM1OTkxXX0=
 -->
