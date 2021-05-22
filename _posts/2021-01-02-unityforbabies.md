@@ -169,6 +169,8 @@ Now that our Mario can move around smoothly with proper animations, it's time we
 
 Make that brick into a prefab so that you can have a master copy because we are going to spawn many of these in the scene. 
 
+> You might notice that Mario's animation doesn't get reset to "idle" state after he jumps onto the brick, because it is now colliding with a brick and not ground. Fix your PlayerController.cs to consider the case where he can jump onto obstacles like this as well. A cheap and easy way will be to add a Tag to the brick, e.g: `Obstacle` and add that check as well when resetting the `onGround` animator parameter. 
+
 ## Effector2D
 Suppose you want to create a platform that allows only one-way collision. You can upgrade your 2DColliders to be used with a new component called **[effectors](https://docs.unity3d.com/Manual/Effectors2D.html)**. 
 
@@ -193,7 +195,7 @@ Try jumping on the brick and on the platform. You should notice that Mario can't
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwODQxODMzMSwtNzA1NDY0NTk3LDY4Nz
+eyJoaXN0b3J5IjpbMTcwOTYxMDc2NiwtNzA1NDY0NTk3LDY4Nz
 MyOTc0LC0yMDYxMjk1NTUzLDE2NDY1MTMzNTQsODg2NTM4OSwx
 ODQzMjA1NDY2LC0xMjU4NTYyMTMyLC0xODU0NTMzNjg2LDY2ND
 cwMTE3NiwtMTQ5MjkzNDk2NiwzMTQ5MDk0NjgsLTMzODQ3Nzg3
