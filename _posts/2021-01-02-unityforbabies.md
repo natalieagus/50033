@@ -412,7 +412,6 @@ IEnumerator  DisableHittable(){
 	//reset box position
 	this.transform.localPosition  =  Vector3.zero;
 	springJoint.enabled  =  false; // disable spring
-	yield return null; 
 }
 ```
 The instruction `yield return new <something>` returns control to Unity until that `<something>` condition happens. We can wait for a few seconds:  `yield return new WaitForSeconds(0.1f)`, or [wait until end of frame](https://docs.unity3d.com/ScriptReference/WaitForEndOfFrame.html), etc. It will continue with the **next** instruction when resumed, which is `spriteRenderer.sprite  =  usedQuestionBox;` for the above example. 
@@ -464,11 +463,11 @@ void  OnCollisionEnter2D(Collision2D col)
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQxODQ0MzY1NCwtMTg5NTI5MTU3NCwtNz
-AzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0MjA2NSwtMTI4Mjc5
-NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5NzQsLTYzNzI2MTg0MC
-wyMDM0MDg5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODcz
-Mjk3NCwtMjA2MTI5NTU1MywxNjQ2NTEzMzU0LDg4NjUzODksMT
-g0MzIwNTQ2NiwtMTI1ODU2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3
-MDExNzZdfQ==
+eyJoaXN0b3J5IjpbLTE0OTE3MjU2NDMsMTQxODQ0MzY1NCwtMT
+g5NTI5MTU3NCwtNzAzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0
+MjA2NSwtMTI4Mjc5NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5Nz
+QsLTYzNzI2MTg0MCwyMDM0MDg5MDY1LC00Mjc1ODY0NDIsLTcw
+NTQ2NDU5Nyw2ODczMjk3NCwtMjA2MTI5NTU1MywxNjQ2NTEzMz
+U0LDg4NjUzODksMTg0MzIwNTQ2NiwtMTI1ODU2MjEzMiwtMTg1
+NDUzMzY4Nl19
 -->
