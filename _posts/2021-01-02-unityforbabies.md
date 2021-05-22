@@ -467,7 +467,9 @@ void  OnCollisionEnter2D(Collision2D col)
 	}
 }
 ```
-> Note that this is not the only way to implement the entire bouncing effect of the box. There's a lot of other alternatives out there, which you are free to choose and implement. The specific method of using SpringJoint2D, 
+> **Disclaimer**: Note that this is not the only way to implement the entire bouncing effect of the box. There's a lot of other alternatives out there, which you are free to choose and implement. These specific methods of using SpringJoint2D, Rigidbody2D methods (addForce, etc), and Coroutines are selected because we want to teach the Unity newbies these concepts by incorporating it into our sample game. 
+
+
 
 
 
@@ -481,7 +483,7 @@ void  OnCollisionEnter2D(Collision2D col)
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NjUwMzE3OTIsMTQxODQ0MzY1NCwtMT
+eyJoaXN0b3J5IjpbLTIwMTQ4Mjg1NzcsMTQxODQ0MzY1NCwtMT
 g5NTI5MTU3NCwtNzAzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0
 MjA2NSwtMTI4Mjc5NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5Nz
 QsLTYzNzI2MTg0MCwyMDM0MDg5MDY1LC00Mjc1ODY0NDIsLTcw
