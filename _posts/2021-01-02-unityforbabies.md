@@ -319,7 +319,8 @@ void  OnCollisionEnter2D(Collision2D col)
 
 This will allow you to spawn the Mushroom right above the box when it's hit by Mario.  
 
-Now create a simple script yourself for the mushroom to dictate its behavior once spawned by the box. 
+Now create a simple script yourself for the mushroom to dictate its behavior as follows once spawned by the box:
+* It springs out of the box once instantiated
 
 
 
@@ -330,11 +331,11 @@ Now create a simple script yourself for the mushroom to dictate its behavior onc
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcwMzcxOTIyMCwtODMxNjI5MTk0LDEyOD
-IxNDIwNjUsLTEyODI3OTQ4MjgsMTI4NTU0MDg5NSwxMDAwMDkw
-OTc0LC02MzcyNjE4NDAsMjAzNDA4OTA2NSwtNDI3NTg2NDQyLC
-03MDU0NjQ1OTcsNjg3MzI5NzQsLTIwNjEyOTU1NTMsMTY0NjUx
-MzM1NCw4ODY1Mzg5LDE4NDMyMDU0NjYsLTEyNTg1NjIxMzIsLT
-E4NTQ1MzM2ODYsNjY0NzAxMTc2LC0xNDkyOTM0OTY2LDMxNDkw
-OTQ2OF19
+eyJoaXN0b3J5IjpbLTkwMDI4OTMyNywtNzAzNzE5MjIwLC04Mz
+E2MjkxOTQsMTI4MjE0MjA2NSwtMTI4Mjc5NDgyOCwxMjg1NTQw
+ODk1LDEwMDAwOTA5NzQsLTYzNzI2MTg0MCwyMDM0MDg5MDY1LC
+00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODczMjk3NCwtMjA2MTI5
+NTU1MywxNjQ2NTEzMzU0LDg4NjUzODksMTg0MzIwNTQ2NiwtMT
+I1ODU2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3MDExNzYsLTE0OTI5
+MzQ5NjZdfQ==
 -->
