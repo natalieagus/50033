@@ -173,17 +173,24 @@ Make that brick into a prefab so that you can have a master copy because we are 
 Suppose you want to create a platform that allows only one-way collision. You can beef up your Colliders with a new component called **[effectors](https://docs.unity3d.com/Manual/Effectors2D.html)**. 
 * Create a new 2D GameObject >> Sprite >> Square and name it PlatformThin. 
 * Change its sprite to `tiles_187`
-* Add BoxCollider2D componentand edit its Collider to match the thin sprite.
+* Add BoxCollider2D component and edit its Collider to match the thin sprite.
 	* **Tick** the Used By Effector property
-* Now, add PlatformEffector2D 
+* Now, add PlatformEffector2D component
+	* **Tick** Use One Way
+* Make PlatformThin a prefab, and spawn a two more in your scene, making a long edge
+
+You should have something like this now:
+
+
 
 # Checkoff
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkyMjAxMDk1NCwtNzA1NDY0NTk3LDY4Nz
-MyOTc0LC0yMDYxMjk1NTUzLDE2NDY1MTMzNTQsODg2NTM4OSwx
-ODQzMjA1NDY2LC0xMjU4NTYyMTMyLC0xODU0NTMzNjg2LDY2ND
-cwMTE3NiwtMTQ5MjkzNDk2NiwzMTQ5MDk0NjgsLTMzODQ3Nzg3
-NSwtMjAxMDY1NTc4MSwtMzY2MDg2NzkwLDk1NzczNTk5MV19
+eyJoaXN0b3J5IjpbLTEyOTM1Mjk2MjksLTcwNTQ2NDU5Nyw2OD
+czMjk3NCwtMjA2MTI5NTU1MywxNjQ2NTEzMzU0LDg4NjUzODks
+MTg0MzIwNTQ2NiwtMTI1ODU2MjEzMiwtMTg1NDUzMzY4Niw2Nj
+Q3MDExNzYsLTE0OTI5MzQ5NjYsMzE0OTA5NDY4LC0zMzg0Nzc4
+NzUsLTIwMTA2NTU3ODEsLTM2NjA4Njc5MCw5NTc3MzU5OTFdfQ
+==
 -->
