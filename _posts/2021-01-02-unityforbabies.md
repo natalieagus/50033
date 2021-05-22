@@ -270,7 +270,10 @@ Afterwards, apply this Physic Material onto the Material property in Edge Detect
 Test run to see if the box now looks _bouncier_. 
 
 # Spawning GameObjects at Runtime
-Now what's left is to spawn something at the top of the HittableSimp
+Now what's left is to spawn something at the top of the HittableSimple object when Mario hits its bottom edge. We can begin by creating the prefab of the object that we are going to spawn. 
+
+Create a new 2D GameObject >> Sprites >> Square:
+* Change the Sprite property into 
 
 
 
@@ -278,7 +281,7 @@ Now what's left is to spawn something at the top of the HittableSimp
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NDI4NTk2MDQsLTYzNzI2MTg0MCwyMD
+eyJoaXN0b3J5IjpbLTEzOTQ3NjI0NDYsLTYzNzI2MTg0MCwyMD
 M0MDg5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODczMjk3
 NCwtMjA2MTI5NTU1MywxNjQ2NTEzMzU0LDg4NjUzODksMTg0Mz
 IwNTQ2NiwtMTI1ODU2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3MDEx
