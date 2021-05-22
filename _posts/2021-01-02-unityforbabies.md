@@ -21,8 +21,12 @@ title: Unity for Babies
 # Introduction
 We will continue where we left off [last week](https://natalieagus.github.io/50033/2021/01/01/unityfornewborns.html) by trying to polish our game a little bit better with sound effects, animation, and platforms. As usual, Unity pros can jump straight to the [Checkoff](https://natalieagus.github.io/50033/2021/01/02/unityforbabies.html#checkoff) heading to find out more information about the required final state of this Lab without having to read all the details. 
 
-# RigidBody2D Constraints
-Notice how we always need Mario to stand upright, and not toppling when moving too fast. In order to do this, we need to place constraints on Mario's Rigidb
+# Rigidbody2D Constraints
+Notice how we always need Mario to stand upright, and not toppling when moving too fast. In order to do this, we need to place **constraints** on Mario's Rigidbody2D component:
+* Go to Mario's Inspector window, and look for `Constraints` property under its Rigidbody2D component 
+* Select Freeze Rotation: Z and that's it! 
+
+We can do the same to constrain position as well, which will come handy later when we create movable obstacle for the game.  
 # Animation 
 Mario's animation is broken down into **four** main state:
 1. Idle state, when he's not moving at all
@@ -226,10 +230,10 @@ Go to Edit >> Project Settings >> Physics2D. You should see some kind of Collisi
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUyMjk3NDc5NywyMDM0MDg5MDY1LC00Mj
-c1ODY0NDIsLTcwNTQ2NDU5Nyw2ODczMjk3NCwtMjA2MTI5NTU1
-MywxNjQ2NTEzMzU0LDg4NjUzODksMTg0MzIwNTQ2NiwtMTI1OD
-U2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3MDExNzYsLTE0OTI5MzQ5
-NjYsMzE0OTA5NDY4LC0zMzg0Nzc4NzUsLTIwMTA2NTU3ODEsLT
-M2NjA4Njc5MCw5NTc3MzU5OTFdfQ==
+eyJoaXN0b3J5IjpbMTk4OTEwMDU0LDIwMzQwODkwNjUsLTQyNz
+U4NjQ0MiwtNzA1NDY0NTk3LDY4NzMyOTc0LC0yMDYxMjk1NTUz
+LDE2NDY1MTMzNTQsODg2NTM4OSwxODQzMjA1NDY2LC0xMjU4NT
+YyMTMyLC0xODU0NTMzNjg2LDY2NDcwMTE3NiwtMTQ5MjkzNDk2
+NiwzMTQ5MDk0NjgsLTMzODQ3Nzg3NSwtMjAxMDY1NTc4MSwtMz
+Y2MDg2NzkwLDk1NzczNTk5MV19
 -->
