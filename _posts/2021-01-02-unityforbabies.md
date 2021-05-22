@@ -320,7 +320,7 @@ void  OnCollisionEnter2D(Collision2D col)
 This will allow you to spawn the Mushroom right above the box when it's hit by Mario.  
 
 Now create a simple script yourself for the mushroom to dictate its behaviour as follows once spawned by the box:
-* It will randomly move to the left or to the right at **constant speed** 
+* It will randomly move to the left or to the right at a **constant speed** 
 * It **will not topple** (Z-rotation is constrained) 
 	> Set its Rigidbody constraint properly
 * However it will **change direction** when colliding with other objects (e.g: the Pipe) 
@@ -335,9 +335,10 @@ The gif below summarises the required behavior of the spawned mushroom:
 
 ![demomushroom](https://www.dropbox.com/s/4h6pg2ek3v94box/demomushroom.gif?raw=1)
 
-You probably can do all the above except the last point: which is to give the mushroom an initial force upwards when spawned. 
+You probably can do all the above except the **first**: move the mushroom at constant speed (either to the left or to the right) and the last point (to give initial impulse force upwards). 
 
-## Rigidbody2D AddForce
+## Rigidbody2D MovePosition
+To do the first point, we need to compute the 
 
 
 
@@ -348,11 +349,11 @@ You probably can do all the above except the last point: which is to give the mu
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg4MzM3NzcxLC0xODk1MjkxNTc0LC03MD
-M3MTkyMjAsLTgzMTYyOTE5NCwxMjgyMTQyMDY1LC0xMjgyNzk0
-ODI4LDEyODU1NDA4OTUsMTAwMDA5MDk3NCwtNjM3MjYxODQwLD
-IwMzQwODkwNjUsLTQyNzU4NjQ0MiwtNzA1NDY0NTk3LDY4NzMy
-OTc0LC0yMDYxMjk1NTUzLDE2NDY1MTMzNTQsODg2NTM4OSwxOD
-QzMjA1NDY2LC0xMjU4NTYyMTMyLC0xODU0NTMzNjg2LDY2NDcw
-MTE3Nl19
+eyJoaXN0b3J5IjpbLTI0ODE3Mzk1NywtMTg5NTI5MTU3NCwtNz
+AzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0MjA2NSwtMTI4Mjc5
+NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5NzQsLTYzNzI2MTg0MC
+wyMDM0MDg5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODcz
+Mjk3NCwtMjA2MTI5NTU1MywxNjQ2NTEzMzU0LDg4NjUzODksMT
+g0MzIwNTQ2NiwtMTI1ODU2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3
+MDExNzZdfQ==
 -->
