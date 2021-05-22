@@ -203,9 +203,11 @@ Follow these steps:
 	* HittableSimple
 		* TopCollider
 		* EdgeDetector
-2. For the Edge, add two components:
-	* BoxCollider2D 
-	* Rigidbody2D
+2. For the EdgeDetector, add four components: 
+	* SpriteRenderer, with `tile_questionblock_0` as its Sprite
+	* Rigidbody2D: with `Mass=0.0001`, zero Linear and Angular Drag 
+	* EdgeCollider2D
+	* 
 
 
 
@@ -222,7 +224,7 @@ Go to Edit >> Project Settings >> Physics2D. You should see some kind of Collisi
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NjAzODU1MTIsMjAzNDA4OTA2NSwtND
+eyJoaXN0b3J5IjpbLTE5NjUzNjAxNjgsMjAzNDA4OTA2NSwtND
 I3NTg2NDQyLC03MDU0NjQ1OTcsNjg3MzI5NzQsLTIwNjEyOTU1
 NTMsMTY0NjUxMzM1NCw4ODY1Mzg5LDE4NDMyMDU0NjYsLTEyNT
 g1NjIxMzIsLTE4NTQ1MzM2ODYsNjY0NzAxMTc2LC0xNDkyOTM0
