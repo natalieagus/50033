@@ -219,8 +219,11 @@ Follow these steps:
 	* BoxCollider2D: edit the Collider to align nicely with the question box sprite
 
 Now time to configure the SpringJoint2D inside EdgeDetector GameObject. It has a few properties, but we mainly are interested in setting up the Spring's anchor. If you're not familiar with how Spring works, you basically need to endpoints to make a spring, its called:
-1. Anchor: The place (in terms of X, Y co-ordinates on the **RigidBody**[](https://docs.unity3d.com/Manual/class-Rigidbody.html)  
-) where the end point of the joint connects to _this_ object.
+1. **Anchor**: Where the end point of the joint connects to _this_ object.
+2. **Connected Anchor**: Where the end point of the joint connects to the _other_ object. 
+
+You also need to configure:
+1. Distance: the spring will try its best to keep the 
 
 
 
@@ -237,10 +240,10 @@ Go to Edit >> Project Settings >> Physics2D. You should see some kind of Collisi
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM4NTczMTU2NCwyMDM0MDg5MDY1LC00Mj
-c1ODY0NDIsLTcwNTQ2NDU5Nyw2ODczMjk3NCwtMjA2MTI5NTU1
-MywxNjQ2NTEzMzU0LDg4NjUzODksMTg0MzIwNTQ2NiwtMTI1OD
-U2MjEzMiwtMTg1NDUzMzY4Niw2NjQ3MDExNzYsLTE0OTI5MzQ5
-NjYsMzE0OTA5NDY4LC0zMzg0Nzc4NzUsLTIwMTA2NTU3ODEsLT
-M2NjA4Njc5MCw5NTc3MzU5OTFdfQ==
+eyJoaXN0b3J5IjpbLTExMzA2OTM4NjEsMjAzNDA4OTA2NSwtND
+I3NTg2NDQyLC03MDU0NjQ1OTcsNjg3MzI5NzQsLTIwNjEyOTU1
+NTMsMTY0NjUxMzM1NCw4ODY1Mzg5LDE4NDMyMDU0NjYsLTEyNT
+g1NjIxMzIsLTE4NTQ1MzM2ODYsNjY0NzAxMTc2LC0xNDkyOTM0
+OTY2LDMxNDkwOTQ2OCwtMzM4NDc3ODc1LC0yMDEwNjU1NzgxLC
+0zNjYwODY3OTAsOTU3NzM1OTkxXX0=
 -->
