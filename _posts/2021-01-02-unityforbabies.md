@@ -157,10 +157,12 @@ We can improve this by adding **events** in the jump clip instead of primitively
 Open `PlayerController.cs` and add the following function:
 ```java
 void  PlayJumpSound(){
-	marioAudio.Play();
+	marioAudio.PlayOneShot(marioAudio.clip);
 }
 ```
 where `marioAudio` is a private variable of type `AudioSource` **(declare it yourself!)**, which you set via `GetComponent<AudioSource>` in the `Start()` function. You should be familiar with this by now. Make sure the AudioSource component in Mario is now **enabled**, but **untick** the **Play On Awake** property. 
+
+> You can also implement this via `marioAudio.Play()`, but `PlayOneShot()` can play multiple sounds **without** cutting each other off.
 
 Now you can **add an event** in the jump animation clip by clicking the **Add Event** button in the desired frame (frame 0 in this case). In the inspector, select the `PlayJumpSound()` function. 
 
@@ -571,11 +573,11 @@ Refer to our course handout as usual to find out the standard protocol on how to
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA0ODY0NDI3Niw1NjI3Mzk5NjIsMTE5Nz
-I1MjU4MiwtMTMyNzMyNjAwMywtMjAxNDgyODU3NywxNDE4NDQz
-NjU0LC0xODk1MjkxNTc0LC03MDM3MTkyMjAsLTgzMTYyOTE5NC
-wxMjgyMTQyMDY1LC0xMjgyNzk0ODI4LDEyODU1NDA4OTUsMTAw
-MDA5MDk3NCwtNjM3MjYxODQwLDIwMzQwODkwNjUsLTQyNzU4Nj
-Q0MiwtNzA1NDY0NTk3LDY4NzMyOTc0LC0yMDYxMjk1NTUzLDE2
-NDY1MTMzNTRdfQ==
+eyJoaXN0b3J5IjpbLTE3NDc4ODkxMDQsNTYyNzM5OTYyLDExOT
+cyNTI1ODIsLTEzMjczMjYwMDMsLTIwMTQ4Mjg1NzcsMTQxODQ0
+MzY1NCwtMTg5NTI5MTU3NCwtNzAzNzE5MjIwLC04MzE2MjkxOT
+QsMTI4MjE0MjA2NSwtMTI4Mjc5NDgyOCwxMjg1NTQwODk1LDEw
+MDAwOTA5NzQsLTYzNzI2MTg0MCwyMDM0MDg5MDY1LC00Mjc1OD
+Y0NDIsLTcwNTQ2NDU5Nyw2ODczMjk3NCwtMjA2MTI5NTU1Mywx
+NjQ2NTEzMzU0XX0=
 -->
