@@ -480,19 +480,102 @@ If everything's implemented correctly, you should have this nice bouncy box effe
 
 # Moving the Camera
 
+The second thing to do to complete the game for this tutorial is to let the Camera follow the player, but clamped so that it doesn't go out of screen too much the left or too much the right. Create a new script called `CameraController.cs` and declare the following variables:
 
+```java
+public  Transform player; // Mario's Transform
+public  Transform endLimit; // GameObject that indicates end of map
+private  float offset; // initial x-offset between camera and Mario
+private  float startX; // smallest x-coordinate of the Camera
+private  float endX; // largest x-coordinate of the camera
+private  float viewportHalfWidth;
+```
+
+In the `Start()` method, we instantiate a few things, but the highlight lies on the part where we need to get the **world coordinate** of the bottom-left point of the Camera's **viewport** using `ViewportToWorldPoint`. The reason we do this is because we need to find out what exactly is the world coordinate (x-coordinate specifically) of the leftmost point of the viewport. 
+> We use it later on to prevent the camera to move *too much to the left.* 
+
+```java
+void  Start()
+{
+	// get coordinate of the bottomleft of the viewport
+	// z doesn't matter since the camera is orthographic
+	Vector3 bottomLeft =  Camera.main.ViewportToWorldPoint(new  Vector3(0, 0, 0));
+	viewportHalfWidth  =  Mathf.Abs(bottomLeft.x  -  this.transform.position.x);
+
+	offset  =  this.transform.position.x  -  player.position.x;
+	startX  =  this.transform.position.x;
+	endX  =  endLimit.transform.position.x  -  viewportHalfWidth;
+}
+```
+
+Then under the `Update()` method, the camera constantly follow the player unless it has reached the ends of the game map:
+
+```Java
+void  Update()
+{
+	float desiredX =  player.position.x  +  offset;
+	// check if desiredX is within startX and endX
+	if (desiredX  >  startX  &&  desiredX  <  endX)
+	this.transform.position  =  new  Vector3(desiredX, this.transform.position.y, this.transform.position.z);
+}
+```
+
+Create an empty GameObject called `EndLimit` with an EdgeCollider2D to prevent Mario from going  over too much to the right:
+
+![endpoint](https://www.dropbox.com/s/jc0qffh8jq8b64a/20.png?raw=1)
+
+> You can do the same for the left side as well, right at the left side of the Camera's ViewPort. In the screenshot above, we name it `StartLimit`. 
+
+Then in the Camera's inspector, link up the references of Mario's Transform and EndLimit's Transform:
+
+![cameracontroller](https://www.dropbox.com/s/to83qz57x4o5yvc/21.png?raw=1)
+
+**Test run and you shall have the Camera gloriously following Mario around the Scene**. 
+
+# Destroy GameObject
+
+One final thing to do is to ensure that the `ConsummableMushroomSimple` Prefab is **Destroyed** once it **goes out of view.** It is very simple to do this as there's a callback dedicated for it: `OnBecameInvisible`. 
+
+> From Unity's documentation: `OnBecameInvisible` is called when the **renderer** is no longer visible by any camera. This message is sent to all scripts attached to the renderer.  [OnBecameVisible](https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnBecameVisible.html)  and  [OnBecameInvisible](https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnBecameInvisible.html)  is useful to avoid computations that are only necessary when the object is visible.
+
+Open the script controlling `ConsummableMushroomSimple` and add the following method, and we're done! The mushroom disappears once it's no longer visible by the camera. This callback obviously only works on gameObjects that have `Renderer` attached to it. 
+
+```java
+void  OnBecameInvisible(){
+	Destroy(gameObject);	
+}
+```
+
+> Some newbies will make the mistake `Destroy(this)` thinking that `this` is the `gameObject`. This is not true. `this` refers to `this (script) instance` instead. 
 
 
  
 # Checkoff
 
+For this checkoff, you're required to implement everything you can see in the demo .gif below (you can just gauge and estimate the placement of each obstacle). 
+
+
+Everything is mostly covered in this lab, **except the script that controls the `ConsummableMushroomSimple`** and the  addition of **background objects**:
+* Write a script so the spawned mushroom can behave exactly like the .gif shown.
+
+* You can use the suggested method above, or use other means that gives the same visual effect. You can also use any Mushroom sprite, it doesn't have to be this green one or the red one above. 
+* You are also **free to use any alternative method** to create the bouncy question box (by using Animator, or manually from script). You don't have to follow our method of using the SpringJoint2D. 
+* Create various GameObjects to render some nice background: the small hills in the background as well as the background _wallpaper_. You have to organise your Sprite Renderer's **Sorting Layer** properly here. Obviously all these objects do not affect the game, so you'll only need to have Transform and Sprite Renderer components attached to these background GameObjects. 
+
+> Get used to the creation and organisation of various Layers, Tags, and Sorting Layers, and understand the application of each property:
+> * Layer: for 2D collision matrix
+> * Sorting Layer: to determine what is rendered in front of what when they're on the same XY-plane
+> * Tags: to quickly prototype and identify the `gameObject` (although you can also search by its *[name](https://docs.unity3d.com/ScriptReference/GameObject.Find.html)*). 
+
+Refer to our course handout as usual to find out the standard protocol on how to submit your lab checkoff. 
+
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTYyNzM5OTYyLDExOTcyNTI1ODIsLTEzMj
-czMjYwMDMsLTIwMTQ4Mjg1NzcsMTQxODQ0MzY1NCwtMTg5NTI5
-MTU3NCwtNzAzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0MjA2NS
-wtMTI4Mjc5NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5NzQsLTYz
-NzI2MTg0MCwyMDM0MDg5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2ND
-U5Nyw2ODczMjk3NCwtMjA2MTI5NTU1MywxNjQ2NTEzMzU0LDg4
-NjUzODldfQ==
+eyJoaXN0b3J5IjpbMjA0ODY0NDI3Niw1NjI3Mzk5NjIsMTE5Nz
+I1MjU4MiwtMTMyNzMyNjAwMywtMjAxNDgyODU3NywxNDE4NDQz
+NjU0LC0xODk1MjkxNTc0LC03MDM3MTkyMjAsLTgzMTYyOTE5NC
+wxMjgyMTQyMDY1LC0xMjgyNzk0ODI4LDEyODU1NDA4OTUsMTAw
+MDA5MDk3NCwtNjM3MjYxODQwLDIwMzQwODkwNjUsLTQyNzU4Nj
+Q0MiwtNzA1NDY0NTk3LDY4NzMyOTc0LC0yMDYxMjk1NTUzLDE2
+NDY1MTMzNTRdfQ==
 -->
