@@ -99,7 +99,7 @@ Everything you see on the game scene is a **GameObject**. It is the [base class]
 ## The Inspector
 On the **Inspector**, head to the `SpriteRenderer` element and add the *mario_idle* sprite. You should see something like this in the end. The inspector is pretty straightforward. It contains all elements attached to a particular gameobject:
 * `Transform` dictates where this GameObject is in the Scene. You can change its coordinates with respect to the Camera Object so you can view it from differnt angles.
-* `SpriteRenderer` works for dictating what the object should look like in 2D. 
+* `SpriteRenderer` dictates what the object should look like on the Scene. 
 
 We can attach more elements to the GameObject, such as `RigidBody` for physics simulation. More on that later. 
 
@@ -387,7 +387,7 @@ The idea:
 
 ![enemyinspector](https://www.dropbox.com/s/uoi7gyriemocnr5/20.png?raw=1)
 
-Now intuitively, we want our character to be “**damaged**” when it collides with the Enemy, but **not for the two bodies to push each other or simulate Physics.** The way to do this is to set the collider attached at the enemy’s GameObject as [Trigger] (https://docs.unity3d.com/540/Documentation/ScriptReference/Collider-isTrigger.html) (tick that `IsTrigger` option in `BoxCollider2D` element). 
+Now intuitively, we want our character to be “**damaged**” when it collides with the Enemy, but **not for the two bodies to push each other or simulate Physics.** The way to do this is to set the collider attached at the enemy’s GameObject as [Trigger](https://docs.unity3d.com/540/Documentation/ScriptReference/Collider-isTrigger.html) (tick that `IsTrigger` option in `BoxCollider2D` element). 
 
 If a `Collider` collides with another `Collider` that is a `Trigger`, then “collision effect” will **not** be computed, and rather the callback `OnTriggerEnter` will be invoked (on **both** GameObject).
 
@@ -603,9 +603,9 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwODU2NTUyMjksLTE5MTM3NjIyODksNz
-Y5NjE1MTA3LDE0NTkyMjQ3MzUsMjQ2NDA5MTAwLC0xNTQzNDU0
-NzYxLDEyMDY1ODM1MTUsLTc1NzA0OTQ1NywtODc4MTU5MjE3LC
-0zMjE5OTA3NTgsMjMzNTg1MTQwLC0xMDE4MzczOTE5LC0xMzk5
-NjExMzgxLC0yMDYxMzU1NzYzXX0=
+eyJoaXN0b3J5IjpbNTI3Mjc2MzE1LC0yMDg1NjU1MjI5LC0xOT
+EzNzYyMjg5LDc2OTYxNTEwNywxNDU5MjI0NzM1LDI0NjQwOTEw
+MCwtMTU0MzQ1NDc2MSwxMjA2NTgzNTE1LC03NTcwNDk0NTcsLT
+g3ODE1OTIxNywtMzIxOTkwNzU4LDIzMzU4NTE0MCwtMTAxODM3
+MzkxOSwtMTM5OTYxMTM4MSwtMjA2MTM1NTc2M119
 -->
