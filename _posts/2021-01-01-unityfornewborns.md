@@ -172,7 +172,7 @@ We can implement the event functions in the script that’s attached to a partic
 
 `Start()` is always called once in the beginning when the GameObject is instantiated, and then `Update()` is called per frame. **This is where you want to implement your game logic.** The diagram below shows the order of execution of event functions. They run on a single Unity main thread.
 
-![UOEOEF](https://www.dropbox.com/s/xcd0iwvdz28zf3c/11.png?raw=1)
+![UOEOEF](https://docs.unity3d.com/uploads/Main/monobehaviour_flowchart.svg)
     
 The manual for all event functions can be found [here](https://docs.unity3d.com/Manual/ExecutionOrder.html). It is crucial for you to read it when the need arises, so you dont put weird things like implementing regular Physics simulation under `OnDestroy`. 
 
@@ -603,9 +603,9 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MTM3NjIyODksNzY5NjE1MTA3LDE0NT
-kyMjQ3MzUsMjQ2NDA5MTAwLC0xNTQzNDU0NzYxLDEyMDY1ODM1
-MTUsLTc1NzA0OTQ1NywtODc4MTU5MjE3LC0zMjE5OTA3NTgsMj
-MzNTg1MTQwLC0xMDE4MzczOTE5LC0xMzk5NjExMzgxLC0yMDYx
-MzU1NzYzXX0=
+eyJoaXN0b3J5IjpbLTIwODU2NTUyMjksLTE5MTM3NjIyODksNz
+Y5NjE1MTA3LDE0NTkyMjQ3MzUsMjQ2NDA5MTAwLC0xNTQzNDU0
+NzYxLDEyMDY1ODM1MTUsLTc1NzA0OTQ1NywtODc4MTU5MjE3LC
+0zMjE5OTA3NTgsMjMzNTg1MTQwLC0xMDE4MzczOTE5LC0xMzk5
+NjExMzgxLC0yMDYxMzU1NzYzXX0=
 -->
