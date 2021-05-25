@@ -575,13 +575,13 @@ Refer to our course handout as usual to find out the standard protocol on how to
 
 
 # Next
-We improve on a few things this time round, but we still lack a few features: the enemies, counting of scores and coin collection, having powerups effect on the character, etc, but with your skills now 
+We improve on a few things this time round, but we still lack a few features: the enemies, counting of scores and coin collection, having power-ups effect on the character, etc. With your skills now, it should be clear how to implement them and we won't 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0ODQ5MDQxNjYsLTE3NDc4ODkxMDQsNT
-YyNzM5OTYyLDExOTcyNTI1ODIsLTEzMjczMjYwMDMsLTIwMTQ4
-Mjg1NzcsMTQxODQ0MzY1NCwtMTg5NTI5MTU3NCwtNzAzNzE5Mj
-IwLC04MzE2MjkxOTQsMTI4MjE0MjA2NSwtMTI4Mjc5NDgyOCwx
-Mjg1NTQwODk1LDEwMDAwOTA5NzQsLTYzNzI2MTg0MCwyMDM0MD
-g5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODczMjk3NCwt
-MjA2MTI5NTU1M119
+eyJoaXN0b3J5IjpbMzQ1MjYxNDQyLC0xNzQ3ODg5MTA0LDU2Mj
+czOTk2MiwxMTk3MjUyNTgyLC0xMzI3MzI2MDAzLC0yMDE0ODI4
+NTc3LDE0MTg0NDM2NTQsLTE4OTUyOTE1NzQsLTcwMzcxOTIyMC
+wtODMxNjI5MTk0LDEyODIxNDIwNjUsLTEyODI3OTQ4MjgsMTI4
+NTU0MDg5NSwxMDAwMDkwOTc0LC02MzcyNjE4NDAsMjAzNDA4OT
+A2NSwtNDI3NTg2NDQyLC03MDU0NjQ1OTcsNjg3MzI5NzQsLTIw
+NjEyOTU1NTNdfQ==
 -->
