@@ -572,12 +572,16 @@ Everything is mostly covered in this lab, **except the script that controls the 
 Refer to our course handout as usual to find out the standard protocol on how to submit your lab checkoff. 
 
 ![checkoff2](https://www.dropbox.com/s/uhdirkzz1q9dr55/checkoff2.gif?raw=1)
+
+
+# Next
+We improve on a few things this time round, but we still lack a few features: the enemies, counting of scores and coin collection, having powerups effect on the character, etc, but with your skills now 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NDc4ODkxMDQsNTYyNzM5OTYyLDExOT
-cyNTI1ODIsLTEzMjczMjYwMDMsLTIwMTQ4Mjg1NzcsMTQxODQ0
-MzY1NCwtMTg5NTI5MTU3NCwtNzAzNzE5MjIwLC04MzE2MjkxOT
-QsMTI4MjE0MjA2NSwtMTI4Mjc5NDgyOCwxMjg1NTQwODk1LDEw
-MDAwOTA5NzQsLTYzNzI2MTg0MCwyMDM0MDg5MDY1LC00Mjc1OD
-Y0NDIsLTcwNTQ2NDU5Nyw2ODczMjk3NCwtMjA2MTI5NTU1Mywx
-NjQ2NTEzMzU0XX0=
+eyJoaXN0b3J5IjpbLTE0ODQ5MDQxNjYsLTE3NDc4ODkxMDQsNT
+YyNzM5OTYyLDExOTcyNTI1ODIsLTEzMjczMjYwMDMsLTIwMTQ4
+Mjg1NzcsMTQxODQ0MzY1NCwtMTg5NTI5MTU3NCwtNzAzNzE5Mj
+IwLC04MzE2MjkxOTQsMTI4MjE0MjA2NSwtMTI4Mjc5NDgyOCwx
+Mjg1NTQwODk1LDEwMDAwOTA5NzQsLTYzNzI2MTg0MCwyMDM0MD
+g5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2ODczMjk3NCwt
+MjA2MTI5NTU1M119
 -->
