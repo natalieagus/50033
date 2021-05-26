@@ -32,7 +32,7 @@ Experienced coders: keep in mind that you too were once a *noob*. You made mista
 The goal of this simple 4-week lab is to recreate basics this classic platform game: **Mario**, step by step and complete it by the end of Week 4. We will try to rebuild World 1-1 as closely as possible, although due to constraints of time, some features may be omitted. In Week 5 & 6, we upgrade our skills to explore Unity3D.
 
 # Preparation
-**Download the starter asset** from your **course handout**, under "Class Calendar" heading, *Week 1 Session 3 row.* This is a starter asset that you can import to your project and complete the lab. It contains all required images, sound files, etc so we can safe time searching all these stuffs. 
+**Download the starter asset** from your **course handout**, under "Class Calendar" heading, *Week 1 Session 3 row.* This is a starter asset that you can import to your project and complete the lab. It contains all required images, sound files, etc so we can save time searching all these stuffs. 
 
 ***We do not own any of the assets and are simply using them for non-profit educational purposes.*** 
 
@@ -603,9 +603,10 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTI3Mjc2MzE1LC0yMDg1NjU1MjI5LC0xOT
-EzNzYyMjg5LDc2OTYxNTEwNywxNDU5MjI0NzM1LDI0NjQwOTEw
-MCwtMTU0MzQ1NDc2MSwxMjA2NTgzNTE1LC03NTcwNDk0NTcsLT
-g3ODE1OTIxNywtMzIxOTkwNzU4LDIzMzU4NTE0MCwtMTAxODM3
-MzkxOSwtMTM5OTYxMTM4MSwtMjA2MTM1NTc2M119
+eyJoaXN0b3J5IjpbLTE5MTY4NDA2NjEsNTI3Mjc2MzE1LC0yMD
+g1NjU1MjI5LC0xOTEzNzYyMjg5LDc2OTYxNTEwNywxNDU5MjI0
+NzM1LDI0NjQwOTEwMCwtMTU0MzQ1NDc2MSwxMjA2NTgzNTE1LC
+03NTcwNDk0NTcsLTg3ODE1OTIxNywtMzIxOTkwNzU4LDIzMzU4
+NTE0MCwtMTAxODM3MzkxOSwtMTM5OTYxMTM4MSwtMjA2MTM1NT
+c2M119
 -->
