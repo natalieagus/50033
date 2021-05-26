@@ -557,17 +557,17 @@ void  OnBecameInvisible(){
 For this checkoff, you're required to implement everything you can see in the demo .gif below (you can just gauge and estimate the placement of each obstacle). 
 
 
-Everything is mostly covered in this lab, **except the script that controls the `ConsummableMushroomSimple`** and the  addition of **background objects**:
+Everything is mostly covered in this lab, **except the script that controls the `ConsummableMushroomSimple`** and the  addition of **background objects** as shown in the demo .gif below. In summary, for this checkoff you must (but you can do more):
 * Write a script so the spawned mushroom can behave exactly like the .gif shown.
 
-* You can use the suggested method above, or use other means that gives the same visual effect. You can also use any Mushroom sprite, it doesn't have to be this green one or the red one above. 
-* You are also **free to use any alternative method** to create the bouncy question box (by using Animator, or manually from script). You don't have to follow our method of using the SpringJoint2D. 
+	* You can use the suggested method above, or use other means that gives the same visual effect. You can also use any Mushroom sprite, it doesn't have to be this green one or the red one above. 
+	* Note that you are also **free to use any alternative method** to create the bouncy question box (by using Animator, or manually from script). You don't have to follow our method of using the SpringJoint2D. 
 * Create various GameObjects to render some nice background: the small hills in the background as well as the background _wallpaper_. You have to organise your Sprite Renderer's **Sorting Layer** properly here. Obviously all these objects do not affect the game, so you'll only need to have Transform and Sprite Renderer components attached to these background GameObjects. 
 
 > Get used to the creation and organisation of various Layers, Tags, and Sorting Layers, and understand the application of each property:
-> * Layer: for 2D collision matrix
-> * Sorting Layer: to determine what is rendered in front of what when they're on the same XY-plane
-> * Tags: to quickly prototype and identify the `gameObject` (although you can also search by its *[name](https://docs.unity3d.com/ScriptReference/GameObject.Find.html)*). 
+> * **Layer**: for 2D collision matrix and *Camera culling mask (next week)*
+> * **Sorting Layer**: to determine what is rendered in front of what when they're on the same XY-plane
+> * **Tags**: to quickly prototype and identify the `gameObject` (although you can also search by its *[name](https://docs.unity3d.com/ScriptReference/GameObject.Find.html)*). 
 
 Refer to our course handout as usual to find out the standard protocol on how to submit your lab checkoff. 
 
@@ -577,11 +577,11 @@ Refer to our course handout as usual to find out the standard protocol on how to
 # Next
 We improve on a few things this time round, but we still lack a few features: the enemies, counting of scores and coin collection, having power-ups effect on the character, and arranging the world to match Super Mario Bros World 1-1. However with your skills now, it should be clear how to implement them (at least to get it to work) so we will not put it as a priority at this point. In the next Lab we will learn new things instead, that is how to polish the looks of this game: adding VFX and basic SFX. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzI0NTk5OTAwLC0xNzQ3ODg5MTA0LDU2Mj
-czOTk2MiwxMTk3MjUyNTgyLC0xMzI3MzI2MDAzLC0yMDE0ODI4
-NTc3LDE0MTg0NDM2NTQsLTE4OTUyOTE1NzQsLTcwMzcxOTIyMC
-wtODMxNjI5MTk0LDEyODIxNDIwNjUsLTEyODI3OTQ4MjgsMTI4
-NTU0MDg5NSwxMDAwMDkwOTc0LC02MzcyNjE4NDAsMjAzNDA4OT
-A2NSwtNDI3NTg2NDQyLC03MDU0NjQ1OTcsNjg3MzI5NzQsLTIw
-NjEyOTU1NTNdfQ==
+eyJoaXN0b3J5IjpbMTUzNjE4MzI5MCwzMjQ1OTk5MDAsLTE3ND
+c4ODkxMDQsNTYyNzM5OTYyLDExOTcyNTI1ODIsLTEzMjczMjYw
+MDMsLTIwMTQ4Mjg1NzcsMTQxODQ0MzY1NCwtMTg5NTI5MTU3NC
+wtNzAzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0MjA2NSwtMTI4
+Mjc5NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5NzQsLTYzNzI2MT
+g0MCwyMDM0MDg5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2
+ODczMjk3NF19
 -->
