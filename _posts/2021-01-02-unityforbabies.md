@@ -353,17 +353,17 @@ You probably can do all the above except the **first**: move the mushroom at con
 To do the first point, we need to compute the supposed position of the mushroom in the next frame in the mushroom's script (whatever you name the script to be). Given `float speed`, current `Vector2 currentPosition` of the Mushroom, and `Vector2 currentDirection`  (`{1,0}` or `{-1,0}`, indicating movement towards the right or the left), we can compute the mushroom's next position as:
 
 ```java
-Vector2 nextPosition = currentPosition + speed * currentDirection.Normalize() * Time.fixedDeltaTime;
+Vector2 nextPosition = currentPosition + speed * currentDirection.normalized * Time.fixedDeltaTime;
 ``` 
 where `Time.fixedDeltaTime` is simply the **interval in seconds** at which Physics frame rate updates. 
 
 Afterwards, we can set the mushroom's Rigidbody2D position directly to be this `nextPosition` under `FixedUpdate()`:
  ```java
-Vector2 nextPosition = currentPosition + speed * currentDirection.Normalize() * Time.fixedDeltaTime;
+Vector2 nextPosition = currentPosition + speed * currentDirection.normalized * Time.fixedDeltaTime;
 rigidBody.MovePosition(nextPosition);
 ``` 
 
-<mark>Note: although not written, it is explicit for you to **declare** `rigidBody` as `this` mushroom's rigidBody and instantiate it at the `Start` method using `GetComponent<Rigidbody2D>()` as usual. </mark>
+> Note: although not written, it is explicit for you to **declare** `rigidBody` as `this` mushroom's rigidBody and instantiate it at the `Start` method using `GetComponent<Rigidbody2D>()` as usual.
 
 ## Rigidbody2D AddForce
 Finally, it will be nice to add an **impulse** force upwards for the mushroom so it looks like it springs out of the box. Under the mushroom script's `Start()` method, you can add the instruction:
@@ -577,11 +577,11 @@ Refer to our course handout as usual to find out the standard protocol on how to
 # Next
 We improve on a few things this time round, but we still lack a few features: the enemies, counting of scores and coin collection, having power-ups effect on the character, and arranging the world to match Super Mario Bros World 1-1. However with your skills now, it should be clear how to implement them (at least to get it to work) so we will not put it as a priority at this point. In the next Lab we will learn new things instead, that is how to polish the looks of this game: adding VFX and basic SFX. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUzNjE4MzI5MCwzMjQ1OTk5MDAsLTE3ND
-c4ODkxMDQsNTYyNzM5OTYyLDExOTcyNTI1ODIsLTEzMjczMjYw
-MDMsLTIwMTQ4Mjg1NzcsMTQxODQ0MzY1NCwtMTg5NTI5MTU3NC
-wtNzAzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0MjA2NSwtMTI4
-Mjc5NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5NzQsLTYzNzI2MT
-g0MCwyMDM0MDg5MDY1LC00Mjc1ODY0NDIsLTcwNTQ2NDU5Nyw2
-ODczMjk3NF19
+eyJoaXN0b3J5IjpbMTQyMTE1MDMwMSwxNTM2MTgzMjkwLDMyND
+U5OTkwMCwtMTc0Nzg4OTEwNCw1NjI3Mzk5NjIsMTE5NzI1MjU4
+MiwtMTMyNzMyNjAwMywtMjAxNDgyODU3NywxNDE4NDQzNjU0LC
+0xODk1MjkxNTc0LC03MDM3MTkyMjAsLTgzMTYyOTE5NCwxMjgy
+MTQyMDY1LC0xMjgyNzk0ODI4LDEyODU1NDA4OTUsMTAwMDA5MD
+k3NCwtNjM3MjYxODQwLDIwMzQwODkwNjUsLTQyNzU4NjQ0Miwt
+NzA1NDY0NTk3XX0=
 -->
