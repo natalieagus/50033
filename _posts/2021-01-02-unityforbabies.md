@@ -364,7 +364,7 @@ Vector2 nextPosition = currentPosition + speed * currentDirection.normalized * T
 rigidBody.MovePosition(nextPosition);
 ``` 
 
-It is a little bit unclean to do the above and mess with rigidBody's position instead of giving complete control to Physics engine (since it's a `dynamic` Rigidbody2D), so perhaps you can think of a better way to handle this, i.e: give the Mushroom an initial impulse Force to the left or to the right (zero linear friction set), and then flip the x-value of the velocity when it hits the other obstacles like the Pipe. 
+It is a bit *unclean* to do the above and mess with rigidBody's position **instead of giving complete control to Physics engine** (since it's a `dynamic` Rigidbody2D), so perhaps you can think of a **better** way to handle this, i.e: give the Mushroom an initial impulse Force to the left or to the right (zero linear friction set), and then flip the x-value of the velocity when it hits the other obstacles like the Pipe. 
 
 
 > Note: although not written, it is explicit for you to **declare** `rigidBody` as `this` mushroom's rigidBody and instantiate it at the `Start` method using `GetComponent<Rigidbody2D>()` as usual.
@@ -581,11 +581,11 @@ Refer to our course handout as usual to find out the standard protocol on how to
 # Next
 We improve on a few things this time round, but we still lack a few features: the enemies, counting of scores and coin collection, having power-ups effect on the character, and arranging the world to match Super Mario Bros World 1-1. However with your skills now, it should be clear how to implement them (at least to get it to work) so we will not put it as a priority at this point. In the next Lab we will learn new things instead, that is how to polish the looks of this game: adding VFX and basic SFX. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDUwNzE2MTE4LDE0MjExNTAzMDEsMTUzNj
-E4MzI5MCwzMjQ1OTk5MDAsLTE3NDc4ODkxMDQsNTYyNzM5OTYy
-LDExOTcyNTI1ODIsLTEzMjczMjYwMDMsLTIwMTQ4Mjg1NzcsMT
-QxODQ0MzY1NCwtMTg5NTI5MTU3NCwtNzAzNzE5MjIwLC04MzE2
-MjkxOTQsMTI4MjE0MjA2NSwtMTI4Mjc5NDgyOCwxMjg1NTQwOD
-k1LDEwMDAwOTA5NzQsLTYzNzI2MTg0MCwyMDM0MDg5MDY1LC00
-Mjc1ODY0NDJdfQ==
+eyJoaXN0b3J5IjpbMjAyMjk1MDgwNCwxNDIxMTUwMzAxLDE1Mz
+YxODMyOTAsMzI0NTk5OTAwLC0xNzQ3ODg5MTA0LDU2MjczOTk2
+MiwxMTk3MjUyNTgyLC0xMzI3MzI2MDAzLC0yMDE0ODI4NTc3LD
+E0MTg0NDM2NTQsLTE4OTUyOTE1NzQsLTcwMzcxOTIyMCwtODMx
+NjI5MTk0LDEyODIxNDIwNjUsLTEyODI3OTQ4MjgsMTI4NTU0MD
+g5NSwxMDAwMDkwOTc0LC02MzcyNjE4NDAsMjAzNDA4OTA2NSwt
+NDI3NTg2NDQyXX0=
 -->
