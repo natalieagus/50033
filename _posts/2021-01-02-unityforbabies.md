@@ -262,12 +262,12 @@ Now you can test your spring. While in Play mode, you can dynamically change the
 
 **Once you're satisfied, save the HittableSimple object as prefab.** 
 
-## Physic Material
+## Physics Material
 To get a more **bouncy** impact, you can create `Physics Material` and apply it on the Rigidbody of the EdgeDetector. It dictates the amount of **friction** or **bouncing** effects of colliding objects.  
 
-Go to the Project tab, and under Materials folder, right click >> Create >> Physic Material. Name it `Bouncy` and set the `Bounciness` property to some positive value, e.g: 0.3.
+Go to the Project tab, and under Materials folder, right click >> Create >> Physics Material. Name it `Bouncy` and set the `Bounciness` property to some positive value, e.g: 0.3.
 
-Afterwards, apply this Physic Material onto the Material property in Edge Detector's Rigidbody2D component:
+Afterwards, apply this Physics Material onto the Material property in Edge Detector's Rigidbody2D component:
 
 ![bouncymat](https://www.dropbox.com/s/qxyb6ywyfnk8lm2/17.png?raw=1)
 
@@ -581,7 +581,7 @@ Refer to our course handout as usual to find out the standard protocol on how to
 # Next
 We improve on a few things this time round, but we still lack a few features: the enemies, counting of scores and coin collection, having power-ups effect on the character, and arranging the world to match Super Mario Bros World 1-1. However with your skills now, it should be clear how to implement them (at least to get it to work) so we will not put it as a priority at this point. In the next Lab we will learn new things instead, that is how to polish the looks of this game: adding VFX and basic SFX. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAyMjk1MDgwNCwxNDIxMTUwMzAxLDE1Mz
+eyJoaXN0b3J5IjpbMTM0MTk4NjEzOSwxNDIxMTUwMzAxLDE1Mz
 YxODMyOTAsMzI0NTk5OTAwLC0xNzQ3ODg5MTA0LDU2MjczOTk2
 MiwxMTk3MjUyNTgyLC0xMzI3MzI2MDAzLC0yMDE0ODI4NTc3LD
 E0MTg0NDM2NTQsLTE4OTUyOTE1NzQsLTcwMzcxOTIyMCwtODMx
