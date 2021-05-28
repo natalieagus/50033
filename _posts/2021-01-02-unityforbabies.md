@@ -357,7 +357,8 @@ Vector2 nextPosition = currentPosition + speed * currentDirection.normalized * T
 ``` 
 where `Time.fixedDeltaTime` is simply the **interval in seconds** at which Physics frame rate updates. 
 
-Afterwards, we can set the mushroom's Rigidbody2D position directly to be this `nextPosition` under `Update()` (instead of `FixedUpdate()` so as not to interfere with the Physics engine's Gravity computation):
+Afterwards, we can set the mushroom's Rigidbody2D position directly to be this `nextPosition` under `Update()` (instead of `FixedUpdate()` so as not to interfere with the Physics engine's Gravity computation). It is a little bit unclean, so perhaps you can think of a better way to handle this, i.e: give the Mushroom an initial impulse Force to the left or to the right (zero linear friction set), and then flip the x-value of the velocity when it hits the other obstacles like the Pipe
+
  ```java
 Vector2 nextPosition = currentPosition + speed * currentDirection.normalized * Time.fixedDeltaTime;
 rigidBody.MovePosition(nextPosition);
@@ -577,7 +578,7 @@ Refer to our course handout as usual to find out the standard protocol on how to
 # Next
 We improve on a few things this time round, but we still lack a few features: the enemies, counting of scores and coin collection, having power-ups effect on the character, and arranging the world to match Super Mario Bros World 1-1. However with your skills now, it should be clear how to implement them (at least to get it to work) so we will not put it as a priority at this point. In the next Lab we will learn new things instead, that is how to polish the looks of this game: adding VFX and basic SFX. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NDc3NDQ2OCwxNDIxMTUwMzAxLDE1Mz
+eyJoaXN0b3J5IjpbLTMzMTgxOTU2OSwxNDIxMTUwMzAxLDE1Mz
 YxODMyOTAsMzI0NTk5OTAwLC0xNzQ3ODg5MTA0LDU2MjczOTk2
 MiwxMTk3MjUyNTgyLC0xMzI3MzI2MDAzLC0yMDE0ODI4NTc3LD
 E0MTg0NDM2NTQsLTE4OTUyOTE1NzQsLTcwMzcxOTIyMCwtODMx
