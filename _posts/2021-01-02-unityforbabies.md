@@ -252,7 +252,7 @@ In order do have fine-grained collision tuning, we need to define the `Layer` of
 
 Then, go to **Edit >> Project Settings >> Physics2D**. You should see some kind of Collision Matrix depending on how many different Layers you have set in your project. Right now you must only have the basics + `Obstacles` that you have created above. 
 
-<mark>**Untick** collision between QuestionBox and Obstacles to disable collisions between the two.</mark>
+<mark>Untick collision between QuestionBox and Obstacles to disable collisions between the two.</mark>
 
 ![layers](https://www.dropbox.com/s/j0yq5gq038jh41m/15.png?raw=1)
 
@@ -581,11 +581,11 @@ Refer to our course handout as usual to find out the standard protocol on how to
 # Next
 We improve on a few things this time round, but we still lack a few features: the enemies, counting of scores and coin collection, having power-ups effect on the character, and arranging the world to match Super Mario Bros World 1-1. However with your skills now, it should be clear how to implement them (at least to get it to work) so we will not put it as a priority at this point. In the next Lab we will learn new things instead, that is how to polish the looks of this game: adding VFX and basic SFX. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM0MTk4NjEzOSwxNDIxMTUwMzAxLDE1Mz
-YxODMyOTAsMzI0NTk5OTAwLC0xNzQ3ODg5MTA0LDU2MjczOTk2
-MiwxMTk3MjUyNTgyLC0xMzI3MzI2MDAzLC0yMDE0ODI4NTc3LD
-E0MTg0NDM2NTQsLTE4OTUyOTE1NzQsLTcwMzcxOTIyMCwtODMx
-NjI5MTk0LDEyODIxNDIwNjUsLTEyODI3OTQ4MjgsMTI4NTU0MD
-g5NSwxMDAwMDkwOTc0LC02MzcyNjE4NDAsMjAzNDA4OTA2NSwt
-NDI3NTg2NDQyXX0=
+eyJoaXN0b3J5IjpbLTEwOTg4MjI1NjUsMTM0MTk4NjEzOSwxND
+IxMTUwMzAxLDE1MzYxODMyOTAsMzI0NTk5OTAwLC0xNzQ3ODg5
+MTA0LDU2MjczOTk2MiwxMTk3MjUyNTgyLC0xMzI3MzI2MDAzLC
+0yMDE0ODI4NTc3LDE0MTg0NDM2NTQsLTE4OTUyOTE1NzQsLTcw
+MzcxOTIyMCwtODMxNjI5MTk0LDEyODIxNDIwNjUsLTEyODI3OT
+Q4MjgsMTI4NTU0MDg5NSwxMDAwMDkwOTc0LC02MzcyNjE4NDAs
+MjAzNDA4OTA2NV19
 -->
