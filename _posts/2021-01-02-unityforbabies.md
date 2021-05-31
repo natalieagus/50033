@@ -324,7 +324,7 @@ void  OnCollisionEnter2D(Collision2D col)
 This will allow you to spawn the Mushroom right above the box when it's hit by Mario.  
 * Attach this script to `EdgeDetector` GameObject under `HittableSimple` prefab (again, in prefab mode as shown in screenshot below! Not your game scene), 
 * Link up all the required public variables with all the assets. 
-* All assets except `Consummable Prefab` must be those in the Prefab's Scene and not the Assets tab.  
+* All assets except `Consummable Prefab` must be those in the Prefab's Tab and not the Assets tab.  
 * You can find the mushroom prefab to link here under the Assets tab. 
 
 ![qnsboxcontroller](https://www.dropbox.com/s/r5a7nshbtl94m47/19a.png?raw=1)
@@ -581,11 +581,11 @@ Refer to our course handout as usual to find out the standard protocol on how to
 # Next
 We improve on a few things this time round, but we still lack a few features: the enemies, counting of scores and coin collection, having power-ups effect on the character, and arranging the world to match Super Mario Bros World 1-1. However with your skills now, it should be clear how to implement them (at least to get it to work) so we will not put it as a priority at this point. In the next Lab we will learn new things instead, that is how to polish the looks of this game: adding VFX and basic SFX. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwOTg4MjI1NjUsMTM0MTk4NjEzOSwxND
-IxMTUwMzAxLDE1MzYxODMyOTAsMzI0NTk5OTAwLC0xNzQ3ODg5
-MTA0LDU2MjczOTk2MiwxMTk3MjUyNTgyLC0xMzI3MzI2MDAzLC
-0yMDE0ODI4NTc3LDE0MTg0NDM2NTQsLTE4OTUyOTE1NzQsLTcw
-MzcxOTIyMCwtODMxNjI5MTk0LDEyODIxNDIwNjUsLTEyODI3OT
-Q4MjgsMTI4NTU0MDg5NSwxMDAwMDkwOTc0LC02MzcyNjE4NDAs
-MjAzNDA4OTA2NV19
+eyJoaXN0b3J5IjpbOTI2OTA2MDk4LDEzNDE5ODYxMzksMTQyMT
+E1MDMwMSwxNTM2MTgzMjkwLDMyNDU5OTkwMCwtMTc0Nzg4OTEw
+NCw1NjI3Mzk5NjIsMTE5NzI1MjU4MiwtMTMyNzMyNjAwMywtMj
+AxNDgyODU3NywxNDE4NDQzNjU0LC0xODk1MjkxNTc0LC03MDM3
+MTkyMjAsLTgzMTYyOTE5NCwxMjgyMTQyMDY1LC0xMjgyNzk0OD
+I4LDEyODU1NDA4OTUsMTAwMDA5MDk3NCwtNjM3MjYxODQwLDIw
+MzQwODkwNjVdfQ==
 -->
