@@ -383,7 +383,7 @@ rigidBody.AddForce(Vector2.up  *  20, ForceMode2D.Force);
 ```
 
 If you use `ForceMode2D.Force`, you might observe straight away that the effect is *not immediate* because the net amount of upwards force `Vector2.up  *  20` we wrote to be applied on the mushroom is automatically set as the amount of **TOTAL force to be applied over ONE second** (50 **physics** frame).
-> By default on desktop, **Unity** runs the **FixedUpdate** at 50 **FPS** and the **Update** at 60 **FPS**
+> By default on desktop, **Unity** runs the **FixedUpdate** at 50 times per second and the **Update** at 60 times per second. 
 
 **However it DOES NOT mean that the physics engine continuously apply this force over 1 whole second.** It will apply **only over the exact frames** when you call it, e.g: over **0.02 seconds** if you only call it for a single frame.
 > Therefore, if you were to call `rigidBody.AddForce(Vector2.up  *  20, ForceMode2D.Force)` continuously for **FIFTY** times (over 1 second), then the **total amount of force applied** on the mushroom body would've been the same as calling `rigidBody.AddForce(Vector2.up  *  20, ForceMode2D.Impulse)` for **ONE** frame (one time). 
@@ -581,11 +581,11 @@ Refer to our course handout as usual to find out the standard protocol on how to
 # Next
 We improve on a few things this time round, but we still lack a few features: the enemies, counting of scores and coin collection, having power-ups effect on the character, and arranging the world to match Super Mario Bros World 1-1. However with your skills now, it should be clear how to implement them (at least to get it to work) so we will not put it as a priority at this point. In the next Lab we will learn new things instead, that is how to polish the looks of this game: adding VFX and basic SFX. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMTM1NjY3NjYsLTg5OTI1NDUxMCwxMz
-QxOTg2MTM5LDE0MjExNTAzMDEsMTUzNjE4MzI5MCwzMjQ1OTk5
-MDAsLTE3NDc4ODkxMDQsNTYyNzM5OTYyLDExOTcyNTI1ODIsLT
-EzMjczMjYwMDMsLTIwMTQ4Mjg1NzcsMTQxODQ0MzY1NCwtMTg5
-NTI5MTU3NCwtNzAzNzE5MjIwLC04MzE2MjkxOTQsMTI4MjE0Mj
-A2NSwtMTI4Mjc5NDgyOCwxMjg1NTQwODk1LDEwMDAwOTA5NzQs
-LTYzNzI2MTg0MF19
+eyJoaXN0b3J5IjpbLTk2Mzc5ODk5NCwtMjExMzU2Njc2NiwtOD
+k5MjU0NTEwLDEzNDE5ODYxMzksMTQyMTE1MDMwMSwxNTM2MTgz
+MjkwLDMyNDU5OTkwMCwtMTc0Nzg4OTEwNCw1NjI3Mzk5NjIsMT
+E5NzI1MjU4MiwtMTMyNzMyNjAwMywtMjAxNDgyODU3NywxNDE4
+NDQzNjU0LC0xODk1MjkxNTc0LC03MDM3MTkyMjAsLTgzMTYyOT
+E5NCwxMjgyMTQyMDY1LC0xMjgyNzk0ODI4LDEyODU1NDA4OTUs
+MTAwMDA5MDk3NF19
 -->
