@@ -579,13 +579,13 @@ Refer to our course handout as usual to find out the standard protocol on how to
 
 
 # Next
-We improve on a few things this time round, but we still lack a few features: the enemies, counting of scores and coin collection, having power-ups effect on the character, and arranging the world to match Super Mario Bros World 1-1. However with your skills now, it should be clear how to implement them (at least to get it to work) so we will not put it as a priority at this point. In the next Lab we will learn new things instead, that is how to polish the looks of this game: adding VFX and postprocessing. 
+We improve on a few things this time round, but we still lack a few features: the enemies, counting of scores and coin collection, having power-ups effect on the character, and arranging the world to match Super Mario Bros World 1-1. However with your skills now, it should be clear how to implement them (at least to get it to work) so we will not put it as a priority at this point. In the next Lab we will learn new things instead, that is how to polish the looks of this game: adding VFX and post-processing. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzc0MzAwNzMyLC05NjM3OTg5OTQsLTIxMT
-M1NjY3NjYsLTg5OTI1NDUxMCwxMzQxOTg2MTM5LDE0MjExNTAz
-MDEsMTUzNjE4MzI5MCwzMjQ1OTk5MDAsLTE3NDc4ODkxMDQsNT
-YyNzM5OTYyLDExOTcyNTI1ODIsLTEzMjczMjYwMDMsLTIwMTQ4
-Mjg1NzcsMTQxODQ0MzY1NCwtMTg5NTI5MTU3NCwtNzAzNzE5Mj
-IwLC04MzE2MjkxOTQsMTI4MjE0MjA2NSwtMTI4Mjc5NDgyOCwx
-Mjg1NTQwODk1XX0=
+eyJoaXN0b3J5IjpbLTE3ODc2MTE2NzksLTk2Mzc5ODk5NCwtMj
+ExMzU2Njc2NiwtODk5MjU0NTEwLDEzNDE5ODYxMzksMTQyMTE1
+MDMwMSwxNTM2MTgzMjkwLDMyNDU5OTkwMCwtMTc0Nzg4OTEwNC
+w1NjI3Mzk5NjIsMTE5NzI1MjU4MiwtMTMyNzMyNjAwMywtMjAx
+NDgyODU3NywxNDE4NDQzNjU0LC0xODk1MjkxNTc0LC03MDM3MT
+kyMjAsLTgzMTYyOTE5NCwxMjgyMTQyMDY1LC0xMjgyNzk0ODI4
+LDEyODU1NDA4OTVdfQ==
 -->
