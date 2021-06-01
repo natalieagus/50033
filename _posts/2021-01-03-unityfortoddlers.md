@@ -83,6 +83,8 @@ Head over to the Light2D inspector and you observe that you can adjust its prope
 
 Expand the **blending** section and observe a few settings: this dictates how two or more light source should blend when they're near one another. Overlap operation of **additive** will cause the overlapping region to be very bright, while **alpha blend** allows the light with higher order to be rendered on top of the other. The gif below demonstrates at first the blue light to be rendered after the green light, giving an overall blue-ish appearance. Afterwards, the light order is swapped so you see that the overall overlapping region has a green-ish appearance. Both lights are set to be "Alpha Blend". 
 
+> Wait for a few seconds, the gif is quite long. 
+
 ![alpha blend](https://www.dropbox.com/s/1xkizaxktv4y4kq/blending.gif?raw=1)
 
 ## URP SpriteLit and SpriteUnlit Material 
@@ -640,5 +642,5 @@ Here's a checkoff gif sample to follow if you don't want to think too much:
 # Next
 We are almost equipped to recreate World 1-1 of Super Mario Bros, with a few enhanced effects. In the next Lab, we will implement a Game and State Manager,  an Object Pooler, and also an Audio Mixer. It will be mostly housekeeping and some C# stuff that hopefully will help you to arrange your code in a neater way. Now that you have understood Unity basics, it's time to clean up these loose ends. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTYwNjE1NjMxXX0=
+eyJoaXN0b3J5IjpbLTg2MTQ1MTY4OCw5NjA2MTU2MzFdfQ==
 -->
