@@ -167,8 +167,8 @@ You can **test run** that now Mario can be moved to the left and to the right us
 
 ## Unity Order Execution of Event Functions.
 We can implement the event functions in the script that’s attached to a particular GameObject. Notice that in the script we created,
--   It inherits from MonoBehaviour, the base class from which every Unity script derives.
--   It comes with two functions for you to implement if you want: `Start()` and `Update()`.
+-   It inherits from MonoBehaviour, the base class from which every *Unity script* derives. It offers some life cycle functions that makes it easier for us to manage our game. 
+-   It comes with **two** starting functions for you to implement if you want: `Start()` and `Update()`.
 
 `Start()` is always called once in the beginning when the GameObject is instantiated, and then `Update()` is called per frame. **This is where you want to implement your game logic.** The diagram below shows the order of execution of event functions. They run on a single Unity main thread.
 
@@ -603,10 +603,10 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MTY4NDA2NjEsNTI3Mjc2MzE1LC0yMD
-g1NjU1MjI5LC0xOTEzNzYyMjg5LDc2OTYxNTEwNywxNDU5MjI0
-NzM1LDI0NjQwOTEwMCwtMTU0MzQ1NDc2MSwxMjA2NTgzNTE1LC
-03NTcwNDk0NTcsLTg3ODE1OTIxNywtMzIxOTkwNzU4LDIzMzU4
-NTE0MCwtMTAxODM3MzkxOSwtMTM5OTYxMTM4MSwtMjA2MTM1NT
-c2M119
+eyJoaXN0b3J5IjpbLTEwNDgzMzM4NjMsLTE5MTY4NDA2NjEsNT
+I3Mjc2MzE1LC0yMDg1NjU1MjI5LC0xOTEzNzYyMjg5LDc2OTYx
+NTEwNywxNDU5MjI0NzM1LDI0NjQwOTEwMCwtMTU0MzQ1NDc2MS
+wxMjA2NTgzNTE1LC03NTcwNDk0NTcsLTg3ODE1OTIxNywtMzIx
+OTkwNzU4LDIzMzU4NTE0MCwtMTAxODM3MzkxOSwtMTM5OTYxMT
+M4MSwtMjA2MTM1NTc2M119
 -->
