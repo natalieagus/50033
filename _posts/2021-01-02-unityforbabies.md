@@ -456,6 +456,8 @@ void  OnCollisionEnter2D(Collision2D col)
 }
 ```
 
+> Note that Coroutine is **NOT** creation of new threads. 
+
 ## Has the Question Box moved?
 One problem with the above implementation is that we cannot know for sure if the box has bounced up (has moved) *sufficiently high* before `ObjectMovedAndStopped()` returns **true**, depending on *where* Mario hits the box. It can be the case that Mario so very slightly collides with the question box's edge but didn't give sufficient energy to bounce the spring attached to the hittable box. 
 
@@ -581,11 +583,11 @@ Refer to our course handout as usual to find out the standard protocol on how to
 # Next
 We improve on a few things this time round, but we still lack a few features: the enemies, counting of scores and coin collection, having power-ups effect on the character, and arranging the world to match Super Mario Bros World 1-1. However with your skills now, it should be clear how to implement them (at least to get it to work) so we will not put it as a priority at this point. In the next Lab we will learn new things instead, that is how to polish the looks of this game: adding VFX and post-processing. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3ODc2MTE2NzksLTk2Mzc5ODk5NCwtMj
-ExMzU2Njc2NiwtODk5MjU0NTEwLDEzNDE5ODYxMzksMTQyMTE1
-MDMwMSwxNTM2MTgzMjkwLDMyNDU5OTkwMCwtMTc0Nzg4OTEwNC
-w1NjI3Mzk5NjIsMTE5NzI1MjU4MiwtMTMyNzMyNjAwMywtMjAx
-NDgyODU3NywxNDE4NDQzNjU0LC0xODk1MjkxNTc0LC03MDM3MT
-kyMjAsLTgzMTYyOTE5NCwxMjgyMTQyMDY1LC0xMjgyNzk0ODI4
-LDEyODU1NDA4OTVdfQ==
+eyJoaXN0b3J5IjpbMTQ3ODY4OTg5OCwtOTYzNzk4OTk0LC0yMT
+EzNTY2NzY2LC04OTkyNTQ1MTAsMTM0MTk4NjEzOSwxNDIxMTUw
+MzAxLDE1MzYxODMyOTAsMzI0NTk5OTAwLC0xNzQ3ODg5MTA0LD
+U2MjczOTk2MiwxMTk3MjUyNTgyLC0xMzI3MzI2MDAzLC0yMDE0
+ODI4NTc3LDE0MTg0NDM2NTQsLTE4OTUyOTE1NzQsLTcwMzcxOT
+IyMCwtODMxNjI5MTk0LDEyODIxNDIwNjUsLTEyODI3OTQ4Mjgs
+MTI4NTU0MDg5NV19
 -->
