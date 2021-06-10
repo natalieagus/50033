@@ -848,8 +848,6 @@ Attach `RedMushroom.cs` and `OrangeMushroom.cs` to your respective consumable pr
 
 Set `Texture t` in the inspector to be a picture you want to indicate in the UI later on on the availability of this powerup. 
 
-## PowerupManager.cs
-
 ### PowerupUI
 Now what is left is to indicate how many powerups are usable, and to bind "consume" of powerup with a key. Create a UI gameobject as follows:
 
@@ -1011,6 +1009,6 @@ In the next lesson, we will further polish our game by learning how to transitio
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY5OTkzMjA1MSwtMzA1MTA4MDg4LDYwMz
-E3MTk0MF19
+eyJoaXN0b3J5IjpbMTE5NjQ2MDk2MiwtNjk5OTMyMDUxLC0zMD
+UxMDgwODgsNjAzMTcxOTQwXX0=
 -->
