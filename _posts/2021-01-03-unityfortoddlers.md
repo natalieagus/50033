@@ -415,7 +415,7 @@ Let's get started!
 ## Getting Parallax Background Asset
 The first step is to get vector images that support parallax scrolling. These backgrounds are mainly composed of different layers. You can download some samples for free online such as from [here](https://www.freepik.com/free-photos-vectors/parallax-background). The specific one that was used for this demo can be found [here](https://digitalmoons.itch.io/parallax-forest-background). 
 
-Import them as sprites to your project. 
+Import them as sprites to your project, and change its **Texture** Wrap Mode property into **Repeat**. 
 
 
 ## Creating Materials and Layers for Each Background Object
@@ -642,6 +642,6 @@ Here's a checkoff gif sample to follow if you don't want to think too much:
 # Next
 We are almost equipped to recreate World 1-1 of Super Mario Bros, with a few enhanced effects. In the next Lab, we will implement a Game and State Manager,  an Object Pooler, and also an Audio Mixer. It will be mostly housekeeping and some C# stuff that hopefully will help you to arrange your code in a neater way. Now that you have understood Unity basics, it's time to clean up these loose ends. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk3NDQ4MjU5OSwtODYxNDUxNjg4LDk2MD
-YxNTYzMV19
+eyJoaXN0b3J5IjpbLTE1ODMwMDI5MjQsMTk3NDQ4MjU5OSwtOD
+YxNDUxNjg4LDk2MDYxNTYzMV19
 -->
