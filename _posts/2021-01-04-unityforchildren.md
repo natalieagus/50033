@@ -23,7 +23,7 @@ title: Unity for Children
 
 # Introduction
 
-The main purpose of this Lab is to introduce a few tools that can be used to manage the game better. For example, right now we have game states spread all over various scripts, audio source spread everywhere on each object, hard-to-read game logic, etc. We can improve the structure of the game better with the help of AudioMixer, ScriptableObject, Singletons, Unity Event,  and a few other C# basics. 
+The main purpose of this Lab is to introduce a few tools that can be used to manage the game better. For example, right now we have game states spread all over various scripts, audio source spread everywhere on each object, hard-to-read game logic, etc. We can improve the structure of the game better with the help of AudioMixer, ScriptableObject, Unity Event,  and a few other C# basics. 
 
 If you already know most of the learning objectives of the Lab, feel free to head straight to the Checkoff section. As usual, you don't have to follow everything in this Lab step by step if you have your own preferences to manage your game. However it is imperative that you still know what is the content of this Lab as they are part of our course syllabus. 
 
@@ -1011,5 +1011,5 @@ In the next lesson, we will further polish our game by learning how to transitio
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjAzMTcxOTQwXX0=
+eyJoaXN0b3J5IjpbLTMwNTEwODA4OCw2MDMxNzE5NDBdfQ==
 -->
