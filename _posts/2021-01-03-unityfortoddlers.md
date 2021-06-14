@@ -560,7 +560,7 @@ There's a lot of different tips and tricks to do this. You're free to implement 
 
 To create this simple 'breakable brick', we need **three** gameObjects:
 1. A gameObject that contains the **Sprite Renderer** of the breakable brick and a regular **BoxCollider2D**.
-2.  A **child** gameObject of (1) that contains a single **EdgeCollider2D** to detect collision only at the **bottom** of the brick
+2.  A **child** gameObject of (1) that contains a single **EdgeCollider2D** to detect collision only at the **bottom** of the brick. Tick its `IsTrigger` property.
 3. A single "debris" **prefab**, which is simply a gameObject with RigidBody2D component attached (so gravity can act on it) and a Sprite Renderer. It has a single script `Debris.cs` which tells the Physics engine to propel this single debris outwards at the point of instantiation, and render itself invisible after some time. 
 
 Now create a new script called `BreakBrick.cs,` to be attached in gameObject (1). Open the script and create a few variables:
@@ -642,6 +642,6 @@ Here's a checkoff gif sample to follow if you don't want to think too much:
 # Next
 We are almost equipped to recreate World 1-1 of Super Mario Bros, with a few enhanced effects. In the next Lab, we will implement a Game and State Manager,  an Object Pooler, and also an Audio Mixer. It will be mostly housekeeping and some C# stuff that hopefully will help you to arrange your code in a neater way. Now that you have understood Unity basics, it's time to clean up these loose ends. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1ODMwMDI5MjQsMTk3NDQ4MjU5OSwtOD
-YxNDUxNjg4LDk2MDYxNTYzMV19
+eyJoaXN0b3J5IjpbLTE0NDQ4NzY2MjIsLTE1ODMwMDI5MjQsMT
+k3NDQ4MjU5OSwtODYxNDUxNjg4LDk2MDYxNTYzMV19
 -->
