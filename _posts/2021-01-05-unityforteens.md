@@ -26,7 +26,7 @@ title: Unity for Teens
 Most things that will be done in this lab will not be immediately visible (unlike Shaders, spawning new enemies, etc that we have done in the previous weeks), but they can be handy tool to manage your project.
 
 As usual, veterans can head straight to the [Checkoff](https://natalieagus.github.io/50033/2021/01/05/unityforteens.html#checkoff) section and implement the required features any way you deem fit.
-> Quick check: you have learned about ScriptableObjects Event System and Game Architecture, you're good to skip the tutorial.
+> Quick check: you have learned about **ScriptableObject Event System** and **ScriptableObject Game Architecture**, you're good to skip the tutorial.
 
 You still need to know the contents of this lab though, as that will be used for our quizzes.
 
@@ -1182,5 +1182,6 @@ The gif below summarises the end result:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDc3NjU0MDUxLC0xMDE4NzcwMzIyXX0=
+eyJoaXN0b3J5IjpbLTEzNzU0NDY4NDQsLTEwMTg3NzAzMjJdfQ
+==
 -->
