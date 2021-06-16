@@ -25,7 +25,10 @@ title: Unity for Teens
 # Introduction
 Most things that will be done in this lab will not be immediately visible (unlike Shaders, spawning new enemies, etc that we have done in the previous weeks), but they can be handy tool to manage your project.
 
-As usual, veterans can head straight to the Checkoff section and implement the required features any way you deem fit. You still need to know the contents of this lab though, as that will be used for our quizzes.
+As usual, veterans can head straight to the [Checkoff](https://natalieagus.github.io/50033/2021/01/05/unityforteens.html#checkoff) section and implement the required features any way you deem fit.
+> Quick check: you have learned about ScriptableObjects Event System and Game Architecture, you're good to skip the tutorial.
+
+You still need to know the contents of this lab though, as that will be used for our quizzes.
 
 # GameObject Persistence Between Scenes
 When we switch from one game scene to another, we will **destroy** all GameObjects (along with its components) in the previous scene. Sometimes we want some GameObjects to persist, or more specifically: its data or state. We can definitely use Scriptable Objects to store some relevant data like GameScore, Player items, stats, current buffs, etc that can be carried over to the next scene, and then load it up when the new scene is ready. We can present the player with some kind of loading screen when we load these information for the new GameObject instances to process. 
@@ -1179,5 +1182,5 @@ The gif below summarises the end result:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMTg3NzAzMjJdfQ==
+eyJoaXN0b3J5IjpbNDc3NjU0MDUxLC0xMDE4NzcwMzIyXX0=
 -->
