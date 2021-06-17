@@ -998,7 +998,7 @@ It is alright if your screen recording for this checkoff takes more time.
 
 
 # Next
-In the next lesson, we will further polish our game by learning how to transition between Scenes and implementing a Combo Manager. We will also learn another way to perform asynchronous execution using async and await, which is fundamentally different from Coroutines, along with some issues to watch out for when using them such as *memory leak*. 
+In the next lesson, we will further polish our game by learning how to transition between Scenes and using an alternative event-based Architecture using Scriptable Objects. This architecture is useful to eliminate dependency between Scenes, and we can use it to implement basic stuffs in game such as Inventory System and Combo System. We will also learn another way to perform asynchronous execution using async and await, which is fundamentally different from Coroutines, along with some issues to watch out for when using them such as *memory leak*. 
 
 
 
@@ -1009,6 +1009,6 @@ In the next lesson, we will further polish our game by learning how to transitio
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1Mjg2ODI5NDYsMTE5NjQ2MDk2MiwtNj
-k5OTMyMDUxLC0zMDUxMDgwODgsNjAzMTcxOTQwXX0=
+eyJoaXN0b3J5IjpbLTE1MzM0MDU5OCwxMTk2NDYwOTYyLC02OT
+k5MzIwNTEsLTMwNTEwODA4OCw2MDMxNzE5NDBdfQ==
 -->
