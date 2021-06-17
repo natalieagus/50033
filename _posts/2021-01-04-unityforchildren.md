@@ -404,7 +404,7 @@ int currentScore;
 int currentPlayerHealth;
 
 // for Reset values
-Vector3 gombaSpawnPointStart = new Vector3(2.5, -0.45, 0); // hardcoded location
+Vector3 gombaSpawnPointStart = new Vector3(2.5f, -0.45f, 0); // hardcoded location
 // .. other reset values 
 
 // for Consume.cs
@@ -1009,6 +1009,6 @@ In the next lesson, we will further polish our game by learning how to transitio
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE5NjQ2MDk2MiwtNjk5OTMyMDUxLC0zMD
-UxMDgwODgsNjAzMTcxOTQwXX0=
+eyJoaXN0b3J5IjpbLTE1Mjg2ODI5NDYsMTE5NjQ2MDk2MiwtNj
+k5OTMyMDUxLC0zMDUxMDgwODgsNjAzMTcxOTQwXX0=
 -->
