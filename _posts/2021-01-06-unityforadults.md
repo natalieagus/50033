@@ -720,7 +720,7 @@ As per Unity Official Documentation, `RenderTexture` is **not automatically mana
 
 Now if the MonoBehavior (the gameobject) running this script is disabled, the `finally` clause never called, thus resulting in **memory leak**.
 
-On the other hand, `async` function continues to run **even after the MonoBehavior is destroyed*. You can test this very easily by setting `Size = 10000`, and method: `useAsync`, run the the project quickly and press `c` then quickly stop it. The output will still appear at Console even after the program exits. This shows that `async` function **always exits**. 
+On the other hand, `async` function continues to run **even after the MonoBehavior is destroyed**. You can test this very easily by setting `Size = 10000`, and method: `useAsync`, run the the project quickly and press `c` then quickly stop it. The output will still appear at Console even after the program exits. This shows that `async` function **always exits**. 
 
 ![asyncexits](https://www.dropbox.com/s/e8t0ruh810a49te/asynccomplete.gif?raw=1)
  
@@ -1036,5 +1036,6 @@ Coroutines iterator function may not automatically release stuffs that are out o
   
 Rather it's a function that generates a dynamic object based on the code in the function.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MDY1NTY3OTNdfQ==
+eyJoaXN0b3J5IjpbLTE4OTk1MDMxNjEsLTE1MDY1NTY3OTNdfQ
+==
 -->
