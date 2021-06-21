@@ -973,7 +973,7 @@ if (Input.GetKeyDown("x")){
 
 As a summary: 
 * When Mario collides with Red/Orange Mushroom, `OnCollision2D` callback in `Red/OrangeMushroom.cs` will call `addPowerup` in CentralManager, and pass the reference for Texture `t` and `this instance` eventually to `PowerupManager`. This will show the UI that a powerup is available. 
-* When Mario presses `z` or `x`, it will call `consumePowerup` in CentralManager, and pass the reference of itself. This will eventually reach `PowerupManager`'s `consumePowerup` and it will call the `consumedBy` method implemented in both `RedMushroom` and `OrangeMushroom` any of these powerups are available. 
+* When Mario presses `z` or `x`, it will call `consumePowerup` in CentralManager, and pass the reference of itself. This will eventually reach `PowerupManager`'s `consumePowerup` and it will call the `consumedBy` method implemented in both `RedMushroom` and `OrangeMushroom` if any of these powerups are available. 
 
 
 
@@ -1009,7 +1009,7 @@ In the next lesson, we will further polish our game by learning how to transitio
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjgyNTI3MzYwLC0xNTMzNDA1OTgsMTE5Nj
-Q2MDk2MiwtNjk5OTMyMDUxLC0zMDUxMDgwODgsNjAzMTcxOTQw
-XX0=
+eyJoaXN0b3J5IjpbLTE4MDk0ODI1NjksNjgyNTI3MzYwLC0xNT
+MzNDA1OTgsMTE5NjQ2MDk2MiwtNjk5OTMyMDUxLC0zMDUxMDgw
+ODgsNjAzMTcxOTQwXX0=
 -->
