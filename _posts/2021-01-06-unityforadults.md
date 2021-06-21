@@ -909,133 +909,15 @@ Here's a sample output:
 
 Observe that the `Frame` **increases** at each even though we call `Thread.Sleep(2000)` because **we have switched to thread pool** before calling that instruction. Otherwise, `Thread.Sleep(2000)` will **block** on the **main thread** instead (because we aren't `await`-ing anything in that line) and cause the  main thread to block, rendering the game unresponsive for two seconds.
 
+# Summary 
+There's no checkoff associated with this tutorial, but the contents of this tutorial will be tested for our midterms. 
 
-> Written with [StackEdit](https://stackedit.io/).
-
-### Events notes
-https://learn.unity.com/tutorial/events-uh
-http://www.unitygeek.com/delegates-events-unity/
-
-
-### Async notes
-Use example:https://www.youtube.com/watch?v=gxaJyuf-2dI
-https://www.youtube.com/watch?v=5Fjt3dhXEqU
-https://www.youtube.com/watch?v=7eKi6NKri6I
-
-An intended use case in the remark seems to say that the method is actually not  `async`  but you would like to turn it into  `async`  so you need an  `await`  somewhere in it, therefore  `Task.Yield()`  is the perfect scapegoat, or something. Instead of finishing the method right away (remember that  `async`  won't magically turn the method to async, it depends on the content of the method) now you  **force** it to be async.
-
-https://gametorrahod.com/unity-and-async-await/
-Basics of sync context: https://hamidmosalla.com/2018/06/24/what-is-synchronizationcontext/
-
-But in our case the context receiver is not an ordinary context but  `UnitySynchronizationContext`. Now the  `Task.Yield()`  has a more useful function that effectively continue things the next frame. If it was an ordinary  `SynchronizationContext`, I guess it could produce infinite loop in our example program since it would continue to the  `while`  again right away.
-
-It returns a  `YieldAwaiter`  that the caller could use to continue. As evidence from our log, "Awaited" was logged every frame onwards becuase the context (code next to the  `await`) was saved into this awaiter.  `UnitySynchronizationContext`  do something magical and wait a frame and use this awaiter to continue, then it hit  `while`  and once again return a new  `YieldAwaiter`. This probably continue adding a new  `WorkRequest`  for the code earlier every frame as a pending task until the  `while`  is  `false`.
-
-Good alternative: https://github.com/Cysharp/UniTask
+# Next
+In the next tutorial, we will lea
 
 
-https://medium.com/@imwithye/asynchronous-function-in-unity-a229941ef353
 
-https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task?view=net-5.0
-## Background task problem
 
-However, the  `async`  function, very similar to JavaScript, is not executed in another thread. Instead, the function executes on the main thread, and only when the  `await`  keyword appears, the function executes may or  **MAY NOT**  on the main thread.
-
-private async void Start()  
-{  
-	Log("Start", "Task delay 2 seconds");  
-	await Task.Delay(TimeSpan.FromSeconds(2));  
-	Log("Start", "Task delay 2 finished");  
-	Log("Start", "Thread sleep 2 seconds");  
-	Thread.Sleep(TimeSpan.FromSeconds(2));  
-	Log("Start", "Thread sleep done");  
-}  
-  
-private void Update()  
-{  
-	_frames++;  
-}  
-  
-private void Log(string caller, string message)  
-{  
-	Debug.Log($"[Thread {Thread.CurrentThread.ManagedThreadId}][Frame {_frames}][Method {caller}] {message}");  
-}
-
-Here we define a helper function  `Log`  to monitor the current thread and current frame count. The above function returns the following. theyre still sequential for Start but UPDATE can run because the frame is increasing
-
-1. [Thread 1][Frame 0][Method Start] Task delay 2 seconds  
-2. [Thread 1][Frame 172][Method Start] Task delay 2 finished  
-3. [Thread 1][Frame 172][Method Start] Thread sleep 2 seconds  
-4. [Thread 1][Frame 172][Method Start] Thread sleep done
-
-Notice the function does execute sequentially and asynchronously. Line 1 and line 2 shows the  `await`  keyword pushes the task to the background and resumes execution after 2 seconds as the frame count is different. However, line 3 and line 4 shows that the function although declared as async, it runs still on the main thread, if there is a heavy computation task in the function, it blocks the whole system until it finishes.
-## Workaround
-
-Instead of lunching the task on the main thread, we can force it to lunch on a background thread and return a task to inform the main thread to await the result.
-
-private async void Start()  
-{  
-	Log("Start", "Task delay 2 seconds");  
-	await Task.Delay(TimeSpan.FromSeconds(2));  
-	Log("Start", "Task delay 2 finished");  
-	Log("Start", "Thread sleep 2 seconds");  
-	await Task.Run(() => Thread.Sleep(TimeSpan.FromSeconds(2)));  
-	Log("Start", "Thread sleep done");  
-}
-
-`Task.Run`  function will lunch the lambda action on the background thread. Instead of blocking the execution of the main thread, the main thread  `Start`  function will pause here and await the  `Task.Run`  function to finish. Then it resumes afterward. The above function returns:
-
-1. [Thread 1][Frame 0][Method Start] Task delay 2 seconds  
-2. [Thread 1][Frame 167][Method Start] Task delay 2 finished  
-3. [Thread 1][Frame 167][Method Start] Thread sleep 2 seconds  
-4. [Thread 1][Frame 378][Method Start] Thread sleep done
-
-## Background task in UniTask
-
-Not only a nicer replacement for Unity coroutine, UniTask also provides a nicer background thread management. With special task  `SwitchToThreadPool`, UniTask allows the thread changes current context to a thread pool thread and execute on the background.
-
-private async void Start()  
-{  
-	Log("Start", "Task delay 2 seconds");  
-	await UniTask.Delay(TimeSpan.FromSeconds(2));  
-	Log("Start", "Task delay 2 finished");  
-	Log("Start", "Thread sleep 2 seconds");  
-	await UniTask.SwitchToThreadPool();  
-	Log("Start", "Going to sleep");  
-	Thread.Sleep(TimeSpan.FromSeconds(2));  --> this one goes to another thread async
-	await UniTask.SwitchToMainThread();  ---> go back main thread for anything below it
-	Log("Start", "Thread sleep done");  
-}
-
-The result of above function, still sequential but frame is increasing
-
-1. [Thread 1][Frame 0][Method Start] Task delay 2 seconds  
-2. [Thread 1][Frame 167][Method Start] Task delay 2 finished  
-3. [Thread 1][Frame 167][Method Start] Thread sleep 2 seconds  
-4. [Thread 68][Frame 168][Method Start] Going to sleep  
-5. [Thread 1][Frame 287][Method Start] Thread sleep done
-
-UniTask will push the current execution context to the thread pool after  `UniTask.SwitchToThreadPool()`  and switch back to main thread after  `UniTask.SwitchToMainThread()`.
-
-UniTask also provides a handy tool, UniTask Tracker to monitor the task usage in the Unity Editor.
-
-Coroutine memory leak (ie run out of memory, hogging memory)
-https://forum.unity.com/threads/finally-block-not-executing-in-a-stopped-coroutine.320611/
-
-Stopping a Coroutine if it doesnt exit naturally or reach end of instruction:
-https://riptutorial.com/unity3d/example/11768/ending-a-coroutine
-started.
-
-I would also like to add that Coroutines are run on the GameObject. So disabling the gameobject will cause any coroutine running on it to stop but doesn't exit naturally, resulting in memory leak
-
-`yield break` or `StopCoroutine(...)` onDisable the gameobject. 
-
-https://forum.unity.com/threads/coroutines-break-c-scope-rules-leading-to-memory-leaks.365956/
-
-Coroutines iterator function may not automatically release stuffs that are out of scope, only when it exits. Iterator functions technically aren't functions and shouldn't be considered to scope in the manner functions do.  
-  
-Rather it's a function that generates a dynamic object based on the code in the function.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4OTk1MDMxNjEsLTE1MDY1NTY3OTNdfQ
-==
+eyJoaXN0b3J5IjpbLTg3MDg2ODY4NCwtMTUwNjU1Njc5M119
 -->
