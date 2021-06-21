@@ -660,7 +660,7 @@ The debug messages are printed in this order:
 	> * `Flatten ends`, then 
 	> * `Enemy returned to pool`, 
 
-This which shows that the method `KillSelf` ** does NOT have to wait until Coroutine flatten ends** to resume execution, thus allowing **asynchronous** execution.
+This which shows that the method `KillSelf` **does NOT have to wait until Coroutine flatten ends** to resume execution, thus allowing **asynchronous** execution.
 
 However, `onTriggerEnter2D` can only be called again once  `KillSelf` exits because `KillSelf` is synchronous with `OnTriggerEnter2D`. 
 
@@ -1009,6 +1009,7 @@ In the next lesson, we will further polish our game by learning how to transitio
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MzM0MDU5OCwxMTk2NDYwOTYyLC02OT
-k5MzIwNTEsLTMwNTEwODA4OCw2MDMxNzE5NDBdfQ==
+eyJoaXN0b3J5IjpbNjgyNTI3MzYwLC0xNTMzNDA1OTgsMTE5Nj
+Q2MDk2MiwtNjk5OTMyMDUxLC0zMDUxMDgwODgsNjAzMTcxOTQw
+XX0=
 -->
