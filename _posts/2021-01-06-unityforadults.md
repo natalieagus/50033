@@ -913,11 +913,11 @@ Observe that the `Frame` **increases** at each even though we call `Thread.Sleep
 There's no checkoff associated with this tutorial, but the contents of this tutorial will be tested for our midterms. 
 
 # Next
-In the next tutorial, we will lea
+This tutorial concludes In the next tutorial, we will learn about basics in 3D Unity Projects, and also learn about *pathfinding* in that environment.
 
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg3MDg2ODY4NCwtMTUwNjU1Njc5M119
+eyJoaXN0b3J5IjpbMTQ4MTU1OTkwNSwtMTUwNjU1Njc5M119
 -->
