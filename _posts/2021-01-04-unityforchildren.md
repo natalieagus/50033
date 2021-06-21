@@ -788,7 +788,7 @@ You should already have a script that controls its direction of patrol as per pr
 ![consume](https://www.dropbox.com/s/cwvjyz38p6nkjrb/consume.gif?raw=1)
 
 ## C#: Interface
-It is very common in a game to have various types of powerups, but they should have common methods that will be called by other scripts such as `cast` or `consume`, etc. To do this more uniformly, we can utilise an `interface`.
+It is very common in a game to have various types of powerups, but they should have common methods that will be called by other scripts such as `cast` or `consume`, etc. To do this more uniformly, we can utilise an `interface`. Interface members must be public by default, because it is meant to be called as a type by other instances (hence the name: *interface*, because it is a contract ). 
 
 Create a new script called `ConsumableInterface.cs`, where we can declare method signatures:
 
@@ -1009,7 +1009,7 @@ In the next lesson, we will further polish our game by learning how to transitio
  
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MDk0ODI1NjksNjgyNTI3MzYwLC0xNT
-MzNDA1OTgsMTE5NjQ2MDk2MiwtNjk5OTMyMDUxLC0zMDUxMDgw
-ODgsNjAzMTcxOTQwXX0=
+eyJoaXN0b3J5IjpbLTIwNjgzOTAyNjIsLTE4MDk0ODI1NjksNj
+gyNTI3MzYwLC0xNTMzNDA1OTgsMTE5NjQ2MDk2MiwtNjk5OTMy
+MDUxLC0zMDUxMDgwODgsNjAzMTcxOTQwXX0=
 -->
