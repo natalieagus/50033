@@ -195,6 +195,11 @@ https://github.com/h8man/NavMeshPlus.git#master`
 
 > NavMeshPlus comes with NavMeshComponents, therefore to avoid **conflicts**, you may remove NavMeshComponents from the package registry. 
 
+Then import the asset `navmesh2dintro` to your project 
+
+> NavMeshPlus comes with NavMeshComponents, and you may be faced with conflicts. To avoid **conflicts**, you may remove NavMeshComponents from the package registry. 
+
+
 ## Create a TileMap
 Tilemap is another handy tool to create 2D maps, especially for top-down games which levels or world would otherwise be too cumbersome to be created as separate Sprites. You need to add the 2D Tilemap Editor from the **package manager. ** Once downloaded, open the Scene Tilemap (inside NavMeshIntro >> TileMap) and click on the Grid gameobject. This gameobject was created using Create >> 2D >> Tilemap >> Rectangular. 
 
@@ -300,6 +305,6 @@ You can define a more complex patrol path using some kind of State Machine, whic
 There's no checkoff with this lab. In the next lab, we will utilise our knowledge on NavMesh and Scriptable Object to create patrolling bots. 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDE4MzI5MTczLC0xNDc5ODE4NzYyLC0xNT
-IxMzg4NzM3LDk0NTIxNzMwOCwtNTM4OTcxMDI2XX0=
+eyJoaXN0b3J5IjpbLTEzNjc4OTIxNDksLTE0Nzk4MTg3NjIsLT
+E1MjEzODg3MzcsOTQ1MjE3MzA4LC01Mzg5NzEwMjZdfQ==
 -->
