@@ -19,21 +19,21 @@ title: Unity for Midlifes
 	- Generating Navmesh obstacles at runtime
 - Using **NavMeshPlus** to create NavMeshSurface on 2D Sprites or TileMap
 
-# Install NavMeshComponents
+# Install NavMeshPlus and NavMeshComponents
 Navigation System is a part of Unity.AI module, and is extremely useful to perform pathfinding  in pre-determined (baked) maps automatically. To learn about this, **create a new 3D project** in Unity, and **import** the asset given in the course handout. This asset requires the `NavMeshComponents` package. Unity already has built-in Navigation System but this package has additional functionalities that will make your life way easier. 
 
 Go to Window >> Package Manager as usual, and click *add package from git URL*:
 
 ![githubadd](https://www.dropbox.com/s/9fxkdkda52uhw4r/Screenshot%202021-06-22%20at%2021.24.13.png?raw=1)
 
-You can then paste the following URL: `https://github.com/Unity-Technologies/NavMeshComponents.git#package`
+You can then paste the following URL for NavMeshComponents only: `https://github.com/Unity-Technologies/NavMeshComponents.git#package`
 When the import is done, there should be no more error messages in the Console. The manual for this package can be found [here](https://github.com/Unity-Technologies/NavMeshComponents/tree/package). 
 
 
-Then install NavMeshPlus (for 2D NavMesYou can add the package from Github URL: `
+Or this Github URL for **both** NavMeshPlus (for 2D NavMesh to be used at the end of this tutorial) and NavMeshComponents: `
 https://github.com/h8man/NavMeshPlus.git#master`
 
-> NavMeshPlus comes with NavMeshComponents, therefore to avoid **conflicts**, you may remove NavMeshComponents from the package registry. 
+> NavMeshPlus comes with NavMeshComponents, and you may be faced with conflicts. To avoid **conflicts**, you may remove NavMeshComponents from the package registry. 
 
 
 # Basics of Navigation System
@@ -305,6 +305,6 @@ You can define a more complex patrol path using some kind of State Machine, whic
 There's no checkoff with this lab. In the next lab, we will utilise our knowledge on NavMesh and Scriptable Object to create patrolling bots. 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTA0NjQwNTc0LDk0NTIxNzMwOCwtNTM4OT
-cxMDI2XX0=
+eyJoaXN0b3J5IjpbLTE1MjEzODg3MzcsOTQ1MjE3MzA4LC01Mz
+g5NzEwMjZdfQ==
 -->
