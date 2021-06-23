@@ -30,11 +30,6 @@ You can then paste the following URL for NavMeshComponents only: `https://github
 When the import is done, there should be no more error messages in the Console. The manual for this package can be found [here](https://github.com/Unity-Technologies/NavMeshComponents/tree/package). 
 
 
-Or this Github URL for **both** NavMeshPlus (for 2D NavMesh to be used at the end of this tutorial) and NavMeshComponents: `
-https://github.com/h8man/NavMeshPlus.git#master`
-
-> NavMeshPlus comes with NavMeshComponents, and you may be faced with conflicts. To avoid **conflicts**, you may remove NavMeshComponents from the package registry. 
-
 
 # Basics of Navigation System
 
@@ -305,6 +300,6 @@ You can define a more complex patrol path using some kind of State Machine, whic
 There's no checkoff with this lab. In the next lab, we will utilise our knowledge on NavMesh and Scriptable Object to create patrolling bots. 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0Nzk4MTg3NjIsLTE1MjEzODg3MzcsOT
-Q1MjE3MzA4LC01Mzg5NzEwMjZdfQ==
+eyJoaXN0b3J5IjpbNDE4MzI5MTczLC0xNDc5ODE4NzYyLC0xNT
+IxMzg4NzM3LDk0NTIxNzMwOCwtNTM4OTcxMDI2XX0=
 -->
