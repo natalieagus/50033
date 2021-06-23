@@ -195,7 +195,7 @@ https://github.com/h8man/NavMeshPlus.git#master`
 
 > NavMeshPlus comes with NavMeshComponents, therefore to avoid **conflicts**, you may remove NavMeshComponents from the package registry. 
 
-Then import the asset `navmesh2dintro` to your project 
+Then import the asset `navmesh2dintro` from the course handout.  to your project.
 
 > NavMeshPlus comes with NavMeshComponents, and you may be faced with conflicts. To avoid **conflicts**, you may remove NavMeshComponents from the package registry. 
 
@@ -305,6 +305,6 @@ You can define a more complex patrol path using some kind of State Machine, whic
 There's no checkoff with this lab. In the next lab, we will utilise our knowledge on NavMesh and Scriptable Object to create patrolling bots. 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNjc4OTIxNDksLTE0Nzk4MTg3NjIsLT
-E1MjEzODg3MzcsOTQ1MjE3MzA4LC01Mzg5NzEwMjZdfQ==
+eyJoaXN0b3J5IjpbMjA3MTA3MDg4OCwtMTQ3OTgxODc2MiwtMT
+UyMTM4ODczNyw5NDUyMTczMDgsLTUzODk3MTAyNl19
 -->
