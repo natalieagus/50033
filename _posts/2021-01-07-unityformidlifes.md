@@ -20,7 +20,7 @@ title: Unity for Midlifes
 - Using **NavMeshPlus** to create NavMeshSurface on 2D Sprites or TileMap
 
 # Install NavMeshPlus and NavMeshComponents
-Navigation System is a part of Unity.AI module, and is extremely useful to perform pathfinding  in pre-determined (baked) maps automatically. To learn about this, **create a new 3D project** in Unity, and **import** the asset given in the course handout. This asset requires the `NavMeshComponents` package. Unity already has built-in Navigation System but this package has additional functionalities that will make your life way easier. 
+Navigation System is a part of Unity.AI module, and is extremely useful to perform pathfinding  in pre-determined (baked) maps automatically. To learn about this, **create a new 3D project** in Unity, and **import** the `navmesh3dintro` asset given in the course handout. This asset requires the `NavMeshComponents` package. Unity already has built-in Navigation System but this package has additional functionalities that will make your life way easier. 
 
 Go to Window >> Package Manager as usual, and click *add package from git URL*:
 
@@ -305,6 +305,6 @@ You can define a more complex patrol path using some kind of State Machine, whic
 There's no checkoff with this lab. In the next lab, we will utilise our knowledge on NavMesh and Scriptable Object to create patrolling bots. 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MjEzODg3MzcsOTQ1MjE3MzA4LC01Mz
-g5NzEwMjZdfQ==
+eyJoaXN0b3J5IjpbLTE0Nzk4MTg3NjIsLTE1MjEzODg3MzcsOT
+Q1MjE3MzA4LC01Mzg5NzEwMjZdfQ==
 -->
