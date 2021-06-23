@@ -35,11 +35,18 @@ When the import is done, there should be no more error messages in the Console. 
 To allow automatic pathfinding, you need to first generate (*bake*) a **NavMesh** from all objects in your scene. 
 > From Unity Documentation:  **NavMesh**  (short for Navigation Mesh) is a data structure which describes the walkable surfaces of the game world and allows to find path from one walkable location to another in the game world. The data structure is built, or baked, automatically from your level geometry.
 
-Unity's built in NavMesh will detect all 3D objects (mesh) that lie on the **XZ** plane. We can create NavMesh on surfaces lying on other planes, such as the common XY plane in 2D games using `NavMeshComponents's Surface` (later). We need to also use **meshes** (mesh renderer) in order for Unity to *bake* the NavMesh, so 2D colliders can't be used to define "*walkable areas*". There's plenty of workarounds that you can find [online](https://github.com/h8man/NavMeshPlus/wiki/HOW-TO), or [paid](https://assetstore.unity.com/packages/tools/ai/navigation2d-pathfinding-for-2d-games-35803#reviews) assets to help you. The rest of this tutorial will just introduce you how to use standard 3D Navigation System using Mesh Renderer (as per Unity base implementation). The 2D workarounds are built upon this knowledge.
+Unity's built in NavMesh will **automatically** detect all 3D objects (mesh) that lie on the **XZ** plane. 
 
-Open the folder NavMeshIntro >> Scene1 and open the Scene Scene1. 
+> We can create NavMesh on surfaces lying on other planes, such as the common XY plane in 2D games using `NavMeshComponents's Surface` (later). 
 
-Then, open the Navigation window from Window >> AI >> Navigation. There's four tabs in the Navigation Window:
+We need to also use **3D meshes** (mesh renderer) in order for Unity to *bake* the NavMesh, so 2D colliders can't be used to define "*walkable areas*". 
+> There's plenty of workarounds that you can find [online](https://github.com/h8man/NavMeshPlus/wiki/HOW-TO), or [paid](https://assetstore.unity.com/packages/tools/ai/navigation2d-pathfinding-for-2d-games-35803#reviews) assets to help you. 
+
+The rest of this tutorial will just introduce you how to use standard 3D Navigation System using Mesh Renderer (as per Unity base implementation). The 2D workarounds are built upon this knowledge.
+
+Import the asset from the Course Handout, then **open** the folder NavMeshIntro >> Scene1 and open the Scene Scene1. 
+
+A the Navigation window from Window >> AI >> Navigation. There's four tabs in the Navigation Window:
 - **Agents:** You can define NavMesh Agents properties such as its step height (agents cannot "go over" steps more than this height), and max slope (agents cannot climb anything steeper than this slope)
 - **Areas**: Similar to "layers", you can name different areas and its cost (second column). The cost will be used for pathfinding computation later on. Areas with lower cost is always more preferable. More about Navigation Area and cost [here](https://docs.unity3d.com/Manual/nav-AreasAndCosts.html). 
 - **Bake**: This is where you generate the NavMesh with the respective agent size. You need to bake different NavMesh per agent. 
@@ -289,5 +296,5 @@ You can define a more complex patrol path using some kind of State Machine, whic
 There's no checkoff with this lab. In the next lab, we will utilise our knowledge on NavMesh and Scriptable Object to create patrolling bots. 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUzODk3MTAyNl19
+eyJoaXN0b3J5IjpbMTgyNzcwNjEwOCwtNTM4OTcxMDI2XX0=
 -->
