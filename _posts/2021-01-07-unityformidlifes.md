@@ -29,6 +29,13 @@ Go to Window >> Package Manager as usual, and click *add package from git URL*:
 You can then paste the following URL: `https://github.com/Unity-Technologies/NavMeshComponents.git#package`
 When the import is done, there should be no more error messages in the Console. The manual for this package can be found [here](https://github.com/Unity-Technologies/NavMeshComponents/tree/package). 
 
+
+Then install NavMeshPlus (for 2D NavMesYou can add the package from Github URL: `
+https://github.com/h8man/NavMeshPlus.git#master`
+
+> NavMeshPlus comes with NavMeshComponents, therefore to avoid **conflicts**, you may remove NavMeshComponents from the package registry. 
+
+
 # Basics of Navigation System
 
 ## NavMesh Generation
@@ -191,6 +198,8 @@ agent.updateUpAxis = true;
 As mentioned previously, NavMesh works on *Mesh Renderer*, which means that it won't work by itself on regular Sprites or TileMap. This asset called [NavMeshPlus](https://github.com/h8man/NavMeshPlus) is a great workaround if you want to create NavMesh on 2D surfaces. You can add the package from Github URL: `
 https://github.com/h8man/NavMeshPlus.git#master`
 
+> NavMeshPlus comes with NavMeshComponents, therefore to avoid **conflicts**, you may remove NavMeshComponents from the package registry. 
+
 ## Create a TileMap
 Tilemap is another handy tool to create 2D maps, especially for top-down games which levels or world would otherwise be too cumbersome to be created as separate Sprites. You need to add the 2D Tilemap Editor from the **package manager. ** Once downloaded, open the Scene Tilemap (inside NavMeshIntro >> TileMap) and click on the Grid gameobject. This gameobject was created using Create >> 2D >> Tilemap >> Rectangular. 
 
@@ -296,5 +305,6 @@ You can define a more complex patrol path using some kind of State Machine, whic
 There's no checkoff with this lab. In the next lab, we will utilise our knowledge on NavMesh and Scriptable Object to create patrolling bots. 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTQ1MjE3MzA4LC01Mzg5NzEwMjZdfQ==
+eyJoaXN0b3J5IjpbNTA0NjQwNTc0LDk0NTIxNzMwOCwtNTM4OT
+cxMDI2XX0=
 -->
