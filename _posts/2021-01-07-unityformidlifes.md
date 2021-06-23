@@ -20,7 +20,7 @@ title: Unity for Midlifes
 - Using **NavMeshPlus** to create NavMeshSurface on 2D Sprites or TileMap
 
 # Install NavMeshComponents
-Navigation System is a part of Unity.AI module, and is extremely useful to perform pathfinding  in pre-determined (baked) maps automatically. To learn about this, create a new 3D project in Unity, and import the asset given in the course handout. This asset requires the `NavMeshComponents` package. Unity already has built-in Navigation System but this package has additional functionalities that will make your life way easier. 
+Navigation System is a part of Unity.AI module, and is extremely useful to perform pathfinding  in pre-determined (baked) maps automatically. To learn about this, **create a new 3D project** in Unity, and **import** the asset given in the course handout. This asset requires the `NavMeshComponents` package. Unity already has built-in Navigation System but this package has additional functionalities that will make your life way easier. 
 
 Go to Window >> Package Manager as usual, and click *add package from git URL*:
 
@@ -46,7 +46,7 @@ The rest of this tutorial will just introduce you how to use standard 3D Navigat
 
 Import the asset from the Course Handout, then **open** the folder NavMeshIntro >> Scene1 and open the Scene Scene1. 
 
-A the Navigation window from Window >> AI >> Navigation. There's four tabs in the Navigation Window:
+**Add** the Navigation Window from Window >> AI >> Navigation. There's four tabs in the Navigation Window:
 - **Agents:** You can define NavMesh Agents properties such as its step height (agents cannot "go over" steps more than this height), and max slope (agents cannot climb anything steeper than this slope)
 - **Areas**: Similar to "layers", you can name different areas and its cost (second column). The cost will be used for pathfinding computation later on. Areas with lower cost is always more preferable. More about Navigation Area and cost [here](https://docs.unity3d.com/Manual/nav-AreasAndCosts.html). 
 - **Bake**: This is where you generate the NavMesh with the respective agent size. You need to bake different NavMesh per agent. 
@@ -296,5 +296,5 @@ You can define a more complex patrol path using some kind of State Machine, whic
 There's no checkoff with this lab. In the next lab, we will utilise our knowledge on NavMesh and Scriptable Object to create patrolling bots. 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgyNzcwNjEwOCwtNTM4OTcxMDI2XX0=
+eyJoaXN0b3J5IjpbOTQ1MjE3MzA4LC01Mzg5NzEwMjZdfQ==
 -->
