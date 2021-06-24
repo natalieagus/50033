@@ -21,7 +21,7 @@ We will use ScriptableObjects that we have learned in the previous part to imple
 
 # PlayerTank 
 Go to Prefab >>> `PlayerTank` and open the prefab:
-![playertank](https://www.dropbox.com/s/hie9va77cl4011v/2.png?raw=1)
+![playertank](https://www.dropbox.com/s/7avtsffgyitny6q/13.png?raw=1)
 
 Study these 3 scripts attached to `PlayerTank`:
 
@@ -367,5 +367,5 @@ There's no checkoff with this lab. In a nutshell, we have learned how to use Scr
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMzgxODUxMDldfQ==
+eyJoaXN0b3J5IjpbNjcyMTA5OTU0LC0yMDM4MTg1MTA5XX0=
 -->
