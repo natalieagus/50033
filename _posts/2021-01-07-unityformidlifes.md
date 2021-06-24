@@ -200,7 +200,7 @@ Then import the asset `navmesh2dintro` from the course handout.  to your project
 
 
 ## Create a TileMap
-Tilemap is another handy tool to create 2D maps, especially for top-down games which levels or world would otherwise be too cumbersome to be created as separate Sprites. You need to add the 2D Tilemap Editor from the **package manager. ** Once downloaded, open the Scene Tilemap (inside NavMeshIntro >> TileMap) and click on the Grid gameobject. This gameobject was created using Create >> 2D >> Tilemap >> Rectangular. 
+Tilemap is another handy tool to create 2D maps, especially for top-down games which levels or world would otherwise be too cumbersome to be created as separate Sprites. You need to add the 2D Tilemap Editor from the **package manager.** Once downloaded, open the Scene Tilemap (inside NavMeshIntro >> TileMap) and click on the Grid gameobject. This gameobject was created using Create >> 2D >> Tilemap >> Rectangular. 
 
 ![tilemap](https://www.dropbox.com/s/pl2ndp6q8hd1dcq/12.png?raw=1)
 
@@ -304,7 +304,7 @@ You can define a more complex patrol path using some kind of State Machine, whic
 There's no checkoff with this lab. In the next lab, we will utilise our knowledge on NavMesh and Scriptable Object to create patrolling bots. 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NzkyNjY4NjMsMjA3MTA3MDg4OCwtMT
-Q3OTgxODc2MiwtMTUyMTM4ODczNyw5NDUyMTczMDgsLTUzODk3
-MTAyNl19
+eyJoaXN0b3J5IjpbLTQ3ODc4NjcyMywyMDcxMDcwODg4LC0xND
+c5ODE4NzYyLC0xNTIxMzg4NzM3LDk0NTIxNzMwOCwtNTM4OTcx
+MDI2XX0=
 -->
