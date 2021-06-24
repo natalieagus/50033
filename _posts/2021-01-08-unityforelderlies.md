@@ -11,13 +11,13 @@ title: Unity for Elderlies
 - Trigger behaviors on certain states
 
 # Introduction
-Create a new 3D project and import the asset `pluggableai` uploaded at the course handout. Then, replace the Project Settings folder with the one provided at the course handout as well. Open Scenes >> Main and you shall see this setup:
+Create a new 3D project and import the asset `TankProject` uploaded at the course handout. Then, replace the Project Settings folder with the one provided at the course handout as well. Open Scenes >> Main and you shall see this setup:
 
 ![test](https://www.dropbox.com/s/qy4xz65zj9eww1n/1.png?raw=1)
 
 The goal of this tutorial is to **understand** how the game utilises a state machine such that the two tanks: green (scanner) and red (chaser) are able to identify you in the map and perform actions accordingly.
 
-We will use ScriptableObjects that we have learned in the previous part to implement the state machine.
+We will use ScriptableObjects that we have learned in the previous part to implement the state machine. The materials and contents in this tutorial is taken from this [Official Unity Tutorial](https://learn.unity.com/tutorial/pluggable-ai-with-scriptable-objects). 
 
 # PlayerTank 
 Go to Prefab >>> `PlayerTank` and open the prefab:
@@ -367,5 +367,6 @@ There's no checkoff with this lab. In a nutshell, we have learned how to use Scr
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjcyMTA5OTU0LC0yMDM4MTg1MTA5XX0=
+eyJoaXN0b3J5IjpbLTE5NjQ2NjY4MTIsNjcyMTA5OTU0LC0yMD
+M4MTg1MTA5XX0=
 -->
