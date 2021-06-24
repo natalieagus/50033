@@ -823,7 +823,9 @@ Here's the console output:
 It shows that `Start` is called first as usual, but **asynchronously**, allowing `Update` to advance and increase the frame value. When the sprite has been loaded, the `Start` method resumes and print the `Start method completes...` message. 
 
 ## UniTask
-Finally before we conclude, we'd like to introduce you to an alternative called `UniTask`. Not only a nicer replacement for Unity Coroutine and C# async-await, UniTask also provides a nicer background *thread management*. The complete documentation and installation details can be obtained [here] (https://github.com/Cysharp/UniTask). You can [download it as UnityAsset](https://github.com/Cysharp/UniTask/releases) and import it to your project. We won't be going into details on how to utilise UniTask in your project, only to quickly introduce to you because it is a good and popular alternative. Among other things, UniTask is capable of:
+Finally before we conclude, we'd like to introduce you to an alternative called `UniTask`. Not only a nicer replacement for Unity Coroutine and C# async-await, UniTask also provides a nicer background *thread management*. The complete documentation and installation details can be obtained [here](https://github.com/Cysharp/UniTask). 
+
+You can [download it as UnityAsset](https://github.com/Cysharp/UniTask/releases) and import it to your project. We won't be going into details on how to utilise UniTask in your project, only to quickly introduce to you because it is a good and popular alternative. Among other things, UniTask is capable of:
 - Making all Unity AsyncOperations and Coroutines **awaitable**
 - Running completely on Unity's PlayerLoop so doesn't use threads and runs on WebGL, wasm, etc
 - Summoning TaskTracker window to prevent memory leaks
@@ -919,5 +921,5 @@ In the next tutorial, we will learn about basics in 3D Unity Projects, and also 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcxNDQ5MzExMywtMTUwNjU1Njc5M119
+eyJoaXN0b3J5IjpbLTkxMzkzNzIxNywtMTUwNjU1Njc5M119
 -->
