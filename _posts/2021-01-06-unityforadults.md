@@ -427,7 +427,7 @@ Now let's take care of the current input (if any),
 If there's new input, loop through our current combos to see if it matches the *next input* of current possible combos. We also take note of the combo ID that will *never* happen because current input doesn't trigger that combo anymore (not the supposed next key to press).
 
 ```java
-List<int> remove = new List<int>();
+		List<int> remove = new List<int>();
         // loop through our current combos to see if it continues existing combos
         for (int i = 0; i < currentPossibleCombosID.Count; i++)
         {
@@ -690,7 +690,7 @@ Now simply add another case in `Update` to test this function:
 Testing the `async` method with `size=10000` results in the following output:
 ![asynctest](https://www.dropbox.com/s/fewqt5aqkiw5nob/8.png?raw=1)
 
-This shows that using `async` function **does not ** (necessarily) make any computation time faster than the `vanilla` method, but in the meantime, the system is still **responsive**. 
+This shows that using `async` function **does not** (necessarily) make any computation time faster than the `vanilla` method, but in the meantime, the system is still **responsive**. 
 
 > In short: the  `async`  function, very similar to JavaScript, is not executed in another thread. Instead, the function executes on the main thread, and only when the  `await`  keyword appears, the function executed may or  **MAY NOT**  on the main thread.
 
@@ -921,5 +921,6 @@ In the next tutorial, we will learn about basics in 3D Unity Projects, and also 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkxMzkzNzIxNywtMTUwNjU1Njc5M119
+eyJoaXN0b3J5IjpbLTIxNDAxNDczNzcsLTkxMzkzNzIxNywtMT
+UwNjU1Njc5M119
 -->
