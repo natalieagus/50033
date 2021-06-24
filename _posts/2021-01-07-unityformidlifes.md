@@ -190,8 +190,7 @@ agent.updateUpAxis = true;
 ```
 
 # NavMesh for 2D Games
-As mentioned previously, NavMesh works on *Mesh Renderer*, which means that it won't work by itself on regular Sprites or TileMap. This asset called [NavMeshPlus](https://github.com/h8man/NavMeshPlus) is a great workaround if you want to create NavMesh on 2D surfaces. You can add the package from Github URL: `
-https://github.com/h8man/NavMeshPlus.git#master`
+As mentioned previously, NavMesh works on *Mesh Renderer*, which means that it won't work by itself on regular Sprites or TileMap. This asset called [NavMeshPlus](https://github.com/h8man/NavMeshPlus) is a great workaround if you want to create NavMesh on 2D surfaces. You can add the package from Git URL: `https://github.com/h8man/NavMeshPlus.git#master`
 
 > NavMeshPlus comes with NavMeshComponents, therefore to avoid **conflicts**, you may remove NavMeshComponents from the package registry. 
 
@@ -305,6 +304,7 @@ You can define a more complex patrol path using some kind of State Machine, whic
 There's no checkoff with this lab. In the next lab, we will utilise our knowledge on NavMesh and Scriptable Object to create patrolling bots. 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA3MTA3MDg4OCwtMTQ3OTgxODc2MiwtMT
-UyMTM4ODczNyw5NDUyMTczMDgsLTUzODk3MTAyNl19
+eyJoaXN0b3J5IjpbLTE0NzkyNjY4NjMsMjA3MTA3MDg4OCwtMT
+Q3OTgxODc2MiwtMTUyMTM4ODczNyw5NDUyMTczMDgsLTUzODk3
+MTAyNl19
 -->
