@@ -269,9 +269,9 @@ We can do this by enabling the `flipX` property of its `SpriteRenderer` whenever
   private bool faceRightState = true;
 ```
 
-**We have to control the `SpriteRenderer` component via the script.** You can pretty much get any component via `GetComponent<type>()` method in the script attached to the game object.  Instantiate the `MarioSprite` under the `Start()` method:
+**We have to control the `SpriteRenderer` component via the script.** You can pretty much get any component via `GetComponent<type>()` method in the script attached to the game object.  Instantiate the `marioSprite` under the `Start()` method:
 ```java
-MarioSprite = GetComponent<SpriteRenderer>();
+marioSprite = GetComponent<SpriteRenderer>();
 ```
 
 Finally, implement the following under `Update` and not `FixedUpdate` since this logic has nothing to do with the Physics Engine:
@@ -603,10 +603,10 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNDgzMzM4NjMsLTE5MTY4NDA2NjEsNT
-I3Mjc2MzE1LC0yMDg1NjU1MjI5LC0xOTEzNzYyMjg5LDc2OTYx
-NTEwNywxNDU5MjI0NzM1LDI0NjQwOTEwMCwtMTU0MzQ1NDc2MS
-wxMjA2NTgzNTE1LC03NTcwNDk0NTcsLTg3ODE1OTIxNywtMzIx
-OTkwNzU4LDIzMzU4NTE0MCwtMTAxODM3MzkxOSwtMTM5OTYxMT
-M4MSwtMjA2MTM1NTc2M119
+eyJoaXN0b3J5IjpbMTk2ODg5MTM1MywtMTA0ODMzMzg2MywtMT
+kxNjg0MDY2MSw1MjcyNzYzMTUsLTIwODU2NTUyMjksLTE5MTM3
+NjIyODksNzY5NjE1MTA3LDE0NTkyMjQ3MzUsMjQ2NDA5MTAwLC
+0xNTQzNDU0NzYxLDEyMDY1ODM1MTUsLTc1NzA0OTQ1NywtODc4
+MTU5MjE3LC0zMjE5OTA3NTgsMjMzNTg1MTQwLC0xMDE4MzczOT
+E5LC0xMzk5NjExMzgxLC0yMDYxMzU1NzYzXX0=
 -->
