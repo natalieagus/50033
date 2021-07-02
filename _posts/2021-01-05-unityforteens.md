@@ -399,7 +399,7 @@ public class PlayerControllerEV : MonoBehaviour
     public IntVariable marioMaxSpeed;
     public GameConstants gameConstants;
 	  
-	// other components and interal state
+	// other components and internal state
 }
 ```
 
@@ -902,23 +902,23 @@ public class Powerup : ScriptableObject
     public Texture powerupTexture;
     
     // list of things any powerup can do
-    public int aboluteSpeedBooster;
+    public int absoluteSpeedBooster;
     public int absoluteJumpBooster;
 
 	// effect of powerup
     public int duration;
 
     public List<int> Utilise(){
-        return new List<int> {aboluteSpeedBooster, absoluteJumpBooster};
+        return new List<int> {absoluteSpeedBooster, absoluteJumpBooster};
     }
 
     public void Reset(){
-        aboluteSpeedBooster = 0;
+        absoluteSpeedBooster = 0;
         absoluteJumpBooster = 0;
     }
 
     public void Enhance(int speedBooster, int jumpBooster){
-        aboluteSpeedBooster += speedBooster;
+        absoluteSpeedBooster += speedBooster;
         absoluteJumpBooster += jumpBooster;
     }
 }
@@ -1182,6 +1182,6 @@ The gif below summarises the end result:
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNzU0NDY4NDQsLTEwMTg3NzAzMjJdfQ
-==
+eyJoaXN0b3J5IjpbLTEzNDczMjQ2NTAsLTEzNzU0NDY4NDQsLT
+EwMTg3NzAzMjJdfQ==
 -->
