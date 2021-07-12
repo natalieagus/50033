@@ -575,7 +575,7 @@ Review our lab recording (the playlist for all recordings can be found in our co
 
 ![checkoff1](https://www.dropbox.com/s/05k8w5sa2qvm66o/checkoff1.gif?raw=1)
 
-Once you've implemented everything in this handout, then for **checkoff** you're required to <mark>implement a **restart** mechanism when game is ***over***</mark>. You need to reset everything: score, player position, etc. 
+Once you've implemented everything in this handout, then for checkoff you're required to <mark>implement a restart mechanism when game is over</mark>. You need to reset everything: score, player position, etc. 
 
 *You’re free to implement it in any way*. *It will not affect your checkoff score.* The grading for this lab is **binary** (completed / not completed). 
 
@@ -603,10 +603,11 @@ We will try to improve our game and learn some common C# coding practices in the
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk2ODg5MTM1MywtMTA0ODMzMzg2MywtMT
-kxNjg0MDY2MSw1MjcyNzYzMTUsLTIwODU2NTUyMjksLTE5MTM3
-NjIyODksNzY5NjE1MTA3LDE0NTkyMjQ3MzUsMjQ2NDA5MTAwLC
-0xNTQzNDU0NzYxLDEyMDY1ODM1MTUsLTc1NzA0OTQ1NywtODc4
-MTU5MjE3LC0zMjE5OTA3NTgsMjMzNTg1MTQwLC0xMDE4MzczOT
-E5LC0xMzk5NjExMzgxLC0yMDYxMzU1NzYzXX0=
+eyJoaXN0b3J5IjpbLTkxMjg2MDQ3OSwxOTY4ODkxMzUzLC0xMD
+Q4MzMzODYzLC0xOTE2ODQwNjYxLDUyNzI3NjMxNSwtMjA4NTY1
+NTIyOSwtMTkxMzc2MjI4OSw3Njk2MTUxMDcsMTQ1OTIyNDczNS
+wyNDY0MDkxMDAsLTE1NDM0NTQ3NjEsMTIwNjU4MzUxNSwtNzU3
+MDQ5NDU3LC04NzgxNTkyMTcsLTMyMTk5MDc1OCwyMzM1ODUxND
+AsLTEwMTgzNzM5MTksLTEzOTk2MTEzODEsLTIwNjEzNTU3NjNd
+fQ==
 -->
