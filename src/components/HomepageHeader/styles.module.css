@@ -13,8 +13,13 @@
 
 @media (max-width: 996px) {
   .heroTitle {
-    font-size: 2.5em !important;
-    margin-top: 1em !important;
+    font-size: 2.5rem !important;
+    margin-top: 1rem !important;
+  }
+  .heroSubtitleCustomStyle {
+    font-size: 1rem !important;
+    padding-top: 0rem !important;
+    /* font-weight: bold; */
   }
 }
 
@@ -45,8 +50,11 @@
   -webkit-text-fill-color: transparent;
 }
 
-.heroSubtitleColor {
+.heroSubtitleCustomStyle {
   color: white;
+  font-size: 1.75rem;
+  font-weight: bold;
+  padding-top: 2rem;
 }
 
 @media screen and (max-width: 996px) {

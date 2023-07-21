@@ -10,7 +10,7 @@ export default function HomepageHeader({ title, emoji, tagline }) {
         <h1 className={`hero__title ${styles.heroTitle} ${styles.heroColor}`}>
           {title} <span className={`${styles.heroTitleEmoji}`}>{emoji}</span>
         </h1>
-        <p className={`hero__subtitle ${styles.heroSubtitleColor}`}>
+        <p className={`hero__subtitle ${styles.heroSubtitleCustomStyle}`}>
           {tagline}
         </p>
 
