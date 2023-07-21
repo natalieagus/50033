@@ -1,0 +1,10 @@
+.collapsible {
+  --docusaurus-details-decoration-color: var(
+    --ifm-color-collapsible-accent
+  ) !important;
+  --docusaurus-details-transition: transform var(--ifm-transition-fast) ease;
+  margin: 0 0 var(--ifm-spacing-vertical);
+  padding: 0.75rem;
+  border: 1px solid var(--ifm-color-collapsible-accent) !important;
+  background-color: var(--ifm-color-collapsible-content) !important;
+}

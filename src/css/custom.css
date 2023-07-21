@@ -1,0 +1,555 @@
+@import "fonts.css";
+@import "~@fontsource/inter";
+@import "~@fontsource/inter/600.css";
+@import "~@fontsource/inter/800.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Typography */
+  --font-sans: "Inter", "Open Sans", sans-serif;
+  --font-sans-heading: "Inter", "Open Sans", sans-serif;
+  --font-serif: "Zilla Slab", "Times New Roman", serif;
+  --font-mono: "SFMono-Regular", "Menlo", monospace;
+  --font-size-00: 0.75rem;
+  --font-size-0: 0.875rem;
+  --font-size-1: 1rem;
+  --font-size-1-25: 1.25rem;
+  --font-size-2: 1.25rem;
+  --font-size-3: 1.5rem;
+  --font-size-4: 1.75rem;
+  --font-size-5: 2.5rem;
+  --font-size-body: 1.125rem;
+
+  /* Colors */
+  --white: #fff;
+  --black: #000;
+  --blue-100: #eefaff;
+  --blue-200: #dff5ff;
+  --blue-300: #bfeaff;
+  --blue-400: #6eceff;
+  --blue-500: #32b8fb;
+  --blue-600: #00a7fb;
+  --blue-700: #008ace;
+  --blue-800: #005580;
+  --blue-900: #00273b;
+  --purple-100: #f5f2fc;
+  --purple-200: #ece6f9;
+  --purple-300: #dbcdf6;
+  --purple-400: #c2aef0;
+  --purple-500: #9478d2;
+  --purple-600: #7352ba;
+  --purple-700: #59418d;
+  --purple-800: #3f2971;
+  --purple-900: #1a0d36;
+  --mint-100: #effbf9;
+  --mint-200: #cff2ec;
+  --mint-300: #9ee5d9;
+  --mint-400: #6fd7c6;
+  --mint-500: #4fceba;
+  --mint-600: #30b09c;
+  --mint-700: #26907f;
+  --mint-800: #1b6054;
+  --mint-900: #134038;
+  --orange-100: #fdf3ef;
+  --orange-200: #ffe0d5;
+  --orange-300: #ffc1ad;
+  --orange-400: #fea285;
+  --orange-500: #ff865e;
+  --orange-600: #ff6632;
+  --orange-700: #f53d01;
+  --orange-800: #cc3201;
+  --orange-900: #791f00;
+  --gray-100: #f2f4f7;
+  --gray-200: #e9ebf0;
+  --gray-300: #dadce0;
+  --gray-400: #c4c7cd;
+  --gray-500: #9ba0a8;
+  --gray-600: #858993;
+  --gray-700: #65686f;
+  --gray-800: #414246;
+  --gray-900: #1a1c1f;
+
+  /* Gradients */
+  --purple-gradient: linear-gradient(180deg, #1a0d36 0%, #59418d 100%);
+  --purple-gradient-rev: linear-gradient(180deg, #4c3b7f 0%, #291c4c 100%);
+
+  /* Shadows */
+  --shadow: 0 1px 1px 0 rgb(65 66 70 / 34%);
+
+  /* Borders */
+  --radius: 24px;
+
+  /* Docusaurus setting for light theme */
+  --ifm-color-primary: #087ea4;
+  --ifm-color-primary-dark: #077194;
+  --ifm-color-primary-darker: #076b8b;
+  --ifm-color-primary-darkest: #065873;
+  --ifm-color-primary-light: #098bb4;
+  --ifm-color-primary-lighter: #0991bd;
+  --ifm-color-primary-lightest: #0aa4d5;
+  --ifm-color-secondary-dark: #381885;
+  --ifm-color-secondary-contrast-background: #d2cde755;
+  --ifm-code-font-size: 90%; /*95%;*/
+
+  --ifm-navbar-shadow: white;
+  --ifm-font-size-base: 16px;
+  --ifm-code-font-size: 90%;
+  --ifm-background-color: var(--white);
+  --ifm-footer-background-color: #23272f;
+  --ifm-footer-title-color: white;
+  --ifm-footer-link-color: white;
+  --ifm-footer-color: white;
+  --ifm-footer-link-hover-color: var(--blue-400);
+  --ifm-menu-color-background-active: var(--ifm-color-emphasis-200);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --search-local-modal-width: 480px;
+  --search-local-hit-active-color: #0a141c;
+  --ifm-breadcrumb-border-radius: 0.4rem;
+  --ifm-breadcrumb-padding-vertical: 0.2rem;
+
+  /* Custom font setup */
+  font-family: "Chinese Quotes", "Inter var", "Inter", ui-sans-serif, system-ui,
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Helvetica, Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  line-height: 1.75;
+  --ifm-font-color-base: #1c1e21;
+}
+
+.navbar-transparent {
+  background-color: transparent !important;
+}
+
+html[data-theme="dark"] {
+  --ifm-pre-background: #16181d !important;
+  --ifm-font-color-base: #e3e3e3;
+  --ifm-navbar-link-hover-color: #fda603; /*  navbar clicked */
+
+  --ifm-link-color: #fda603; /* colors of previous-next page links, or any clickable links in text */
+  --ifm-color-primary-lightest: #fda603;
+  --ifm-color-primary: var(
+    --ifm-navbar-link-hover-color
+  ); /* color of TOC selected, and breadcrumbs  */
+
+  --ifm-menu-color-active: #fda603; /*  sidebar text currently clicked, and currently opened sub-sidebar */
+
+  /* background color on navbar, body, and footer */
+  --ifm-background-color: rgb(0, 0, 10) !important;
+  --ifm-footer-background-color: black !important;
+  --ifm-footer-link-hover-color: var(--ifm-menu-color-active);
+  --ifm-navbar-background-color: var(--ifm-background-color);
+
+  /* sidebar colors */
+  --ifm-menu-color-background-hover: #30353e; /* when hovering over sidebar */
+  --ifm-menu-color-background-active: #1e2127; /* opened sidebar link */
+
+  /* markdown card */
+  --ifm-card-background-color: #15191e; /* markdown page having many cards to summarise all in the folder card color */
+
+  /* additional color settings */
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-secondary-dark: #ea7317;
+  --ifm-color-secondary-contrast-background: rgba(227, 199, 247, 0.1);
+
+  /* render blockquote (the one with >) */
+  --ifm-blockquote-border-color: #90e0ef;
+  --ifm-blockquote-border-left-width: 2px;
+
+  /* Custom components color */
+  --ifm-color-collapsible-accent: #fda503;
+  --ifm-color-collapsible-content: #ffd60a3f;
+  --ifm-color-collapsible-content-hovered: rgba(253, 165, 3, 0.303) !important;
+  --ifm-button-hover: var(--ifm-footer-background-color);
+  --ifm-button-hover-color: white;
+  --ifm-border-color: #ea7317;
+}
+
+/* Invert images and object color on dark mode*/
+[data-theme="dark"] img {
+  filter: invert(0.9) hue-rotate(180deg);
+}
+
+[data-theme="dark"] object {
+  filter: invert(0.9) hue-rotate(180deg) !important;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+html[data-theme="dark"] .docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.diagonal-box {
+  transform: skewY(-6deg);
+}
+
+.diagonal-content {
+  transform: skewY(6deg);
+}
+
+[class^="announcementBar"] {
+  z-index: 10;
+}
+
+.showcase {
+  background-color: #fff;
+}
+
+html[data-theme="dark"] .showcase {
+  background-color: #21243d;
+}
+
+.showcase-border {
+  border-color: rgba(243, 244, 246, 1);
+}
+
+html[data-theme="dark"] .showcase-border {
+  border-color: rgba(55, 65, 81, 1);
+}
+
+.text-description {
+  color: rgba(107, 114, 128, 1);
+}
+
+html[data-theme="dark"] .text-description {
+  color: rgba(209, 213, 219, 1);
+}
+
+/* apply */
+#hero-apply {
+  z-index: -1;
+  background-image: linear-gradient(
+    var(--ifm-footer-background-color),
+    var(--ifm-navbar-background-color)
+  );
+}
+
+html[data-theme="dark"] #hero-apply {
+  background-image: linear-gradient(
+    var(--ifm-navbar-background-color),
+    var(--ifm-background-color)
+  );
+}
+
+html[data-theme="dark"] #hero-apply > div:first-child {
+  opacity: 0.4;
+}
+
+.apply-form {
+  background-image: linear-gradient(#fff, #f5f5fa);
+  max-width: 600px;
+}
+
+html[data-theme="dark"] .apply-form {
+  background-image: radial-gradient(
+    circle at 50% 0px,
+    rgb(72, 76, 122),
+    rgb(35, 38, 59)
+  );
+}
+
+.apply-text {
+  color: #36395a;
+}
+
+html[data-theme="dark"] .apply-text {
+  color: #fff;
+}
+
+/* index */
+#hero {
+  background-image: linear-gradient(
+    var(--ifm-footer-background-color),
+    var(--ifm-navbar-background-color)
+  );
+}
+
+html[data-theme="dark"] #hero {
+  background-image: linear-gradient(
+    var(--ifm-navbar-background-color),
+    var(--ifm-background-color)
+  );
+}
+
+html[data-theme="dark"] #hero > div:first-child {
+  opacity: 0.4;
+}
+
+.docsearch-logo {
+  color: #21243d;
+}
+
+html[data-theme="dark"] .docsearch-logo {
+  color: #fff;
+}
+
+.apply-button:hover {
+  color: #fff;
+}
+
+/* GitHub */
+.header-github-link:hover {
+  opacity: 0.6;
+}
+
+.header-github-link:before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
+    no-repeat;
+}
+
+html[data-theme="dark"] .header-github-link:before {
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
+    no-repeat;
+}
+
+/* Images */
+.image-rendering-crisp {
+  image-rendering: crisp-edges;
+
+  /* alias for google chrome */
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.image-rendering-pixel {
+  image-rendering: pixelated;
+}
+
+/* Manually prevent invert of some images in dark mode */
+.no-invert-color {
+  filter: none !important;
+}
+
+/* Change the way buttons look when hovered */
+.button:hover {
+  font-weight: 800;
+  color: var(--ifm-button-hover-color);
+  background-color: var(--ifm-button-hover);
+  border-color: var(--ifm-button-hover);
+}
+
+/* Custom margins on headers*/
+h1 {
+  margin-top: 3rem !important;
+}
+
+h2 {
+  margin-top: 4rem !important;
+  border: 0;
+  border-top: 1px solid var(--ifm-border-color);
+  padding-top: 1.5rem;
+}
+
+h3 {
+  margin-top: 3rem !important;
+}
+
+/* Allows for word breaking on buttons and other components when used */
+.breakword {
+  white-space: break-spaces !important;
+  word-wrap: break-word;
+}
+
+/* Custom Admonition: keyword */
+.alert--keyword {
+  --ifm-alert-background-color: #ffeaddb8;
+  --ifm-alert-background-color-highlight: rgba(212, 53, 28, 0.15);
+  --ifm-alert-foreground-color: rgb(29, 29, 29);
+  --ifm-alert-border-color: #ff6666;
+}
+
+html[data-theme="dark"] .alert--keyword {
+  --ifm-alert-background-color: #090707c5;
+  --ifm-alert-background-color-highlight: rgba(212, 52, 28, 0.591);
+  --ifm-alert-foreground-color: rgb(255, 230, 230);
+  --ifm-alert-border-color: #ff6666;
+}
+
+/* Custom Admonition: author */
+.alert--author {
+  --ifm-alert-background-color: #48cae4;
+  --ifm-alert-background-color-highlight: rgba(212, 53, 28, 0.15);
+  --ifm-alert-foreground-color: rgb(29, 29, 29);
+  --ifm-alert-border-color: #03045e;
+}
+
+html[data-theme="dark"] .alert--author {
+  --ifm-alert-background-color: #023047b2;
+  --ifm-alert-background-color-highlight: rgba(212, 53, 28, 0.15);
+  --ifm-alert-foreground-color: rgb(255, 255, 255);
+  --ifm-alert-border-color: #fb8500;
+}
+
+/* Custom Admonition: Think */
+.alert--think {
+  --ifm-alert-background-color: #008cff33;
+  --ifm-alert-background-color-highlight: #fffce6;
+  --ifm-alert-foreground-color: #2a270a;
+  --ifm-alert-border-color: #2d1d51;
+}
+
+html[data-theme="dark"] .alert--think {
+  --ifm-alert-background-color: #a2c9ff2d;
+  --ifm-alert-background-color-highlight: #fffce6;
+  --ifm-alert-foreground-color: #ffffff;
+  --ifm-alert-border-color: #246dff;
+}
+
+/* Custom h2 for card to not cause big DocCard */
+.card h2 {
+  margin-top: 0rem !important;
+  padding-top: 0rem;
+  border-top: 0px;
+}
+
+/* Sets sidebar and navbar to be centered on super wide screens */
+@media (min-width: 1616px) {
+  .main-wrapper {
+    align-self: center;
+    max-width: 1600px;
+    width: 1600px;
+  }
+
+  /* Still set hero--primary to be full width */
+  .hero--primary {
+    max-width: 100vw !important;
+    width: 100vw !important;
+    align-self: center;
+  }
+}
+
+.navbar .navbar__inner {
+  margin: 0 auto;
+  max-width: 1560px;
+}
+
+@media (max-width: 996px) {
+  .navbar__search-input {
+    width: 12rem;
+  }
+}
+
+/* Chatbase styling*/
+.chatbase-bubble-img {
+  filter: none !important;
+  border-radius: 25px;
+  object-fit: cover;
+  width: 3rem;
+  height: 3rem;
+}
+.chatbase-bubble-button {
+  width: 3rem;
+  height: 3rem;
+  right: auto;
+  left: 1rem !important;
+  bottom: 1rem !important;
+  background-color: $main-color-1 !important;
+}
+
+/* Mermaid */
+.docusaurus-mermaid-container {
+  display: flex;
+  justify-content: center;
+}
+
+@media print {
+  iframe {
+    display: none !important;
+  }
+  :root {
+    /* Docusaurus setting */
+    --ifm-color-primary: #087ea4 !important;
+    --ifm-color-primary-dark: #077194 !important;
+    --ifm-color-primary-darker: #076b8b !important;
+    --ifm-color-primary-darkest: #065873 !important;
+    --ifm-color-primary-light: #098bb4 !important;
+    --ifm-color-primary-lighter: #0991bd !important;
+    --ifm-color-primary-lightest: #0aa4d5 !important;
+    --ifm-color-secondary-dark: #381885 !important;
+    --ifm-color-secondary-contrast-background: #d2cde755 !important;
+
+    --ifm-code-font-size: 90% !important; /*95% !important;*/
+
+    --ifm-navbar-shadow: white !important;
+    --ifm-font-size-base: 16px !important;
+    --ifm-code-font-size: 90% !important;
+    --ifm-background-color: var(--white) !important;
+    --ifm-footer-background-color: #23272f !important;
+    --ifm-menu-color-background-active: var(
+      --ifm-color-emphasis-200
+    ) !important;
+
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1) !important;
+    --search-local-modal-width: 480px !important;
+    --search-local-hit-active-color: #0a141c !important;
+    --ifm-breadcrumb-border-radius: 0.4rem !important;
+    --ifm-breadcrumb-padding-vertical: 0.2rem !important;
+
+    /* Custom components color */
+    --ifm-color-collapsible-accent: #0285ff !important;
+    --ifm-color-collapsible-content: #0071e911 !important;
+    --ifm-color-collapsible-content-hovered: #0071e923 !important;
+    --ifm-button-hover: var(--ifm-footer-background-color) !important;
+    --ifm-button-hover-color: white !important;
+    --ifm-border-color: #ccc !important;
+
+    /* Custom font setup */
+    font-family: "Chinese Quotes", "Inter var", "Inter", ui-sans-serif,
+      system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Helvetica, Arial, "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji" !important;
+    line-height: 1.75 !important;
+    --ifm-font-color-base: #1c1e21 !important;
+  }
+
+  object {
+    filter: none !important;
+  }
+
+  .alert--think {
+    --ifm-alert-background-color: #ffeb3baf !important;
+    --ifm-alert-background-color-highlight: #fffce6 !important;
+    --ifm-alert-foreground-color: #2a270a !important;
+    --ifm-alert-border-color: #2a270a !important;
+  }
+  .alert--keyword {
+    --ifm-alert-background-color: #ffeaddb8 !important;
+    --ifm-alert-background-color-highlight: rgba(212, 53, 28, 0.15) !important;
+    --ifm-alert-foreground-color: rgb(29, 29, 29) !important;
+    --ifm-alert-border-color: #ff6666 !important;
+  }
+}
+
+.navbar__item:hover {
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff,
+    0 0 42px rgb(0, 8, 255), 0 0 82px rgb(0, 8, 255), 0 0 92px rgb(0, 8, 255),
+    0 0 102px rgb(0, 8, 255), 0 0 151px rgb(0, 8, 255);
+}
+
+.orange-bold {
+  color: #ffc300;
+  font-weight: bold;
+}
+.red-bold {
+  color: red;
+  font-weight: bold;
+}
+
+blockquote {
+  background-color: rgba(128, 128, 128, 0.21);
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}

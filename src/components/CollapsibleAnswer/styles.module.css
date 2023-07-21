@@ -1,0 +1,22 @@
+.collapsible {
+  --docusaurus-details-decoration-color: var(--ifm-color-collapsible-accent);
+  --docusaurus-details-transition: transform var(--ifm-transition-fast) ease;
+  margin: 0 0 var(--ifm-spacing-vertical);
+  padding: 0.75rem;
+  border-left: 2px solid var(--ifm-color-collapsible-accent);
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 0px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+
+  background-color: var(--ifm-color-collapsible-content);
+}
+
+.collapsible:hover {
+  background-color: var(--ifm-color-collapsible-content-hovered);
+}
+
+.header {
+  font-weight: bold;
+}

@@ -1,0 +1,65 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent !important;
+}
+
+.heroTitle {
+  > span {
+    -webkit-text-fill-color: initial;
+    animation: neonAnim 2s alternate-reverse infinite;
+  }
+
+  font-size: 4em !important;
+  margin-top: 1em !important;
+}
+
+@keyframes neonAnim {
+  from {
+    text-shadow: 0 0 20px rgba(0, 123, 255, 0.7),
+      0 0 80px rgba(0, 123, 255, 0.7), 0 0 200px rgba(0, 123, 255, 0.7);
+  }
+  to {
+    text-shadow: 0 0 1px rgba(0, 123, 255, 0.7), 0 0 5px rgba(0, 123, 255, 0.7),
+      0 0 5px rgba(0, 123, 255, 0.7);
+  }
+}
+
+.heroColor {
+  > span {
+    -webkit-text-fill-color: initial;
+  }
+
+  background: -webkit-linear-gradient(45deg, #3571ff, #ff7403);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroSubtitleColor {
+  > span {
+    -webkit-text-fill-color: initial;
+  }
+
+  color: white;
+  /* background: -webkit-linear-gradient(45deg, #3571ff, #ff7403);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.glowBox:hover {
+  color: white;
+  box-shadow: 0 0px 10px 2px#d6cafff5;
+}
