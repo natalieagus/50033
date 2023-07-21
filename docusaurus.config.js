@@ -237,7 +237,7 @@ const config = {
             items: [
               {
                 label: "GitHub",
-                href: "https://github.com/data-driven-world",
+                href: "https://github.com/natalieagus/2023-50033",
               },
             ],
           },
