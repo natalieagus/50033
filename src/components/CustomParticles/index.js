@@ -1,6 +1,6 @@
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles"; // loads tsparticles
-import React, { useCallback, useMemo } from "react";
+import React, { useMemo } from "react";
 
 // tsParticles Repository: https://github.com/matteobruni/tsparticles
 // tsParticles Website: https://particles.js.org/
@@ -126,7 +126,7 @@ const CustomParticles = (props) => {
           x: -30,
         },
         rate: {
-          delay: 7,
+          delay: 5,
           quantity: 1,
         },
         size: {

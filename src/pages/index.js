@@ -21,7 +21,6 @@ export default function Home() {
         emoji={content.emoji}
         tagline={content.tagline}
       />
-      <Footer />
     </LayoutProvider>
   );
 }

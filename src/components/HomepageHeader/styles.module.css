@@ -25,6 +25,10 @@
   .heroBanner {
     padding: 2rem;
   }
+
+  .glowBox {
+    font-size: 1rem !important;
+  }
 }
 
 .heroTitle {
@@ -52,7 +56,8 @@
   background: -webkit-linear-gradient(45deg, #3571ff, #ff7403);
   text-shadow: 0 3px 5px rgba(255, 255, 255, 0.1),
     3px 0px 5px rgba(255, 255, 255, 0.1);
-  text-shadow: 0 5px 10px rgba(255, 255, 255, 0.2);
+  text-shadow: 0 5px 5px rgba(255, 255, 255, 0.2),
+    0 -5px 5px rgba(255, 255, 255, 0.15);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
