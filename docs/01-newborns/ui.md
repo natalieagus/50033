@@ -36,20 +36,20 @@ Then, gso to the newly created Text GameObject, and change its `Font Asset` prop
 
 The Canvas might look rather huge right now in the Scene view, and that's fine. That is because the canvas `Render Mode` is at `Screen Space - Overlay`, meaning it's like HUD style and does not depend on the World coordinate. Play around with its properties to understand more how it works.
 
-<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/canvas-overlay.mp4"} widthPercentage="100%"/>
+<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-1/canvas-overlay.mp4"} widthPercentage="100%"/>
 
 ### Button (TMP)
 
 Next, add a Button UI GameObject to the scene. Get some button sprite in `.png` format and drag it to your `Assets/Sprite` folder, and change the button's `Source Image` property on its `Image` element. You can position the button and the Text GameObject you set earlier as shown:
 
-<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/set-ui.mp4"} widthPercentage="100%"/>
+<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-1/set-ui.mp4"} widthPercentage="100%"/>
 
 You can dictate how it looks like when user interact with it by changing all properties under `Transition` in the `Button` element of the `Button` GameObject.
 
 :::tip
 At this point, it's worth naming your GameObject intuitively, as shown:
 
-<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/button-setup.mp4"} widthPercentage="100%"/>
+<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-1/button-setup.mp4"} widthPercentage="100%"/>
 :::
 
 ## Scoring System
@@ -174,7 +174,7 @@ Add the following code to `JumpOverGoomba.cs`:
 
 With this, you can see how big the box that we are about to cast is. Ensure that it can sufficiently touch the ground. Also, adjust the `gravity` value of Mario's Rigidbody to make it drop more naturally. You need to adjust the `boxSize` until the log shows `onGround` when Mario jumps off the ground for the first time.
 
-<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/mario-jump-over-goomba.mp4"} widthPercentage="100%"/>
+<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-1/mario-jump-over-goomba.mp4"} widthPercentage="100%"/>
 
 ## Game Resolution
 
@@ -286,7 +286,7 @@ public class EnemyMovement : MonoBehaviour
 :::playtest
 Now to put everything together, attach the `RestartButtonCallback` method as callback in the RestartButton gameobject. You should be able to now restart the game. The following recording shows the entire process of stopping the game and restarting the game:
 
-<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/restart-game.mp4"} widthPercentage="100%"/>
+<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-1/restart-game.mp4"} widthPercentage="100%"/>
 
 Note that we don't actually utilise parameter `input` in `RestartButtonCallback`. We only put it there for demonstration purposes.  
 :::
@@ -338,7 +338,7 @@ You might have noticed from the recording above that the score is reset to `0`, 
 :::playtest
 Link up JumpOverGoomba in Mario's PlayerMovement inspector. You should see the score being reset properly:
 
-<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/restart-score.mp4"} widthPercentage="100%"/>
+<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-1/restart-score.mp4"} widthPercentage="100%"/>
 
 :::
 

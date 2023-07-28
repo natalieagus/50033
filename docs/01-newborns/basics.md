@@ -76,7 +76,7 @@ Open Assets >> Sprites and notice that we have provided you with various sprites
 
 Now click on Mario's sprite, change its `Sprite Mode` to **Multiple**, and launch the Sprite Editor. Aftewards, you can define sections of the sprite that you want manually, or automatically. In the case of our Mario sprite, they're not placed in regular spacing, so [**slicing** them automatically](https://docs.unity3d.com/Manual/sprite-automatic-slicing.html) will not work. We need to **manually** slice each Sprite as such:
 
-<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/mario-sprite-slice.mp4"} widthPercentage="100%"/>
+<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-1/mario-sprite-slice.mp4"} widthPercentage="100%"/>
 
 > _Yes, it's tedious._ Don't worry, we will give you pre-sliced sprites later.
 
@@ -305,7 +305,7 @@ Finally, also **add** a `BoxCollider2D` to Mario so that they can "collide" and 
 Test it and you should see Mario not falling to oblivion anymore.
 :::
 
-<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/mario-collide-ground.mov"} widthPercentage="100%"/>
+<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-1/mario-collide-ground.mov"} widthPercentage="100%"/>
 
 ### OnCollision2D and Double Jump
 
@@ -342,7 +342,7 @@ We need to have some kind of **state** variable for this, and an upward "speed".
 :::playtest
 Test your jumping Mario. You should have something like this.
 
-<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/mario-jump.mp4"} widthPercentage="100%"/>
+<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-1/mario-jump.mp4"} widthPercentage="100%"/>
 :::
 
 You can improve the controls and adjust the parameters: `speed`, `upSpeed`, and `maxSpeed` accordingly to get the right “**feel**”. It can take quite a lot of time to get the **kinesthetics** right, but it is an important part of your journey in making a good game.
@@ -373,7 +373,7 @@ We need the following Sprites. You can slowly slice and create them all from `mi
 <DeepDive title="A Shortcut">
 You can <a href="https://www.dropbox.com/scl/fo/vwoh9vizstlnmzi5clyrw/h?rlkey=c37jshqpwbikxhpzltcppd532&dl=0">download the texture metadata from here</a>. Then, paste all these <code>.meta</code> files under <code>Assets/Sprites</code>. Don't forget to set Texture's Mesh Type and Wrap Mode as above to enable tiling.
 
-<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/sprite-import-meta.mp4"} widthPercentage="100%"/>
+<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-1/sprite-import-meta.mp4"} widthPercentage="100%"/>
 </DeepDive>
 
 We shall have this before proceeding:
@@ -392,7 +392,7 @@ Also, you can "drag" and move GameObjects together in the scene.
 
 Here's a speedup recording demonstrating all of the above:
 
-<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/background-setup.mp4"} widthPercentage="100%"/>
+<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-1/background-setup.mp4"} widthPercentage="100%"/>
 
 ## Flip Mario
 
@@ -443,7 +443,7 @@ We do not implement the flipping of Sprite under `FixedUpdate` since it has **no
 :::playtest
 Your Mario will now face right and left accordingly as "a" or "d" key is pressed.
 
-<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/mario-flip.mp4"} widthPercentage="100%"/>
+<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-1/mario-flip.mp4"} widthPercentage="100%"/>
 :::
 
 ## Add Obstacles
@@ -530,7 +530,7 @@ Make sure to place Goomba nicely above the Ground. Gravity **does not apply** to
 :::playtest
 Now is a good time to test. Notice how the Goomba "pushes" Mario. That's because both objects have colliders in it.
 
-<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/goomba-setup.mp4"} widthPercentage="100%"/>
+<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-1/goomba-setup.mp4"} widthPercentage="100%"/>
 :::
 
 ### Collision between Goomba and Mario
