@@ -19,7 +19,7 @@ Once you've implemented everything in this handout, then for **checkoff** you're
 
 You’re free to implement it in any way you want. It will not affect your checkoff score. The grading for this lab is **binary** (completed or not completed). Here's a sample result:
 
-<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-1/restart-game.mp4"} widthPercentage="100%"/>
+<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-1/complete-checkoff-1.mp4"} widthPercentage="100%"/>
 
 ### Housekeeping
 
