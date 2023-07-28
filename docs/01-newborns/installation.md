@@ -29,7 +29,9 @@ Please install all of the above tools before proceeding.
 ### Basic Setup
 
 :::note
-**Download the starter asset** from your **course handout**, under "Class Calendar" heading, _Week 1 Lab Session_ row. This is a **starter** asset for this week that you can import to your project and complete the lab. It contains all required images, sound files, etc so we can save time without having to search for all these assets.
+**Download the starter asset** from your **course handout**, under "Class Calendar" heading, _Week 1 Lab Session_ row. We do not own any of the assets distributed in this lab, they can all be freely obtained from the Internet, credits are all indicated in the individual sheet/resources.
+
+This is a **starter** asset for this week that you can import to your project and complete the lab. It contains all required images, sound files, etc so we can save time without having to search for all these assets.
 :::
 
 ### Create New Project
