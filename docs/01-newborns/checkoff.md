@@ -25,7 +25,7 @@ You’re free to implement it in any way you want. It will not affect your check
 
 While Debug messages are useful, please **clean them up** once you're done with the features. Manage your Scene with proper GameObject hierarchies. Manage your files under `Project` window properly too. For these lab series, we neatly manage our scripts and scenes by Week.
 
-## Next
+## Next Time
 
 :::think 🤔
 What to do next?

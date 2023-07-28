@@ -91,11 +91,10 @@
   --ifm-color-primary-lightest: #0aa4d5;
   --ifm-color-secondary-dark: #381885;
   --ifm-color-secondary-contrast-background: #d2cde755;
-  --ifm-code-font-size: 90%; /*95%;*/
+  --ifm-code-font-size: 75%; /*95%;*/
 
   --ifm-navbar-shadow: white;
   --ifm-font-size-base: 16px;
-  --ifm-code-font-size: 90%;
   --ifm-background-color: var(--white);
   --ifm-footer-background-color: #23272f;
   --ifm-footer-title-color: white;
