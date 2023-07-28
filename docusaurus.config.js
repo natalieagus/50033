@@ -250,7 +250,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} 10.020 Data Driven World`,
+        copyright: `Copyright © ${new Date().getFullYear()} 50.033 Game Design and Development`,
       },
       prism: {
         theme: lightCodeTheme,

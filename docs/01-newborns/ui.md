@@ -30,7 +30,7 @@ We have given you font asset: `Assets/Fonts/prstart.ttf`. To be able to use it, 
 
 <ImageCard path={require("./images/ui/2023-07-28-11-35-02.png").default} widthPercentage="100%"/>
 
-Then, gso to the newly created Text GameObject, and change its `Font Asset` property under `TMP - Text(UI)` element into this newly created asset (`prstart SDF`) to use it.
+Then, go to the newly created Text GameObject, and change its `Font Asset` property under `TMP - Text(UI)` element into this newly created asset (`prstart SDF`) to use it.
 
 ### The Canvas
 
@@ -47,7 +47,7 @@ Next, add a Button UI GameObject to the scene. Get some button sprite in `.png` 
 You can dictate how it looks like when user interact with it by changing all properties under `Transition` in the `Button` element of the `Button` GameObject.
 
 :::tip
-At this point, it's worth naming your GameObject intuitively, as shown:
+At this point, it's worth naming your GameObject intuitively, as shown. Then proceed with making the desired effect on the button.
 
 <VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-1/button-setup.mp4"} widthPercentage="100%"/>
 :::
