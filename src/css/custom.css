@@ -164,14 +164,21 @@ html[data-theme="dark"] {
   --ifm-button-hover: var(--ifm-footer-background-color);
   --ifm-button-hover-color: white;
   --ifm-border-color: #ea7317;
+
+  /* line highlight color  */
+  /* --docusaurus-highlighted-code-line-bg: rgb(72, 77, 91); */
 }
 
 /* Invert images and object color on dark mode*/
-[data-theme="dark"] img {
+/* [data-theme="dark"] img {
   filter: invert(0.9) hue-rotate(180deg);
 }
 
 [data-theme="dark"] object {
+  filter: invert(0.9) hue-rotate(180deg) !important;
+} */
+
+.invert-color {
   filter: invert(0.9) hue-rotate(180deg) !important;
 }
 
@@ -381,6 +388,14 @@ html[data-theme="dark"] .alert--keyword {
   --ifm-alert-background-color-highlight: rgba(212, 53, 28, 0.15);
   --ifm-alert-foreground-color: rgb(29, 29, 29);
   --ifm-alert-border-color: #03045e;
+}
+
+/* Custom Admonition: test */
+.alert--playtest {
+  --ifm-alert-background-color: #ffffff3a;
+  --ifm-alert-background-color-highlight: rgba(62, 236, 245, 0.11);
+  --ifm-alert-foreground-color: rgb(212, 212, 212);
+  --ifm-alert-border-color: #e5e5e5;
 }
 
 html[data-theme="dark"] .alert--author {

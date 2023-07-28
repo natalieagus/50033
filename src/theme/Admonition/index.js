@@ -6,6 +6,7 @@ import styles from "./styles.module.css";
 import SVGKeyword from "@site/static/img/keys-icon.svg";
 import SVGThink from "@site/static/img/qn-icon.svg";
 import SVGAuthor from "@site/static/img/author-icon.svg";
+import SVGTest from "@site/static/img/test-icon.svg";
 
 function KeywordIcon() {
   return <SVGKeyword />;
@@ -16,6 +17,10 @@ function ThinkIcon() {
 
 function AuthorIcon() {
   return <SVGAuthor />;
+}
+
+function TestIcon() {
+  return <SVGTest />;
 }
 
 function NoteIcon() {
@@ -163,6 +168,18 @@ const AdmonitionConfigs = {
         description="The default label used for the Author admonition (:::author)"
       >
         authors
+      </Translate>
+    ),
+  },
+  playtest: {
+    infimaClassName: "playtest",
+    iconComponent: TestIcon,
+    label: (
+      <Translate
+        id="theme.admonition.playtest"
+        description="The default label used for the Playtest admonition (:::playtest)"
+      >
+        test
       </Translate>
     ),
   },

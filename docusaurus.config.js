@@ -45,6 +45,7 @@ const config = {
               "keyword",
               "think",
               "author",
+              "playtest",
             ],
           },
         },
@@ -98,6 +99,7 @@ const config = {
             "keyword",
             "think",
             "author",
+            "playtest",
           ],
         },
       },
@@ -124,6 +126,7 @@ const config = {
             "keyword",
             "think",
             "author",
+            "playtest",
           ],
         },
       },
@@ -151,6 +154,11 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      mermaid: {
+        options: {
+          fontSize: 24,
+        },
+      },
       colorMode: {
         // only want to have dark theme here
         defaultMode: "dark",
@@ -247,6 +255,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ["csharp"],
       },
     }),
   stylesheets: [
@@ -258,6 +267,7 @@ const config = {
       crossorigin: "anonymous",
     },
   ],
+
   markdown: {
     mermaid: true,
   },
