@@ -192,7 +192,7 @@ const config = {
           },
           {
             type: "doc",
-            docId: "introduction",
+            docId: "syllabus",
             position: "left",
             label: "Lab Docs",
           },
@@ -228,7 +228,7 @@ const config = {
             items: [
               {
                 label: "Lab Documentation",
-                to: "/docs/introduction",
+                to: "/docs/syllabus",
               },
               // {
               //   label: "Problem Sets",

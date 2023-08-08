@@ -19,6 +19,8 @@ _Yes, this classic game. Who doesn't know this game? Mario, our favourite plumbe
 
 The overarching goal of our labs is to recreate basics this classic platform game: **Super Mario Bros** step by step while learning Unity's features along the way. We will try to rebuild [World 1-1](<https://www.mariowiki.com/World_1-1_(Super_Mario_Bros.)>) as closely as possible, although due to constraints of time, some features may be omitted. We then discuss a few technical details in depth: such as game and asset management, events, and callbacks.
 
+> If you've never played this game before, [give it a try before proceeding](https://supermarioplay.com).
+
 ## Unity Basics: The Scene
 
 ### GameObject

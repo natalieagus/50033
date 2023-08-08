@@ -206,7 +206,7 @@ We actually didn't really _stop_ the game, but **freezes** time. You can still p
 
 ### Button Callback
 
-Now we want to play the game again when the `RestartButton` is clicked. Implement a callback function with the following **signature** (public **void** with 0 or 1 argument) in `PlayerMovement.cs`. We also need to implement some sort of `resetGame` method to reset everything back into the beginning of the game when the restart button is pressed:
+Now we want to play the game again when the `RestartButton` is clicked. Implement a callback function with the following **signature** (public **void** with 0 or 1 argument) in `PlayerMovement.cs`. We also need to implement some sort of `ResetGame` method to reset everything back into the beginning of the game when the restart button is pressed:
 
 <Tabs> 
 <TabItem value="pm" label="PlayerMovement.cs">
@@ -232,12 +232,12 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log("Restart!");
         // reset everything
-        resetGame();
+        ResetGame();
         // resume time
         Time.timeScale = 1.0f;
     }
 
-    private void resetGame()
+    private void ResetGame()
     {
         // reset position
         marioBody.transform.position = new Vector3(-5.33f, -4.69f, 0.0f);
@@ -314,7 +314,7 @@ You might have noticed from the recording above that the score is reset to `0`, 
     public JumpOverGoomba jumpOverGoomba;
 //highlight-end
 
-    public void resetGame()
+    public void ResetGame()
     {
         // reset position
         marioBody.transform.position = new Vector3(-5.33f, -4.69f, 0.0f);
