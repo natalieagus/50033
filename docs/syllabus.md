@@ -104,7 +104,51 @@ flowchart TD
 
 ### Week 3: Unity for Toddlers
 
-We have a lot of state management to do at this stage. It's time to learn more advanced <span className="orange-bold">scripting</span> and <span className="orange-bold">design patterns</span>.
+We have a lot of state management to do at this stage. It's time to learn more advanced <span className="orange-bold">Input Management</span>, <span className="orange-bold">Audio Management</span>, and <span className="orange-bold">Design Patterns</span>.
+
+```mermaid
+flowchart TD
+    U(((Unity)))
+    U --> IS(The Input System)
+    IS --> IP(Input)
+    IP --> K(Keyboard)
+    IP --> M(Mouse)
+    IS --> IA(InputActions)
+    IS --> IAC(Actions)
+    IS --> AMP(Action Maps)
+    IS --> AB(Action Binding)
+    IS --> AP(Action Properties)
+    IS --> WF(Workflow)
+    WF --> ASSET(ActionAsset)
+    WF --> PIC(PlayerInput Component)
+    U --> A(Audio Management)
+    A --> AM(AudioMixer)
+    U --> CS(C#)
+    CS --> D(Delegates)
+    CS --> AC(Actions)
+    CS --> UV(UnityEvent)
+    U --> DP(Design Pattern)
+    DP --> STO(The Observer Pattern)
+    U --> HS(Helper Script)
+    HS --> AEV(AnimationEventTool)
+```
+
+<br/>
+
+| Topic                     | Details                                                              |
+| ------------------------- | -------------------------------------------------------------------- |
+| Unity                     | The Input System                                                     |
+| The Input System Input    | Keyboard, Mouse                                                      |
+| The Input System          | InputActions, Actions, ActionMaps, Action Binding, Action Properties |
+| The Input System Workflow | ActionAsset, PlayerInput Component                                   |
+| Unity                     | AudioMixer                                                           |
+| Design Pattern            | The Observer Pattern                                                 |
+| C#                        | Delegates, Actions, and UnityEvent                                   |
+| Unity Scripting           | AnimationEvent<T\>Tool                                               |
+
+### Week 4: Unity for Children
+
+This week we learn how to make multi-scene game and make important instances and values <span className="orange-bold">persist</span> between scenes and gameplay.
 
 ```mermaid
 flowchart TD
@@ -121,10 +165,7 @@ flowchart TD
     CS --> CR(coroutines)
     CS --> AW(async-await)
     U --> DP(Design Pattern)
-    DP --> OP(Object Pooling)
     DP --> STO(Singletons)
-    DP --> D(Delegates)
-    DP --> UEV(Unity Events)
     U --> SO(Scriptable Objects)
 ```
 
@@ -135,7 +176,6 @@ flowchart TD
 | Unity           | Switching Scenes                                                                                         |
 | C#              | Enums, switch statements, interface and inheritance, static variables, properties and method overloading |
 | C# Advanced     | Coroutines, async-await                                                                                  |
-| Design Pattern  | Object Pooling                                                                                           |
 | Design Pattern  | Singletons                                                                                               |
-| Design Pattern  | Delegate and Unity Events                                                                                |
+| Design Pattern  | Delegates, Actions, and Unity Events                                                                     |
 | Unity Scripting | Scriptable Objects                                                                                       |

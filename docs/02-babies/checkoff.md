@@ -49,3 +49,11 @@ As shown in the recording above, the question box is comprised of three gameObje
 The bouncing brick in the demo video above is implemented using animation rather than Spring Joint, which is easier to control (bounce exactly **once**). We use a hierarchy of GameObject, so that we can control the animation of the **local coordinate** of the Brick and the coin separately.
 
 :::
+
+## Next Time
+
+:::think 🤔
+What to do next?
+:::
+
+We will explore how to manage our games better in the next lab, mainly internal game state management and asset management. It's time to learn more advanced input management using The Unity Input System, SFX management using AudioMixer, and the observer design pattern.

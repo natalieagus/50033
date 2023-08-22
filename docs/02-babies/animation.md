@@ -161,10 +161,10 @@ Here's a sped up recording to help you out. Pause it at certain key frames if ne
 
 ### Animation Event
 
-We can create animation events on animation clips, which will eventually call designated functions as long as the signature matches (`void` return type, and accepting either of the parameters: `Float`, `Int`, `String`, or `Object`).
+We can create animation events on animation clips, of which we can **subscribe** a callback from a script **attached** to the GameObject where that animator is added to, as long as the signature matches (`void` return type, and accepting either of the parameters: `Float`, `Int`, `String`, or `Object`).
 
 :::caution
-As stated in the [documentation](https://docs.unity3d.com/Manual/AnimationEventsOnImportedClips.html), make sure that any **GameObject** which uses this animation in its animator has a corresponding script attached that contains a **function** with a matching event name.
+As stated in the [documentation](https://docs.unity3d.com/Manual/AnimationEventsOnImportedClips.html), make sure that any **GameObject** which uses this animation in its animator has a corresponding script attached that contains a **function** with a matching event name. If you wish to call other functions in other script, you need to create a **custom** animation event tool script. You will learn more about this in Week 3.
 :::
 
 For instance, let's say we want to play a sound effect whenever Mario jumps. First, create the following global variable and function in `PlayerMovement.cs`:

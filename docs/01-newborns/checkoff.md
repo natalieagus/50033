@@ -21,6 +21,10 @@ You’re free to implement it in any way you want. It will not affect your check
 
 <VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-1/complete-checkoff-1.mp4"} widthPercentage="100%"/>
 
+:::caution Grading notes
+The grading for this lab is **binary** (completed or not completed). This means you should implement <span className="orange-bold">all features</span> above to obtain the mark.
+:::
+
 ### Housekeeping
 
 While Debug messages are useful, please **clean them up** once you're done with the features. Manage your Scene with proper GameObject hierarchies. Manage your files under `Project` window properly too. For these lab series, we neatly manage our scripts and scenes by Week.

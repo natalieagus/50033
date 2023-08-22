@@ -11,7 +11,7 @@ const config = {
   title: "Game Development and Design",
   tagline: "The best way to learn programming is by playing videogames",
   url: "https://natalieagus.github.io",
-  baseUrl: "/2023-50033/",
+  baseUrl: "/50033/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
