@@ -62,8 +62,8 @@ Then add the following to your VSCode`settings.json`:
 {
   // ... other settings
   "omnisharp.projectLoadTimeout": 60,
-  "omnisharp.monoPath": "/Library/Frameworks/Mono.framework/Versions/Current",
-  "omnisharp.dotnetPath": "/usr/local/share/dotnet/dotnet",
+  "omnisharp.monoPath": "/Library/Frameworks/Mono.framework/Versions/Current", // change this accordingly to where mono is installed
+  "omnisharp.dotnetPath": "/usr/local/share/dotnet/dotnet", // change this accordingly to where dotnet is installed
   "omnisharp.useModernNet": false,
   "omnisharp.useGlobalMono": "always",
   // for format on save (automatically)
@@ -109,6 +109,66 @@ And then link VSCode in External Tools tab under Unity's Preferences:
 :::tip
 The official support for Unity in VSCode has been dropped, so it might be a bit wonky sometimes (VSCode can't find `mono`, etc). Try completely quitting VSCode (<span className="orange-bold">not just closing it</span>) and reopening the files.
 :::
+
+## Update Aug 2023
+
+:::caution
+If the above setting with VSCode does not work for you, that's because Visual Studio Code Editor package is no longer actively maintained by Unity, and you might just be unlucky.
+:::
+
+Go to Window >> Package Manager and install Visual Studio Editor instead:
+
+<ImageCard path={require("./images/installation/2023-08-25-11-41-33.png").default} widthPercentage="70%"/>
+
+Go to Unity >> Settings and set Visual Studio Code as your external tools:
+
+<ImageCard path={require("./images/installation/2023-08-25-11-43-00.png").default} widthPercentage="70%"/>
+
+Then, go to Visual Studio Code and install the C# extension (v2.0 above):
+<ImageCard path={require("./images/installation/2023-08-25-11-43-23.png").default} widthPercentage="70%"/>
+
+Also install Unity extension (at the time of this writing, it's under `preview`):
+<ImageCard path={require("./images/installation/2023-08-25-11-43-49.png").default} widthPercentage="70%"/>
+
+Go to your VSCode UI settings and set dotnet path as the path of your system's dotnet (the one you get when typing `which dotnet` in the terminal, we assume on UNIX-like OS):
+
+<ImageCard path={require("./images/installation/2023-08-25-11-45-01.png").default} widthPercentage="70%"/>
+
+Also update the dotnet sdk path, you can list your sdk as follows:
+
+<ImageCard path={require("./images/installation/2023-08-25-11-46-01.png").default} widthPercentage="70%"/>
+
+And update it in VSCode settings:
+
+<ImageCard path={require("./images/installation/2023-08-25-11-46-15.png").default} widthPercentage="70%"/>
+
+Completely <span className="orange-bold">restart VSCode</span> and reopen your scripts via Unity. Your intellisense should be good to go:
+
+<ImageCard path={require("./images/installation/2023-08-25-11-47-40.png").default} widthPercentage="70%"/>
+
+Finally, ensure `settings.json` in VSCode has the following setting regarding `omnisharp`:
+
+```json
+  "omnisharp.projectLoadTimeout": 60,
+  "omnisharp.monoPath": "/Library/Frameworks/Mono.framework/Versions/Current", // change this to suit your system where mono is installed
+  "omnisharp.useModernNet": true,
+```
+
+:::important
+Please contact your TA or instructor if you stil cant get your intellisense working, or use another IDE/editor like Visual Studio. Do not program blind for the rest of the semester.
+:::
+
+## Completely Restart VSCode
+
+If you find the following error:
+
+<ImageCard path={require("./images/installation/2023-08-25-11-51-53.png").default} widthPercentage="50%"/>
+
+Please <span className="orange-bold">restart VSCode</span> completely and reopen the script. This is due to the fact that you close VSCode window and it's still running (in the background), and yet you reopen the scripts from Unity. There will be a <span className="orange-bold">conflict</span> in the language server.
+
+You **should** reopen your VSCode window from VSCode itself:
+
+<ImageCard path={require("./images/installation/2023-08-25-11-54-25.png").default} widthPercentage="50%"/>
 
 ## Housekeeping
 

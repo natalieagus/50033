@@ -10,11 +10,9 @@ import VideoItem from '@site/src/components/VideoItem';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Game Management Basics
+# The Input System
 
 The main purpose of this Lab is to introduce a few tools that can be used to manage the game better. For example, right now we have game states spread all over various scripts, audio source spread everywhere on each object, hard-to-read game logic, etc. We can improve the structure of the game better with the help of AudioMixer, ScriptableObject, Unity Event, and a few other C# basics like Coroutines, Async functions, Singletons, and many more.
-
-## The Input System
 
 :::info
 At the time of this writing, we are using Input System v1.6.3.

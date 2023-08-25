@@ -210,7 +210,7 @@ Here's the overview of the end product:
 First, create a `mario_die` animation with 4 samples, simply changing the sprite.
 
 - Add `gameRestart` Trigger parameter to Mario's animator
-- Remove "Has Exit Time"
+- Remove "Has Exit Time", we want mario to go back to `idle` state immediately when the game is restarted
 - Add transition between `mario_die` to `mario_idle`
 - and add the `gameRestart` condition to this newly created transition
 
@@ -314,3 +314,15 @@ The final thing that you need to do is to **disable** Mario's movement when he i
 :::note
 Our game starts to become a little <span className="orange-bold">messier</span>. We have states everywhere: player's status (alive or dead), score, game state (stopped or restarted), etc. We have `GameManager` that's supposed to manage the game but many other scripts that sort of manages itself (like `PlayerMovement.cs`). We will refactor our game to have a better architecture next week.
 :::
+
+## Fix gameRestart Bug
+
+When the restart button is pressed while Mario is **NOT** in `mario-die` state in the animator, we will inadvertently set `gameRestart` trigger in the Animator, disallowing `mario-die` clip to play the **next** time he collides with Goomba. What we want is to <span className="orange-bold">consume</span> `gameRestart` trigger in `mario-idle` just in case a player restarts the game while mario isn't dead.
+
+1. Create a transition from mario-idle to mario-idle
+2. Remove HasExitTime
+3. Add transition condition as `gameRestart`
+
+The following clip demonstrates both the bug and the fix:
+
+<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-2/restart-fix.mp4"} widthPercentage="100%"/>
