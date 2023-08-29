@@ -672,7 +672,7 @@ Note that methods that are declared on the interface are meant to be **public**:
 On the contrary, if you have some methods that are meant to be extended within the powerup only, then these methods should be declared in the BaseClass instead (either as abstract, virtual, or concrete methods).
 
 :::playtest
-Refactor your Coin box to implement `Powerup` and inherit `BasePowerup` as well so you can have similar functionalities. Here's an example where we can dynamically set whether the coin brick is eventually _breakable_ (by SuperMario) or not:
+Refactor your Coin box to implement `Powerup` and inherit `BasePowerup` as well so you can have similar functionalities. You can begin by creating `BrickPowerupController.cs` which implements `PowerupController` interface, because how a brick is controlled is eventually different from the question box (brick is _breakable_ by SuperMario). Here's an example where we can dynamically set whether the coin brick is eventually breakable (by SuperMario) or not:
 
 <VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-4/powerup-coin.mp4"} widthPercentage="100%"/>
 :::
