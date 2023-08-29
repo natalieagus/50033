@@ -287,7 +287,7 @@ The idea is not to immediately stop time when Mario collides with Goomba but to 
 <VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-2/setup-death-script.mp4"} widthPercentage="100%"/>
 
 :::note
-Also notice how although `alive` is a public state, we do not see it serialized in the INspector due to `[System.NonSerialized]` attribute.
+Also notice how although `alive` is a public state, we do not see it serialized in the inspector due to `[System.NonSerialized]` [attribute](https://learn.microsoft.com/en-us/dotnet/csharp/advanced-topics/reflection-and-attributes/).
 :::
 
 ## Disable Control when not `alive`
