@@ -633,8 +633,8 @@ public class QuestionBoxPowerupController : MonoBehaviour, PowerupController
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Player" && !powerup.hasSpawned)
         {
+        if (other.gameObject.tag == "Player" && !powerup.hasSpawned)
             // show disabled sprite
             this.GetComponent<Animator>().SetTrigger("spawned");
             // spawn the powerup

@@ -214,7 +214,7 @@ const config = {
           //   position: "left",
           // },
           {
-            href: "https://github.com/data-driven-world",
+            href: "https://github.com/natalieagus/2023-50033",
             label: "GitHub",
             position: "right",
           },
