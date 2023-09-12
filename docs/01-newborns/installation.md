@@ -43,7 +43,7 @@ Using UnityHub, create a new 2D project:
 
 <ImageCard path={require("./images/installation/2023-07-25-16-39-08.png").default} widthPercentage="70%"/>
 
-Then, **import** the asset you downloaded:
+Then, **import** the asset `mario-lab.unitypackage` you downloaded from the Course Handout :
 <ImageCard path={require("./images/installation/2023-07-25-16-40-37.png").default} widthPercentage="70%"/>
 
 You should see a list of assets on the Project tab in the Unity editor.
