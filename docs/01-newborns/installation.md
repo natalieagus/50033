@@ -17,9 +17,12 @@ We are using the following versions of Unity editor, `mono`, `dotnet`, and C# Vi
 
 - [Unity Hub 3.5.0](https://unity.com/download)
 - [Unity 2022.3.5f1](https://unity.com/releases/editor/whats-new/2022.3.5)
-- [Mono 6.12.0 ](https://www.mono-project.com/download/stable/)
-- [.NET 7.0](https://dotnet.microsoft.com/en-us/download)
-- [VSCode Extension C# v1.26.0](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
+- [.NET 7.0 Framework](https://dotnet.microsoft.com/en-us/download)
+- [Mono 6.12.0, an open-source .NET runtime](https://www.mono-project.com/download/stable/)
+  - Only macOS or Linux users needs this
+  - Windows users do NOT need `mono` because Windows (in 2023) already has .NET runtime by default
+- [VSCode Extension C# v1.26.0](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp), OR [v2.1.2 (if you are using the Aug 2023 update)](#aug-update)
+- [VSCode Unity Extension v0.9.0](https://marketplace.visualstudio.com/items?itemName=VisualStudioToolsForUnity.vstuc)
 
 You are free to use other code editors or IDE such as Neovim, Visual Studio or Monodevelop. Please enable intellisense regardless of which IDE/code editor you are using.
 :::
@@ -51,21 +54,29 @@ Check that `dotnet` and `mono` are installed properly:
 
 <ImageCard path={require("./images/installation/cli-check-mono-dotnet.png").default} widthPercentage="70%"/>
 <br/>
-If you're using VSCode, ensure that you install the C# VSCode extension:
+
+If you're using VSCode, ensure that you install the C# VSCode extension (notice the version, to gain access to this old version, click the arrow beside _Uninstall_ and select _Install Another Version_):
 
 <ImageCard path={require("./images/installation/csharp-extension.png").default} widthPercentage="70%"/>
 
 <br/>
-Then add the following to your VSCode`settings.json`:
+
+Then add the following to your VSCode `settings.json`:
 
 ```json title="[other path]/Code/Usersettings.json"
 {
   // ... other settings
   "omnisharp.projectLoadTimeout": 60,
+
+  // only macOS users need mono, Windows users ignore this
   "omnisharp.monoPath": "/Library/Frameworks/Mono.framework/Versions/Current", // change this accordingly to where mono is installed
-  "omnisharp.dotnetPath": "/usr/local/share/dotnet/dotnet", // change this accordingly to where dotnet is installed
+
+  // change this accordingly to where dotnet is installed
+  "omnisharp.dotnetPath": "/usr/local/share/dotnet/dotnet",
+
   "omnisharp.useModernNet": false,
   "omnisharp.useGlobalMono": "always",
+
   // for format on save (automatically)
   "editor.formatOnSave": true,
   "[csharp]": {
@@ -110,7 +121,7 @@ And then link VSCode in External Tools tab under Unity's Preferences:
 The official support for Unity in VSCode has been dropped, so it might be a bit wonky sometimes (VSCode can't find `mono`, etc). Try completely quitting VSCode (<span className="orange-bold">not just closing it</span>) and reopening the files.
 :::
 
-## Update Aug 2023
+## Update Aug 2023 {#aug-update}
 
 :::caution
 If the above setting with VSCode does not work for you, that's because Visual Studio Code Editor package is no longer actively maintained by Unity, and you might just be unlucky.
@@ -124,10 +135,10 @@ Go to Unity >> Settings and set Visual Studio Code as your external tools:
 
 <ImageCard path={require("./images/installation/2023-08-25-11-43-00.png").default} widthPercentage="70%"/>
 
-Then, go to Visual Studio Code and install the C# extension (v2.0 above):
-<ImageCard path={require("./images/installation/2023-08-25-11-43-23.png").default} widthPercentage="70%"/>
+Then, go to Visual Studio Code and install the **C#** extension (v2.0.X or above is acceptable):
+<ImageCard path={require("./images/installation/2023-09-12-22-10-46.png").default} widthPercentage="70%"/>
 
-Also install Unity extension (at the time of this writing, it's under `preview`):
+Also install **Unity** extension (at the time of this writing, it's under `preview`):
 <ImageCard path={require("./images/installation/2023-08-25-11-43-49.png").default} widthPercentage="70%"/>
 
 Go to your VSCode UI settings and set dotnet path as the path of your system's dotnet (the one you get when typing `which dotnet` in the terminal, we assume on UNIX-like OS):
@@ -142,7 +153,7 @@ And update it in VSCode settings:
 
 <ImageCard path={require("./images/installation/2023-08-25-11-46-15.png").default} widthPercentage="70%"/>
 
-Completely <span className="orange-bold">restart VSCode</span> and reopen your scripts via Unity. Your intellisense should be good to go:
+Completely <span className="orange-bold">quit and restart VSCode</span> and reopen your scripts via Unity. Your intellisense should be good to go:
 
 <ImageCard path={require("./images/installation/2023-08-25-11-47-40.png").default} widthPercentage="70%"/>
 
@@ -150,7 +161,8 @@ Finally, ensure `settings.json` in VSCode has the following setting regarding `o
 
 ```json
   "omnisharp.projectLoadTimeout": 60,
-  "omnisharp.monoPath": "/Library/Frameworks/Mono.framework/Versions/Current", // change this to suit your system where mono is installed
+
+  // macOS users: since useModernNet is set to true, theres no need to set monoPath anymore
   "omnisharp.useModernNet": true,
 ```
 
@@ -158,7 +170,7 @@ Finally, ensure `settings.json` in VSCode has the following setting regarding `o
 Please contact your TA or instructor if you stil cant get your intellisense working, or use another IDE/editor like Visual Studio. Do not program blind for the rest of the semester.
 :::
 
-## Completely Restart VSCode
+## Completely Quit and Restart VSCode
 
 If you find the following error:
 
@@ -168,7 +180,7 @@ Please <span className="orange-bold">restart VSCode</span> completely and reopen
 
 You **should** reopen your VSCode window from VSCode itself:
 
-<ImageCard path={require("./images/installation/2023-08-25-11-54-25.png").default} widthPercentage="50%"/>
+<ImageCard path={require("./images/installation/2023-08-25-11-54-25.png").default} widthPercentage="70%"/>
 
 ## Housekeeping
 
