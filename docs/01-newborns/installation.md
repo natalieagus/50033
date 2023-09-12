@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem'
 # Installation and Setup
 
 :::caution Versions
-We are using the following versions of Unity editor, `mono`, `dotnet`, and C# Visual Studio Code extension:
+We are using the following versions of Unity editor, `mono`, `dotnet`, Unity VSCode Extension, and C# VSCode extension:
 
 - [Unity Hub 3.5.0](https://unity.com/download)
 - [Unity 2022.3.5f1](https://unity.com/releases/editor/whats-new/2022.3.5)
@@ -24,7 +24,7 @@ We are using the following versions of Unity editor, `mono`, `dotnet`, and C# Vi
 - [VSCode Extension C# v1.26.0](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp), OR [v2.1.2 (if you are using the Aug 2023 update)](#aug-update)
 - [VSCode Unity Extension v0.9.0](https://marketplace.visualstudio.com/items?itemName=VisualStudioToolsForUnity.vstuc)
 
-You are free to use other code editors or IDE such as Neovim, Visual Studio or Monodevelop. Please enable intellisense regardless of which IDE/code editor you are using.
+You are free to use other code editors or IDE such as Neovim, **Visual Studio** (easy choice but official support will be dropped by Microsoft for macOS users in 2024) or Monodevelop. Please enable intellisense regardless of which IDE/code editor you are using.
 :::
 
 Please install all of the above tools before proceeding.
