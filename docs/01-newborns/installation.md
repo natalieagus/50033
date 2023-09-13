@@ -283,6 +283,12 @@ crashlytics-build.properties
 
 You can read more about how to use Git from this wonderful [article](https://unityatscale.com/unity-version-control-guide/how-to-setup-unity-project-on-github/).
 
+### Force Text Asset Serialization
+
+Go to Edit >> Project Settings in Unity, and set Asset Serialization Mode under Editor tab into Force Text:
+
+<ImageCard path={require("./images/installation/2023-09-13-15-58-00.png").default} widthPercentage="70%"/>
+
 ### Git LFS
 
 Git LFS should be used **only** if you need to version **large** files. Normal free-tier GitHub repository can hold as much as 5GB, but 1GB is the recommended size. You can push objects **not more** than 100MB in size. A typical 50.033 project is far less than 1GB in total, given that you use proper `.gitignore` file.
