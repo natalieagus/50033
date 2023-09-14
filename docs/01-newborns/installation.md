@@ -211,6 +211,21 @@ Here's one suggestion, taken [from this source](https://github.com/github/gitign
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
+
+# for vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/

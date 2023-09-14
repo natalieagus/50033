@@ -566,7 +566,7 @@ Implement the callback function `OnTriggerEnter2D` in `PlayerMovement.cs`, and `
 ```cs
   void OnTriggerEnter2D(Collider2D other)
   {
-     Debug.log(other.gameObject.name)
+     Debug.Log(other.gameObject.name);
   }
 ```
 
