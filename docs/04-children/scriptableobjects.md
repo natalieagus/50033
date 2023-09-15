@@ -25,7 +25,7 @@ From the official documentation, it's stated that the main use cases for Scripta
 
 This week, we mainly focus on the simplified version of the first use case: to use an SO instance to store **game constants**, accessible by any script.
 
-## Create Scriptable Object Template
+## Scriptable Object Template
 
 To begin creating this data container, create a new script under a new directory: `Assets/Scripts/ScriptableObjects/`and call it `GameConstants.cs`. Instead of inheriting MonoBehavior as usual, we let it inherit ScriptableObject:
 
@@ -157,6 +157,8 @@ You can then create instances of these events, such as: `PlayerDeathEvent` or `S
 
 ## Storing Variables
 
+In this section, we will mainly discuss the role of SO instances as persistent variable storage container. We can write custom getters and setters to make it more convenient to manage.
+
 ### C# Method Overloading
 
 There are many states in the game that should be shared among different instances, such as whether Mario is alive or dead, current game score (for combo system if possible), where Mario currently is (which World to indicate progress), and many more. We can utilise SO by creating a generic variable container as follows:
@@ -195,15 +197,16 @@ public abstract class Variable<T> : ScriptableObject
 
 ```
 
-Then, we can create a subclass called `IntVariable`:
+Then, we can create a subclass called `IntVariable` (similarly you can create other variable types as well) that also store its highest value thus far:
 
 ```cs title="IntVariable.cs"
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "IntVariable", menuName = "ScriptableObjects/IntVariable", order = 2)] // so it appears as second entry in the menu
+[CreateAssetMenu(fileName = "IntVariable", menuName = "ScriptableObjects/IntVariable", order = 2)]
 public class IntVariable : Variable<int>
 {
 
+    public int previousHighestValue;
     public override void SetValue(int value)
     {
         if (value > _value) previousHighestValue = value;
@@ -219,17 +222,69 @@ public class IntVariable : Variable<int>
 
     public void ApplyChange(int amount)
     {
-        _value += amount;
+        this.Value += amount;
     }
 
-    // overload
     public void ApplyChange(IntVariable amount)
     {
         ApplyChange(amount.Value);
     }
+
+    public void ResetHighestValue()
+    {
+        previousHighestValue = 0;
+    }
+
 }
 ```
 
-Finally, you can instantiate `Score` from `IntVariable`. We suggest you organise your directory accordingly.:
+Finally, you can instantiate `GameScore` from `IntVariable`. We suggest you organise your directory accordingly:
 
-<ImageCard path={require("./images/scriptableobjects/2023-09-12-14-25-07.png").default} widthPercentage="100%"/>
+<ImageCard path={require("./images/scriptableobjects/2023-09-14-10-00-58.png").default} widthPercentage="100%"/>
+
+You can use `GameScore` in `GameManager` (Singleton) in favour of a private score variable:
+
+```cs title="GameManager.cs"
+
+    public IntVariable gameScore;
+
+    // use it as per normal
+
+    // reset score
+    gameScore.Value = 0;
+
+    // increase score by 1
+    gameScore.ApplyChange(1);
+
+    // invoke score change event with current score to update HUD
+    scoreChange.Invoke(gameScore.Value);
+
+```
+
+This way, we have a <span className="orange-bold">persistent</span> data storage for our highscore. Simply refer to it via another script, for instance:
+
+```cs title="HUDManager"
+public class HUDManager : MonoBehaviour
+{
+
+    public GameObject highscoreText;
+    public IntVariable gameScore;
+
+
+    public void GameOver()
+    {
+        // other instructions
+//highlight-start
+        // set highscore
+        highscoreText.GetComponent<TextMeshProUGUI>().text = "TOP- " + gameScore.previousHighestValue.ToString("D6");
+        // show
+        highscoreText.SetActive(true);
+//highlight-end
+    }
+
+}
+```
+
+And we can have highscore reported at the end of a run. This value is <span className="orange-bold">persistent</span> (even if you stop and start the game again):
+
+<ImageCard path={require("./images/scriptableobjects/2023-09-14-10-33-09.png").default} widthPercentage="100%"/>

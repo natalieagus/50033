@@ -17,6 +17,8 @@ We are using the following versions of Unity editor, `mono`, `dotnet`, Unity VSC
 
 - [Unity Hub 3.5.0](https://unity.com/download)
 - [Unity 2022.3.5f1](https://unity.com/releases/editor/whats-new/2022.3.5)
+  - Installed via Unity Hub
+  - Sign in to Unity Hub first and manage your personal license
 - [.NET 7.0 Framework](https://dotnet.microsoft.com/en-us/download)
 - [Mono 6.12.0, an open-source .NET runtime](https://www.mono-project.com/download/stable/)
   - Only macOS or Linux users needs this
@@ -28,6 +30,16 @@ You are free to use other code editors or IDE such as Neovim, **Visual Studio** 
 :::
 
 Please install all of the above tools before proceeding.
+
+#### Recommendation
+
+:::note macOS or Linux distros
+macOS users are recommended to use Visual Studio Code with the Unity Extension. See [Aug 2023 update](#aug-update).
+:::
+
+:::note Windows
+Windows users are recommended to use Visual Studio instead of VSC. It will be the **default recommended** version when you install Unity from Unity Hub.
+:::
 
 ### Basic Setup
 
