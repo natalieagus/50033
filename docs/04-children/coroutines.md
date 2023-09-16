@@ -412,7 +412,71 @@ This section briefly covers the comparison between the two. There’s no better 
 
 Async functions <span className="orange-bold">always</span> runs into completion because they continue to run even after the MonoBehavior is destroyed, while Coroutines are run <span className="orange-bold">on</span> the GameObject. Therefore, disabling the gameobject will cause any coroutine running on it to stop but <span className="orange-bold">doesn’t exit</span> naturally.
 
-> This can potentially result in memory leak
+Consider the following script:
+
+```cs title="TestDestroy.cs showLineNumbers"
+using System.Collections;
+using UnityEngine;
+using System.Threading.Tasks;
+public class TestDestroy : MonoBehaviour
+{
+    async void Start()
+    {
+        StartCoroutine(Sampletask());
+        SampleTaskAsync();
+        await Task.Delay(1000);
+        Destroy(gameObject);
+    }
+
+    async void SampleTaskAsync()
+    {
+        // This task will finish, even though it's object is destroyed
+        Debug.Log($"Async Task Started for object {this.gameObject.name}");
+        await Task.Delay(5000);
+        Debug.Log($"Async Task Ended for object {this.gameObject.name}");
+    }
+
+    IEnumerator Sampletask()
+    {
+        // This task won't finish, it will be stopped as soon as the object is destroyed
+        Debug.Log($"Coroutine Started for object {this.gameObject.name}");
+        yield return new WaitForSeconds(5);
+        Debug.Log($"Coroutine Ended for object {this.gameObject.name}");
+    }
+}
+```
+
+Attaching the above script and running it will result in the output:
+
+<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-4/test-destroy-async.mp4"} widthPercentage="100%"/>
+
+Notice how the message `Coroutine Ended...` never gets printed out, but instruction at line 19 causes an error because we tried to access the already destroyed GameObject's name (since `async` function always completes). Therefore you have to be careful when accessing the instance's member in async functions.
+
+#### Memory Leak With Coroutine
+
+On the other hand, Coroutines might result in <span className="orange-bold">memory leak</span> if not used properly since it does not exit if the gameObject has been destroyed. Assets in Unity (textures, materials, etc) are <span className="orange-bold">not</span> garbage collected as readily as other types. Unity will clean up unused assets on scene loads, but to keep them from piling up it's our responsibility to manage the assets we're creating, and `Destroy()` them when we're finished.
+
+In the following example, the `finally` block never gets executed and thus results in memory leak.
+
+```cs
+    IEnumerator RenderEffect(UnityEngine.UI.RawImage r)
+    {
+        var texture = new RenderTexture(1024, 1024, 0);
+        try
+        {
+            for (int i = 0; i < 1000; i++)
+            {
+                // do something with r and texture
+                // then give control back to Unity after one interation
+                yield return null;
+            }
+        }
+        finally
+        {
+            texture.Release();
+        }
+    }
+```
 
 ### Stopping Async Functions
 
@@ -465,7 +529,11 @@ We cannot return anything in a Coroutine, but async functions can the following 
 - [Task<TResult\>](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1?view=net-7.0), for an async method that returns a value.
 - `void`, for an event handler.
 
-For example, the following async function returns a `Sprite`:
+For example, the following async function returns a `Sprite` placed at a `path`.
+
+:::note Resource Path
+Using `Resources.Load` or `Resources.LoadAsync`, you can load an asset of the requested `type` stored at a `path` in the `Resources` folder. You must first create the `Assets/Resources` folder for this to work. Note that the `path` is case insensitive and must <span className="orange-bold">not</span> contain a file extension. [Read the full documentation here](https://docs.unity3d.com/ScriptReference/Resources.Load.html).
+:::
 
 ```cs
     async Task<Sprite> LoadAsSprite_Task(string path)
@@ -494,7 +562,7 @@ public class AsyncReturnValue : MonoBehaviour
     async void Start()
     {
         Debug.Log("Start method begins...");
-        Sprite s = await LoadAsSprite_Task("Sprites/play-button");
+        Sprite s = await LoadAsSprite_Task("Sprites/play-button"); // the actual file is at Assets/Resources/play-button.png
         testTask = true;
         Debug.Log("The sprite: " + s.name + " has been loaded.");
         Debug.Log("Start method completes in frame: " + frame.ToString());
@@ -527,3 +595,19 @@ Here's the console output:
 <ImageCard path={require("./images/coroutines/2023-09-15-17-59-59.png").default} widthPercentage="100%"/>
 
 It shows that `Start` is called first as usual, but **asynchronously**, allowing `Update` to advance and increase the frame value. When the sprite has been loaded, the Start method resumes and print the `Start method completes` message.
+
+## Summary
+
+Choosing between coroutines and async/await isn't always straightforward due to their differing functionalities.
+
+Coroutines are best for _fire-and-forget_ tasks like fading the screen, replenishing health bar, triggering explosion on crates two seconds after it collides with the player and similar tasks, while async is essential for processing intensive tasks in the background _without_ causing game stalls. Coroutines can be **tricky**, but async functions can get **complex** when handling task cancellation. In practice, using both methods in your project is common. As a broadly general rule, it may be simpler to employ coroutines for object-related game logic and reserve async for situations like executing lengthy background tasks.
+
+## Fix The Powerup Bug {#powerup-bug}
+
+If you follow the tutorial exactly, you will have a particular powerup bug. While our powerup works at first glance, having the collider placed above the box will cause problems if Mario approached it from above as follows:
+
+<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-4/bug-powerup.mp4"} widthPercentage="100%"/>
+
+The Starman powerup looks alright if we only collide with it from below, however it mistakenly collided with Mario even before spawned. On the other hand, the Magic Mushroom powerup didn't have that.
+
+You need to disable the collider and set its `RigidBody2D.type` to `static` at first, and then enable the collider and set the `RigidBody2D.type` to `dynamic` upon `SpawnPowerup()`. However, you can't do it all in the same function because adding Impulse Force to a currently static body type will <span className="orange-bold">not work</span>. Even though you have changed its type to `dynamic` in this frame, the Engine does not know yet and so you technically need to wait until the **next frame** to add the Impulse force to move the powerup once spawned. You can utilise Coroutine or utilise `await Task.Delay()` for this.

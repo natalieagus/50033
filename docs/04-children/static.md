@@ -295,10 +295,12 @@ Create a new script called `Powerup.cs`, where we can declare the following inte
 ```cs title="Powerup.cs"
 using UnityEngine;
 
-// interface for powerup item
 public interface Powerup
 {
-    // getters
+    void DestroyPowerup();
+    void SpawnPowerup();
+    void ApplyPowerup(MonoBehaviour i);
+
     PowerupType powerupType
     {
         get;
@@ -308,14 +310,9 @@ public interface Powerup
     {
         get;
     }
-
-    // methods
-    void DestroyPowerup();
-    void SpawnPowerup();
-    void ApplyPowerup(MonoBehaviour i);
 }
 
-// interface for objects that can be affected by powerups
+
 public interface PowerupApplicable
 {
     public void RequestPowerupEffect(Powerup i);
@@ -440,6 +437,8 @@ public abstract class BasePowerup : MonoBehaviour, Powerup
 ```
 
 We can typically add the `abstract` or `virtual` keywords on methods/properties/events etc in the base class.
+
+> Feel free to modify the above to your own usage. For instance, we added more methods to manage Game Restart event and manage Audio Source better.
 
 ### Abstract Keyword
 
@@ -660,6 +659,11 @@ public class QuestionBoxPowerupController : MonoBehaviour, PowerupController
 Then create a simple prefab extending the bouncy question box you did in the earlier week. There are many ways to implement this prefab, here's one sample:
 
 <VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-4/setup-magic-mushroom.mp4"} widthPercentage="100%"/>
+
+:::caution
+While the above implementation seems working at first glance, there exist one particular bug. We will fix this [later](./coroutines.md#powerup-bug) since we are not equipped for it yet.
+
+:::
 
 ### Important Notes
 

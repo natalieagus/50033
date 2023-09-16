@@ -209,7 +209,7 @@ public class IntVariable : Variable<int>
     public int previousHighestValue;
     public override void SetValue(int value)
     {
-        if (value > _value) previousHighestValue = value;
+        if (value > previousHighestValue) previousHighestValue = value;
 
         _value = value;
     }
