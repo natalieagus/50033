@@ -76,11 +76,15 @@ Open Assets >> Sprites and notice that we have provided you with various sprites
 
 > A sprite sheet is a bitmap image file that contains several smaller graphics in a tiled grid arrangement.
 
-Now click on Mario's sprite, change its `Sprite Mode` to **Multiple**, and launch the Sprite Editor. Aftewards, you can define sections of the sprite that you want manually, or automatically. In the case of our Mario sprite, they're not placed in regular spacing, so [**slicing** them automatically](https://docs.unity3d.com/Manual/sprite-automatic-slicing.html) will not work. We need to **manually** slice each Sprite as such:
+Now click on Mario's sprite, change its `Sprite Mode` to **Multiple**, and launch the Sprite Editor. Notice that the sprites are blurry. Go back to the inspector and change the `Filter Mode` to **Point (no filter)** to disable smoothing and get clean edges for the sprites. This is something to keep in mind when you work with pixel art.
+
+Afterwards, in the Sprite Editor, you can define sections of the sprite that you want manually, or automatically. In the case of our Mario sprite, they're not placed in regular spacing, so [**slicing** them automatically](https://docs.unity3d.com/Manual/sprite-automatic-slicing.html) will not work. We need to **manually** slice each Sprite as such:
 
 <VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-1/mario-sprite-slice.mp4"} widthPercentage="100%"/>
 
 > _Yes, it's tedious._ Don't worry, we will give you pre-sliced sprites later.
+
+
 
 ### Setting up Inputs
 
