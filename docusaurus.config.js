@@ -214,7 +214,7 @@ const config = {
           //   position: "left",
           // },
           {
-            href: "https://github.com/natalieagus/2023-50033",
+            href: "https://github.com/natalieagus/50033",
             label: "GitHub",
             position: "right",
           },
@@ -245,7 +245,7 @@ const config = {
             items: [
               {
                 label: "GitHub",
-                href: "https://github.com/natalieagus/2023-50033",
+                href: "https://github.com/natalieagus/50033",
               },
             ],
           },
