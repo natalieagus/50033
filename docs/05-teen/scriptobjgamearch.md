@@ -46,7 +46,7 @@ If you've been following the lab faithfully so far, your current game architectu
 
 <ImageCard path={require("./images/singleton-archi.png").default} customClass="invert-color" widthPercentage="100%"/>
 
-It's _decent_, in a way that there's no cross-referencing between scripts attached to gameObject instances, **except** to Singletons: `GameManager` and `PowerupManager`. Most chain of actions are triggered via events.
+It's _decent_, in a way that there's no cross-referencing between scripts attached to gameObject instances, **except** to Singletons: `GameManager` and `PowerupManager`. Most chain of actions are triggered via events. Let's recap the event flow for powerup-related events and score change.
 
 ### Powerup Collection
 
@@ -61,10 +61,20 @@ The subscribers of `powerupAffectsPlayer` or `powerupAffectsManager` (Mario or M
 
 In `RequestPowerupEffect`, one simply passes itself (`this`) to the powerup triggering the chain of events from the start by calling `i.ApplyPowerup(this)`. Then, the **actual** implementation (how this powerup is affecting `this`) is implemented in that powerup script itself.
 
-For instance, when Mario hits a question box containing MagicMushroom, it triggers `SpawnPowerup()` which will animate the spawning of the MagicMushroom. When Mario collides with the MagicMushroom, `OnCollisionEnter2D` on MagicMushroom's BasePowerup will be triggered, which will **invoke** `powerupCollected` event, passing itself in the process. `FilterAndCastPowerup` (subscriber of `powerupCollected`) will examines the `PowerupType` triggering this event, which is MagicMushroom and hence it invokes `powerupAffectsPlayer` event instead, passing MagicMushroom instance in the process. This triggers the callback `RequestPowerupEffect` in `PlayerMovement.cs` attached on Mario. In `RequestPowerupEffect`, we pass `this` (which is Mario gameobject instance) to MagicMushroom via `ApplyPowerup` method. Finally, in the MagicMushroomPowerup script we can decide _what the effect of this powerup is to Mario_: which is to call `MakeSuperMario()` method implemented in `PlayerMovement` attached to Mario.
+For instance, when Mario hits a question box containing MagicMushroom, it triggers `SpawnPowerup()` which will animate the spawning of the MagicMushroom.
+
+- When Mario <span className="orange-bold">collides</span> with the MagicMushroom, `OnCollisionEnter2D` on MagicMushroom's BasePowerup will be triggered, which will **invoke** `powerupCollected` event, passing itself in the process.
+- `FilterAndCastPowerup` (<span className="orange-bold">subscriber</span> of `powerupCollected`) will examine the `PowerupType` triggering this event (which is MagicMushroom) and hence it <span className="orange-bold">invokes</span> `powerupAffectsPlayer` event, passing MagicMushroom instance as the argument.
+- This <span className="orange-bold">triggers</span> the callback `RequestPowerupEffect` in `PlayerMovement.cs` attached on Mario.
+  - In `RequestPowerupEffect`, we pass `this` (which is Mario gameobject instance) to MagicMushroom via `ApplyPowerup` method.
+- Finally, in the MagicMushroomPowerup script we can decide _what the effect of this powerup is to Mario_: which is to call `MakeSuperMario()` method implemented in `PlayerMovement`.
 
 :::note
 This is just one of the suggested method to prevent cross-referencing of scripts that needed to be done manually via inspector during runtime. The main idea is to modularise the implementation of the powerup effect as much as possible, implementing parts concerning that instances in the instance script and nowhere else. For instance: it is the MagicMushroom's responsibility to call Mario's: MakeSuperMario, and it is Mario's responsibility to decide what "Super Mario" should be.
 :::
+
+### Score Update
+
+There are two ways currently to increase the current score: by stomping on Goomba from above or spawning a coin. Both `EnemyController` and `CoinPowerup` calls `GameManager.instance.IncreaseScore(int value)` anytime those conditions are valid. This calls the `SetScore` method inside `GameManager`, which invokes the `scoreChange` event and eventually triggers its subscriber: `SetScore` in `HUDManager` to update the UI. The actual score is stored at `GameScore`, an `IntVariable` Scriptable Object, which is updated inside `IncreaseScore` method.
 
 ## Scriptable Object Game Architecture
