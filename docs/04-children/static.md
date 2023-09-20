@@ -190,9 +190,9 @@ It is very common in a game to have various types of buttons, powerups, or enemi
 
 Let's try to create one simple interface for all interactive buttons:
 
-```cs title="InteractiveButton.s"
+```cs title="IInteractiveButton.s"
 
-public interface InteractiveButton
+public interface IInteractiveButton
 {
     void ButtonClick();
 }
@@ -201,7 +201,7 @@ public interface InteractiveButton
 
 > There's no need to declare `public` in the methods
 
-Rename your `ButtonController.cs` script into `RestartButton.cs`, and create another `PauseButton.cs` script to pause the game. Both controllers must inherit `InteractiveButton` interface:
+Rename your `ButtonController.cs` script into `RestartButton.cs`, and create another `PauseButton.cs` script to pause the game. Both controllers must inherit `IInteractiveButton` interface:
 
 <Tabs>
 <TabItem value="1" label="RestartButton.cs">
@@ -212,7 +212,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // later on, teach interface
-public class RestartButtonController : MonoBehaviour, InteractiveButton
+public class RestartButtonController : MonoBehaviour, IInteractiveButton
 {
     // implements the interface
     public void ButtonClick()
@@ -235,7 +235,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PauseButtonController : MonoBehaviour, InteractiveButton
+public class PauseButtonController : MonoBehaviour, IInteractiveButton
 {
     private bool isPaused = false;
     public Sprite pauseIcon;
@@ -290,12 +290,12 @@ The main idea is that no matter which powerup is being collected by the player, 
 
 <ImageCard customClass="invert-color" path={require("./images/static/50033-2023.drawio.png").default} widthPercentage="100%"/>
 
-Create a new script called `Powerup.cs`, where we can declare the following interfaces:
+Create a new script called `IPowerup.cs`, where we can declare the following interfaces:
 
-```cs title="Powerup.cs"
+```cs title="IPowerup.cs"
 using UnityEngine;
 
-public interface Powerup
+public interface IPowerup
 {
     void DestroyPowerup();
     void SpawnPowerup();
@@ -313,7 +313,7 @@ public interface Powerup
 }
 
 
-public interface PowerupApplicable
+public interface IPowerupApplicable
 {
     public void RequestPowerupEffect(Powerup i);
 }
@@ -356,7 +356,7 @@ Right now we have four different types of powerups. Sure, we can use _tags_, or 
 An enumeration type (or enum type) is a [value type](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-types) defined by a set of named constants of the underlying [integral numeric](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/integral-numeric-types) type.
 :::
 
-Add the following code to `Powerup.cs`:
+Add the following code to `IPowerup.cs`:
 
 ```cs
 
@@ -371,7 +371,7 @@ public enum PowerupType
 ```
 
 :::tip
-If you wish, you can create two separate files: `PowerupInterface.cs` and `PowerupType.cs` to physically separate the two.
+If you wish, you can create two separate files: `IPowerup.cs` and `PowerupType.cs` to physically separate the two.
 :::
 
 ## C#: Abstract Class
@@ -393,7 +393,7 @@ Abstract classes are useful for creating hierarchies of related classes while en
 using UnityEngine;
 
 
-public abstract class BasePowerup : MonoBehaviour, Powerup
+public abstract class BasePowerup : MonoBehaviour, IPowerup
 {
     public PowerupType type;
     public bool spawned = false;
@@ -594,10 +594,10 @@ public class MagicMushroomPowerup : BasePowerup
 The question box that spawned the Magic Mushroom must be set into some kind of disabled state after the mushroom is spawned. You can create a simple controller for that:
 
 <Tabs>
-<TabItem value="1" label="PowerupController.cs">
+<TabItem value="1" label="IPowerupController.cs">
 
 ```cs
-public interface PowerupController
+public interface IPowerupController
 {
     void Disable();
 }
@@ -613,7 +613,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestionBoxPowerupController : MonoBehaviour, PowerupController
+public class QuestionBoxPowerupController : MonoBehaviour, IPowerupController
 {
     public Animator powerupAnimator;
     public BasePowerup powerup; // reference to this question box's powerup
@@ -676,7 +676,7 @@ Note that methods that are declared on the interface are meant to be **public**:
 On the contrary, if you have some methods that are meant to be extended within the powerup only, then these methods should be declared in the BaseClass instead (either as abstract, virtual, or concrete methods).
 
 :::playtest
-Refactor your Coin box to implement `Powerup` and inherit `BasePowerup` as well so you can have similar functionalities. You can begin by creating `BrickPowerupController.cs` which implements `PowerupController` interface, because how a brick is controlled is eventually different from the question box (brick is _breakable_ by SuperMario). Here's an example where we can dynamically set whether the coin brick is eventually breakable (by SuperMario) or not:
+Refactor your Coin box to implement `Powerup` and inherit `BasePowerup` as well so you can have similar functionalities. You can begin by creating `BrickPowerupController.cs` which implements `IPowerupController` interface, because how a brick is controlled is eventually different from the question box (brick is _breakable_ by SuperMario). Here's an example where we can dynamically set whether the coin brick is eventually breakable (by SuperMario) or not:
 
 <VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-4/powerup-coin.mp4"} widthPercentage="100%"/>
 :::

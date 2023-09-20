@@ -82,7 +82,7 @@ The values stored inside a ScriptableObject persists (unlike runtime variables t
 To use the SO values in any script, simply declare it as a public variable and link it up in the inspector. For example, we can modify `PlayerMovement.cs` as follows:
 
 ```cs title="PlayerMovement.cs"
-public class PlayerMovement : MonoBehaviour, PowerupApplicable
+public class PlayerMovement : MonoBehaviour, IPowerupApplicable
 {
     //highlight-start
     public GameConstants gameConstants;
