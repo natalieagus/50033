@@ -224,7 +224,7 @@ You shall experiment with other effectors and their properties as well so that y
 
 ### PhysicsJoint2D
 
-The question boxes should bounce when Mario collides with it from below, then turn into an empty box. We can do this easily by creating an Animation Clip, but where's the fun in that? Let's simulate it with a spring. Unity provides us with various useful **joints**. It will safe you so much time if you want to implement any basic joints: hinge, spring, slider, wheel, etc.
+The question boxes should bounce when Mario collides with it from below, then turn into an empty box. We can do this easily by creating an Animation Clip, but where's the fun in that? Let's simulate it with a spring. Unity provides us with various useful **joints**. It will save you so much time if you want to implement any basic joints: hinge, spring, slider, wheel, etc.
 
 ### Springy Question Box
 
