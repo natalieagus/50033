@@ -206,7 +206,7 @@ Unity's Physics 2D engine handles 2D physics and optimises them. You don't have 
 
 Suppose you want to create a platform that allows only one-way collision. You can upgrade your 2DColliders to be used with a new component called [effectors](https://docs.unity3d.com/Manual/Effectors2D.html). To demonstrate how this works, let’s create a platform where Mario can “climb onto” from underneath it but can stay upright on top of it.
 
-> Yes, World 1-1 in Super Mario Bros doesnt have this item, but we are just going to build it here for learning sake.
+> Yes, World 1-1 in Super Mario Bros doesn't have this item, but we are just going to build it here for learning sake.
 
 Create a `platform` GameObject, and place it under Obstacles GameObject. Then,
 
