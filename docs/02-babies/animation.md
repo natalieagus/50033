@@ -169,7 +169,7 @@ As stated in the [documentation](https://docs.unity3d.com/Manual/AnimationEvents
 
 For instance, let's say we want to play a sound effect whenever Mario jumps. First, create the following global variable and function in `PlayerMovement.cs`:
 
-```
+```cs
     // for audio
     public AudioSource marioAudio;
 
