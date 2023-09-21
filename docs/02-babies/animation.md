@@ -246,7 +246,7 @@ Then head to `PlayerMovement.cs` and edit the `OnTriggerEnter2D` and `ResetGame`
         // stop time
         Time.timeScale = 0.0f;
         // set gameover scene
-        gameManager.GameOver();
+        gameManager.GameOver(); // replace this with whichever way you triggered the game over screen for Checkoff 1
     }
 //highlight-end
 
@@ -312,7 +312,7 @@ The final thing that you need to do is to **disable** Mario's movement when he i
 ```
 
 :::note
-Our game starts to become a little <span className="orange-bold">messier</span>. We have states everywhere: player's status (alive or dead), score, game state (stopped or restarted), etc. We have `GameManager` that's supposed to manage the game but many other scripts that sort of manages itself (like `PlayerMovement.cs`). We will refactor our game to have a better architecture next week.
+Our game starts to become a little <span className="orange-bold">messier</span>. We have states everywhere: player's status (alive or dead), score, game state (stopped or restarted), etc. We should have sort of `GameManager` that's supposed to manage the game but many other scripts that sort of manages itself (like `PlayerMovement.cs`). We will refactor our game to have a better architecture next week.
 :::
 
 ## Fix gameRestart Bug
