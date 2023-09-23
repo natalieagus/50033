@@ -182,7 +182,7 @@ For instance, let's say we want to play a sound effect whenever Mario jumps. Fir
 
 Then:
 
-1. Create AudioSource component at Mario GameObject, and load the `smp_jump_small` AudioClip. Ensure that you disable Play on Awake property.
+1. Create AudioSource component at Mario GameObject, and load the `smb_jump_small` AudioClip. Ensure that you disable Play on Awake property.
 2. Then link this AudioSource component to `marioAudio` on the script from the inspector
 3. Open `mario_jump` animation clip, and create an event at timestamp `0:00` as shown in the recording below
 4. Ensure that `mario-jump` Animation clip Loop Time property is **unticked**
