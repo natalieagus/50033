@@ -156,10 +156,10 @@ We can then **create** a 32-bit [LayerMask](https://docs.unity3d.com/ScriptRefer
 
 1. `Ground` is `0x00000008`
    - This translate to `0000 1000` in binary (leading zeroes are omitted)
-   - The value `1` lies on the 3rd bit from the right (we count from 0, so 0th bit from the right is the MSB)
+   - The value `1` lies on the 3rd bit from the right (we count from 0, so 0th bit from the right is the LSB)
    - You can create this binary value using leftshift operation: `int groundMask = 1 << 3`
 2. `Enemies` is `0x00000040`
-3. `Obstacles` is `0x000080`
+3. `Obstacles` is `0x00000080`
 
 To check if `LayerX` hits `LayerY`, we simply perform a bitwise `AND` between them and check if the resulting value is $>0$.
 
