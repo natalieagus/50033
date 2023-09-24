@@ -280,3 +280,11 @@ After a few tries, the procedure should be quite standard. Firstly, create the `
 Secondly, figure out which callback methods should be run for each event. Create a `public` callback method where you will handle a particular event in a script. Then, on the same gameObject where that script is attached to, add a `GameEventListener` script with that `public` method as the `Response`.
 
 Thirdly, figure out which scripts shall `Raise` the events. To `Raise` a `GameEvent`, attach that `GameEvent` `Raise` method as a listener to `public UnityEvent event` member in that script that wants to _cast_ (raise) it, for as written in the `RestartButtonController` above.
+
+Here's a quick video for your reference:
+
+<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-5/migrate.mp4"} widthPercentage="100%"/>
+
+:::caution For reference only
+Your actual implementation might differ and that's alright, so don't be alarmed. As long as the game works as intended with this new architecture, that's fine.
+:::
