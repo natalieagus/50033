@@ -121,7 +121,7 @@ In `PlayerMovement.cs`, we have yet to take into account that Mario can land on 
 
 We can fix that by checking for collision against `Obstacles` and `Pipes` too. Sure, we can **add** `Tag` to each pipe and each Goomba and do the following check:
 
-```cs
+```cs title="PlayerMovement.cs"
 
     void OnCollisionEnter2D(Collision2D col)
     {
