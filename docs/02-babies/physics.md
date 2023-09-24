@@ -125,7 +125,9 @@ We can fix that by checking for collision against `Obstacles` and `Pipes` too. S
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("Ground") && col.gameObject.CompareTag("Enemies") && col.gameObject.CompareTag("Obstacles") && !onGroundState )
+
+        if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Enemies") || col.gameObject.CompareTag("Obstacles")) && !onGroundState
+
         {
             onGroundState = true;
             // update animator state
