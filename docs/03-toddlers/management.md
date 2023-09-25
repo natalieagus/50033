@@ -32,7 +32,7 @@ You can enable both systems so to not immediately break your game. This can be f
 
 ## Mario's Control
 
-Right now our Mario can move (left and right, with `a` or `d`) key, and jump (with a spacebar). We can also control Mario using the **arrow** keys to move left and right but the sprite wont flip (because we only check for keys `a` and `d` manually), while the Input Manager bind a and left arrow key to cause negative horizontal movement (similarly with positive horizontal movement).
+Right now our Mario can move (left and right, with `a` or `d`) key, and jump (with a spacebar). We can also control Mario using the **arrow** keys to move left and right but the sprite won't flip (because we only check for keys `a` and `d` manually), while the Input Manager bind `a` and left arrow key to cause negative horizontal movement (similarly with positive horizontal movement).
 
 <ImageCard path={require("./images/management/2023-08-09-10-54-07.png").default} widthPercentage="50%"/>
 
@@ -135,7 +135,7 @@ There are [**four** different workflows](https://docs.unity3d.com/Packages/com.u
 
 This method allows us to define actions, properties, and interactions via the GUI as shown above, _and then_ instantiate and register callbacks via the script attached to the GameObject we want to control. The documentation related to this section is [here](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.6/manual/Workflow-ActionsAsset.html).
 
-Since we have generated the C# script: `MarioActions.cs` from the Action Asset, we can instantiate it directly in the code under `Start`, then `enable` it. Then we can address the actions directly via `marioActions` asa follows and register the callbacks we want. The callback must have the signature: return value `void` and receive one argument of type: `InputAction.CallbackContext`.
+Since we have generated the C# script: `MarioActions.cs` from the Action Asset, we can instantiate it directly in the code under `Start`, then `enable` it. Then we can address the actions directly via `marioActions` as follows and register the callbacks we want. The callback must have the signature: return value `void` and receive one argument of type: `InputAction.CallbackContext`.
 
 ```cs
     public MarioActions marioActions;
@@ -174,7 +174,7 @@ Since we have generated the C# script: `MarioActions.cs` from the Action Asset, 
 
 ```
 
-We can read the context's value using `ReadValue<T>`, where `T` depends on the action **type** and control type. For instance, `move` has an action type of Vanue with control type of Axis. Thus, we can read its value with `float`. [You can read more about Control Types here](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.6/manual/Controls.html#control-types).
+We can read the context's value using `ReadValue<T>`, where `T` depends on the action **type** and control type. For instance, `move` has an action type of Value with control type of Axis. Thus, we can read its value with `float`. [You can read more about Control Types here](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.6/manual/Controls.html#control-types).
 
 <br/>
 
