@@ -226,6 +226,7 @@ Then head to `PlayerMovement.cs` and edit the `OnTriggerEnter2D` and `ResetGame`
 
 //highlight-start
     public AudioClip marioDeath;
+    public float deathImpulse = 15;
 
     // state
     [System.NonSerialized]
