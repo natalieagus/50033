@@ -25,7 +25,7 @@ As per how question box works in Mario:
 1. The question box bounces only when hit from below (not when Mario is jumping on top of it)
 2. Animate "blinking" of the question box
 3. It will spawn a coin, animated as shown
-4. Plays a sound effect when the coin spawns and the coin lands back **inside** the box
+4. Plays a sound effect when the coin spawns and the coin should land back **inside** the box
 5. The box sprite is changed to indicate that it's disabled once coin is spawned
 6. The question box, once disabled, should not bounce anymore
 
