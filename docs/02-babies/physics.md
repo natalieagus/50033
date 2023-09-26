@@ -94,8 +94,8 @@ For **layer-based rendering**, we can decide what to be rendered (only a selecti
 **Create** two other layers via any GameObject Inspector: `Enemies` and `Obstacles`.
 
 1. Set `Pipes` GameObject Layer to `Obstacles`.
-2. Set `Obstacles` GameoBject Layer to `Obstacles` too.
-3. Set all `Enemies` GameObject Layer to `Enemies`. `
+2. Set `Obstacles` GameObject Layer to `Obstacles` too.
+3. Set all `Enemies` GameObject Layer to `Enemies`. 
 
 > Apply it to all their **children**.
 
