@@ -146,7 +146,7 @@ The usage of Tag can be controversial sometimes, with some complaining that it's
 However, let's be a little fancier. Although Layers are essential (to avoid extra computation on collision and unwanted collision behavior, etc), we don't want to manually `Tag` every GameObject in our Scene.
 
 :::warning
-Please note that `CompareTag` is really fast, and there's nothing wrong with the code above in terms of performance! We do not discard it for performance reason, but simply _preference_ and extra convenience (not having to add Tags). Making a functional game is hard enough. If you don't have performance issues, **do not blatantly attempt to optimise**. Code readability and modularity is more important that that.
+Please note that `CompareTag` is really fast, and there's nothing wrong with the code above in terms of performance! We do not discard it for performance reason, but simply _preference_ and extra convenience (not having to add Tags). Making a functional game is hard enough. If you don't have performance issues, **do not blatantly attempt to optimise**. Code readability and modularity is more important than that.
 :::
 
 Every **layer** that we set the GameObject to is represented by an **integer**:
