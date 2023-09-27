@@ -191,7 +191,7 @@ The resulting behavior should be as follows, where Mario can now climb obstacles
 
 :::
 
-# Profiler
+## Profiler
 
 If you _really_ want to optimise your game, or feel like some part has high latency, you can use Unity's Profiler to identify the root cause of the heavy computations. Select Window >> Analysis >> Profiler, and begin recording your gameplay.
 
