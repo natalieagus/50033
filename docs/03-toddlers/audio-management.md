@@ -106,7 +106,7 @@ This is particularly handy if you have different sections in your game, e.g: cav
 
 <ImageCard path={require("./images/audio-management/2023-08-16-14-49-13.png").default} widthPercentage="100%"/>
 
-SFX Reverb has many properties, and it is best if you find presets online to get the room effect that you want without going into the details. The [official documentation](SFX Reverb has many properties, and it is best if you find presets online to get the room effect that you want without going into the details. The documentation provides a brief description of each property, but it doesn’t seem like much help for beginners who aren’t familiar with the term.) provides a brief description of each property, but it doesn’t seem like much help for beginners who aren’t familiar with the term.
+SFX Reverb has many properties, and it is best if you find presets online to get the room effect that you want without going into the details. The [official documentation](https://docs.unity3d.com/Manual/class-AudioReverbEffect.html) provides a brief description of each property, but it doesn’t seem like much help for beginners who aren’t familiar with the term.
 
 ### Duck Volume
 
