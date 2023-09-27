@@ -242,7 +242,7 @@ Then, add `SpringJoint2D` component, and set the properties as follows:
 Here's a further explanation:
 
 1. We connect the spring to parent's static Rigidbody, and **disable** collision with it (we want to have an "invisible" anchor, we don't want our box to collide with it)
-2. We set the `Connected Anchor` at `(0,1)` (this is local position, or in other words: the position of the anchor relative to the connected Rigidbody). That means to set the anchor of the spring to the connected Rigidbody in `Question-Box-Bounce` at 1 unit away in the y-axis direction from this GameObject as shown on the Scene. 
+2. We set the `Connected Anchor` at `(0,1)` (this is local position, or in other words: the position of the anchor relative to the connected Rigidbody's transform). That means to set the anchor of the spring to the connected Rigidbody in `Question-Box-Bounce` at 1 unit away in the y-axis direction from `Question-Box-Bounce`'s position on the Scene. 
 3. `Distance` is set to `1` because we don't want the spring to shorten once the game starts
 4. `Frequency` and `Damping Ratio` affects the "feel" of the spring
 
