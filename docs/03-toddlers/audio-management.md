@@ -100,7 +100,7 @@ You’re not required to know the details behind pitch shifting DSP. If you’re
 
 ### SFX Reverb
 
-This effect causes the sound group to be as if it is played within a room, having that complex "blurry", "dreammy" effect. Each room sounds differently, depending on the amount of things that exist in a room, for example listening to music in the bathroom (high reverb) sounds different than listening to the same music in an open field. Routing all audio output through the same reverb filter has the effect as if each of the audio files are played in the same room.
+This effect causes the sound group to be as if it is played within a room, having that complex "blurry", "dreamy" effect. Each room sounds differently, depending on the amount of things that exist in a room, for example listening to music in the bathroom (high reverb) sounds different than listening to the same music in an open field. Routing all audio output through the same reverb filter has the effect as if each of the audio files are played in the same room.
 
 This is particularly handy if you have different sections in your game, e.g: cave, open field, wooden houses, etc. For example, the player’s footsteps will sound different in each scenario, despite having the same audio file for footsteps.
 
