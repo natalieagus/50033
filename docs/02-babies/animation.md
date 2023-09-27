@@ -138,7 +138,7 @@ Then add the following inside `PlayerMovement.cs`:
 Let's gradually test it by setting Mario's running animation first. Pay attention on when we **untick** exit time and **setting** the transition duration to 0:
 
 :::info Transition duration
-Transition duraton: The duration of the transition itself, in normalized time or seconds depending on the Fixed Duration mode, relative to the current state’s duration. This is visualized in the transition graph as the portion between the two blue markers.
+Transition duration: The duration of the transition itself, in normalized time or seconds depending on the Fixed Duration mode, relative to the current state’s duration. This is visualized in the transition graph as the portion between the two blue markers.
 :::
 
 :::info Exit time
@@ -149,7 +149,7 @@ If Has Exit Time is checked, this value represents the exact time at which the t
 
 ### Exit time
 
-Now completethe rest of the state animation state machine. It will definitely take a bit of time to setup the right **exit** time. We want most transition to happen **immediately**, but the transition between skidding state and running state should have some exit time. What we want is for the entire skidding state to complete (all frames played) before transitioning to the running state. The transition itself takes no time.
+Now complete the rest of the state animation state machine. It will definitely take a bit of time to setup the right **exit** time. We want most transition to happen **immediately**, but the transition between skidding state and running state should have some exit time. What we want is for the entire skidding state to complete (all frames played) before transitioning to the running state. The transition itself takes no time.
 
 :::important
 Read more documentation on [transition properties here](https://docs.unity3d.com/Manual/class-Transition.html).
