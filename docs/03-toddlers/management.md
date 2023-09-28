@@ -174,7 +174,7 @@ Since we have generated the C# script: `MarioActions.cs` from the Action Asset, 
 
 ```
 
-We can read the context's value using `ReadValue<T>`, where `T` depends on the action **type** and control type. For instance, `move` has an action type of Vanue with control type of Axis. Thus, we can read its value with `float`. [You can read more about Control Types here](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.6/manual/Controls.html#control-types).
+We can read the context's value using `ReadValue<T>`, where `T` depends on the action **type** and control type. For instance, `move` has an action type of Value with control type of Axis. Thus, we can read its value with `float`. [You can read more about Control Types here](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.6/manual/Controls.html#control-types).
 
 <br/>
 
