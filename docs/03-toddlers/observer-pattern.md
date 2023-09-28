@@ -159,9 +159,9 @@ When the event is triggered by the owner or whoever `Invoke()` it, the observers
 
 ### UnityEvent
 
-Unity events are a way to hook up function calls between GameObjects in the editor and **serialize** those calls. They are designed to be populated by developer at design-time. Create a new scipt (if you haven't already) called `ActionManager.cs` and attach it to Mario:
+Unity events are a way to hook up function calls between GameObjects in the editor and **serialize** those calls. They are designed to be populated by the developer at design-time. Create a new script (if you haven't already) called `ActionManager.cs` and attach it to Mario:
 
-```cs
+```cs title="ActionManager.cs"
 
 using UnityEngine;
 using UnityEngine.Events;
