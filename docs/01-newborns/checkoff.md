@@ -22,7 +22,7 @@ You’re free to implement it in any way you want. It will not affect your check
 <VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-1/complete-checkoff-1.mp4"} widthPercentage="100%"/>
 
 :::caution Grading notes
-The grading for this lab is **binary** (completed or not completed). This means you should implement <span className="orange-bold">all features</span> above to obtain the mark.
+The grading for this lab is **binary** (completed or not completed). This means you should implement <span className="orange-bold">all features</span> above to obtain the mark. If you're already experienced with Unity and would like to experiment, you're free to implement similar features. In this checkoff, the feature we are looking for is some kind of "GameOver" state where everything stops moving and reporting of stats.
 :::
 
 ### Housekeeping
