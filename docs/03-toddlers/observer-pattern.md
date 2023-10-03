@@ -694,6 +694,15 @@ public class GameManagerWeek3 : MonoBehaviour
 <TabItem value="5" label="JumpOverGoomba.cs">
 
 ```cs
+    //highlight-start
+    GameManager gameManager;
+//highlight-end
+    void Start(){
+        //highlight-start
+        gameManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>();
+        //highlight-end
+    }
+
     void FixedUpdate()
     {
         // when jumping, and Goomba is near Mario and we haven't registered our score
@@ -703,7 +712,7 @@ public class GameManagerWeek3 : MonoBehaviour
             {
                 countScoreState = false;
                 //highlight-start
-                gameManager.IncreaseScore(1);
+                gameManager.IncreaseScore(1); //
                 //highlight-end
             }
         }
