@@ -244,6 +244,7 @@ Save and test that Mario can still move, skid, etc, jump, along with higher jump
 :::
 
 <DeepDive title="Deep Dive: UnityEvent vs UnityAction">
+    
 Some of you might have heard about `UnityAction`. They're similar to UnityEvent. Here's an example that will lead into identical results:
 
 <Tabs>
