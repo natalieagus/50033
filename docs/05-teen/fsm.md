@@ -339,6 +339,12 @@ public class MarioStateController : StateController
         // set the start state
         TransitionToState(startState);
     }
+
+    public void SetPowerup(PowerupType i)
+    {
+        currentPowerupType = i;
+    }
+
 }
 ```
 
@@ -905,7 +911,7 @@ We need a "dummy" state to indicate that we <span className="orange-bold">remain
 Now create five more state instances and name them accordingly. You will then need to modify its members in the inspector. Here's the specs of `FireMario`:
 
 1. There exist **two** setup actions: setup fire mario animator and clear the powerup in `MarioStateController`
-2. There exist also one event-triggered action: `FireAttack` of `ActionType.Attack` (enum defined in `EventAction.cs`). It will not be called every frame, but rather only when `Z` key is pressed. <span className="orange-bold">We will explicitly call this later in `MarioController`</span>.
+2. There exist also one event-triggered action: `FireAttack` of `ActionType.Attack` (enum defined in `EventAction.cs`). It will not be called every frame, but rather only when `Z` key is pressed. <span className="orange-bold">We will explicitly call this later in `MarioStateController`</span>.
 3. There's also only one transition to consider: which determines whether it should go to `InvincibleSmallMario` state or `RemainInState` (our dummy state).
 
 <ImageCard path={require("./images/fsm/2023-10-03-12-42-23.png").default} widthPercentage="100%"/>
@@ -938,11 +944,11 @@ public abstract class StateController : MonoBehaviour
 }
 ```
 
-## Update MarioController to Trigger EventAction
+## Update MarioStateController to Trigger EventAction
 
-The last thing that we need to do is to update our `MarioController` script to launch `FireAttack` when key 'Z' is pressed. Add a new public void method called `Fire`:
+The last thing that we need to do is to update our `MarioStateController` script to launch `FireAttack` when key 'Z' is pressed. Add a new public void method called `Fire`:
 
-```cs title="MarioController.cs"
+```cs title="MarioStateController.cs"
     public void Fire()
     {
         this.currentState.DoEventTriggeredActions(this, ActionType.Attack);
@@ -951,9 +957,9 @@ The last thing that we need to do is to update our `MarioController` script to l
 
 This will calls the `Act` method of <span className="orange-bold">all</span> registered event-triggered actions in this state whose `type` matches `ActionType.Attack`.
 
-## Attach MarioController to Mario
+## Attach MarioStateController to Mario
 
-The final step is to attach `MarioController` script to Mario:
+The final step is to attach `MarioStateController` script to Mario:
 
 - Set its `StartState` to `SmallMario`
 - Set `RemainState` as `RemainInState` (our dummy state)
@@ -963,7 +969,7 @@ The final step is to attach `MarioController` script to Mario:
 
 ### Modify how "Damage" Works
 
-When Mario collides with Goomba, there has to be a way for us to set `MarioController`'s current powerup member to `PowerupType.Damage`. One suggested way is to modify your existing "damage player" callback in `PlayerController`:
+When Mario collides with Goomba, there has to be a way for us to set `MarioStateController`'s current powerup member to `PowerupType.Damage`. One suggested way is to modify your existing "damage player" callback in `PlayerController`:
 
 ```cs title="PlayerController.cs"
     public void DamageMario()
@@ -971,7 +977,7 @@ When Mario collides with Goomba, there has to be a way for us to set `MarioContr
         // GameOverAnimationStart(); // last time Mario dies right away
 
         // pass this to StateController to see if Mario should start game over
-        // since both state StateController and MarioController are on the same gameobject, it's ok to cross-refer between scripts
+        // since both state StateController and MarioStateController are on the same gameobject, it's ok to cross-refer between scripts
         GetComponent<MarioStateController>().SetPowerup(PowerupType.Damage);
 
     }
@@ -990,3 +996,50 @@ As a result, the moment we collide with Goomba whilst in `SmallMario` state will
 <VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-5/mario-damaged-fsm.mp4"} widthPercentage="100%"/>
 
 ### Modify how Powerup Works
+
+Each powerup script needs to set MarioStateController's `currentPowerupType` whenever a powerup is collected. If you have been following the lab closely, you can modify the `ApplyPowerup` method in each class inheriting `BasePowerup` class as follows:
+
+<Tabs>
+<TabItem value="1" label="MagicMushroomPowerup.cs">
+
+```cs
+    public override void ApplyPowerup(MonoBehaviour i)
+    {
+        base.ApplyPowerup(i);
+        // try
+        MarioStateController mario;
+        bool result = i.TryGetComponent<MarioStateController>(out mario);
+        if (result)
+        {
+            mario.SetPowerup(this.powerupType);
+        }
+    }
+```
+
+</TabItem>
+
+<TabItem value="2" label="FireFlowerPowerup.cs">
+
+```cs
+    public override void ApplyPowerup(MonoBehaviour i)
+    {
+        base.ApplyPowerup(i);
+        // try
+        MarioStateController mario;
+        bool result = i.TryGetComponent<MarioStateController>(out mario);
+        if (result)
+        {
+            mario.SetPowerup(this.powerupType);
+        }
+    }
+
+```
+
+</TabItem>
+</Tabs>
+
+:::playtest
+Changing MarioStateController's `currentPowerupType` member will trigger state transition depending on its `currentState`. When small mario obtains the magic mushroom, he transforms to super mario. If he is damaged by Goomba, he will enter invincible small Mario state where he cant be damaged by Goombas.
+
+<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-5/supermario.mp4"} widthPercentage="100%"/>
+:::
