@@ -504,7 +504,7 @@ flowchart TD
 
 ### Major Refactoring using Events
 
-We need to create **three** different **events**: `GameOver`, `GameStart`, `GameRestart`, and `ScoreChange` in `GameManager.cs` and let other scripts subscribe to it and update themselves accordingly. Create **two** new scripts: `HUDManager.cs` and `EnemyManager.cs` which will contain callbacks to subscribe to the events above:
+We need to create **four** different **events**: `GameOver`, `GameStart`, `GameRestart`, and `ScoreChange` in `GameManager.cs` and let other scripts subscribe to it and update themselves accordingly. Create **two** new scripts: `HUDManager.cs` and `EnemyManager.cs` which will contain callbacks to subscribe to the events above:
 
 :::warning
 Do not <span className="orange-bold">blindly</span> copy paste the content of the methods below. Your actual implementation might vary, for instance you might not have the `GameOverPanel` in your implementation if you did not choose to do it for Checkoff 1. These files are for your reference only.
