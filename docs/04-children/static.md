@@ -670,7 +670,7 @@ While the above implementation seems working at first glance, there exist one pa
 Note that methods that are declared on the interface are meant to be **public**: used by other instances.
 
 - `SpawnPowerup` might be called by Animators or events
-- `ApplyPowerup` might be called by some PowerupManager or instances that consumes
+- `ApplyPowerup` might be called by some PowerupManager or instances that consumes the powerup
 - `DestroyPowerup` might be called after some timeout
 
 On the contrary, if you have some methods that are meant to be extended within the powerup only, then these methods should be declared in the BaseClass instead (either as abstract, virtual, or concrete methods).
