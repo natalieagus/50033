@@ -550,7 +550,7 @@ public class MagicMushroomPowerup : BasePowerup
     protected override void Start()
     {
         base.Start(); // call base class Start()
-        this.type = PowerupType.StarMan;
+        this.type = PowerupType.MagicMushroom;
     }
 
     void OnCollisionEnter2D(Collision2D col)
