@@ -403,7 +403,7 @@ public abstract class BasePowerup : MonoBehaviour, IPowerup
 
     // base methods
     protected virtual void Start(){
-        rigidBody = GetComponent<RigidBody2D>();
+        rigidBody = GetComponent<Rigidbody2D>();
     }
 
     // interface methods
