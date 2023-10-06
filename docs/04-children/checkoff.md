@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 # Checkoff
 
 :::caution Grading notes
-As usual, the grading for this lab is **binary** (completed or not completed). This means you should implement <span className="orange-bold">all features</span> above to obtain the mark.
+As usual, the grading for this lab is **binary** (completed or not completed). This means you should implement <span className="orange-bold">all features</span> above to obtain the mark. In this checkoff, the features we are looking for are: meaningful player feedback, multiple scenes in the game, some kind of persistent data (could be highscore, user setting, etc), existence of interactable powerups (can be anything that benefits the player or introduce dilemma), and properly polished game restart functionality.
 :::
 
 You are free to utilise whatever you have learned in this topic to implement the following (turn on the volume):

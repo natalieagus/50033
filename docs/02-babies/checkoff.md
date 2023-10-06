@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 Once you've implemented everything in this handout, then for **checkoff** you're required to add these new features listed below.
 
 :::caution Grading notes
-As usual, the grading for this lab is **binary** (completed or not completed). This means you should implement <span className="orange-bold">all features</span> above to obtain the mark.
+As usual, the grading for this lab is **binary** (completed or not completed). This means you should implement <span className="orange-bold">all features</span> above to obtain the mark. If you're already experienced with Unity and would like to experiment, you're free to implement similar features. In this checkoff, the feature we are looking for are: to existence of two or more different interactable objects that the player can manipulate, complete with some sound effects.
 :::
 
 ### Question Box
@@ -25,7 +25,7 @@ As per how question box works in Mario:
 1. The question box bounces only when hit from below (not when Mario is jumping on top of it)
 2. Animate "blinking" of the question box
 3. It will spawn a coin, animated as shown
-4. Plays a sound effect when the coin spawns and the coin lands back **inside** the box
+4. Plays a sound effect when the coin spawns and the coin should land back **inside** the box
 5. The box sprite is changed to indicate that it's disabled once coin is spawned
 6. The question box, once disabled, should not bounce anymore
 

@@ -320,3 +320,36 @@ The point is that there's <span className="orange-bold">no way</span> we can get
 :::
 
 <span className="orange-bold">Use Singleton Pattern with caution!</span>
+
+## Static Class vs Singletons
+
+Static Class and Singletons are similar at first glance: they can only have <span className="orange-bold">one</span> instance available in memory, and both can be used to maintain the global state of an application. They come with some subtle differences depending on your application.
+
+:::note source
+[The following information is obtained from here.](https://henriquesd.medium.com/singleton-vs-static-class-e6b2b32ec331#:~:text=A%20Singleton%20class%20can%20Dispose,are%20bonded%20on%20compile%20time.)
+:::
+
+#### Extension
+
+- A Singleton class supports <span className="orange-bold">interface</span> implementation, while static classes **cannot** implement interfaces.
+- A Singleton class supports <span className="orange-bold">inheritance</span>, while a Static class is a sealed class, and therefore cannot be inherited.
+- A Singleton class <span className="orange-bold">can inherit from other classes</span>, while a Static class cannot (not even from other static classes).
+
+#### Resource Management
+
+- A Singleton class can be instantiated using the `new` keyword, while static can not be instantiated (static class can be used directly).
+- Both Singleton and static are stored on the Heap memory, but static classes are stored in a special area of the Heap Memory called the <span className="orange-bold">High-Frequency Heap</span> (Objects in High Frequency Heap are not garbage collected by GC, and hence static members are available **throughout** the application lifetime).
+- A Singleton class can [**Dispose**](https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/implementing-dispose) (release unmanaged resources held by an object explicitly), while a static class can't. Static classes in C# are designed to be <span className="orange-bold">stateless</span> and do not have instances that can be disposed of in the same way that regular (non-static) classes do.
+- A Static Class is often used for <span className="orange-bold">utility functions</span> or as containers for constants, and they don't have a typical object lifecycle like regular instance classes _or_ instance-specific state.
+
+#### Performance
+
+- A Static class has <span className="orange-bold">better</span> performance since static methods are bonded on compile time.
+- A Singleton class can be <span className="orange-bold">lazy loaded</span> when needed, while static classes are always loaded. Static classes are loaded automatically by the .NET Framework common language runtime (CLR) when the program or namespace containing the class is loaded.
+
+#### General Usage
+
+- A Singleton class can have a <span className="orange-bold">constructor</span>, while a static class can only have a private static <span className="orange-bold">parameterless</span> constructor and cannot have instance constructors.
+- A Singleton class can be <span className="orange-bold">destroyed</span> (for specific purpose like reset or restart) while Static Classes cannot.
+
+Hence, it should be pretty straightforward for you to decide: <span className="orange-bold">if a class has no real need to use the Unity API (heavy dependence or computation on the attached object), make it static</span>. If you'd like to dive deeper in making your choices, give [this](https://vionixstudio.com/2022/06/18/unity-singleton-and-static-variables/#Singleton_vs_Static_variable_usage_in_Unity), [this](https://www.c-sharpcorner.com/UploadFile/akkiraju/singleton-vs-static-classes/), and [this](https://gamedevbeginner.com/singletons-in-unity-the-right-way/) articles a read on top of your own research. Good luck!

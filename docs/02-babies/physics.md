@@ -94,8 +94,8 @@ For **layer-based rendering**, we can decide what to be rendered (only a selecti
 **Create** two other layers via any GameObject Inspector: `Enemies` and `Obstacles`.
 
 1. Set `Pipes` GameObject Layer to `Obstacles`.
-2. Set `Obstacles` GameoBject Layer to `Obstacles` too.
-3. Set all `Enemies` GameObject Layer to `Enemies`. `
+2. Set `Obstacles` GameObject Layer to `Obstacles` too.
+3. Set all `Enemies` GameObject Layer to `Enemies`. 
 
 > Apply it to all their **children**.
 
@@ -146,7 +146,7 @@ The usage of Tag can be controversial sometimes, with some complaining that it's
 However, let's be a little fancier. Although Layers are essential (to avoid extra computation on collision and unwanted collision behavior, etc), we don't want to manually `Tag` every GameObject in our Scene.
 
 :::warning
-Please note that `CompareTag` is really fast, and there's nothing wrong with the code above in terms of performance! We do not discard it for performance reason, but simply _preference_ and extra convenience (not having to add Tags). Making a functional game is hard enough. If you don't have performance issues, **do not blatantly attempt to optimise**. Code readability and modularity is more important that that.
+Please note that `CompareTag` is really fast, and there's nothing wrong with the code above in terms of performance! We do not discard it for performance reason, but simply _preference_ and extra convenience (not having to add Tags). Making a functional game is hard enough. If you don't have performance issues, **do not blatantly attempt to optimise**. Code readability and modularity is more important than that.
 :::
 
 Every **layer** that we set the GameObject to is represented by an **integer**:
@@ -191,7 +191,7 @@ The resulting behavior should be as follows, where Mario can now climb obstacles
 
 :::
 
-# Profiler
+## Profiler
 
 If you _really_ want to optimise your game, or feel like some part has high latency, you can use Unity's Profiler to identify the root cause of the heavy computations. Select Window >> Analysis >> Profiler, and begin recording your gameplay.
 
@@ -241,8 +241,8 @@ Then, add `SpringJoint2D` component, and set the properties as follows:
 
 Here's a further explanation:
 
-1. We connect the spring to parent's static Rigidbody, and **disable** collision with it (we want this invisible anchor)
-2. We set the `Connected Anchor` at `(0,1)` (this is local position). That means to set the connected anchor to `Question-Box-Bounce` at 1-y distance away from this GameObject as shown on the Scene
+1. We connect the spring to parent's static Rigidbody, and **disable** collision with it (we want to have an "invisible" anchor, we don't want our box to collide with it)
+2. We set the `Connected Anchor` at `(0,1)` (this is local position, or in other words: the position of the anchor relative to the connected Rigidbody's transform). That means to set the anchor of the spring to the connected Rigidbody in `Question-Box-Bounce` at 1 unit away in the y-axis direction from `Question-Box-Bounce`'s position on the Scene. 
 3. `Distance` is set to `1` because we don't want the spring to shorten once the game starts
 4. `Frequency` and `Damping Ratio` affects the "feel" of the spring
 
