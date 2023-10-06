@@ -339,7 +339,8 @@ Static Class and Singletons are similar at first glance: they can only have <spa
 
 - A Singleton class can be instantiated using the `new` keyword, while static can not be instantiated (static class can be used directly).
 - Both Singleton and static are stored on the Heap memory, but static classes are stored in a special area of the Heap Memory called the <span className="orange-bold">High-Frequency Heap</span> (Objects in High Frequency Heap are not garbage collected by GC, and hence static members are available **throughout** the application lifetime).
-- A Singleton class can [**Dispose**](https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/implementing-dispose) (release unmanaged resources held by an object explicitly), while a static class can not.
+- A Singleton class can [**Dispose**](https://learn.microsoft.com/en-us/dotnet/standard/garbage-collection/implementing-dispose) (release unmanaged resources held by an object explicitly), while a static class can't. Static classes in C# are designed to be <span className="orange-bold">stateless</span> and do not have instances that can be disposed of in the same way that regular (non-static) classes do.
+- A Static Class is often used for <span className="orange-bold">utility functions</span> or as containers for constants, and they don't have a typical object lifecycle like regular instance classes _or_ instance-specific state.
 
 #### Performance
 
