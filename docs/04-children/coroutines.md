@@ -26,7 +26,7 @@ In certain situations, we might want to spread a sequence of events like procedu
 
 ## C#: Coroutines
 
-A coroutine lets us to spread tasks across several **frames**. It pauses execution and return control to Unity, and then continue where it left off on the following <span className="orange-bold">frame</span>. A normal function like Update() cannot do this and must run into completion before returning control to Unity.
+A coroutine lets us to spread tasks across several **frames**. It pauses execution and return control to Unity, and then continue where it left off on the following <span className="orange-bold">frame</span>. A normal function like `Update()` cannot do this and must run into completion before returning control to Unity.
 
 Coroutines are very <span className="orange-bold">resource efficient</span> so it's okay to use them for your projects.
 
@@ -45,9 +45,18 @@ You can declare and call Coroutine like this:
     void UseCoroutine()
     {
         // call it
-        StartCoroutine(functionName());.
+        StartCoroutine(functionName());
+        // do other things (can be done immediately after coroutine yields)
     }
 ```
+
+#### Basic Idea
+
+When you start a coroutine using `StartCoroutine`, the coroutine runs on the Unity main thread, just like the rest of your game code. It <span className="orange-bold">doesn't block</span> the execution of the `Update` or other functions in your script. You also <span className="orange-bold">don't need to wait for the coroutine to finish</span> before the Update function or other Unity event functions are called as per normal.
+
+The Unity main thread continues to execute other code and events while the coroutine is running in the background. The coroutine itself will `yield` control back to the main thread when it encounters a `yield` statement, such as yield return new `WaitForSecondsRealtime(time)` (see later section), allowing other code to run during the specified time delay <span className="orange-bold">without freezing</span> the entire game. Once the time delay is over, the coroutine resumes its execution.
+
+In short, you can think of coroutines in Unity as a way to perform tasks over time or in the background without blocking the main thread and the normal execution of Unity's event functions like `Update`.
 
 ### Examples
 
@@ -220,6 +229,12 @@ public class WaitWhileExample : MonoBehaviour
 // Rescue mission started
 // Finally, all enemies are eliminated and I have been rescued!
 ```
+
+:::important
+When you start a coroutine using `StartCoroutine`, it doesn't block the execution of the calling method (in the above case, `Start`). The coroutine runs _separately_ in the background, and the calling method continues to execute immediately after starting the coroutine.
+
+Remember that Unity coroutines are not executed on separate threads. They run on the Unity main thread, just like the rest of your Unity game code. Coroutine provides a way to perform asynchronous-like operations <span className="orange-bold">without</span> introducing threading complexities.
+:::
 
 ### Starting Multiple Coroutines
 
@@ -599,6 +614,8 @@ It shows that `Start` is called first as usual, but **asynchronously**, allowing
 ## Summary
 
 Choosing between coroutines and async/await isn't always straightforward due to their differing functionalities.
+
+It's essential to understand that asynchronous code <span className="orange-bold">doesn't always imply multithreading</span>, and the behavior can vary depending on the specific APIs and libraries you're working with.
 
 Coroutines are best for _fire-and-forget_ tasks like fading the screen, replenishing health bar, triggering explosion on crates two seconds after it collides with the player and similar tasks, while async is essential for processing intensive tasks in the background _without_ causing game stalls. Coroutines can be **tricky**, but async functions can get **complex** when handling task cancellation. In practice, using both methods in your project is common. As a broadly general rule, it may be simpler to employ coroutines for object-related game logic and reserve async for situations like executing lengthy background tasks.
 
