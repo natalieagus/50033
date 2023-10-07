@@ -236,6 +236,49 @@ When you start a coroutine using `StartCoroutine`, it doesn't block the executio
 Remember that Unity coroutines are not executed on separate threads. They run on the Unity main thread, just like the rest of your Unity game code. Coroutine provides a way to perform asynchronous-like operations <span className="orange-bold">without</span> introducing threading complexities.
 :::
 
+#### Waiting for a Coroutine to Finish
+
+If you have a very specific case such as to wait for Coroutine launched in a `Start` function _before_ the `Update` function is launched, then you need to use some kind of `flag` to make this happen, for instance:
+
+```cs
+using System.Collections;
+using UnityEngine;
+
+public class SomeScript : MonoBehaviour
+{
+    private bool isStartComplete = false;
+
+    void Start()
+    {
+        Debug.Log("Begin Start event");
+        StartCoroutine(StartEventCoroutine());
+        Debug.Log("Start Invoked");
+    }
+
+    private IEnumerator StartEventCoroutine()
+    {
+        // Perform any initialization or tasks you need in Start here.
+        // ...
+
+        // Assume you want to delay for 2 seconds before Update() works
+        yield return new WaitForSeconds(2f);
+
+        // Mark the Start as complete.
+        isStartComplete = true;
+    }
+
+    void Update()
+    {
+        // Only execute Update when StartEventCoroutine completes
+        if (isStartComplete)
+        {
+            // Your Update code here.
+            // ...
+        }
+    }
+}
+```
+
 ### Starting Multiple Coroutines
 
 You can also start many coroutines at once, such as:
