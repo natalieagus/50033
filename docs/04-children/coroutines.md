@@ -153,7 +153,7 @@ This is what the `EventSystem` GameObject in your scene is for, which is to mana
 
 ### `yield return`
 
-On a coroutine, the yield return `[something]` returns control to Unity until that `[something]` condition is fulfilled. If we do `yield return null`, your coroutine code <span className="orange-bold">pauses</span> for the next frame and **continues** where it left off (after the `yield return`) afterward, depending on whether that `[something]` condition is fulfilled. That `[something]` can be also be any of the things below:
+On a coroutine, the yield return `[something]` returns control to Unity until that `[something]` condition is fulfilled. If we do `yield return null`, your coroutine execution <span className="orange-bold">pauses</span> for the next frame and **continues** where it left off (after the `yield return`) afterwards, depending on whether that `[something]` condition is fulfilled, <span className="orange-bold">all these done without blocking the caller of the coroutine</span>. That `[something]` can be also be any of the things below:
 
 1. [Wait for a few seconds](https://docs.unity3d.com/ScriptReference/WaitForSeconds.html) (scaled): `yield return new WaitForSeconds(0.1f)`
 2. Wait for a few seconds ([realtime](https://docs.unity3d.com/ScriptReference/WaitForSecondsRealtime.html)): `yield return new WaitForSecondsRealtime(0.1f)`
