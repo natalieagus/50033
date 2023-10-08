@@ -204,7 +204,7 @@ public interface IInteractiveButton
 Rename your `ButtonController.cs` script into `RestartButton.cs`, and create another `PauseButton.cs` script to pause the game. Both controllers must inherit `IInteractiveButton` interface:
 
 <Tabs>
-<TabItem value="1" label="RestartButton.cs">
+<TabItem value="1" label="RestartButtonController.cs">
 
 ```cs
 using System.Collections;
@@ -226,7 +226,7 @@ public class RestartButtonController : MonoBehaviour, IInteractiveButton
 
 </TabItem>
 
-<TabItem value="2" label="PauseButton.cs">
+<TabItem value="2" label="PauseButtonController.cs">
 
 ```cs
 
