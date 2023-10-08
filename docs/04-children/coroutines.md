@@ -14,7 +14,7 @@ import TabItem from '@theme/TabItem';
 
 To polish our game further, we need to ensure that:
 
-1. All player actions constitute a reaction
+1. All player actions have discernible **feedback**
 2. The UI is coherent
 3. There exist a main menu to properly start a game
 4. Restart and pausing capability works as intended
@@ -153,7 +153,7 @@ This is what the `EventSystem` GameObject in your scene is for, which is to mana
 
 ### `yield return`
 
-On a coroutine, the yield return `[something]` returns control to Unity until that `[something]` condition is fulfilled. If we do `yield return null`, your coroutine code <span className="orange-bold">pauses</span> for the next frame and **continues** where it left off (after the `yield return`) afterward, depending on whether that `[something]` condition is fulfilled. That `[something]` can be also be any of the things below:
+On a coroutine, the yield return `[something]` returns control to Unity until that `[something]` condition is fulfilled. If we do `yield return null`, your coroutine execution <span className="orange-bold">pauses</span> for the next frame and **continues** where it left off (after the `yield return`) afterwards, depending on whether that `[something]` condition is fulfilled, <span className="orange-bold">all these done without blocking the caller of the coroutine</span>. That `[something]` can be also be any of the things below:
 
 1. [Wait for a few seconds](https://docs.unity3d.com/ScriptReference/WaitForSeconds.html) (scaled): `yield return new WaitForSeconds(0.1f)`
 2. Wait for a few seconds ([realtime](https://docs.unity3d.com/ScriptReference/WaitForSecondsRealtime.html)): `yield return new WaitForSecondsRealtime(0.1f)`
@@ -310,7 +310,7 @@ StopCoroutine("Fade");
 A coroutine will also <span className="orange-bold">automatically</span> stop if the object that it’s attached to is disabled by SetActive(false) or by destroying the object with Destroy().
 :::
 
-If you would like to <span className="orange-bold">stop all Coroutines in the game</span>, then you can use the method `StopAllCoroutines()`.
+If you would like to <span className="orange-bold">stop all Coroutines in the Behavior</span> (Coroutines on the script), then you can use the method `StopAllCoroutines()`. Note that this will only stop coroutines that are in the same script so other scripts won't be effected.
 
 ## C#: Async Methods and Multithreading With Task{#async-methods}
 
