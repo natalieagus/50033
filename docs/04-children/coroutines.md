@@ -14,7 +14,7 @@ import TabItem from '@theme/TabItem';
 
 To polish our game further, we need to ensure that:
 
-1. All player actions constitute a reaction
+1. All player actions have discernible **feedback**
 2. The UI is coherent
 3. There exist a main menu to properly start a game
 4. Restart and pausing capability works as intended
