@@ -74,7 +74,7 @@ Over at the inspector, you can set the values to correspond to each constant tha
 > As of now, `maxLives` are not used yet, leave it at 10.
 
 :::info
-The values stored inside a ScriptableObject persists (unlike runtime variables that exists only in-memory), so you can store something in these data containers such as the player’s highest score, and load it again the next time the game starts. You can treat SO instancse as files.
+The values stored inside a ScriptableObject persists (unlike runtime variables that exists only in-memory), so you can store something in these data containers such as the player’s highest score, and load it again the next time the game starts. You can treat SO instances as files.
 :::
 
 ### Usage in Runtime
