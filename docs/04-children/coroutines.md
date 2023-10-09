@@ -90,7 +90,7 @@ public class HealthBar : MonoBehaviour
 
 #### Temporary Invincibility
 
-For those making casual (chaotic) couch multiplayer game, you will also want to use coroutines to prevent the same player to be hit again after 0.5 seconds. This will create temporary invincibility to avoid an unjust game experience. We would deactivate the player's hitbox or some `vulnerable` state for 0.5 seconds before enabling it again.
+For those making casual (chaotic) couch multiplayer game, you will also want to use coroutines to prevent the same player to be hit again before 0.5 seconds has passed. This will create temporary invincibility to avoid an unjust game experience. We would deactivate the player's hitbox or some `vulnerable` state for 0.5 seconds before enabling it again.
 
 #### Fading Loading Screen
 
