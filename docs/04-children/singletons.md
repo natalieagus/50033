@@ -325,6 +325,55 @@ The point is that there's <span className="orange-bold">no way</span> we can get
 
 Static Class and Singletons are similar at first glance: they can only have <span className="orange-bold">one</span> instance available in memory, and both can be used to maintain the global state of an application. They come with some subtle differences depending on your application.
 
+This is an example of a static GameManager class:
+
+```cs
+using UnityEngine;
+using UnityEngine.Events;
+
+public static class StaticGameManager
+{
+    // usage: StaticGameManager.gameStart.AddListener(<FunctionName>)
+    public static UnityEvent gameStart;
+    public static UnityEvent gameRestart;
+    public static UnityEvent<int> scoreChange;
+    public static UnityEvent gameOver;
+    public static UnityEvent damageMario;
+
+    public static IntVariable gameScore;
+
+    // usage: StaticGameManager.GameRestart()
+    public static void GameRestart()
+    {
+        // reset score
+        gameScore.Value = 0;
+        SetScore(gameScore.Value);
+        gameRestart.Invoke();
+        Time.timeScale = 1.0f;
+    }
+
+    public static void IncreaseScore(int increment)
+    {
+        gameScore.ApplyChange(increment);
+        SetScore(gameScore.Value);
+    }
+
+    // invoke the scorechange events
+    public static void SetScore(int score)
+    {
+        scoreChange.Invoke(score);
+    }
+
+    public static void GameOver()
+    {
+        Time.timeScale = 0.0f;
+    }
+
+}
+```
+
+In a static classes, all members must be static. Static classes provide a way to <span className="orange-bold">create</span> and <span className="orange-bold">use</span> class and method members <span className="orange-bold">without</span> creating an instance of the class. This can be useful when you need to create a <span className="orange-bold">utility</span> class with methods that don’t require any **state** or instance related information. Notice that we do not have instructions like `this.GetComponent<something>()` in the script above.
+
 :::note source
 [The following information is obtained from here.](https://henriquesd.medium.com/singleton-vs-static-class-e6b2b32ec331#:~:text=A%20Singleton%20class%20can%20Dispose,are%20bonded%20on%20compile%20time.)
 :::
