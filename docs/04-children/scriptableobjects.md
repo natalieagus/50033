@@ -46,18 +46,18 @@ public  class GameConstants : ScriptableObject
 {
 	//highlight-start
     // lives
-    int maxLives;
+    public int maxLives;
 
     // Mario's movement
-    int speed;
-    int maxSpeed;
-    int upSpeed;
-    int deathImpulse;
-    Vector3 marioStartingPosition;
+    public int speed;
+    public int maxSpeed;
+    public int upSpeed;
+    public int deathImpulse;
+    public Vector3 marioStartingPosition;
 
     // Goomba's movement
-    float goombaPatrolTime;
-    float goombaMaxOffset;
+    public float goombaPatrolTime;
+    public float goombaMaxOffset;
     //highlight-end
 }
 

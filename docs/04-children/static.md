@@ -190,7 +190,7 @@ It is very common in a game to have various types of buttons, powerups, or enemi
 
 Let's try to create one simple interface for all interactive buttons:
 
-```cs title="IInteractiveButton.s"
+```cs title="IInteractiveButton.cs"
 
 public interface IInteractiveButton
 {
@@ -201,7 +201,7 @@ public interface IInteractiveButton
 
 > There's no need to declare `public` in the methods
 
-Rename your `ButtonController.cs` script into `RestartButton.cs`, and create another `PauseButton.cs` script to pause the game. Both controllers must inherit `IInteractiveButton` interface:
+Rename your `ButtonController.cs` script into `RestartButtonController.cs`, and create another `PauseButtonController.cs` script to pause the game. Both controllers must inherit `IInteractiveButton` interface:
 
 <Tabs>
 <TabItem value="1" label="RestartButtonController.cs">
