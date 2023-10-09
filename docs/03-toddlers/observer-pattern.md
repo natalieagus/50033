@@ -244,6 +244,7 @@ Save and test that Mario can still move, skid, etc, jump, along with higher jump
 :::
 
 <DeepDive title="Deep Dive: UnityEvent vs UnityAction">
+    
 Some of you might have heard about `UnityAction`. They're similar to UnityEvent. Here's an example that will lead into identical results:
 
 <Tabs>
@@ -396,9 +397,13 @@ For example, something like this:
 public delegate void SimpleGameEvent();
 ```
 
+:::note
+You can declare a delegate <span className="orange-bold">without</span> placing it within a class in C#. Delegates are a type that can be declared at the <span className="orange-bold">namespace</span> level, which means they can exist **outside** of any class or structure. This makes it accessible to any class or code within the namespace.
+:::
+
 ### C# Event
 
-To allow other scripts to subscribe to this delegate, we need to create an instance of that delegate, using the `event` keyword:
+To allow other scripts to subscribe to this delegate, we need to create an <span className="orange-bold">instance</span> of that delegate, using the `event` keyword:
 
 ```cs
 public static event SimpleGameEvent IncreaseScore;
@@ -414,9 +419,154 @@ public static SimpleGameEvent IncreaseScore;
 Without the `event` keyword, `IncreaseScore` can be cast by anyone (unless it is not public, but that will mean that not every other script can subscribe to it). If we want <span className="orange-bold">only</span> the **owner** of the **delegate** to cast, then the event keyword is used.
 :::
 
-Since the event is declared as `static`, that means other scripts can subscribe to it via the Classname.
+Since the event is declared as `static`, that means other scripts can subscribe to it via the Classname. Whether you should make an event static or not <span className="orange-bold">depends</span> on your design and how you intend to use it.
 
-#### UnityEvent
+- If you want a single event that is shared across all instances _or_ if you need to raise the event <span className="orange-bold">without having an instance of the class</span>, make it `static`.
+- If you want each instance to have its own event handling, make it non-static.
+
+<DeepDive title="DeepDive: C# Events">
+
+You can try and experiment with C# events with the following 3 scripts:
+
+<Tabs>
+<TabItem value="1" label="SomeEventManager.cs">
+
+```cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+// declare delegate at namespace level
+public delegate void SomeGameEvent(int score);
+
+public class SomeEventManager
+{
+    // with event keyword, can only be invoked within this class
+    public static event SomeGameEvent SampleEventFoo;
+
+    // without event keyword, can be invoked by anyone else
+    public static SomeGameEvent SampleEventBar;
+
+    public static void LaunchEventFooBy(int points)
+    {
+        // Raise the static event
+        SampleEventFoo?.Invoke(points);
+    }
+
+
+}
+```
+
+</TabItem>
+
+<TabItem value="2" label="SomeEventManagerNonStatic">
+
+```cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SomeEventManagerNonStatic : MonoBehaviour
+{
+    // static event
+    public static event SomeGameEvent SampleEventBaz;
+
+    // non static event
+    public event SomeGameEvent SampleEventQux;
+
+    // these methods needs an instance of PlaygroundEventManager
+    public void LaunchSampleEventBaz(int points)
+    {
+        // Raise the static event
+        SampleEventBaz?.Invoke(points);
+    }
+
+    public void LaunchSampleEventQux(int points)
+    {
+        // Raise the instance event
+        SampleEventQux?.Invoke(points);
+    }
+}
+```
+
+</TabItem>
+
+<TabItem value="3" label="TestEventInPlayground.cs">
+
+```cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TestEventInPlayground : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        // subscribe without having the instance of the class
+        SomeEventManager.SampleEventFoo += TestEventFoo;
+        SomeEventManager.SampleEventBar += TestEventBar;
+        SomeEventManagerNonStatic.SampleEventBaz += TestEventBaz;
+
+        // subscribe by finding instance of the class
+        FindObjectOfType<SomeEventManagerNonStatic>().SampleEventQux += TestEventQux;
+    }
+
+    public void TestEventFoo(int score)
+    {
+        Debug.Log($"TestEventFoo is called with parameter value {score}");
+    }
+    public void TestEventBar(int score)
+    {
+        Debug.Log($"TestEventBar is called with parameter value {score}");
+    }
+    public void TestEventBaz(int score)
+    {
+        Debug.Log($"TestEventBaz is called with parameter value {score}");
+    }
+    public void TestEventQux(int score)
+    {
+        Debug.Log($"TestEventQux is called with parameter value {score}");
+    }
+
+    public void Press()
+    {
+        // invoke via PlaygroundEventManager static method
+        SomeEventManager.LaunchEventFooBy(1);
+        // invoke event directly
+        SomeEventManager.SampleEventBar.Invoke(2);
+
+        // invoke from instance
+        FindObjectOfType<SomeEventManagerNonStatic>().LaunchSampleEventBaz(3);
+        FindObjectOfType<SomeEventManagerNonStatic>().LaunchSampleEventQux(4);
+    }
+}
+
+
+```
+
+</TabItem>
+</Tabs>
+
+Now attach `SomeEventManagerNonStatic` and `TestEventInPlayground` to some test GameObject, and then create a button to call `Press()`: you will find four Debug messages printed out at the Console:
+
+<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-3/test-event-cs.mp4"} widthPercentage="100%"/>
+Here are a few important observations:
+
+- `SampleEventFoo` and `SampleEventBar` are invoked **without** the need to make an instance of `SomeEventManager` class.
+- `SampleEventBaz`, despite being declared as `static`, could **not** be invoked **without** an instance of `SomeEventManagerStatic` because of the `event` keyword when declaring it.
+- We can Invoke static event `SampleEventBaz` in non-static method
+- `SampleEventQux` will <span className="orange-bold">not</span> exist without an instance of `SomeEventManagerNonStatic` class.
+
+:::important
+In the code above, the `SomeGameEvent` delegate is declared at the [namespace](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/namespaces) level, making it <span className="orange-bold">accessible</span> to any class or code within that namespace. This allows you to use the `SomeGameEvent` delegate in various classes or parts of your application without the need to encapsulate it within a specific class.
+
+In the example above we simply utilise `SomeGameEvent` in another class: `SomeEventManagerNonStatic`.
+:::
+
+</DeepDive>
+
+### UnityEvent
 
 We will **mainly** utilise `UnityEvent` instead of C# Event and delegates because the former allows us to conveniently set it up via the inspector and that it covers basic signatures that we need (return type of `void` and accept generic parameters, up to four).
 
@@ -503,7 +653,7 @@ flowchart TD
 
 ### Major Refactoring using Events
 
-We need to create **three** different **events**: `GameOver`, `GameStart`, `GameRestart`, and `ScoreChange` in `GameManager.cs` and let other scripts subscribe to it and update themselves accordingly. Create **two** new scripts: `HUDManager.cs` and `EnemyManager.cs` which will contain callbacks to subscribe to the events above:
+We need to create **four** different **events**: `GameOver`, `GameStart`, `GameRestart`, and `ScoreChange` in `GameManager.cs` and let other scripts subscribe to it and update themselves accordingly. Create **two** new scripts: `HUDManager.cs` and `EnemyManager.cs` which will contain callbacks to subscribe to the events above:
 
 :::warning
 Do not <span className="orange-bold">blindly</span> copy paste the content of the methods below. Your actual implementation might vary, for instance you might not have the `GameOverPanel` in your implementation if you did not choose to do it for Checkoff 1. These files are for your reference only.
@@ -694,6 +844,15 @@ public class GameManagerWeek3 : MonoBehaviour
 <TabItem value="5" label="JumpOverGoomba.cs">
 
 ```cs
+    //highlight-start
+    GameManager gameManager;
+//highlight-end
+    void Start(){
+        //highlight-start
+        gameManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>();
+        //highlight-end
+    }
+
     void FixedUpdate()
     {
         // when jumping, and Goomba is near Mario and we haven't registered our score
@@ -703,7 +862,7 @@ public class GameManagerWeek3 : MonoBehaviour
             {
                 countScoreState = false;
                 //highlight-start
-                gameManager.IncreaseScore(1);
+                gameManager.IncreaseScore(1); //
                 //highlight-end
             }
         }

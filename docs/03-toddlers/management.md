@@ -32,7 +32,7 @@ You can enable both systems so to not immediately break your game. This can be f
 
 ## Mario's Control
 
-Right now our Mario can move (left and right, with `a` or `d`) key, and jump (with a spacebar). We can also control Mario using the **arrow** keys to move left and right but the sprite wont flip (because we only check for keys `a` and `d` manually), while the Input Manager bind a and left arrow key to cause negative horizontal movement (similarly with positive horizontal movement).
+Right now our Mario can move (left and right, with `a` or `d`) key, and jump (with a spacebar). We can also control Mario using the **arrow** keys to move left and right but the sprite won't flip (because we only check for keys `a` and `d` manually), while the Input Manager bind `a` and left arrow key to cause negative horizontal movement (similarly with positive horizontal movement).
 
 <ImageCard path={require("./images/management/2023-08-09-10-54-07.png").default} widthPercentage="50%"/>
 

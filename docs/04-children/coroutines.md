@@ -14,7 +14,7 @@ import TabItem from '@theme/TabItem';
 
 To polish our game further, we need to ensure that:
 
-1. All player actions constitute a reaction
+1. All player actions have discernible **feedback**
 2. The UI is coherent
 3. There exist a main menu to properly start a game
 4. Restart and pausing capability works as intended
@@ -26,7 +26,7 @@ In certain situations, we might want to spread a sequence of events like procedu
 
 ## C#: Coroutines
 
-A coroutine lets us to spread tasks across several **frames**. It pauses execution and return control to Unity, and then continue where it left off on the following <span className="orange-bold">frame</span>. A normal function like Update() cannot do this and must run into completion before returning control to Unity.
+A coroutine lets us to spread tasks across several **frames**. It pauses execution and return control to Unity, and then continue where it left off on the following <span className="orange-bold">frame</span>. A normal function like `Update()` cannot do this and must run into completion before returning control to Unity.
 
 Coroutines are very <span className="orange-bold">resource efficient</span> so it's okay to use them for your projects.
 
@@ -45,9 +45,18 @@ You can declare and call Coroutine like this:
     void UseCoroutine()
     {
         // call it
-        StartCoroutine(functionName());.
+        StartCoroutine(functionName());
+        // do other things (can be done immediately after coroutine yields)
     }
 ```
+
+#### Basic Idea
+
+When you start a coroutine using `StartCoroutine`, the coroutine runs on the Unity main thread, just like the rest of your game code. It <span className="orange-bold">doesn't block</span> the execution of the `Update` or other functions in your script. You also <span className="orange-bold">don't need to wait for the coroutine to finish</span> before the Update function or other Unity event functions are called as per normal.
+
+The Unity main thread continues to execute other code and events while the coroutine is running in the background. The coroutine itself will `yield` control back to the main thread when it encounters a `yield` statement, such as yield return new `WaitForSecondsRealtime(time)` (see later section), allowing other code to run during the specified time delay <span className="orange-bold">without freezing</span> the entire game. Once the time delay is over, the coroutine resumes its execution.
+
+In short, you can think of coroutines in Unity as a way to perform tasks over time or in the background without blocking the main thread and the normal execution of Unity's event functions like `Update`.
 
 ### Examples
 
@@ -144,7 +153,7 @@ This is what the `EventSystem` GameObject in your scene is for, which is to mana
 
 ### `yield return`
 
-On a coroutine, the yield return `[something]` returns control to Unity until that `[something]` condition is fulfilled. If we do `yield return null`, your coroutine code <span className="orange-bold">pauses</span> for the next frame and **continues** where it left off (after the `yield return`) afterward, depending on whether that `[something]` condition is fulfilled. That `[something]` can be also be any of the things below:
+On a coroutine, the yield return `[something]` returns control to Unity until that `[something]` condition is fulfilled. If we do `yield return null`, your coroutine execution <span className="orange-bold">pauses</span> for the next frame and **continues** where it left off (after the `yield return`) afterwards, depending on whether that `[something]` condition is fulfilled, <span className="orange-bold">all these done without blocking the caller of the coroutine</span>. That `[something]` can be also be any of the things below:
 
 1. [Wait for a few seconds](https://docs.unity3d.com/ScriptReference/WaitForSeconds.html) (scaled): `yield return new WaitForSeconds(0.1f)`
 2. Wait for a few seconds ([realtime](https://docs.unity3d.com/ScriptReference/WaitForSecondsRealtime.html)): `yield return new WaitForSecondsRealtime(0.1f)`
@@ -221,6 +230,55 @@ public class WaitWhileExample : MonoBehaviour
 // Finally, all enemies are eliminated and I have been rescued!
 ```
 
+:::important
+When you start a coroutine using `StartCoroutine`, it doesn't block the execution of the calling method (in the above case, `Start`). The coroutine runs _separately_ in the background, and the calling method continues to execute immediately after starting the coroutine.
+
+Remember that Unity coroutines are not executed on separate threads. They run on the Unity main thread, just like the rest of your Unity game code. Coroutine provides a way to perform asynchronous-like operations <span className="orange-bold">without</span> introducing threading complexities.
+:::
+
+#### Waiting for a Coroutine to Finish
+
+If you have a very specific case such as to wait for Coroutine launched in a `Start` function _before_ the `Update` function is launched, then you need to use some kind of `flag` to make this happen, for instance:
+
+```cs
+using System.Collections;
+using UnityEngine;
+
+public class SomeScript : MonoBehaviour
+{
+    private bool isStartComplete = false;
+
+    void Start()
+    {
+        Debug.Log("Begin Start event");
+        StartCoroutine(StartEventCoroutine());
+        Debug.Log("Start Invoked");
+    }
+
+    private IEnumerator StartEventCoroutine()
+    {
+        // Perform any initialization or tasks you need in Start here.
+        // ...
+
+        // Assume you want to delay for 2 seconds before Update() works
+        yield return new WaitForSeconds(2f);
+
+        // Mark the Start as complete.
+        isStartComplete = true;
+    }
+
+    void Update()
+    {
+        // Only execute Update when StartEventCoroutine completes
+        if (isStartComplete)
+        {
+            // Your Update code here.
+            // ...
+        }
+    }
+}
+```
+
 ### Starting Multiple Coroutines
 
 You can also start many coroutines at once, such as:
@@ -252,12 +310,14 @@ StopCoroutine("Fade");
 A coroutine will also <span className="orange-bold">automatically</span> stop if the object that it’s attached to is disabled by SetActive(false) or by destroying the object with Destroy().
 :::
 
-If you would like to <span className="orange-bold">stop all Coroutines in the game</span>, then you can use the method `StopAllCoroutines()`.
+If you would like to <span className="orange-bold">stop all Coroutines in the Behavior</span> (Coroutines on the script), then you can use the method `StopAllCoroutines()`. Note that this will only stop coroutines that are in the same script so other scripts won't be effected.
 
-## C#: Async Methods and Multithreading {#async-methods}
+## C#: Async Methods and Multithreading With Task{#async-methods}
 
 :::warning
 It is highly unlikely that you will need to implement async methods with extra threads in your game, but this section is added here to highlight _differences_ between async methods and coroutines.
+
+Unity's coroutines and C#'s async methods are <span className="orange-bold">separate</span> mechanisms for handling asynchronous operations. Unity's coroutines are specific to the Unity game engine and provide a way to perform tasks over time or in the background without blocking the main thread. C#'s async/await feature, on the other hand, is a **general-purpose** mechanism for handling asynchronous operations in C#.
 :::
 
 Async methods running on a separate threads are useful **if** you need to perform <span className="orange-bold">very extensive computation</span> that requires millions of CPU cycles while keeping your game responsive. In other words, we want to utilise the CPU _only after it's done_ computing whatever it needs for each frame.
@@ -523,7 +583,7 @@ To be sure that Coroutines always exit especially on destroyed GameObjects, we n
 
 ### Return Values
 
-We cannot return anything in a Coroutine, but async functions can the following return types:
+We cannot return anything in a Coroutine, but async functions can the following return types (thats why we can `await` its results!):
 
 - [Task](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task?view=net-7.0), for an async method that performs an operation but returns no value.
 - [Task<TResult\>](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1?view=net-7.0), for an async method that returns a value.
@@ -596,9 +656,15 @@ Here's the console output:
 
 It shows that `Start` is called first as usual, but **asynchronously**, allowing `Update` to advance and increase the frame value. When the sprite has been loaded, the Start method resumes and print the `Start method completes` message.
 
+:::warning
+We can't `await` a Coroutine, it does not make sense because Unity's coroutines are not Task-based and don't return a Task object that you can `await`. However you can achieve similar result such as using a flag that will be set to `true` once a Coroutine completes.
+:::
+
 ## Summary
 
-Choosing between coroutines and async/await isn't always straightforward due to their differing functionalities.
+Choosing between coroutines and async/await Task isn't always straightforward due to their differing functionalities.
+
+It's essential to understand that asynchronous code <span className="orange-bold">doesn't always imply multithreading</span>, and the behavior can vary depending on the specific APIs and libraries you're working with.
 
 Coroutines are best for _fire-and-forget_ tasks like fading the screen, replenishing health bar, triggering explosion on crates two seconds after it collides with the player and similar tasks, while async is essential for processing intensive tasks in the background _without_ causing game stalls. Coroutines can be **tricky**, but async functions can get **complex** when handling task cancellation. In practice, using both methods in your project is common. As a broadly general rule, it may be simpler to employ coroutines for object-related game logic and reserve async for situations like executing lengthy background tasks.
 
