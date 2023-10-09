@@ -201,7 +201,7 @@ public interface IInteractiveButton
 
 > There's no need to declare `public` in the methods
 
-Rename your `ButtonController.cs` script into `RestartButton.cs`, and create another `PauseButton.cs` script to pause the game. Both controllers must inherit `IInteractiveButton` interface:
+Rename your `ButtonController.cs` script into `RestartButtonController.cs`, and create another `PauseButtonController.cs` script to pause the game. Both controllers must inherit `IInteractiveButton` interface:
 
 <Tabs>
 <TabItem value="1" label="RestartButtonController.cs">
