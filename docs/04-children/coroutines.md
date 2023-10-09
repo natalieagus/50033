@@ -71,7 +71,7 @@ using UnityEngine;
 public class HealthBar : MonoBehaviour
 {
    // an SO instance containing hp
-   public IntVar playerHP;
+   public IntVariable playerHP;
 
    public void RefillHealth(int amount)
    {
