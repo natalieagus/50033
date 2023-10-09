@@ -190,7 +190,7 @@ It is very common in a game to have various types of buttons, powerups, or enemi
 
 Let's try to create one simple interface for all interactive buttons:
 
-```cs title="IInteractiveButton.s"
+```cs title="IInteractiveButton.cs"
 
 public interface IInteractiveButton
 {
