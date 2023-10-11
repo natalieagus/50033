@@ -146,14 +146,14 @@ We are now ready to convert our `GameManager` into a Singleton as follows:
 
 ```cs title="GameManager.cs"
 //highlight-start
-public class GameManagerWeek : Singleton<GameManagerWeek>
+public class GameManager : Singleton<GameManager>
 //highlight-end
 {
     // other instructions
 }
 ```
 
-This means that the GameManager instance will **not be destroyed** upon scene change.
+This means that the GameManager instance will **not be destroyed** upon scene change. Feel free to adjust the title of the script to suit your own usage. 
 
 ## Changing Scene
 
