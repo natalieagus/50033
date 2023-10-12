@@ -216,7 +216,7 @@ public class WaitWhileExample : MonoBehaviour
     IEnumerator Rescue(string name)
     {
         Debug.Log($"Waiting for Mario to rescue {name}...");
-        yield return new WaitWhile(() => enemies > 0);
+        yield return new WaitWhile(() => enemies <= 0);
         Debug.Log($"Finally, all enemies are eliminated and {name} have been rescued!");
     }
 
