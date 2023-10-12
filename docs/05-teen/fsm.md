@@ -133,7 +133,7 @@ It mainly contains <span className="orange-bold">regular methods</span> (cannot 
 1. `UpdateState`: called at every frame update by the state controller, we cast our actions and check for possible transitions
 2. Action-related methods: there are <span className="orange-bold">four</span> types of actions:
    - **Exit** and **Setup** Actions: to be done exactly **once**: when we first arrive at this state and when we _leave_ this state
-   - **Actions**: called at **every frame update** by `UpdateState`. This is particularly useful if you have bots or NPCs, but not so muchg in the case of player-controlled Mario
+   - **Actions**: called at **every frame update** by `UpdateState`. This is particularly useful if you have bots or NPCs, but not so much in the case of player-controlled Mario
    - **Event** Triggered Actions: actions that should be executed whenever the controller wishes to cast it, could be due to certain events such as keyboard pressed or collision with other gameObjects
 3. `CheckTransitions`: goes through every single transition listed under `transitions`. Some decision resulted in a different state, while some results in the same state. If the gameObject has changed its state, we `break` (stop checking for more transitions)
 
