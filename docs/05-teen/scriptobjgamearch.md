@@ -153,6 +153,7 @@ public class GameEventListener<T> : MonoBehaviour
         Event.RegisterListener(this);
     }
 
+    // This is also called when the object is destroyed and can be used for any cleanup code. When scripts are reloaded after compilation has finished, OnDisable will be called, followed by an OnEnable after the script has been loaded.
     private void OnDisable()
     {
         Event.UnregisterListener(this);
