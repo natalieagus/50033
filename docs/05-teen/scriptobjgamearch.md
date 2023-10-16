@@ -169,7 +169,7 @@ public class GameEventListener<T> : MonoBehaviour
 </TabItem>
 </Tabs>
 
-These are currently of a `generic` type because `UnityEvent` can have any signature: without zero to three arguments of any time. For the sake of the lab, we need at least three different types: no argument, a single `int` type argument, and a single `IPowerup` type argument. For each type, we need a pair of scripts: the GameEvent and the GameEventListener variant.
+These are currently of a `generic` type because `UnityEvent` can have any varying signature: zero parameter, one parameter, etc. For the sake of the lab, we need at least three different types: no argument, a single `int` type argument, and a single `IPowerup` type argument. For each type, we need a pair of scripts: the GameEvent and the GameEventListener variant.
 
 The following creates the "no argument" variant:
 
