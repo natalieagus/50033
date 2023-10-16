@@ -364,6 +364,8 @@ public enum MarioState
 }
 ```
 
+:::
+
 ## Create Action Scripts
 
 Since `Action` and `Decision` are highly specific to our use cases, we need to create scripts that describe _what_ we should do. Let's start with **actions** first, there are three categories of actions from this FSM diagram we had above:
