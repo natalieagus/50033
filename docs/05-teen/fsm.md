@@ -232,7 +232,7 @@ public abstract class StateController : MonoBehaviour
     public bool transitionStateChanged = false;
     [HideInInspector] public float stateTimeElapsed;
 
-    private bool isActive = true;
+    public bool isActive = true;
 
     public virtual void Start()
     {
@@ -955,7 +955,7 @@ The last thing that we need to do is to update our `MarioStateController` script
     }
 ```
 
-This will calls the `Act` method of <span className="orange-bold">all</span> registered event-triggered actions in this state whose `type` matches `ActionType.Attack`.
+This will calls the `Act` method of <span className="orange-bold">all</span> registered event-triggered actions in this state whose `type` matches `ActionType.Attack`. You should link up this method to whatever `ActionManager` script which sanitises the input from Input System.
 
 ## Attach MarioStateController to Mario
 
