@@ -184,7 +184,23 @@ If everything works right, you can then have <span className="orange-bold">every
 
 ## C#: Interface
 
-It is very common in a game to have various types of buttons, powerups, or enemies, but they should have common methods that will be called by other scripts such as `cast` or `consume`, or `click`, etc. To do this more uniformly, we can utilise an interface. Interface members must be <span className="orange-bold">public</span> by default, because they’re meant to define the public API of a type, hence the name <span className="orange-bold">interface</span>: a contract meant to be use by other classes.
+It is very common in a game to have various types of buttons, powerups, or enemies, but they should have common methods that will be called by other scripts such as `cast` or `consume`, or `click`, etc. To do this more uniformly, we can utilise an interface. Interface members should be <span className="orange-bold">public</span> by default (<span className="orange-bold">legacy</span>, see deep dive section below), because they’re meant to define the public API of a type, hence the name <span className="orange-bold">interface</span>: a contract meant to be use by other classes.
+
+<DeepDive title="Deep Dive: Actually, Not-So-Simple Interface (Anymore)">
+
+The legacy definition of C# interface were:
+
+- An interface only has declarations of methods, properties, indexers, and events.
+- An interface has only public members and it cannot include private, protected, or internal members.
+- An interface cannot contain fields.
+
+However, more and more features are added now for various [**reasons**](https://jeremybytes.blogspot.com/2019/11/c-8-interfaces-public-private-and.html). It was first introduced in C#8.0 in 2019, with the goal of being able to extend existing interface **without** breaking legacy or old libraries.
+
+The syntax for an interface is relaxed to permit modifiers on its members. The following are permitted: `private`, `protected`, `internal`, `public`, `virtual`, `abstract`, `sealed`, `static`, `extern`, and `partial` with certain requirements.
+
+For example: C# Interface members **can** be private but must have concrete (default) implementation, for the purpose of useful refactoring and organization of code used to implement the interface's public API. You can read more about C# interface **[default implementation of interface methods here](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-8.0/default-interface-methods)**.
+
+</DeepDive>
 
 ### Interactive Button
 
