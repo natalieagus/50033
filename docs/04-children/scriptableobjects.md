@@ -30,7 +30,7 @@ Scriptable objects are mainly used as **assets** in a project that can be refere
 
 You _can_ change the data it contains, and it will persist throughout your game (between scenes, etc) but you cannot expect it to persist upon restart in your exported build!
 
-> In editor, changes stored in SO persist even after you stop and restart the game so they behave differently.
+**In editor, changes stored in SO persist even after you stop and restart the game so they behave differently from export build!**
 
 To properly save various game data, you can use Unity's [Binary Serialization](https://stuartspixelgames.com/2020/07/26/how-to-do-easy-saving-loading-with-binary-unity-c/), [PlayerPrefs](https://docs.unity3d.com/ScriptReference/PlayerPrefs.html), basic Serialization with [JSON files](https://docs.unity3d.com/ScriptReference/JsonUtility.html), or paid asset like [EasySave](https://assetstore.unity.com/packages/tools/utilities/easy-save-the-complete-save-data-serializer-system-768). There are many ways depending on the complexity of the data you save: simple settings like volume level, difficulty level, or primitive data type like `int`, `string`, `float`, or more complex stuffs like an array.
 :::
