@@ -25,6 +25,16 @@ From the official documentation, it's stated that the main use cases for Scripta
 
 This week, we mainly focus on the simplified version of the first use case: to use an SO instance to store **game constants**, accessible by any script.
 
+:::danger
+Scriptable objects are mainly used as **assets** in a project that can be referenced by other assets in the project, and they are serialised into your project. However, they <span className="orange-bold">cannot</span> be modified permanently in the exported build. Any changes would be <span className="orange-bold">reverted</span> when you restart your game as scriptable object are _serialized_ into the asset database and such assets <span className="orange-bold">can not be changed at runtime</span>.
+
+You _can_ change the data it contains, and it will persist throughout your game (between scenes, etc) but you cannot expect it to persist upon restart in your exported build!
+
+> In editor, changes stored in SO persist even after you stop and restart the game so they behave differently.
+
+To properly save various game data, you can use Unity's [Binary Serialization](https://stuartspixelgames.com/2020/07/26/how-to-do-easy-saving-loading-with-binary-unity-c/), [PlayerPrefs](https://docs.unity3d.com/ScriptReference/PlayerPrefs.html), basic Serialization with [JSON files](https://docs.unity3d.com/ScriptReference/JsonUtility.html), or paid asset like [EasySave](https://assetstore.unity.com/packages/tools/utilities/easy-save-the-complete-save-data-serializer-system-768). There are many ways depending on the complexity of the data you save: simple settings like volume level, difficulty level, or primitive data type like `int`, `string`, `float`, or more complex stuffs like an array.
+:::
+
 ## Scriptable Object Template
 
 To begin creating this data container, create a new script under a new directory: `Assets/Scripts/ScriptableObjects/`and call it `GameConstants.cs`. Instead of inheriting MonoBehavior as usual, we let it inherit ScriptableObject:
