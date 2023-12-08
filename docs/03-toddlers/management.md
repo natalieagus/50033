@@ -12,6 +12,12 @@ import TabItem from '@theme/TabItem';
 
 # The Input System
 
+:::caution Lab Checkoff Requrements
+The lab handout uses Super Mario Bros as assets to demonstrate certain Unity features and functionalities. You are free to follow along and submit it for checkoff, **OR you can also create an entirely new project to demonstrate the requested feature(s)**.
+
+The requirement(s) for the lab checkoff can be found [here](./checkoff.md).
+:::
+
 The main purpose of this Lab is to introduce a few tools that can be used to manage the game better. For example, right now we have game states spread all over various scripts, audio source spread everywhere on each object, hard-to-read game logic, etc. We can improve the structure of the game better with the help of AudioMixer, ScriptableObject, Unity Event, and a few other C# basics like Coroutines, Async functions, Singletons, and many more.
 
 :::info
@@ -20,7 +26,9 @@ At the time of this writing, we are using Input System v1.6.3.
 
 The Input System is a newer system offered by Unity to **manage** your game's user input in an easier way. The old is called the `Input Manager`, and that's one that we heave briefly touched (`GetKeyUp`, `GetKeyDown`, etc). This Input System package is a newer, more **flexible** system, which allows you to use any kind of Input Device to control your Unity content, define specific **actions**, watch for specific **interactions**, **process** the actions, and give an overall pleasant management of the user input.
 
-Let's say we have a different input bindings during the gameplay and in the main menu of the game. With The Input System, we can define **Action Maps** for different scenes, while with the old system, we need to manually manage that within our scripts. There also exist other alternatives (e.g: paid assets, using ScriptableObjects) to manage user input. The Input System is simply an **alternative**.
+Let's say we have a different input bindings during the gameplay and in the main menu of the game. With The Input System, we can define **Action Maps** for different scenes, while with the old system, we need to manually manage that within our scripts. There also exist other alternatives (e.g: paid assets, using ScriptableObjects) to manage user input.
+
+<span className="orange-bold">Note that The Input System is simply an **alternative**</span>, and you can definitely utilise both `Input Manager` and The Input System in the same project,
 
 ### Installation
 

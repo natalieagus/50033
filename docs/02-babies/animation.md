@@ -12,6 +12,12 @@ import TabItem from '@theme/TabItem';
 
 # Animation
 
+:::caution Lab Checkoff Requrements
+The lab handout uses Super Mario Bros as assets to demonstrate certain Unity features and functionalities. You are free to follow along and submit it for checkoff, **OR you can also create an entirely new project to demonstrate the requested feature(s)**.
+
+The requirement(s) for the lab checkoff can be found [here](./checkoff.md).
+:::
+
 You can continue from where you left off in the previous Lab. Note that you **need** to finish the previous lab before starting on this one. In this lab we will upgrade our game by adding animation, sound effect, camera movement, and **obstacles** (leveraging on Unity's Physics2D engine) in the game.
 
 ## Mario's Animation

@@ -12,6 +12,12 @@ import TabItem from '@theme/TabItem';
 
 # The Singleton Pattern
 
+:::caution Lab Checkoff Requrements
+The lab handout uses Super Mario Bros as assets to demonstrate certain Unity features and functionalities. You are free to follow along and submit it for checkoff, **OR you can also create an entirely new project to demonstrate the requested feature(s)**.
+
+The requirement(s) for the lab checkoff can be found [here](./checkoff.md).
+:::
+
 When we switch from one game scene to another, we will <span className="orange-bold">destroy</span> all GameObjects (along with its components) in the previous scene. Sometimes we want some GameObjects to persist, or more specifically: its data or state. We can create a script that implement the Singleton pattern so that the GameObject (along with its children) is **not** destroyed upon loading to a new Scene. Note that this will only apply on <span className="orange-bold">root</span> GameObject. Before we begin, create a new scene and name it `World 1-2`. You don't have to follow exactly [how World 1-2 looks](https://nesmaps.com/maps/SuperMarioBrothers/SuperMarioBrosWorld1-2Map.html), but here's a sample:
 
 <ImageCard path={require("./images/singletons/2023-08-20-17-37-39.png").default} widthPercentage="100%"/>
@@ -153,7 +159,7 @@ public class GameManager : Singleton<GameManager>
 }
 ```
 
-This means that the GameManager instance will **not be destroyed** upon scene change. Feel free to adjust the title of the script to suit your own usage. 
+This means that the GameManager instance will **not be destroyed** upon scene change. Feel free to adjust the title of the script to suit your own usage.
 
 ## Changing Scene
 

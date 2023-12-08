@@ -14,6 +14,8 @@ import TabItem from '@theme/TabItem';
 
 :::caution Grading notes
 As usual, the grading for this lab is **binary** (completed or not completed). This means you should implement <span className="orange-bold">all features</span> above to obtain the mark. If you're already experienced with Unity and would like to experiment, you're free to implement similar features. In this checkoff, the feature we are looking for are: meaningful usage of the use of AudioMixer in the game, and allowing the player to increment some kind of score or stats after overcoming an obstacle (can be enemies or alike), as well as utilisation of the Observer Pattern.
+
+Don't worry, we are _lenient_ and will give you the marks as long as we see some form of the requested feature.
 :::
 
 ### Utilize The Input System

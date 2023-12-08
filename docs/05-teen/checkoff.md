@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 :::caution Grading notes
 As usual, the grading for this lab is **binary** (completed or not completed). This means you should implement <span className="orange-bold">all features</span> above to obtain the mark. If you're already experienced with Unity and would like to experiment, you're free to implement similar features. In this checkoff, the feature we are looking for are: **usage** of Scriptable Object Game Architecture, **usage** of Pluggable FSM (must be at least as complex as the checkoff requirements below, similar number of states and transitions etc). Show it clearly in your recording by either showing your inspector for Mario when playing the game, or show us relevant scripts on your code editor for a few seconds.
 
-We <span className="orange-bold">also</span> want you to demonstrate that there exist some kind of collectibles or powerup or buffs that will disappear after a few seconds. Game or level restart must also be demonstrated where every single component goes back to its original state.
+We <span className="orange-bold">also</span> want you to demonstrate that there exist some kind of collectibles or powerup or buffs that will disappear after a few seconds. Game or level restart must also be demonstrated where every single component goes back to its original state. Don't worry, we are _lenient_ and will give you the marks as long as we see some form of the requested feature.
 :::
 
 You are free to utilise whatever you have learned in this topic to implement the following (turn on the volume):

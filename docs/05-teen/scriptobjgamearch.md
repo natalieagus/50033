@@ -12,16 +12,32 @@ import TabItem from '@theme/TabItem';
 
 # ScriptableObject Game Architecture
 
+:::caution Lab Checkoff Requrements
+The lab handout uses Super Mario Bros as assets to demonstrate certain Unity features and functionalities. You are free to follow along and submit it for checkoff, **OR you can also create an entirely new project to demonstrate the requested feature(s)**.
+
+The requirement(s) for the lab checkoff can be found [here](./checkoff.md).
+:::
+
 :::note
 This [amazing talk](https://www.youtube.com/watch?v=raQ3iHhE_Kk) inspires the existence of this section. We simply do not have enough time (unfortunately) to go into every single detailed implementation of common concepts such as game inventory, skill tree, etc but we hope that this quick introduction will point you into the right direction in the future.
 :::
 
-This topic covers an entirely new game architecture which separates data from code to make your game more maintanable and all around pleasant to work with. You can choose to go down the Singleton Path and utilising some SO for parts of your data that is supposed to be persistent. The choice is entirely up to you but we feel that it is our responsibility to introduce you to another great alternative using Scriptable Objects. This will revamp our existing project by quite a lot, but the benefits are worth it:
+This topic covers an entirely new game architecture which separates data from code to make your game more maintanable and all around pleasant to work with. You can choose to go down the Singleton Pattern Path for some appropriate parts of your project and utilise SO Architecture for others. The SO Architecture is <span className="orange-bold">not</span> strictly a replacement for the Singleton Pattern.
+
+For example, Singleton Pattern and static pattern is ideal when you have a cache or repository for frequently accessed data (e.g., a level cache, asset loader, or a global configuration), as they can provide easy access from anywhere in the game without passing references explicitly. Singleton can be helpful to maintain <span className="orange-bold">consistency</span> and <span className="orange-bold">centralize control</span>.
+
+On the other hand, SO Architecture is superior in promoting modularity and reusability, such as when you are creating different enemy types or power-ups, or creating **reusable** systems like event systems, dialogue systems, or inventory management systems that can be easily shared between different game elements. The SO Architecture provide for easy tweaking and tuning without code changes.
+
+The decision regarding which approach to embrace is entirely yours. However, we take it upon ourselves to introduce you to another excellent game architecture leveraging Scriptable Objects. You'll need to overhaul your current lab project, but the advantages make it worthwhile:
 
 - Scenes are clean slates
 - No dependency between Systems and they are modular
 - Prefabs work on their own
 - Pluggable custom components
+
+:::note Prototyping with your project idea
+Since you would have to start prototyping your project anyway, it will be good to apply this week's lab for that. Think about small features in your game that you need to implement as proof of concept. However, feel free to still follow along and use the Mario assets if you want.
+:::
 
 ## Preparation
 

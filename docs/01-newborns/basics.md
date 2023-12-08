@@ -21,6 +21,12 @@ The overarching goal of our labs is to recreate basics this classic platform gam
 
 > If you've never played this game before, [give it a try before proceeding](https://supermarioplay.com).
 
+:::caution Lab Checkoff Requrements
+The lab handout uses Super Mario Bros as assets to demonstrate certain Unity features and functionalities. You are free to follow along and submit it for checkoff, **OR you can also create an entirely new project to demonstrate the requested feature(s)**.
+
+The requirement(s) for the lab checkoff can be found [here](./checkoff.md).
+:::
+
 ## Unity Basics: The Scene
 
 ### GameObject
@@ -83,8 +89,6 @@ Afterwards, in the Sprite Editor, you can define sections of the sprite that you
 <VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-1/mario-sprite-slice.mp4"} widthPercentage="100%"/>
 
 > _Yes, it's tedious._ Don't worry, we will give you pre-sliced sprites later.
-
-
 
 ### Setting up Inputs
 
