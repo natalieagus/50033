@@ -14,6 +14,26 @@ import TabItem from '@theme/TabItem';
 
 The goal of this section is to create some obstacles (breakable boxes, platforms, static blocks, pipes) that exists in Super Mario Bros. Using this, we will learn more about Unity's Physics2D Engine and manage our GameObjects by creating Prefabs (a sort of reusable object).
 
+## Alternative: Unity Tilemap
+
+In this section, we’ll focus on building a 2D platformer using **individual** **sprites** to introduce key concepts like **Physics2D** and character movement, giving us a solid foundation in Unity's 2D game development tools.
+
+:::info
+Sprites serve as the <span className="orange-bold">visual</span> representations for objects, while Physics2D defines their <span className="orange-bold">movement</span>, <span className="orange-bold">collisions</span>, and <span className="orange-bold">interactions</span> in the game world.
+:::
+
+While we'll work with **sprites** for clarity and flexibility, [Unity's Tilemap system](https://learn.unity.com/tutorial/introduction-to-tilemaps) is an excellent alternative for creating grid-based environments efficiently. Once you grasp the basics, you can explore Tilemap to streamline level design and enhance your workflow for more complex projects.
+
+:::note
+**To Use Tilemap:** Tilemap is great for grid-based level design, offering efficient editing, automated tile placement, and optimized performance with fewer draw calls. It's ideal for modular, repetitive environments in 2D platformers.
+
+**Not to Use Tilemap:** For detailed, non-repetitive, or dynamic environments, custom solutions like individual sprites or procedural generation offer more creative freedom but require more effort and may impact performance.
+:::
+
+Super Mario Bros-style games are best suited for Unity's Tilemap system, as it simplifies creating grid-based levels with **reusable** tiles, **built-in collision handling**, and **efficient** performance.
+
+However, we’ll still use Physics2D with sprites here to facilitate learning, as it provides a clear understanding of movement, collisions, and interactions without relying on Tilemap-specific tools.
+
 ## Constraint Z-Rotation
 
 Notice how we always need Mario to stand upright, and not toppling when moving too fast. We definitely do not want Mario to topple when hitting other obstacles as well like this:
@@ -95,7 +115,7 @@ For **layer-based rendering**, we can decide what to be rendered (only a selecti
 
 1. Set `Pipes` GameObject Layer to `Obstacles`.
 2. Set `Obstacles` GameObject Layer to `Obstacles` too.
-3. Set all `Enemies` GameObject Layer to `Enemies`. 
+3. Set all `Enemies` GameObject Layer to `Enemies`.
 
 > Apply it to all their **children**.
 
@@ -242,7 +262,7 @@ Then, add `SpringJoint2D` component, and set the properties as follows:
 Here's a further explanation:
 
 1. We connect the spring to parent's static Rigidbody, and **disable** collision with it (we want to have an "invisible" anchor, we don't want our box to collide with it)
-2. We set the `Connected Anchor` at `(0,1)` (this is local position, or in other words: the position of the anchor relative to the connected Rigidbody's transform). That means to set the anchor of the spring to the connected Rigidbody in `Question-Box-Bounce` at 1 unit away in the y-axis direction from `Question-Box-Bounce`'s position on the Scene. 
+2. We set the `Connected Anchor` at `(0,1)` (this is local position, or in other words: the position of the anchor relative to the connected Rigidbody's transform). That means to set the anchor of the spring to the connected Rigidbody in `Question-Box-Bounce` at 1 unit away in the y-axis direction from `Question-Box-Bounce`'s position on the Scene.
 3. `Distance` is set to `1` because we don't want the spring to shorten once the game starts
 4. `Frequency` and `Damping Ratio` affects the "feel" of the spring
 
