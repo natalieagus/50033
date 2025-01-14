@@ -15,16 +15,16 @@ import TabItem from '@theme/TabItem'
 :::caution Versions
 We are using the following versions of Unity editor, `mono`, `dotnet`, Unity VSCode Extension, and C# VSCode extension:
 
-- [Unity Hub 3.5.0](https://unity.com/download)
+- [Unity Hub 3.11.0](https://unity.com/download)
 - [Unity 2022.3.5f1](https://unity.com/releases/editor/whats-new/2022.3.5)
   - Installed via Unity Hub
   - Sign in to Unity Hub first and manage your personal license
-- [.NET 7.0 Framework](https://dotnet.microsoft.com/en-us/download)
+- [.NET 8.0 Framework](https://dotnet.microsoft.com/en-us/download)
 - [Mono 6.12.0, an open-source .NET runtime](https://www.mono-project.com/download/stable/)
   - Only macOS or Linux users needs this
   - Windows users do NOT need `mono` because Windows (in 2023) already has .NET runtime by default
-- [VSCode Extension C# v1.26.0](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp), OR [v2.1.2 (if you are using the Aug 2023 update)](#aug-update)
-- [VSCode Unity Extension v0.9.0](https://marketplace.visualstudio.com/items?itemName=VisualStudioToolsForUnity.vstuc)
+- [VSCode C# Dev Kit v1.15.34](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)
+- [VSCode Unity v1.0.5 Extension](https://marketplace.visualstudio.com/items?itemName=VisualStudioToolsForUnity.vstuc)
 
 You are free to use other code editors or IDE such as Neovim, **Visual Studio** (easy choice but official support will be dropped by Microsoft for macOS users in 2024) or Monodevelop. Please enable intellisense regardless of which IDE/code editor you are using.
 :::
@@ -33,11 +33,11 @@ Please install all of the above tools before proceeding.
 
 #### Recommendation
 
-:::note macOS or Linux distros
-macOS users are recommended to use Visual Studio Code with the Unity Extension. See [Aug 2023 update](#aug-update).
+:::info macOS or Linux distros
+macOS users are recommended to use Visual Studio Code with the Unity + C# Dev kit extension.
 :::
 
-:::note Windows
+:::info Windows
 Windows users are recommended to use Visual Studio instead of VSC. It will be the **default recommended** version when you install Unity from Unity Hub.
 :::
 
@@ -60,6 +60,10 @@ Then, **import** the asset `mario-lab.unitypackage` you downloaded from the Cour
 
 You should see a list of assets on the Project tab in the Unity editor.
 
+:::warning Unity 6
+You can create new project using the all new Unity 6 in 2025, but note the breaking changes [here](https://docs.unity3d.com/6000.0/Documentation/Manual/UpgradeGuideUnity6.html). Some code won't be able to be copy-pasted as-is, but it is not difficult to figure out the new API. <span className="orange-bold">Don't worry</span>.
+:::
+
 ### Setting up VSCode
 
 Check that `dotnet` and `mono` are installed properly:
@@ -67,9 +71,9 @@ Check that `dotnet` and `mono` are installed properly:
 <ImageCard path={require("./images/installation/cli-check-mono-dotnet.png").default} widthPercentage="70%"/>
 <br/>
 
-If you're using VSCode, ensure that you install the C# VSCode extension (notice the version, to gain access to this old version, click the arrow beside _Uninstall_ and select _Install Another Version_):
+If you're using VSCode, ensure that you install the C# Dev Kit VSCode extension:
 
-<ImageCard path={require("./images/installation/csharp-extension.png").default} widthPercentage="70%"/>
+<ImageCard path={require("/docs/01-newborns/images/installation/images/installation/csharp-extension.png.png").default} widthPercentage="70%"/>
 
 <br/>
 
@@ -83,11 +87,16 @@ Then add the following to your VSCode `settings.json`:
   // only macOS users need mono, Windows users ignore this
   "omnisharp.monoPath": "/Library/Frameworks/Mono.framework/Versions/Current", // change this accordingly to where mono is installed
 
-  // change this accordingly to where dotnet is installed
-  "omnisharp.dotnetPath": "/usr/local/share/dotnet/dotnet",
+  "omnisharp.useModernNet": true,
 
-  "omnisharp.useModernNet": false,
-  "omnisharp.useGlobalMono": "always",
+  // change this where dotnet sdk is installed
+  "omnisharp.sdkPath": "/usr/local/share/dotnet/sdk/8.0.402",
+  // change this to where dotnet binary is located (1 level above)
+  "dotnet.dotnetPath": "/usr/local/share/dotnet",
+
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
 
   // for format on save (automatically)
   "editor.formatOnSave": true,
@@ -120,63 +129,27 @@ You might want to ignore irrelevant files while opening your project with VSCode
     }
 ```
 
-You also need to install Visual Studio Code Editor under Window >> Package Manager in Unity:
+Finally, install the Unity Extension:
 
-<ImageCard path={require("./images/installation/package-manager-install-vscode-editor-support.png").default} widthPercentage="70%"/>
+<ImageCard path={require("/docs/01-newborns/images/installation/2025-01-14-14-29-46.png").default} widthPercentage="70%"/>
 
-And then link VSCode in External Tools tab under Unity's Preferences:
+#### Unity: Install Visual Studio Editor Package
 
-<ImageCard path={require("./images/installation/externaltools-resetarg-regenprojectfiles.png").default} widthPercentage="70%"/>
-<br/>
+Manually update the Visual Studio Editor package in all the Unity projects so that VSCode works with the Unity extension.
 
-:::tip
-The official support for Unity in VSCode has been dropped, so it might be a bit wonky sometimes (VSCode can't find `mono`, etc). Try completely quitting VSCode (<span className="orange-bold">not just closing it</span>) and reopening the files.
-:::
-
-## Update Aug 2023 {#aug-update}
-
-:::caution
-If the above setting with VSCode does not work for you, that's because Visual Studio Code Editor package is no longer actively maintained by Unity, and you might just be unlucky.
-:::
-
-Go to Window >> Package Manager and install Visual Studio Editor instead:
+Go to Window >> Package Manager and install Visual Studio Editor:
 
 <ImageCard path={require("./images/installation/2023-08-25-11-41-33.png").default} widthPercentage="70%"/>
 
 Go to Unity >> Settings and set Visual Studio Code as your external tools:
 
-<ImageCard path={require("./images/installation/2023-08-25-11-43-00.png").default} widthPercentage="70%"/>
+<ImageCard path={require("/docs/01-newborns/images/installation/images/installation/2023-08-25-11-43-00.png.png").default} widthPercentage="70%"/>
 
-Then, go to Visual Studio Code and install the **C#** extension (v2.0.X or above is acceptable):
-<ImageCard path={require("./images/installation/2023-09-12-22-10-46.png").default} widthPercentage="70%"/>
+Generate all `.csproj` files as shown and click **Regenerate Project Files**.
 
-Also install **Unity** extension (at the time of this writing, it's under `preview`):
-<ImageCard path={require("./images/installation/2023-08-25-11-43-49.png").default} widthPercentage="70%"/>
-
-Go to your VSCode UI settings and set dotnet path as the path of your system's dotnet (the one you get when typing `which dotnet` in the terminal, we assume on UNIX-like OS):
-
-<ImageCard path={require("./images/installation/2023-08-25-11-45-01.png").default} widthPercentage="70%"/>
-
-Also update the dotnet sdk path, you can list your sdk as follows:
-
-<ImageCard path={require("./images/installation/2023-08-25-11-46-01.png").default} widthPercentage="70%"/>
-
-And update it in VSCode settings:
-
-<ImageCard path={require("./images/installation/2023-08-25-11-46-15.png").default} widthPercentage="70%"/>
-
-Completely <span className="orange-bold">quit and restart VSCode</span> and reopen your scripts via Unity. Your intellisense should be good to go:
+Finally, Completely <span className="orange-bold">quit and restart VSCode</span> and reopen your scripts via Unity. Your intellisense should be good to go:
 
 <ImageCard path={require("./images/installation/2023-08-25-11-47-40.png").default} widthPercentage="70%"/>
-
-Finally, ensure `settings.json` in VSCode has the following setting regarding `omnisharp`:
-
-```json
-  "omnisharp.projectLoadTimeout": 60,
-
-  // macOS users: since useModernNet is set to true, theres no need to set monoPath anymore
-  "omnisharp.useModernNet": true,
-```
 
 :::important
 Please contact your TA or instructor if you stil cant get your intellisense working, or use another IDE/editor like Visual Studio. Do not program blind for the rest of the semester.

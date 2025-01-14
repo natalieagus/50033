@@ -586,7 +586,7 @@ To be sure that Coroutines always exit especially on destroyed GameObjects, we n
 We cannot return anything in a Coroutine, but async functions can the following return types (thats why we can `await` its results!):
 
 - [Task](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task?view=net-7.0), for an async method that performs an operation but returns no value.
-- [Task<TResult\>](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1?view=net-7.0), for an async method that returns a value.
+- [Task\<TResult\>](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1?view=net-7.0), for an async method that returns a value.
 - `void`, for an event handler.
 
 For example, the following async function returns a `Sprite` placed at a `path`.

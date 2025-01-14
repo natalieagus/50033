@@ -144,7 +144,7 @@ flowchart TD
 | Unity                     | AudioMixer                                                           |
 | Design Pattern            | The Observer Pattern                                                 |
 | C#                        | Delegates, Actions, and UnityEvent                                   |
-| Unity Scripting           | AnimationEvent<T\>Tool                                               |
+| Unity Scripting           | AnimationEvent\<T\>Tool                                              |
 
 ### Week 4: Unity for Children
 

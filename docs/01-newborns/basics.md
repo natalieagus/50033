@@ -229,6 +229,10 @@ To prevent this “sliding” feature that’s not very intuitive for platform g
 
 Add the global variable `maxSpeed` and implement `FixedUpdate()` in `PlayerMovement.cs`.
 
+:::warning Unity 6 .velocity
+**Breaking changes**: use `.linearVelocity` in place of `.velocity` if you use Unity 6
+:::
+
 ```cs
     //highlight-start
     public float maxSpeed = 20;
