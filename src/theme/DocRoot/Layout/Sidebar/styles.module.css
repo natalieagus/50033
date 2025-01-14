@@ -1,5 +1,5 @@
 :root {
-  --doc-sidebar-width: 225px;
+  --doc-sidebar-width: 300px;
   --doc-sidebar-hidden-width: 30px;
 }
 
@@ -10,7 +10,7 @@
 @media (min-width: 997px) {
   .docSidebarContainer {
     display: block;
-    max-width: var(--doc-sidebar-width);
+    width: var(--doc-sidebar-width);
     margin-top: calc(-1 * var(--ifm-navbar-height));
     border-right: 0px solid var(--ifm-toc-border-color);
     will-change: width;
@@ -19,7 +19,7 @@
   }
 
   .docSidebarContainerHidden {
-    max-width: var(--doc-sidebar-hidden-width);
+    width: var(--doc-sidebar-hidden-width);
     cursor: pointer;
   }
 

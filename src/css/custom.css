@@ -115,6 +115,9 @@
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   line-height: 1.75;
   --ifm-font-color-base: #1c1e21;
+
+  /* Sidebar */
+  --ifm-toc-border-color: red !important;
 }
 
 .navbar-transparent {
@@ -350,7 +353,7 @@ h1 {
 }
 
 h2 {
-  margin-top: 4rem !important;
+  margin-top: 3rem !important;
   border: 0;
   border-top: 1px solid var(--ifm-border-color);
   padding-top: 1.5rem;

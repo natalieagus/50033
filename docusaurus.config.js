@@ -1,8 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/duotoneDark");
+const { themes } = require("prism-react-renderer");
+const lightCodeTheme = themes.github;
+const darkCodeTheme = themes.duotoneDark;
 const math = require("remark-math");
 const katex = require("rehype-katex");
 
@@ -32,7 +32,6 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           routeBasePath: "docs",
           admonitions: {
-            tag: ":::",
             keywords: [
               "info",
               "success",
@@ -86,7 +85,6 @@ const config = {
         routeBasePath: "resources",
         sidebarPath: require.resolve("./sidebars.js"),
         admonitions: {
-          tag: ":::",
           keywords: [
             "info",
             "success",
@@ -113,7 +111,6 @@ const config = {
         sidebarPath: require.resolve("./sidebars.js"),
         sidebarCollapsed: false,
         admonitions: {
-          tag: ":::",
           keywords: [
             "info",
             "success",
@@ -222,34 +219,34 @@ const config = {
       },
       footer: {
         // style: "dark",
-        links: [
-          {
-            title: "Course Materials",
-            items: [
-              {
-                label: "Lab Documentation",
-                to: "/docs/syllabus",
-              },
-              // {
-              //   label: "Problem Sets",
-              //   to: "/psets/intro",
-              // },
-              {
-                label: "Resources",
-                to: "/resources/intro",
-              },
-            ],
-          },
-          {
-            title: "Contribute",
-            items: [
-              {
-                label: "GitHub",
-                href: "https://github.com/natalieagus/50033",
-              },
-            ],
-          },
-        ],
+        // links: [
+        //   {
+        //     title: "Course Materials",
+        //     items: [
+        //       {
+        //         label: "Lab Documentation",
+        //         to: "/docs/syllabus",
+        //       },
+        //       // {
+        //       //   label: "Problem Sets",
+        //       //   to: "/psets/intro",
+        //       // },
+        //       {
+        //         label: "Resources",
+        //         to: "/resources/intro",
+        //       },
+        //     ],
+        //   },
+        //   {
+        //     title: "Contribute",
+        //     items: [
+        //       {
+        //         label: "GitHub",
+        //         href: "https://github.com/natalieagus/50033",
+        //       },
+        //     ],
+        //   },
+        // ],
         copyright: `Copyright © ${new Date().getFullYear()} 50.033 Game Design and Development`,
       },
       prism: {
