@@ -55,7 +55,7 @@ flowchart TD
 
 | Topic                  | Details                                                                                                   |
 | ---------------------- | --------------------------------------------------------------------------------------------------------- |
-| Installation           | `mono`, `dotnet`, configuring editor, enabling intellisense                                               |
+| Installation           | `dotnet`, configuring editor, enabling intellisense                                                       |
 | Unity Basics (files)   | Layout arrangements, windows, managing project files                                                      |
 | Unity Basics (scene)   | Adding and editing a scene, add GameObject & elements, create prefabs, use Camera, binding keys for input |
 | Unity Basics (scripts) | C# scripting basics, setting script execution order                                                       |

@@ -13,21 +13,17 @@ import TabItem from '@theme/TabItem'
 # Installation and Setup
 
 :::caution Versions
-We are using the following versions of Unity editor, `mono`, `dotnet`, Unity VSCode Extension, and C# VSCode extension:
+We are using the following versions of Unity editor, `dotnet`, and VSCode extensions:
 
 - [Unity Hub 3.11.0](https://unity.com/download)
 - [Unity 2022.3.5f1](https://unity.com/releases/editor/whats-new/2022.3.5)
+  - Released on July, 2023
   - Installed via Unity Hub
   - Sign in to Unity Hub first and manage your personal license
 - [.NET 8.0 Framework](https://dotnet.microsoft.com/en-us/download)
-- [Mono 6.12.0, an open-source .NET runtime](https://www.mono-project.com/download/stable/)
-  - Only macOS or Linux users needs this
-  - Windows users do NOT need `mono` because Windows (in 2023) already has .NET runtime by default
 - [VSCode C# Dev Kit v1.15.34](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)
 - [VSCode Unity v1.0.5 Extension](https://marketplace.visualstudio.com/items?itemName=VisualStudioToolsForUnity.vstuc)
-
-You are free to use other code editors or IDE such as Neovim, **Visual Studio** (easy choice but official support will be dropped by Microsoft for macOS users in 2024) or Monodevelop. Please enable intellisense regardless of which IDE/code editor you are using.
-:::
+  :::
 
 Please install all of the above tools before proceeding.
 
@@ -66,9 +62,9 @@ You can create new project using the all new Unity 6 in 2025, but note the break
 
 ### Setting up VSCode
 
-Check that `dotnet` and `mono` are installed properly:
+Check that `dotnet` is installed properly:
 
-<ImageCard path={require("./images/installation/cli-check-mono-dotnet.png").default} widthPercentage="70%"/>
+<ImageCard path={require("/docs/01-newborns/images/installation/2025-01-21-23-14-28.png").default} widthPercentage="70%"/>
 <br/>
 
 If you're using VSCode, ensure that you install the C# Dev Kit VSCode extension:
@@ -83,9 +79,6 @@ Then add the following to your VSCode `settings.json`:
 {
   // ... other settings
   "omnisharp.projectLoadTimeout": 60,
-
-  // only macOS users need mono, Windows users ignore this
-  "omnisharp.monoPath": "/Library/Frameworks/Mono.framework/Versions/Current", // change this accordingly to where mono is installed
 
   "omnisharp.useModernNet": true,
 
