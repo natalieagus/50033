@@ -194,7 +194,7 @@ const config = {
             label: "Lab Docs",
           },
           {
-            to: "/resources/intro",
+            to: "/resources/uidb",
             label: "Resources",
             position: "left",
             activeBaseRegex: `/resources/`,
