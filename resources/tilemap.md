@@ -65,12 +65,15 @@ Use **Unity Tilemap** for grid-based layouts where environments follow a structu
 - Particularly useful for <span class="orange-bold">quick level design</span>, allowing us to paint large environments directly in the editor using the Tile Palette.
 - Simplifies collision setup and layering for games with multiple background, foreground, and interactive elements.
 
-> **Example**: _Super Mario Bros, Terraria, Stardew Valley_
-
+:::info Example
+Super Mario Bros, Terraria, Stardew Valley
+:::
 <br/>
 Use **individual sprites** when designing **unique**, **non-repetitive elements** that are not bound to a grid, such as detailed characters, standalone props, or complex objects.
 
 - Sprites are better suited for **freeform** environments or when precise control over placement, animations, or interactions is required
 - They work well in scenes where the focus is on unique visuals or objects that move independently of a grid structure.
 
-> **Example**: _Hollow Knight, Cuphead, Celeste_ (unique environmental feature, hybrid)
+:::info Example
+_Hollow Knight, Cuphead, Celeste_ (unique environmental feature, hybrid)
+:::

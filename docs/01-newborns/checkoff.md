@@ -17,12 +17,12 @@ Once you've implemented everything in this handout, then for **checkoff** you're
 1. Score highlighted
 2. Restart button highlighted
 
-You’re free to implement it in any way you want. It will **not** affect your checkoff score. The grading for this lab is **binary** (completed or not completed). Here's a sample result:
+You’re free to implement it in any way you want. It will **not** affect your checkoff score. The grading for **each** of this lab's feature is **binary** (completed or not completed). Here's a sample result:
 
 <VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-1/complete-checkoff-1.mp4"} widthPercentage="100%"/>
 
 :::caution Grading notes
-The grading for this lab is **binary** (completed or not completed). This means you should implement <span className="orange-bold">all features</span> above to obtain the mark. Don't worry, we are _lenient_ and will give you the marks as long as we see some form of the requested feature.
+The grading for this lab is **binary** (completed or not completed) **for each feature**. This means you should implement each <span className="orange-bold">feature</span> fully to obtain the mark for that feature. Don't worry, we are _lenient_ and will give you the marks as long as we see some form of the requested feature.
 
 If you're already experienced with Unity and would like to experiment, you're free to implement similar features. You can even use your own asset or an entirely new project to demonstrate the requested feature(s). In this checkoff, the feature we are looking for is some kind of "GameOver" screen where everything stops moving and reporting of stats.
 :::
