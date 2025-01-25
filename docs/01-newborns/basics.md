@@ -21,7 +21,7 @@ The overarching goal of our labs is to recreate basics this classic platform gam
 
 > If you've never played this game before, [give it a try before proceeding](https://supermarioplay.com).
 
-:::caution Lab Checkoff Requrements
+:::caution Lab Checkoff Requirements
 The lab handout uses Super Mario Bros as assets to demonstrate certain Unity features and functionalities. You are free to follow along and submit it for checkoff, **OR you can also create an entirely new project to demonstrate the requested feature(s)**.
 
 The requirement(s) for the lab checkoff can be found [here](./checkoff.md).
@@ -33,7 +33,7 @@ The requirement(s) for the lab checkoff can be found [here](./checkoff.md).
 
 Everything you see on the game scene is a **GameObject**. It is the [base class](https://docs.unity3d.com/ScriptReference/GameObject.html) of all entities in the Unity Scene.
 
-**Let’s add Mario to the scene.** Right click in the Hierarchy tab and create a **2D Object** with **Sprite** component (doesn't matter which shape you select). Change its name to “Mario”. Right now Mario doesnt seem like much. We need to do these later:
+**Let’s add Mario to the scene.** Right click in the Hierarchy tab and create a **2D Object** with **Sprite** component (doesn't matter which shape you select). Change its name to “Mario”. Right now Mario doesn't seem like much. We need to do these later:
 
 1. Add Mario Sprite (**image**) to it, so it _looks_ like Mario
 2. **Control** it (move it around): left, right, jump, down (enter pipe)
@@ -65,7 +65,7 @@ Right now we only have one "Mario" GameObject in the scene and that's what the G
 
 #### Projection
 
-There are **two** types of camera projection: Ortographic and Perspective, the name explains itself. Since we are working with 2D side-scrol platform game for these labs, we stick with orthographic projection.
+There are **two** types of camera projection: Orthographic and Perspective, the name explains itself. Since we are working with a 2D side-scrolling platform game for these labs, we stick with orthographic projection.
 
 > [Read more about Camera Component here. ](https://docs.unity3d.com/Manual/class-Camera.html)
 
@@ -138,7 +138,7 @@ public class PlayerMovement : MonoBehaviour
 
 We can implement the **event** functions in the script that’s attached to a particular GameObject. Notice that in the script we created,
 
-- It inherits from MonoBehaviour, the base class from which every _Unity script_ derives. It offers some life cycle functions that makes it easier for us to manage our game.
+- It inherits from MonoBehaviour, the base class from which every _Unity script_ derives. It offers some life cycle functions that make it easier for us to manage our game.
 - It comes with **two** starting functions for you to implement if you want: `Start()` and `Update()`.
 
 `Start()` is always called once in the beginning when the GameObject is instantiated, and then `Update()` is called per frame. **This is where you want to implement your game logic.** The diagram below shows the order of execution of event functions.
@@ -209,7 +209,7 @@ Add the script to Mario: Add Component >> Script >> `PlayerMovement`.
 :::playtest
 You can **test run** that now Mario can be moved to the left and to the right using the keys “a” and “d” respectively. You can change the value of `speed` in Mario's Inspector under Script component.
 
-_However may not feel quite right. We will fix this later but first, lets learn about Unity event functions._
+_However, this may not feel quite right. We will fix this later but first, let's learn about Unity event functions._
 :::
 
 ### RigidBody2D Setting
@@ -218,7 +218,7 @@ _However may not feel quite right. We will fix this later but first, lets learn 
 
 Setting the `BodyType` to `Dynamic` allows the **physics engine to simulate** forces, collisions, etc on the body. Since we’re adding Force to Mario’s body, it will obviously “glide” until the drag forces it to stop. We need to fix this.
 
-> Setting BodyType to `Kinematic` allows movement unders simulation but under very specific user control, that is you want to compute its behavior yourself: simulating Physics under your own rule instead of relying on Unity's Physics engine. Read the documentation [here](https://docs.unity3d.com/Manual/Rigidbody2D-Kinematic.html).
+> Setting BodyType to `Kinematic` allows movement under simulation but under very specific user control, that is you want to compute its behavior yourself: simulating Physics under your own rule instead of relying on Unity's Physics engine. Read the documentation [here](https://docs.unity3d.com/Manual/Rigidbody2D-Kinematic.html).
 
 ### Stop Mario
 
@@ -264,7 +264,7 @@ Add the global variable `maxSpeed` and implement `FixedUpdate()` in `PlayerMovem
 
 ## Make Mario Jump
 
-Let’s make him jump to a fixed height whenever we press the **Spacebar** key once. We can leverage on the physics engine for this, but we need to **enable gravity**. Otherwise we have to make the Kinematics computation ourselves.
+Let’s make him jump to a fixed height whenever we press the **Spacebar** key once. We can leverage on the physics engine for this, but we need to **enable gravity**. Otherwise, we have to make the Kinematics computation ourselves.
 
 > Nobody’s stopping you to do that, but due to time constraints let’s not reinvent the wheel.
 
@@ -400,7 +400,7 @@ You might want to set the Ground Gameobject's Sprite Renderer >> Additional Sett
 
 <ImageCard path={require("./images/basics/2023-07-27-17-09-42.png").default} widthPercentage="100%"/>
 
-You might also want to **group** related gameobjects together as shown in the Screenshot's Hierarchy.
+You might also want to **group** related GameObjects together as shown in the Screenshot's Hierarchy.
 
 Also, you can "drag" and move GameObjects together in the scene.
 
@@ -410,7 +410,7 @@ Here's a speedup recording demonstrating all of the above:
 
 ## Flip Mario
 
-Now let’s fix mario’s facing. If he is going to the left, he should be facing the left side and vice versa. The direction he’s facing should conform to the **last pressed key**.
+Now let’s fix Mario’s facing. If he is going to the left, he should be facing the left side and vice versa. The direction he’s facing should conform to the **last pressed key**.
 
 We can do this by enabling the `flipX` property of its `SpriteRenderer` whenever key “a” is pressed, and disabling it whenever key “d” is pressed. We also have to control the `SpriteRenderer` component via the script. You can pretty much get any component via `GetComponent<type>()` method in the script attached to the game object.
 
@@ -466,7 +466,7 @@ There are many obstacles that can be added to a game: enemies, physical obstacle
 
 ### Goombas
 
-Now its time to create the Enemy.
+Now it's time to create the Enemy.
 
 - Create an empty GameObject onto the scene, name it `Enemies`
 - Create a child GameObject under `Enemy`, name it Goomba:

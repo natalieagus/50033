@@ -145,7 +145,7 @@ Finally, Completely <span className="orange-bold">quit and restart VSCode</span>
 <ImageCard path={require("./images/installation/2023-08-25-11-47-40.png").default} widthPercentage="70%"/>
 
 :::important
-Please contact your TA or instructor if you stil cant get your intellisense working, or use another IDE/editor like Visual Studio. Do not program blind for the rest of the semester.
+Please contact your TA or instructor if you still cant get your intellisense working, or use another IDE/editor like Visual Studio. Do not program blind for the rest of the semester.
 :::
 
 ## Completely Quit and Restart VSCode
