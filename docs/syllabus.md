@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 The contents of these labs are made to teach and stress some learning points and for mere “practice”, e.g: getting used to Unity layout, terminologies, etc.
 
-By no means we claim that they are the best practice, in fact some of the ways may be convoluted and they won’t be done exactly this way by experienced coder but we can’t teach the “best practices” right away because it relies on many prior knowledge.
+By no means we claim that they are the best practice, in fact some of the ways may be convoluted and they won’t be done exactly this way by experienced coders but we can’t teach the “best practices” right away because it relies on many prior knowledge.
 
 :::tip Be respectful
 Experienced programmers: keep in mind that you too were once a _beginner_. You made mistakes, you grow from it. You didn't get to be where you are right now instantly.
@@ -148,7 +148,7 @@ flowchart TD
 
 ### Week 4: Unity for Children
 
-This week we learn how to make multi-scene game and make important instances and values <span className="orange-bold">persist</span> between scenes and gameplay.
+This week we learn how to make a multi-scene game and make important instances and values <span className="orange-bold">persist</span> between scenes and gameplay.
 
 ```mermaid
 flowchart TD
