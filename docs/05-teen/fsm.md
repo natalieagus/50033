@@ -1041,7 +1041,7 @@ Each powerup script needs to set MarioStateController's `currentPowerupType` whe
 </Tabs>
 
 :::playtest
-Changing MarioStateController's `currentPowerupType` member will trigger state transition depending on its `currentState`. When small mario obtains the magic mushroom, he transforms to super mario. If he is damaged by Goomba, he will enter invincible small Mario state where he cant be damaged by Goombas.
+Changing MarioStateController's `currentPowerupType` member will trigger state transition depending on its `currentState`. When small Mario obtains the magic mushroom, he transforms to super Mario. If he is damaged by Goomba, he will enter invincible small Mario state where he can't be damaged by Goombas.
 
 <VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-5/supermario.mp4"} widthPercentage="100%"/>
 :::

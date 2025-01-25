@@ -37,7 +37,7 @@ public class CameraController : MonoBehaviour
 
 ### ViewportToWorldPoint
 
-In the `Start()` method, we need to get the **world** coordinate of the bottom-left point of the Camera’s viewport using `ViewportToWorldPoint`. The camera's viewport has its own **local coordinate sytem**, where `(0,0)` **means** the **bottom left** corner of the Camera's viewport. The reason we do this is because we need to find out what exactly is the width of the camera's **viewport** by taking the difference between the global coordinate of the camera's `bottomLeft` viewport position and Mario's transform `x` position. This way, we can keep the camera "centered" (or focused) on the player.
+In the `Start()` method, we need to get the **world** coordinate of the bottom-left point of the Camera’s viewport using `ViewportToWorldPoint`. The camera's viewport has its own **local coordinate system**, where `(0,0)` **means** the **bottom left** corner of the Camera's viewport. The reason we do this is because we need to find out what exactly is the width of the camera's **viewport** by taking the difference between the global coordinate of the camera's `bottomLeft` viewport position and Mario's transform `x` position. This way, we can keep the camera "centered" (or focused) on the player.
 
 ```cs title="CameraController.cs"
 using System.Collections;
@@ -67,7 +67,7 @@ public class CameraController : MonoBehaviour
 You might find [this documentation](https://docs.unity3d.com/ScriptReference/Camera.ViewportToWorldPoint.html) useful to explain the workings of `ViewportToWorldPoint`. 
 :::
 
-Then under the `Update()` method, the camera constantly follow the player unless it has reached the ends of the game map:
+Then under the `Update()` method, the camera constantly follows the player unless it has reached the ends of the game map:
 
 ```cs title="CameraController.cs"
 using System.Collections;

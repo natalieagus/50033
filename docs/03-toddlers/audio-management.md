@@ -28,7 +28,7 @@ The `MainCamera` is usually the standard object that has `AudioListener` compone
 
 <ImageCard path={require("./images/AudioMixerSignalPath.png").default} widthPercentage="60%"/>
 
-We will not be going in depth about DSP concepts in Audio, and we assume that it is your job to find out which effects are more suitable for your project. However we will still be picking a few examples to illustrate how to utilize the AudioMixer. They include: lowpass and highpass, pitch shifting, reverb, and duck volume.
+We will not be going in depth about DSP concepts in Audio, and we assume that it is your job to find out which effects are more suitable for your project. However, we will still be picking a few examples to illustrate how to utilize the AudioMixer. They include: lowpass and highpass, pitch shifting, reverb, and duck volume.
 
 Click Window » Audio » AudioMixer to have the AudioMixer tab open. Create a new Mixer called "SuperMarioBros".
 
@@ -119,7 +119,7 @@ This configuration means:
 - The volume will go down very quickly (Attack time) at 100 ms and,
 - After the alert has gone below -25db, the backround music should go back to normal somewhat quickly (Release time).
 
-Leave the other properties as is unless you know what they means. Right now we do not need it, and we are confident that you can learn them independently next time when you need it.
+Leave the other properties as is unless you know what they mean. Right now we do not need it, and we are confident that you can learn them independently next time when you need it.
 
 <ImageCard path={require("./images/audio-management/2023-08-16-14-52-24.png").default} widthPercentage="100%"/>
 

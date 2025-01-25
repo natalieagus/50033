@@ -25,7 +25,7 @@ Sprites serve as the <span className="orange-bold">visual</span> representations
 While we'll work with **sprites** for clarity and flexibility, [Unity's Tilemap system](https://learn.unity.com/tutorial/introduction-to-tilemaps) is an excellent alternative for creating grid-based environments efficiently. Once you grasp the basics, you can explore Tilemap to streamline level design and enhance your workflow for more complex projects.
 
 :::note
-**To Use Tilemap:** Tilemap is great for grid-based level design, offering efficient editing, automated tile placement, and optimized performance with fewer draw calls. It's ideal for modular, repetitive environments in 2D platformers.
+**To Use Tilemap:** Tilemap is great for grid-based level design, offering efficient editing, automated tile placement, and optimised performance with fewer draw calls. It's ideal for modular, repetitive environments in 2D platformers.
 
 **Not to Use Tilemap:** For detailed, non-repetitive, or dynamic environments, custom solutions like individual sprites or procedural generation offer more creative freedom but require more effort and may impact performance.
 :::
@@ -92,7 +92,7 @@ Goomba should also be set as a prefab since we will spawn many of them at once. 
 
 ### Unpack Prefab
 
-If you no longer want one of your GameObject to be assosicated with a prefab, simply right click on the GameObject in the Hierarchy and select Prefab >> Unpack Completely:
+If you no longer want one of your GameObject to be associated with a prefab, simply right click on the GameObject in the Hierarchy and select Prefab >> Unpack Completely:
 
 <ImageCard path={require("./images/physics/2023-08-05-13-06-23.png").default} widthPercentage="50%"/>
 

@@ -46,7 +46,7 @@ Please watch the demo below for reference (turn on the sound):
 <VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-2/checkoff2.mp4"} widthPercentage="100%"/>
 
 :::tip
-As shown in the recording above, the question box is comprised of three gameObjects: the parent GameObject called `QuestionBox-Coin`, and two children called `Question-Box` and `Coin`. The spawning of the coin is another animation clip, which triggers an event to play the sound once the coin drops back to the box. The RigidBody type of the `Question-Box` is then set into `Static` to disable the joint. We also apply three edge collider 2D at the parent GameObject `QuestionBox-Coin` so that the spring is not triggered when Mario hits the box from above (or stand on it).
+As shown in the recording above, the question box is comprised of three GameObjects: the parent GameObject called `QuestionBox-Coin`, and two children called `Question-Box` and `Coin`. The spawning of the coin is another animation clip, which triggers an event to play the sound once the coin drops back to the box. The RigidBody type of the `Question-Box` is then set into `Static` to disable the joint. We also apply three edge collider 2D at the parent GameObject `QuestionBox-Coin` so that the spring is not triggered when Mario hits the box from above (or stand on it).
 
 The bouncing brick in the demo video above is implemented using animation rather than Spring Joint, which is easier to control (bounce exactly **once**). We use a hierarchy of GameObject, so that we can control the animation of the **local coordinate** of the Brick and the coin separately.
 

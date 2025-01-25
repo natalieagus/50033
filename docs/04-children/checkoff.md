@@ -38,7 +38,7 @@ Have a main menu and a loading scene (design is up to you) before the main game.
 
 ### Persistent Highscore
 
-Have have a **persistent highscore** that can be reset in the main menu. Persistent means: when stopped and started again in unity editor, the same value stays. You also need to have at least **two** worlds where **current** score can be properly **carried over** (show it).
+Have a **persistent highscore** that can be reset in the main menu. Persistent means: when stopped and started again in unity editor, the same value stays. You also need to have at least **two** worlds where **current** score can be properly **carried over** (show it).
 
 ### Powerup
 

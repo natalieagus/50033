@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 # ScriptableObject Game Architecture
 
-:::caution Lab Checkoff Requrements
+:::caution Lab Checkoff Requirements
 The lab handout uses Super Mario Bros as assets to demonstrate certain Unity features and functionalities. You are free to follow along and submit it for checkoff, **OR you can also create an entirely new project to demonstrate the requested feature(s)**.
 
 The requirement(s) for the lab checkoff can be found [here](./checkoff.md).
@@ -22,7 +22,7 @@ The requirement(s) for the lab checkoff can be found [here](./checkoff.md).
 This [amazing talk](https://www.youtube.com/watch?v=raQ3iHhE_Kk) inspires the existence of this section. We simply do not have enough time (unfortunately) to go into every single detailed implementation of common concepts such as game inventory, skill tree, etc but we hope that this quick introduction will point you into the right direction in the future.
 :::
 
-This topic covers an entirely new game architecture which separates data from code to make your game more maintanable and all around pleasant to work with. You can choose to go down the Singleton Pattern Path for some appropriate parts of your project and utilise SO Architecture for others. The SO Architecture is <span className="orange-bold">not</span> strictly a replacement for the Singleton Pattern.
+This topic covers an entirely new game architecture which separates data from code to make your game more maintainable and all around pleasant to work with. You can choose to go down the Singleton Pattern Path for some appropriate parts of your project and utilise SO Architecture for others. The SO Architecture is <span className="orange-bold">not</span> strictly a replacement for the Singleton Pattern.
 
 For example, Singleton Pattern and static pattern is ideal when you have a cache or repository for frequently accessed data (e.g., a level cache, asset loader, or a global configuration), as they can provide easy access from anywhere in the game without passing references explicitly. Singleton can be helpful to maintain <span className="orange-bold">consistency</span> and <span className="orange-bold">centralize control</span>.
 

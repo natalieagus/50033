@@ -269,7 +269,7 @@ If you set any object in World-1-2 to refer to `Mario` instance there, e.g as su
 
 <ImageCard path={require("./images/singletons/2023-08-23-17-43-35.png").default} widthPercentage="100%"/>
 
-Then, you need to modify `CameraController.cs` to reassign current Scene's mario under `Start` function:
+Then, you need to modify `CameraController.cs` to reassign current Scene's Mario under `Start` function:
 
 ```cs title="CameraController.cs"
     public Transform player; // Mario's Transform
