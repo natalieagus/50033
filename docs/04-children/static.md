@@ -139,7 +139,7 @@ Typically this will be automatically created the moment you create any interacti
 You may not need to reset Mario's position anymore because you have a new Mario instance in World-1-2 that you have placed in the correct starting position. However, the GameManager must do some housekeeping:
 
 1. Remove the HUD when scene changes, this used to be done at `Start()` in GameManager
-2. Set the score to curent score (from World-1-1)
+2. Set the score to current score (from World-1-1)
 
 The GameManager can now subscribe to `activeSceneChanged`:
 

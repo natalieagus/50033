@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 # Animation
 
-:::caution Lab Checkoff Requrements
+:::caution Lab Checkoff Requirements
 The lab handout uses Super Mario Bros as assets to demonstrate certain Unity features and functionalities. You are free to follow along and submit it for checkoff, **OR you can also create an entirely new project to demonstrate the requested feature(s)**.
 
 The requirement(s) for the lab checkoff can be found [here](./checkoff.md).
@@ -216,7 +216,7 @@ Here's the overview of the end product:
 First, create a `mario_die` animation with 4 samples, simply changing the sprite.
 
 - Add `gameRestart` Trigger parameter to Mario's animator
-- Remove "Has Exit Time", we want mario to go back to `idle` state immediately when the game is restarted
+- Remove "Has Exit Time", we want Mario to go back to `idle` state immediately when the game is restarted
 - Add transition between `mario_die` to `mario_idle`
 - and add the `gameRestart` condition to this newly created transition
 
@@ -324,7 +324,7 @@ Our game starts to become a little <span className="orange-bold">messier</span>.
 
 ## Fix gameRestart Bug
 
-When the restart button is pressed while Mario is **NOT** in `mario-die` state in the animator, we will inadvertently set `gameRestart` trigger in the Animator, disallowing `mario-die` clip to play the **next** time he collides with Goomba. What we want is to <span className="orange-bold">consume</span> `gameRestart` trigger in `mario-idle` just in case a player restarts the game while mario isn't dead.
+When the restart button is pressed while Mario is **NOT** in `mario-die` state in the animator, we will inadvertently set `gameRestart` trigger in the Animator, disallowing `mario-die` clip to play the **next** time he collides with Goomba. What we want is to <span className="orange-bold">consume</span> `gameRestart` trigger in `mario-idle` just in case a player restarts the game while Mario isn't dead.
 
 1. Create a transition from mario-idle to mario-idle
 2. Remove HasExitTime
