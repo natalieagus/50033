@@ -7,7 +7,7 @@
 <script src="https://cdn.jsdelivr.net/npm/brython@3.9.5/brython_stdlib.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/50033/assets/css/styles.8a536349.css">
-<script src="/50033/assets/js/runtime~main.274692bd.js" defer="defer"></script>
+<script src="/50033/assets/js/runtime~main.71fe52e7.js" defer="defer"></script>
 <script src="/50033/assets/js/main.791c9768.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -22,7 +22,7 @@
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="audiomixer">AudioMixer<a href="#audiomixer" class="hash-link" aria-label="Direct link to AudioMixer" title="Direct link to AudioMixer">​</a></h2>
 <p><a href="https://docs.unity3d.com/Manual/AudioMixerOverview.html" target="_blank" rel="noopener noreferrer">Unity AudioMixer</a> allows you to route each AudioSource output in your scene, mix, apply effects on any of them and perform mastering. You can apply <strong>effects</strong> such as volume attenuation and pitch altering for each individual AudioSource. For example, you can reduce the background music of the game when there’s a <strong>cutscene</strong> or <strong>conversation</strong>. We can mix any number of input signals from each AudioSource, and have exactly one output in the Scene: the AudioListener usually attached to the MainCamera. The figure below illustrates this scenario, taken from the Official Unity AudioMixer Documentation:</p>
 <section><img src="/50033/assets/images/AudioMixerSignalPath-e786f4b44a116fdb85093ef31e7a0b0f.png" class="center_image_tcFY" style="width:60%"></section>
-<p>We will not be going in depth about DSP concepts in Audio, and we assume that it is your job to find out which effects are more suitable for your project. However we will still be picking a few examples to illustrate how to utilize the AudioMixer. They include: lowpass and highpass, pitch shifting, reverb, and duck volume.</p>
+<p>We will not be going in depth about DSP concepts in Audio, and we assume that it is your job to find out which effects are more suitable for your project. However, we will still be picking a few examples to illustrate how to utilize the AudioMixer. They include: lowpass and highpass, pitch shifting, reverb, and duck volume.</p>
 <p>Click Window » Audio » AudioMixer to have the AudioMixer tab open. Create a new Mixer called &quot;SuperMarioBros&quot;.</p>
 <section><img src="/50033/assets/images/2023-08-16-14-27-46-57d46e4e9e48ecd890e20eb079567c82.png" class="center_image_tcFY" style="width:80%"></section>
 <p>On the left of the AudioMixer window, there are four sections: Mixers, Groups, Snapshot, and Views. The first section is called Mixers, and they contain the overview of all AudioMixers in your Project. The output of each mixer is routed to a Scene’s default Audio Listener typically attached on the Main Camera. You can also route the output of one AudioMixer to another AudioMixer if your project is complex. <a href="https://docs.unity3d.com/Manual/AudioMixerSpecifics.html" target="_blank" rel="noopener noreferrer">Specifics can be found in the official documentation</a>. The right region of the AudioMixer Window is called the <span class="orange-bold">strip view</span>. There&#x27;s only one &quot;bus&quot; called Master right now.</p>
@@ -81,7 +81,7 @@
 <li>The volume will go down very quickly (Attack time) at 100 ms and,</li>
 <li>After the alert has gone below -25db, the backround music should go back to normal somewhat quickly (Release time).</li>
 </ul>
-<p>Leave the other properties as is unless you know what they means. Right now we do not need it, and we are confident that you can learn them independently next time when you need it.</p>
+<p>Leave the other properties as is unless you know what they mean. Right now we do not need it, and we are confident that you can learn them independently next time when you need it.</p>
 <section><img src="/50033/assets/images/2023-08-16-14-52-24-4690c81bf28966229fc6454264abf653.png" class="center_image_tcFY" style="width:100%"></section>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="send-effect">Send Effect<a href="#send-effect" class="hash-link" aria-label="Direct link to Send Effect" title="Direct link to Send Effect">​</a></h4>
 <p>Now the final thing to do is to Send an input to this Duck Volume effect, which is the source that can cause this audio group’s volume to duck. Add a new group called Player Dies under SFX and add the Send effect. Select <strong>Background Sound</strong> as its Receive target and set its send level to 0.00 dB (so the background sound unit can receive the full amount of Player Dies SFX output).</p>
