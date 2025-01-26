@@ -6,7 +6,7 @@ You can contribute by forking this repository and creating pull requests 😊
 
 ## Getting started
 
-1. Clone this project, then `npm install`
+1. Clone this project, then `npm install --legacy-peer-deps`
 2. Afterwards, type `npm start`
 3. You can publish this site to github automatically by pushing this to your `master` branch. See `.github/workflows/deploy.yml` action script
 4. You need to give **read and write** Action permission in your workflow
