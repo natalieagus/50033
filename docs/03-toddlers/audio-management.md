@@ -110,14 +110,14 @@ SFX Reverb has many properties, and it is best if you find presets online to get
 
 ### Duck Volume
 
-Another very useful effect to know is **duck volume.** This allows the group’s volume to automatically reduce when something else is playing **above** a certain threshold. For example, if we want to reduce the background music whenever the player is jumping, we add add Duck Volume effect in Background Sound group, and set its threshold to be -65 dB:
+Another very useful effect to know is **duck volume.** This allows the group’s volume to automatically reduce when something else is playing **above** a certain threshold. For example, if we want to reduce the background music whenever the player is jumping, we add a Duck Volume effect in Background Sound group, and set its threshold to be -65 dB:
 
 This configuration means:
 
 - Any input over -65db will cause the volume to go down (Threshold)
 - The volume will go down by quite a **high** amount (Ratio)
 - The volume will go down very quickly (Attack time) at 100 ms and,
-- After the alert has gone below -25db, the backround music should go back to normal somewhat quickly (Release time).
+- After the alert has gone below -25db, the background music should go back to normal somewhat quickly (Release time).
 
 Leave the other properties as is unless you know what they mean. Right now we do not need it, and we are confident that you can learn them independently next time when you need it.
 
@@ -147,7 +147,7 @@ Test that you can run the game and that all our sound effects are applied as des
 
 For management purposes, we can create **snapshots** and **views**. Snapshot is a saved state of your Audio Mixer, a great way to define moods or themes of the mix and have those moods change as the player progresses through the game. For example, we might want to the parameters of Reverb filter depending on the location of the player. It is more convenient than manually changing all SFX Reverb parameters one by one during runtime through scripts.
 
-You can create a new View by clicking the + button, rename the view and then click to focus on it. Then you can start hiding some groups that you don’t want to see within this view. For example, we want have "SFX Only" View that show only SFX related audio groups, and hide all other groups:
+You can create a new View by clicking the + button, rename the view and then click to focus on it. Then you can start hiding some groups that you don’t want to see within this view. For example, we want to have "SFX Only" View that show only SFX related audio groups, and hide all other groups:
 
 The following shows how to create Snapshots and Views, and <span className="orange-bold">color code</span> your group:
 <VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-3/snapshots-view.mp4"} widthPercentage="100%"/>

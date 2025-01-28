@@ -279,7 +279,7 @@ Once you are satisfied, set `Question-Box-Bounce` as a prefab.
 
 ### Physics Material 2D
 
-We can **create** a Physics Material to adjust the friction and bounce of 2D objects when the collide, then **attach** it to our collider. We don't really need it in this game, but for demonstration purposes, lets create some "bouncy cloud" (called [Lakitu's cloud](https://mario.fandom.com/wiki/Lakitu%27s_Cloud)) for Mario. Create a new `Materials` folder in the Project Window. Then, right click and select Create >> 2D >> Physics Material 2D:
+We can **create** a Physics Material to adjust the friction and bounce of 2D objects when they collide, then **attach** it to our collider. We don't really need it in this game, but for demonstration purposes, lets create some "bouncy cloud" (called [Lakitu's cloud](https://mario.fandom.com/wiki/Lakitu%27s_Cloud)) for Mario. Create a new `Materials` folder in the Project Window. Then, right click and select Create >> 2D >> Physics Material 2D:
 
 <ImageCard path={require("./images/physics/2023-08-05-13-44-06.png").default} widthPercentage="50%"/>
 

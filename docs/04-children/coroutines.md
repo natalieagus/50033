@@ -26,7 +26,7 @@ In certain situations, we might want to spread a sequence of events like procedu
 
 ## C#: Coroutines
 
-A coroutine lets us to spread tasks across several **frames**. It pauses execution and return control to Unity, and then continue where it left off on the following <span className="orange-bold">frame</span>. A normal function like `Update()` cannot do this and must run into completion before returning control to Unity.
+A coroutine lets us spread tasks across several **frames**. It pauses execution and return control to Unity, and then continue where it left off on the following <span className="orange-bold">frame</span>. A normal function like `Update()` cannot do this and must run into completion before returning control to Unity.
 
 Coroutines are very <span className="orange-bold">resource efficient</span> so it's okay to use them for your projects.
 
