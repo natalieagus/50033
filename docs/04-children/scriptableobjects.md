@@ -26,7 +26,7 @@ From the official documentation, it's stated that the main use cases for Scripta
 This week, we mainly focus on the simplified version of the first use case: to use an SO instance to store **game constants**, accessible by any script.
 
 :::danger
-Scriptable objects are mainly used as **assets** in a project that can be referenced by other assets in the project, and they are serialised into your project. However, they <span className="orange-bold">cannot</span> be modified permanently in the exported build. Any changes would be <span className="orange-bold">reverted</span> when you restart your game as scriptable object are _serialized_ into the asset database and such assets <span className="orange-bold">can not be changed at runtime</span>.
+Scriptable objects are mainly used as **assets** in a project that can be referenced by other assets in the project, and they are serialised into your project. However, they <span className="orange-bold">cannot</span> be modified permanently in the exported build. Any changes would be <span className="orange-bold">reverted</span> when you restart your game as scriptable object are _serialised_ into the asset database and such assets <span className="orange-bold">can not be changed at runtime</span>.
 
 You _can_ change the data it contains, and it will persist throughout your game (between scenes, etc) but you cannot expect it to persist upon restart in your exported build!
 

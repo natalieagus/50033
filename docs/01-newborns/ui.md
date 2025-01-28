@@ -60,7 +60,7 @@ Now that we have all of our UI Elements, it's time to do three things:
 2. Stop the game whenever Mario "dies"
 3. Restart the game
 
-One way to “count” a score is to count how many time Mario has successfully jumped over Goomba. To do this, we need to know where Goomba is at all times, and of course the **reference** to the ScoreText GameObject so we can set its FieldValue dynamically at runtime. We also need to know if Mario is **on the ground** or not. We did it before in `PlayerMovement.cs`, but sadly there's **no state management** of any kind as of now, and we need to compute it again here.
+One way to “count” a score is to count how many times Mario has successfully jumped over Goomba. To do this, we need to know where Goomba is at all times, and of course the **reference** to the ScoreText GameObject so we can set its FieldValue dynamically at runtime. We also need to know if Mario is **on the ground** or not. We did it before in `PlayerMovement.cs`, but sadly there's **no state management** of any kind as of now, and we need to compute it again here.
 
 :::info BoxCast
 Let's use another method: [`Physics2D.BoxCast`](https://docs.unity3d.com/ScriptReference/Physics2D.BoxCast.html). The idea is to cast a small box from Mario downwards, and see if there's any Colliders that's being hit. The `layerMask` can be used to detect objects selectively only on certain layers (this allows you to apply the detection only to enemy characters, for example).
@@ -284,7 +284,7 @@ public class EnemyMovement : MonoBehaviour
 </Tabs>
 
 :::playtest
-Now to put everything together, attach the `RestartButtonCallback` method as callback in the RestartButton gameobject. You should be able to now restart the game. The following recording shows the entire process of stopping the game and restarting the game:
+Now to put everything together, attach the `RestartButtonCallback` method as callback in the RestartButton GameObject. You should be able to now restart the game. The following recording shows the entire process of stopping the game and restarting the game:
 
 <VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-1/restart-game.mp4"} widthPercentage="100%"/>
 
