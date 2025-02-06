@@ -123,8 +123,9 @@ Here are the summarized practical implementation tips from both sources:
 3. For large-scale games, Unity’s [Entity Component System (ECS)](https://docs.unity3d.com/Packages/com.unity.entities@1.3/manual/index.html) provides a **data-oriented approach** (as opposed to object-oriented) that significantly improves performance. We are talking thousands or millions of game objects components.
 4. Debugging and profiling tools like Unity’s **Profiler**, **Deep Profiling**, and **Frame Debugger** are essential for identifying bottlenecks and optimizing game performance.
 
-{:.info}
+:::info
 Use **ECS** when you need to handle thousands of game objects efficiently (e.g., mass enemy AI, particle systems, procedural world generation). Use **ScriptableObjects** when you need centralized, reusable game data (e.g., character stats, ability configs, game settings). They can be used together, for example, an ECS system might **process** enemies, but their individual **stats** could be stored in ScriptableObjects.
+:::
 
 ## Conclusion and Further Learning
 
