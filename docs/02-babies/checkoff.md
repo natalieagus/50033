@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 Once you've implemented everything in this handout, then for **checkoff** you're required to add these new features listed below.
 
 :::caution Grading notes
-The grading for this lab is **binary** (completed or not completed) **for each feature**. This means you should implement each <span className="orange-bold">feature</span> fully to obtain the mark for that feature. If you're already experienced with Unity and would like to experiment, you're free to implement similar features. In this checkoff, the feature we are looking for are: to existence of two or more different interactable objects that the player can manipulate, complete with some sound effects.
+The grading for this lab is **binary** (completed or not completed) **for each feature**. This means you should implement each <span className="orange-bold">feature</span> fully to obtain the mark for that feature. If you're already experienced with Unity and would like to experiment, you're free to implement similar features. In this checkoff, the feature we are looking for are: the existence of two or more different interactable objects that the player can manipulate, complete with some sound effects.
 
 Don't worry, we are _lenient_ and will give you the marks as long as we see some form of the requested feature.
 :::
