@@ -63,7 +63,7 @@ This article provides an **overview** of how game programming patterns apply in 
    - Unity Use Case: Centralized service retrieval (e.g., Audio, UI, Input Systems).
    - Reduces direct dependencies and improves modularity.
 
----
+
 
 ## Game Programming Patterns by Robert Nystrom
 
