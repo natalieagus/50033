@@ -297,6 +297,8 @@ Note that there's a difference between `transform.position` (refers to Global co
 
 ### Button Navigation
 
+Unity's EventSystem handles user input, such as mouse clicks, keyboard presses, and controller inputs, particularly when interacting with UI elements (e.g., buttons, sliders, toggles). When you **select** or **interact** with a UI element (like clicking a button), it becomes the currently selected GameObject in the EventSystem. After a button is clicked, you might want to **clear** its focus or **disable** UI navigation completely to prevent unintended reactivation when using controllers or the keyboard .
+
 There exist a property called `Navigation` under Button element. You should set its Navigation to `None`.
 
 <ImageCard path={require("./images/ui/2023-07-28-15-27-09.png").default} widthPercentage="30%"/>
@@ -304,6 +306,14 @@ There exist a property called `Navigation` under Button element. You should set 
 :::important
 This ensures that after you click on the Button once, pressing spacebar does **NOT** trigger the restart button again. You can [read the docs on Navigation Options](https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/script-SelectableNavigation.html) further here.
 :::
+
+Otherwise, you can **manually** clear the current focus or selection of a UI element in the Event System as follows. This clears the currently selected UI and yet still allows UI navigation for other purposes.
+
+```
+using UnityEngine.EventSystems;
+
+EventSystem.current.SetSelectedGameObject(null);
+```
 
 ### Reset Score
 

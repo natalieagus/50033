@@ -12,10 +12,10 @@ import TabItem from '@theme/TabItem';
 
 # Checkoff
 
-Once you've implemented everything in this handout, then for **checkoff** you're required to add one new feature: A "Game Over" screen (can be overlaying canvas that's hidden when game starts) when Mario hits Goomba. In this GameOver screen, we should have:
+Once you've implemented everything in this handout, then for **checkoff** you're required to add one new feature: A "Game Over" screen (can be overlaying canvas that's hidden when game starts) when Mario hits Goomba. In this GameOver screen, we should have the following brought to the player's attention:
 
-1. Score highlighted
-2. Restart button highlighted
+1. Score
+2. Restart button
 
 You’re free to implement it in any way you want. It will **not** affect your checkoff score. The grading for **each** of this lab's feature is **binary** (completed or not completed). Here's a sample result:
 
