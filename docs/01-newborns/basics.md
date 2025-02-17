@@ -233,6 +233,12 @@ Add the global variable `maxSpeed` and implement `FixedUpdate()` in `PlayerMovem
 **Breaking changes**: use `.linearVelocity` in place of `.velocity` if you use Unity 6
 :::
 
+:::note
+You might see Mario not stop when lifting "a" or "d".
+This is because Input.GetKeyUp is in FixedUpdate, which may not run on every frame and cause the input event to be missed.
+We will go through this in the lab review.
+:::
+
 ```cs
     //highlight-start
     public float maxSpeed = 20;
