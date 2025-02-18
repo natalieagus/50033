@@ -143,9 +143,10 @@ There are [**four** different workflows](https://docs.unity3d.com/Packages/com.u
 
 This method allows us to define actions, properties, and interactions via the GUI as shown above, _and then_ instantiate and register callbacks via the script attached to the GameObject we want to control. The documentation related to this section is [here](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.6/manual/Workflow-ActionsAsset.html).
 
-Since we have generated the C# script: `MarioActions.cs` from the Action Asset, we can instantiate it directly in the code under `Start`, then `enable` it. Then we can address the actions directly via `marioActions` as follows and register the callbacks we want. The callback must have the signature: return value `void` and receive one argument of type: `InputAction.CallbackContext`.
+This method utilizes the generated C# script. The generated script: `MarioActions.cs` from the Action Asset can be instantiated it directly in the code under `Start`, then `enable` it. Then we can address the actions directly via `marioActions` as follows and register the callbacks we want. The callback must have the signature: return value `void` and receive one argument of type: `InputAction.CallbackContext`.
 
 ```cs
+// this is a sample code in another script attached to Mario or relevant character for instance
     public MarioActions marioActions;
 
     void Start()
