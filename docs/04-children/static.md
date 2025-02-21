@@ -479,7 +479,7 @@ The override modifier **extends** the **base** class **virtual or abstract** met
 
 TL;DR: If you're expecting **standard** polymorphism behavior, use `virtual` methods in base class and `override` keyword in derived classes, and call `base.methodName()` wherever appropriate.
 
-[Read more about when to use `override` vs new `keyword` here](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords).
+[Read more about when to use `override` vs `new` keyword here](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords).
 :::
 
 <DeepDive>
