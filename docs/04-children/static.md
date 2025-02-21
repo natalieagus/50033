@@ -484,7 +484,7 @@ TL;DR: If you're expecting **standard** polymorphism behavior, use `virtual` met
 
 <DeepDive>
 
-The difference between the two is very apparent in this example, especially when we declare object type `BaseClass` using `DerivedClass` constructor. The output of line `40` will be **different** to the output of line `39`.
+The difference between the two is very apparent in this example, especially when we declare object type `BaseClass` using `DerivedClass` constructor. The output of line `42` will be **different** to the output of line `38`.
 
 ```cs showLineNumbers
 using UnityEngine;
