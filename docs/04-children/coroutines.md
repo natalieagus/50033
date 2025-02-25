@@ -299,11 +299,25 @@ The output:
 
 ### Stopping Coroutines
 
-You can stop any coroutines by using the `StopCoroutine` method, with the name of the `IEnumerator` as string:
+You can stop any coroutines by using the `StopCoroutine` method. There are three ways to do so: with the name of the `IEnumerator` as string put as the parameter, _or_ the reference to the coroutine, _or_ the Coroutine created during `StartCoroutine`. The method you choose should match how you started the Coroutine.
+
+- If a string is used as the argument in `StartCoroutine`, use the string in `StopCoroutine`. This method only works for coroutines with <span class="orange-bold">no parameters</span>
+- If you use the IEnumerator in `StartCoroutine`, use its reference too in `StopCoroutine`.
+- Alternatively, you can use `StopCoroutine` with the Coroutine used for creation.
 
 ```cs
-StopCoroutine("Rescue");
+// Method 1 (string)
+StartCoroutine("Fade")
 StopCoroutine("Fade");
+
+// Method 2 (using reference to the IEnumerator)
+private IEnumerator coroutine;
+coroutine = Rescue("Toad")
+StopCoroutine(coroutine)
+
+// Method 3 (using the Coroutine)
+Coroutine RescueToad = StartCoroutine("Rescue", "Toad")
+StopCoroutine(RescueToad)
 ```
 
 :::note
