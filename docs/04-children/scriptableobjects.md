@@ -165,9 +165,17 @@ public class GameEvent : ScriptableObject
 
 You can then create instances of these events, such as: `PlayerDeathEvent` or `ScoreIncreasedEvent` and use it in a Script (in place of Singleton pattern). An SO can also be used to represent a **state**, e.g: `CurrentScore` if that state is meant to be shared by many instances in the game (read). This allows you to retain the score of your _current progress_ should you exit the game. We will learn more about this next week when we dive deeper into <span className="orange-bold">Scriptable Object Game Architecture</span>.
 
-## Storing Variables
+## Storing Game States or Variables During Editing for Faster Development
 
-In this section, we will mainly discuss the role of SO instances as persistent variable storage container. We can write custom getters and setters to make it more convenient to manage.
+In this section, we will mainly discuss the role of SO instances as persistent variable storage in the editor. We can write custom getters and setters to make it more convenient to manage.
+
+:::important
+**Do not treat SO as Files**
+
+SO are saved as assets in the project (`.asset` files). Any changes made during **runtime** in the Editor can persist because Unity writes data back into `.asset` file. However in a built game, SO do NOT save data between sessions. Once you quit the game, the SO resets to its original values. To save persistent data across sessions in built games, you need to **save to a file** ([JSON](https://docs.unity3d.com/6000.0/Documentation/Manual/json-serialization.html), [PlayerPrefs](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/PlayerPrefs.html)).
+
+Scriptable Objects (SOs) are perfect for **storing** and **tweaking** variables **during development**, because they act as editable assets in the Unity Editor.
+:::
 
 ### C# Method Overloading
 
@@ -271,7 +279,7 @@ You can use `GameScore` in `GameManager` (Singleton) in favour of a private scor
 
 ```
 
-This way, we have a <span className="orange-bold">persistent</span> data storage for our highscore. Simply refer to it via another script, for instance:
+This way, we have a <span className="orange-bold">centralised</span> container for our score and keeping track of highscore _during this gameplay time or in editor_. Simply refer to it via another script, for instance:
 
 ```cs title="HUDManager"
 public class HUDManager : MonoBehaviour
@@ -295,6 +303,24 @@ public class HUDManager : MonoBehaviour
 }
 ```
 
-And we can have highscore reported at the end of a run. This value is <span className="orange-bold">persistent</span> (even if you stop and start the game again):
+And we can have highscore reported at the end of a run. This value is <span className="orange-bold">persistent</span> (even if you stop and start the game again) in the Editor:
 
 <ImageCard path={require("./images/scriptableobjects/2023-09-14-10-33-09.png").default} widthPercentage="100%"/>
+
+However if you would like to make this highscore persistent in build, then as stated, you need to save it to a file. You can use ([JSON](https://docs.unity3d.com/6000.0/Documentation/Manual/json-serialization.html), [PlayerPrefs](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/PlayerPrefs.html)).
+
+## Summary Usage
+
+SOs are data containers used to store and manage structured data without needing a MonoBehaviour. They help keep data organized, reusable, and editable in unity editors. Basic use cases of SOs include:
+
+1. **Configuration data**: store game standard game settings (not player preferences!), such as high/low graphics setting
+2. **Game balance data**: enemy stats, weapon damage, level parameters, numerical formulas that support the economy of the game
+3. **Shared data across scenes**: UI themes, player inventory, localization text
+4. **Protytping and presets**: quickly swap weapons, characters, power-ups, reference prefabs
+5. **Event and messaging system**: Scriptable Object Game Architecture (next lab), to decouple communications between game objects
+
+<span class="orange-bold">Do not use SOs</span> for:
+
+1. Permanent data saving between game runs (close an reopen the build)
+2. Storing scene-specific runtime data since SOs are not per-instance objects but rather they are shared across all instances
+3. Directly holding references to scene objects. SOs exist outside the scenes
