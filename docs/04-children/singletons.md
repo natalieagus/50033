@@ -234,7 +234,7 @@ These instances will be destroyed and **new** one will be created in World-1-2. 
 As a consequence, we need to turn all root GameObjects that refers to World-1-1 GameManager instance into Singletons as well.
 
 1. All scripts on Mario: `PlayerMovement.cs` and `ActionManager.cs` must inherit `Singleton`
-2. All scriupts on Canvas: `HUDManager.cs` must also inherit `Singleton`
+2. All scripts on Canvas: `HUDManager.cs` must also inherit `Singleton`
 
 ### `SceneManager.activeSceneChanged`
 
