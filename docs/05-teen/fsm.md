@@ -18,7 +18,7 @@ We begin by creating a State, Action, and Transition SO. The State SO describes 
 
 We will follow the this basic idea for Mario's state:
 
-<ImageCard path={require("./images/mario-fsm.png").default} customClass="invert-color" widthPercentage="50%"/>
+<ImageCard path={require("/docs/05-teen/images/fsm/images/mario-fsm.png.png").default} customClass="invert-color" widthPercentage="50%"/>
 
 As for Buffs, we have this simple construct:
 
