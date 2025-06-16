@@ -10,7 +10,7 @@ import VideoItem from '@site/src/components/VideoItem';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# 2025
+# Spring 2025
 
 As usual, we conducted a 48-hour game jam as part of our midterm examination. It was a painful process for some, and an exciting process for some others.
 
