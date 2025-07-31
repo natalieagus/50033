@@ -85,3 +85,7 @@ Use these for prototyping, polishing, or exploring game ideas. All sources are U
 | 3D Modular Worlds | [Kenney Modular 3D Kit](https://kenney.nl/assets), [Synty Prototype Pack](https://syntystore.com/)  |
 | UI Design         | [Kenney UI Pack](https://kenney.nl/assets), [Craftpix UI](https://craftpix.net/freebies/)           |
 | Audio             | [Sonniss GDC](https://sonniss.com/gameaudiogdc), [Freesound](https://freesound.org/)                |
+
+## Other Notable Links
+
+1. [Spritesheet Generator](https://liberatedpixelcup.github.io/Universal-LPC-Spritesheet-Character-Generator/)
