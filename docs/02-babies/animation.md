@@ -92,7 +92,7 @@ Then add the following inside `PlayerMovement.cs`:
             faceRightState = false;
             marioSprite.flipX = true;
             //highlight-start
-            if (marioBody.velocity.x > 0.1f)
+            if (marioBody.linearVelocity.x > 0.1f)
                 marioAnimator.SetTrigger("onSkid");
 //highlight-end
         }
@@ -102,13 +102,13 @@ Then add the following inside `PlayerMovement.cs`:
             faceRightState = true;
             marioSprite.flipX = false;
             //highlight-start
-            if (marioBody.velocity.x < -0.1f)
+            if (marioBody.linearVelocity.x < -0.1f)
                 marioAnimator.SetTrigger("onSkid");
                 //highlight-end
         }
 
         //highlight-start
-        marioAnimator.SetFloat("xSpeed", Mathf.Abs(marioBody.velocity.x));
+        marioAnimator.SetFloat("xSpeed", Mathf.Abs(marioBody.linearVelocity.x));
         //highlight-end
     }
 

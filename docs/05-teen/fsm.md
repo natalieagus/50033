@@ -720,7 +720,7 @@ public class PlayerControllerWeek5 : MonoBehaviour, IPowerupApplicable
             updateMarioShouldFaceRight(false);
             //highlight-end
             marioSprite.flipX = !faceRightState;
-            if (marioBody.velocity.x > 0.05f)
+            if (marioBody.linearVelocity.x > 0.05f)
                 marioAnimator.SetTrigger("onSkid");
 
         }
@@ -731,7 +731,7 @@ public class PlayerControllerWeek5 : MonoBehaviour, IPowerupApplicable
             updateMarioShouldFaceRight(true);
             //highlight-end
             marioSprite.flipX = !faceRightState;
-            if (marioBody.velocity.x < -0.05f)
+            if (marioBody.linearVelocity.x < -0.05f)
                 marioAnimator.SetTrigger("onSkid");
         }
     }
