@@ -25,7 +25,7 @@ We are now ready to utilise the new input system to control Mario's movement. Le
 
     void Update()
     {
-        marioAnimator.SetFloat("xSpeed", Mathf.Abs(marioBody.velocity.x));
+        marioAnimator.SetFloat("xSpeed", Mathf.Abs(marioBody.linearVelocity.x));
     }
 
 //highlight-start
@@ -35,7 +35,7 @@ We are now ready to utilise the new input system to control Mario's movement. Le
         {
             faceRightState = false;
             marioSprite.flipX = true;
-            if (marioBody.velocity.x > 0.05f)
+            if (marioBody.linearVelocity.x > 0.05f)
                 marioAnimator.SetTrigger("onSkid");
 
         }
@@ -44,7 +44,7 @@ We are now ready to utilise the new input system to control Mario's movement. Le
         {
             faceRightState = true;
             marioSprite.flipX = false;
-            if (marioBody.velocity.x < -0.05f)
+            if (marioBody.linearVelocity.x < -0.05f)
                 marioAnimator.SetTrigger("onSkid");
         }
     }
@@ -76,7 +76,7 @@ We are now ready to utilise the new input system to control Mario's movement. Le
 
         Vector2 movement = new Vector2(value, 0);
         // check if it doesn't go beyond maxSpeed
-        if (marioBody.velocity.magnitude < maxSpeed)
+        if (marioBody.linearVelocity.magnitude < maxSpeed)
             marioBody.AddForce(movement * speed);
     }
 

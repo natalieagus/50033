@@ -229,9 +229,9 @@ To prevent this “sliding” feature that’s not very intuitive for platform g
 
 Add the global variable `maxSpeed` and implement `FixedUpdate()` in `PlayerMovement.cs`.
 
-:::warning Unity 6 .velocity
+<!-- :::warning Unity 6 .velocity
 **Breaking changes**: use `.linearVelocity` in place of `.velocity` if you use Unity 6
-:::
+::: -->
 
 :::note
 You might see Mario not stop when lifting "a" or "d".
@@ -253,14 +253,14 @@ We will go through this in the lab review.
         if (Mathf.Abs(moveHorizontal) > 0){
             Vector2 movement = new Vector2(moveHorizontal, 0);
             // check if it doesn't go beyond maxSpeed
-            if (marioBody.velocity.magnitude < maxSpeed)
+            if (marioBody.linearVelocity.magnitude < maxSpeed)
                     marioBody.AddForce(movement * speed);
         }
 
         // stop
         if (Input.GetKeyUp("a") || Input.GetKeyUp("d")){
             // stop
-            marioBody.velocity = Vector2.zero;
+            marioBody.linearVelocity = Vector2.zero;
         }
   //highlight-end
   }

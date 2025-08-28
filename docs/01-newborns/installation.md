@@ -15,14 +15,14 @@ import TabItem from '@theme/TabItem'
 :::caution Versions
 We are using the following versions of Unity editor, `dotnet`, and VSCode extensions:
 
-- [Unity Hub 3.11.0](https://unity.com/download)
-- [Unity 2022.3.5f1](https://unity.com/releases/editor/whats-new/2022.3.5)
-  - Released on July, 2023
+- [Unity Hub 3.14.0](https://unity.com/download)
+- [Unity 6000.0.56f1 LTS](https://unity.com/releases/editor/whats-new/6000.0.56f1#installs)
+  - Released on August 2025
   - Installed via Unity Hub
   - Sign in to Unity Hub first and manage your personal license
 - [.NET 8.0 Framework](https://dotnet.microsoft.com/en-us/download)
-- [VSCode C# Dev Kit v1.15.34](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)
-- [VSCode Unity v1.0.5 Extension](https://marketplace.visualstudio.com/items?itemName=VisualStudioToolsForUnity.vstuc)
+- [VSCode C# Dev Kit v1.50.33](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)
+- [VSCode Unity v1.1.3 Extension](https://marketplace.visualstudio.com/items?itemName=VisualStudioToolsForUnity.vstuc)
   :::
 
 Please install all of the above tools before proceeding.
@@ -56,8 +56,8 @@ Then, **import** the asset `mario-lab.unitypackage` you downloaded from the Cour
 
 You should see a list of assets on the Project tab in the Unity editor.
 
-:::warning Unity 6
-You can create new project using the all new Unity 6 in 2025, but note the breaking changes [here](https://docs.unity3d.com/6000.0/Documentation/Manual/UpgradeGuideUnity6.html). Some code won't be able to be copy-pasted as-is, but it is not difficult to figure out the new API. <span className="orange-bold">Don't worry</span>.
+:::warning Unity 6.2
+You can create new project using the all new Unity 6.2 in the fall of 2025, but note the changes [here](https://docs.unity3d.com/6000.2/Documentation/Manual/WhatsNewUnity62.html). Some code might not be able to be copy-pasted as-is, but it is not difficult to figure out the new API. <span className="orange-bold">Don't worry</span>.
 :::
 
 ### Setting up VSCode
