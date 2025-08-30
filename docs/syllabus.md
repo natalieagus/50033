@@ -179,3 +179,7 @@ flowchart TD
 | Design Pattern  | Singletons                                                                                               |
 | Design Pattern  | Delegates, Actions, and Unity Events                                                                     |
 | Unity Scripting | Scriptable Objects                                                                                       |
+
+### Week 5: Unity for Teens
+
+This week we are doing a complete overhaul of game architecture and utilises the Scriptable Object Game Architecture (<span class="orange-bold">SOGA</span>) instead that allows for better modularity and decoupling (minimise dependencies between subcomponents). However it requires quite a big initial investment to set up.
