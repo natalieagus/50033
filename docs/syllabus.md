@@ -183,3 +183,58 @@ flowchart TD
 ### Week 5: Unity for Teens
 
 This week we are doing a complete overhaul of game architecture and utilises the Scriptable Object Game Architecture (<span class="orange-bold">SOGA</span>) instead that allows for better modularity and decoupling (minimise dependencies between subcomponents). However it requires quite a big initial investment to set up.
+
+```mermaid
+flowchart TD
+    U(((Unity)))
+
+    %% SO Architecture
+    U --> SO(Scriptable Objects)
+    SO --> GE(GameEvent<T>)
+    SO --> GEL(GameEventListener<T>)
+    SO --> VAR(SO Variables)
+    U --> MIG(Migration from Singletons)
+    MIG --> CLEAN(Clean scenes)
+    MIG --> DECO(Decoupled systems)
+    MIG --> PREF(Standalone prefabs)
+    MIG --> PLUG(Pluggable components)
+
+    %% FSM
+    U --> FSM(Pluggable FSM)
+    FSM --> SC(StateController)
+    FSM --> MSC(MarioStateController)
+    FSM --> ST(State)
+    ST --> ACT(Action)
+    ST --> EACT(EventAction)
+    ST --> DEC(Decision)
+    DEC --> TRN(Transition)
+
+    %% Example states and assets
+    FSM --> STATES(Small · Super · Fire · InvincibleSmall · Dead)
+    ACT --> ASET(SetupAnimator)
+    ACT --> ACLEAR(ClearPowerup)
+    ACT --> AFIRE(FireAttack)
+    ACT --> AINV(InvincibleAction)
+    DEC --> DTRANS(TransformDecision)
+    DEC --> DCOUNT(CountdownDecision)
+
+
+
+```
+
+<br/>
+
+| Topic            | Details                                                                                                                                                                                   |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Architecture     | ScriptableObject-based **event and data architecture** for modularity and reuse; singletons only where global caches or configuration are appropriate.                                    |
+| SO Event System  | `GameEvent` ScriptableObjects with `GameEventListener` components implement a **publish–subscribe** pattern; call **Raise** to broadcast events decoupled from the sender.                |
+| Persistent Data  | Use ScriptableObject variables (e.g., integers, booleans, object references) so values <span className="orange-bold">persist</span> across scenes and objects without singleton managers. |
+| Migration        | Replace direct `managerInstance.Event.AddListener(...)` calls with: (1) creating SO events, (2) attaching listeners to objects, (3) wiring callbacks and Raise methods in the Inspector.  |
+| FSM Purpose      | Implement a **pluggable finite state machine** using ScriptableObjects to separate state definitions from code, making logic reusable and easy to extend.                                 |
+| FSM Core Types   | **State** (SO with actions, transitions), **Action** (SO behavior unit), **EventAction** (triggered action), **Decision** (SO conditional), **Transition** (links states).                |
+| State Controller | MonoBehaviour that runs the FSM at runtime, tracks current/next states, executes actions, and evaluates transitions.                                                                      |
+| Actions          | ScriptableObjects encapsulating behaviors (e.g., setup, clear, activate ability). Can be reused across states or objects.                                                                 |
+| Decisions        | ScriptableObjects encapsulating conditions (e.g., input detected, timer expired). Drive **state transitions** without hardcoding logic into controllers.                                  |
+| States           | FSMs require a set of states plus a “remain” or “no transition” placeholder; states are modular and swappable.                                                                            |
+| Input & Events   | External input or in-game events connect to trigger **event actions** or state transitions, keeping input handling decoupled from gameplay logic.                                         |
+| Design Patterns  | Apply ScriptableObject architecture for modular systems; use singletons selectively for global services.                                                                                  |
