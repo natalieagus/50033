@@ -117,7 +117,7 @@ Go to Window >> Package Manager and install Visual Studio Editor:
 
 <ImageCard path={require("./images/installation/2023-08-25-11-41-33.png").default} widthPercentage="70%"/>
 
-Go to Unity >> Settings and set Visual Studio Code as your external tools:
+Go to Unity >> Settings (Windows: Edit >> Prefernces) and set Visual Studio Code as your external tools:
 
 <ImageCard path={require("/docs/01-newborns/images/installation/images/installation/2023-08-25-11-43-00.png.png").default} widthPercentage="70%"/>
 
