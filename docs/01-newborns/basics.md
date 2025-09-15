@@ -149,7 +149,7 @@ These event functions run on a single Unity main thread. [Please read the offici
 
 <ImageCard path={"https://docs.unity3d.com/uploads/Main/monobehaviour_flowchart.svg"} customClass={"invert-color"} widthPercentage="100%"/>
 
-Usually we don’t implement all of them. One of the more common ones to implement are: `Start, Update, FixedUpdate, LateUpdate, OnTrigger, OnCollision, OnMouse OnDestroy`, and some internal animation state machines if you use `AnimationControllers`. We will learn that in the next series.
+Usually we don’t implement all of them. One of the more common ones to implement are: `Start, Update, FixedUpdate, LateUpdate, OnTrigger, OnCollision, OnMouse, OnDestroy`, and some internal animation state machines if you use `AnimationControllers`. We will learn that in the next series.
 
 ## Unity 2D Physics Engine
 
