@@ -158,7 +158,7 @@ Usually we don’t implement all of them. One of the more common ones to impleme
 **Let's attempt to move Mario via the script.** Firstly, Add [`Rigidbody2D` component](https://docs.unity3d.com/Manual/class-Rigidbody2D.html) in the **Inspector** and set:
 
 - `Gravity Scale` to `0`,
-- `Linear Drag` to `3`
+- `Linear Damping` to `3`
 - `BodyType` to `Dynamic`
 
 We can then control this component from the script. Add the following code inside `PlayerMovement.cs`:
