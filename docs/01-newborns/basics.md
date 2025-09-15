@@ -293,6 +293,18 @@ We need to add some sort of a “floor” to prevent him from falling down (via 
    - This allows the Collider to follow the SpriteRenderer's tiling properties
 
 3. Add a `Tag` called `Ground`
+
+    - Make a new tag by Inspector >> Tag >> Add Tag... >> `+` under Tags
+    <div style={{ display: "flex" }}>
+        <ImageCard 
+            path={require("./images/basics/KakaoTalk_20250915_184138780.png").default} 
+            widthPercentage="90%" 
+        />
+        <ImageCard 
+            path={require("./images/basics/KakaoTalk_20250915_184326833.png").default} 
+            widthPercentage="90%" 
+        />
+    </div>
 4. Set its `Transform` to:
 
    - Rotation (0,0,0)
