@@ -20,7 +20,8 @@ We are using the following versions of Unity editor, `dotnet`, and VSCode extens
   - Released on August 2025
   - Installed via Unity Hub
   - Sign in to Unity Hub first and manage your personal license
-- [.NET 8.0 Framework](https://dotnet.microsoft.com/en-us/download)
+- [.NET 9.0 Framework](https://dotnet.microsoft.com/en-us/download)
+  - Or if you prefer to used managed .NET version: [.NET Install Tool](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscode-dotnet-runtime)
 - [VSCode C# Dev Kit v1.50.33](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)
 - [VSCode Unity v1.1.3 Extension](https://marketplace.visualstudio.com/items?itemName=VisualStudioToolsForUnity.vstuc)
   :::
@@ -62,35 +63,21 @@ You can create new project using the all new Unity 6.2 in the fall of 2025, but 
 
 ### Setting up VSCode
 
-Check that `dotnet` is installed properly:
+Ensure that all extensions for VSCode above are installed properly. If you use [.NET Install Tool](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscode-dotnet-runtime), you wont need to manage dotnet manually. This is the recommended way. Otherwise, check that `dotnet` is installed properly:
 
 <ImageCard path={require("/docs/01-newborns/images/installation/2025-01-21-23-14-28.png").default} widthPercentage="70%"/>
 <br/>
 
-If you're using VSCode, ensure that you install the C# Dev Kit VSCode extension:
+<!-- If you're using VSCode, ensure that you install the C# Dev Kit VSCode extension:
 
 <ImageCard path={require("/docs/01-newborns/images/installation/images/installation/csharp-extension.png.png").default} widthPercentage="70%"/>
 
-<br/>
+<br/>  -->
 
 Then add the following to your VSCode `settings.json`:
 
 ```json title="[other path]/Code/Usersettings.json"
 {
-  // ... other settings
-  "omnisharp.projectLoadTimeout": 60,
-
-  "omnisharp.useModernNet": true,
-
-  // change this where dotnet sdk is installed
-  "omnisharp.sdkPath": "/usr/local/share/dotnet/sdk/8.0.402",
-  // change this to where dotnet binary is located (1 level above)
-  "dotnet.dotnetPath": "/usr/local/share/dotnet",
-
-  "[csharp]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools"
-  },
-
   // for format on save (automatically)
   "editor.formatOnSave": true,
   "[csharp]": {
@@ -121,10 +108,6 @@ You might want to ignore irrelevant files while opening your project with VSCode
         "**/Temp": true
     }
 ```
-
-Finally, install the Unity Extension:
-
-<ImageCard path={require("/docs/01-newborns/images/installation/2025-01-14-14-29-46.png").default} widthPercentage="70%"/>
 
 #### Unity: Install Visual Studio Editor Package
 
