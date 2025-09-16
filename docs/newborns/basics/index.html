@@ -7,7 +7,7 @@
 <script src="https://cdn.jsdelivr.net/npm/brython@3.9.5/brython_stdlib.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/50033/assets/css/styles.9cdf0fa5.css">
-<script src="/50033/assets/js/runtime~main.6944fd64.js" defer="defer"></script>
+<script src="/50033/assets/js/runtime~main.56cff906.js" defer="defer"></script>
 <script src="/50033/assets/js/main.f69b19a6.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -91,13 +91,13 @@
 <p><code>Start()</code> is always called once in the beginning when the GameObject is instantiated, and then <code>Update()</code> is called per frame. <strong>This is where you want to implement your game logic.</strong> The diagram below shows the order of execution of event functions.</p>
 <div class="theme-admonition theme-admonition-important alert alert--info admonition_WoCw"><div class="admonitionHeading_TMsN"><span class="admonitionIcon_Ibzs"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Important</div><div class="admonitionContent_vXIg"><p>These event functions run on a single Unity main thread. <a href="https://docs.unity3d.com/Manual/ExecutionOrder.html" target="_blank" rel="noopener noreferrer">Please read the official documentation</a>.</p></div></div>
 <section><img src="https://docs.unity3d.com/uploads/Main/monobehaviour_flowchart.svg" class="center_image_tcFY , invert-color" style="width:100%"></section>
-<p>Usually we don’t implement all of them. One of the more common ones to implement are: <code>Start, Update, FixedUpdate, LateUpdate, OnTrigger, OnCollision, OnMouse OnDestroy</code>, and some internal animation state machines if you use <code>AnimationControllers</code>. We will learn that in the next series.</p>
+<p>Usually we don’t implement all of them. One of the more common ones to implement are: <code>Start, Update, FixedUpdate, LateUpdate, OnTrigger, OnCollision, OnMouse, OnDestroy</code>, and some internal animation state machines if you use <code>AnimationControllers</code>. We will learn that in the next series.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="unity-2d-physics-engine">Unity 2D Physics Engine<a href="#unity-2d-physics-engine" class="hash-link" aria-label="Direct link to Unity 2D Physics Engine" title="Direct link to Unity 2D Physics Engine">​</a></h2>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="move-mario">Move Mario<a href="#move-mario" class="hash-link" aria-label="Direct link to Move Mario" title="Direct link to Move Mario">​</a></h3>
 <p><strong>Let&#x27;s attempt to move Mario via the script.</strong> Firstly, Add <a href="https://docs.unity3d.com/Manual/class-Rigidbody2D.html" target="_blank" rel="noopener noreferrer"><code>Rigidbody2D</code> component</a> in the <strong>Inspector</strong> and set:</p>
 <ul>
 <li><code>Gravity Scale</code> to <code>0</code>,</li>
-<li><code>Linear Drag</code> to <code>3</code></li>
+<li><code>Linear Damping</code> to <code>3</code></li>
 <li><code>BodyType</code> to <code>Dynamic</code></li>
 </ul>
 <p>We can then control this component from the script. Add the following code inside <code>PlayerMovement.cs</code>:</p>
