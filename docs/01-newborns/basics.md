@@ -149,7 +149,7 @@ These event functions run on a single Unity main thread. [Please read the offici
 
 <ImageCard path={"https://docs.unity3d.com/uploads/Main/monobehaviour_flowchart.svg"} customClass={"invert-color"} widthPercentage="100%"/>
 
-Usually we don’t implement all of them. One of the more common ones to implement are: `Start, Update, FixedUpdate, LateUpdate, OnTrigger, OnCollision, OnMouse OnDestroy`, and some internal animation state machines if you use `AnimationControllers`. We will learn that in the next series.
+Usually we don’t implement all of them. One of the more common ones to implement are: `Start, Update, FixedUpdate, LateUpdate, OnTrigger, OnCollision, OnMouse, OnDestroy`, and some internal animation state machines if you use `AnimationControllers`. We will learn that in the next series.
 
 ## Unity 2D Physics Engine
 
@@ -158,7 +158,7 @@ Usually we don’t implement all of them. One of the more common ones to impleme
 **Let's attempt to move Mario via the script.** Firstly, Add [`Rigidbody2D` component](https://docs.unity3d.com/Manual/class-Rigidbody2D.html) in the **Inspector** and set:
 
 - `Gravity Scale` to `0`,
-- `Linear Drag` to `3`
+- `Linear Damping` to `3`
 - `BodyType` to `Dynamic`
 
 We can then control this component from the script. Add the following code inside `PlayerMovement.cs`:
