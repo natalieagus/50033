@@ -473,7 +473,7 @@ We do not implement the flipping of Sprite under `FixedUpdate` since it has **no
 :::
 
 :::playtest
-Your Mario will now face right and left accordingly as "a" or "d" key is pressed.
+Your Mario will now face left and right accordingly as "a" or "d" key is pressed.
 
 <VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-1/mario-flip.mp4"} widthPercentage="100%"/>
 :::
