@@ -529,6 +529,7 @@ public class EnemyMovement : MonoBehaviour
         enemyBody.MovePosition(enemyBody.position + velocity * Time.fixedDeltaTime);
     }
 
+    // note that this is Update(), which still works but not ideal. See below.
     void Update()
     {
         if (Mathf.Abs(enemyBody.position.x - originalX) < maxOffset)
@@ -564,6 +565,52 @@ Now is a good time to test. Notice how the Goomba "pushes" Mario. That's because
 
 <VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-1/goomba-setup.mp4"} widthPercentage="100%"/>
 :::
+
+### Update() vs FixedUpdate()
+
+While the above script works, we should've placed the movement logic inside `FixedUpdate()`:
+
+```cs
+// Version A: Update
+void Update() {
+    transform.position += velocity * Time.deltaTime;
+}
+
+// Version B: FixedUpdate
+void FixedUpdate() {
+    enemyBody.MovePosition(enemyBody.position + velocity * Time.fixedDeltaTime);
+}
+
+```
+
+Here are a few points to think about.
+
+**Frame vs Physics timestep**
+
+- Update runs once per rendered frame (variable rate).
+- FixedUpdate runs on the physics timestep (fixed rate, default 50 Hz).
+  _What happens if the framerate is 30 fps vs 120 fps?_
+
+**DeltaTime mismatch**
+
+- In Update, you should use `Time.deltaTime`
+- In FixedUpdate, you should use `Time.fixedDeltaTime`
+  _What happens if you use the wrong one?_
+
+**Collision accuracy**
+
+- Moving a kinematic Rigidbody via transform.position or MovePosition in Update doesn’t line up with the physics solver
+  _Will a fast-moving bullet always detect hitting this object? Or might it “miss”?_
+
+**Jitter & interpolation**
+
+- At high or low frame rates, motion applied in Update can look smooth, but physics interactions (dynamic bodies colliding with it) may jitter
+  _Why do moving platforms sometimes feel “slippery” when coded in `Update`?_
+
+**When Update is OK**
+
+- For purely visual movement (ghost enemies, cutscene props, non-colliding objects).
+  _Can you think of a case where physics accuracy doesn’t matter?_
 
 ### Collision between Goomba and Mario
 
