@@ -26,9 +26,9 @@ Three things will be created automatically for you: Canvas, Text(TMP), and Event
 
 ### TMP Font Asset
 
-We have given you font asset: `Assets/Fonts/prstart.ttf`. To be able to use it, you need to create a new TMP Asset. Right click at `prstart.ttf` in your Project Window, and create new TMP Font Asset. You should end up with `Assets/Fonts/prstart SDF.asset`.
+We have given you font asset: `Assets/Fonts/prstart.ttf`. To be able to use it, you need to create a new TMP Asset. Right click at `prstart.ttf` in your Project Window, and create new TMP Font Asset (SDF). You should end up with `Assets/Fonts/prstart SDF.asset`.
 
-<ImageCard path={require("./images/ui/2023-07-28-11-35-02.png").default} widthPercentage="100%"/>
+<ImageCard path={require("./images/ui/2025-09-18-16-31-22.png").default} widthPercentage="100%"/>
 
 Then, go to the newly created Text GameObject, and change its `Font Asset` property under `TMP - Text(UI)` element into this newly created asset (`prstart SDF`) to use it.
 
