@@ -40,7 +40,7 @@ The Canvas might look rather huge right now in the Scene view, and that's fine. 
 
 ### Button (TMP)
 
-Next, add a Button UI GameObject to the scene. Get some button sprite in `.png` format and drag it to your `Assets/Sprite` folder, and change the button's `Source Image` property on its `Image` element. You can position the button and the Text GameObject you set earlier as shown:
+Next, add a Button UI GameObject to the scene (UI >> Legacy >> `Button`). Get some button sprite in `.png` format and drag it to your `Assets/Sprite` folder, and change the button's `Source Image` property on its `Image` element. You can position the button and the Text GameObject you set earlier as shown:
 
 <VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-1/set-ui.mp4"} widthPercentage="100%"/>
 
