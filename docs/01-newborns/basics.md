@@ -294,17 +294,18 @@ We need to add some sort of a “floor” to prevent him from falling down (via 
 
 3. Add a `Tag` called `Ground`
 
-    - Make a new tag by Inspector >> Tag >> Add Tag... >> `+` under Tags
-    <div style={{ display: "flex" }}>
-        <ImageCard 
-            path={require("./images/basics/KakaoTalk_20250915_184138780.png").default} 
-            widthPercentage="90%" 
-        />
-        <ImageCard 
-            path={require("./images/basics/KakaoTalk_20250915_184326833.png").default} 
-            widthPercentage="90%" 
-        />
-    </div>
+   - Make a new tag by Inspector >> Tag >> Add Tag... >> `+` under Tags
+   <div style={{ display: "flex" }}>
+       <ImageCard 
+           path={require("./images/basics/KakaoTalk_20250915_184138780.png").default} 
+           widthPercentage="90%" 
+       />
+       <ImageCard 
+           path={require("./images/basics/KakaoTalk_20250915_184326833.png").default} 
+           widthPercentage="90%" 
+       />
+   </div>
+
 4. Set its `Transform` to:
 
    - Rotation (0,0,0)
@@ -331,7 +332,7 @@ Use the Size property of Sprite Renderer if you want to adjust the Ground's widt
 
 <ImageCard path={require("./images/basics/2023-07-27-16-01-25.png").default} widthPercentage="100%"/>
 
-Finally, also **add** a `BoxCollider2D` to Mario so that they can "collide" and prevents him from falling to oblivion. You can press `Edit Collider` in the component to adjust the collider edges to match Mario's sprite.
+Finally, also **add** a `BoxCollider2D` to Mario so that they can "collide" and prevents him from falling to oblivion. You can press `Edit Collider` in the component of Mario gameobject to adjust the collider edges to match Mario's sprite.
 
 :::playtest
 Test it and you should see Mario not falling to oblivion anymore.
