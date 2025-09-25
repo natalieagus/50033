@@ -232,7 +232,8 @@ Then it does:
 ### Overlay
 
 This class provides a simple IMGUI panel with toggles for each cheat. It toggles with backtick (\`) to show/hide. Hotkeys (F1, F2, F3, …) flip cheats instantly. Because it reads `_defs` every frame, all cheats (core + extensions) appear automatically.
-<img src="{{ site.baseurl }}//resources/images/cheats/2025-09-25-10-48-50.png"  class="center_seventy"/>
+
+<ImageCard path={require("/resources/images/cheats/2025-09-25-10-48-50.png").default} widthPercentage="100%"/>
 
 ### `Debug.isDebugBuild`
 
@@ -244,7 +245,7 @@ This is a property Unity fills in for us at runtime.
 
 You can set in Build Settings whether you want your game to be made as Development Build (tick the box).
 
-<img src="{{ site.baseurl }}//resources/images/cheats/2025-09-25-10-37-37.png"  class="center_seventy"/>
+<ImageCard path={require("/resources/images/cheats/2025-09-25-10-37-37.png").default} widthPercentage="100%"/>
 
 ## Usage with Polling
 
