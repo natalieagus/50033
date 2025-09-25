@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-resources docs-version-current docs-doc-page docs-doc-id-general/prog-pattern" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">Game Programming Patterns | Game Development and Design</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://natalieagus.github.io/50033/resources/general/prog-pattern"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-resources-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-resources-current"><meta data-rh="true" property="og:title" content="Game Programming Patterns | Game Development and Design"><meta data-rh="true" name="description" content="This section provides curated resources for improving game code structure and maintainability."><meta data-rh="true" property="og:description" content="This section provides curated resources for improving game code structure and maintainability."><link data-rh="true" rel="icon" href="/50033/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://natalieagus.github.io/50033/resources/general/prog-pattern"><link data-rh="true" rel="alternate" href="https://natalieagus.github.io/50033/resources/general/prog-pattern" hreflang="en"><link data-rh="true" rel="alternate" href="https://natalieagus.github.io/50033/resources/general/prog-pattern" hreflang="x-default"><script src="https://cdn.jsdelivr.net/npm/brython@3.9.5/brython.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/brython@3.9.5/brython_stdlib.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/50033/assets/css/styles.9cdf0fa5.css">
+<script src="/50033/assets/js/runtime~main.d3fc6223.js" defer="defer"></script>
+<script src="/50033/assets/js/main.790f11be.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/50033/img/home-logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top navbarHideable_jvwV"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/50033/"><div class="navbar__logo"><img src="/50033/img/home-logo.svg" alt="DDW Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/50033/img/home-logo.svg" alt="DDW Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">50.033</b></a><a class="navbar__item navbar__link" href="/50033/about/intro">About</a><a class="navbar__item navbar__link" href="/50033/docs/syllabus">Lab Docs</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/50033/resources/category/general-resources">Resources</a></div><div class="navbar__items navbar__items--right"><div class="searchBox_H2mL"><div class="navbar__search searchBarContainer_NW3z"><input placeholder="Search" aria-label="Search" class="navbar__search-input" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div><a href="https://github.com/natalieagus/50033" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_eExm"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_RSuS"><div class="sidebarViewport_pYEE"><div class="sidebar_njMd sidebarWithHideableNavbar_wUlq"><a tabindex="-1" class="sidebarLogo_isFc" href="/50033/"><img src="/50033/img/home-logo.svg" alt="DDW Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/50033/img/home-logo.svg" alt="DDW Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"><b>50.033</b></a><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/50033/resources/category/general-resources">General Resources</a><button aria-label="Collapse sidebar category &#x27;General Resources&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/50033/resources/general/uidb">The Game UI Database</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/50033/resources/general/tilemap">Tilemap</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/50033/resources/general/prog-pattern">Game Programming Patterns</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/50033/resources/general/assets-db">Asset Library</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/50033/resources/general/cheats">God Mode for Development</a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/50033/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/50033/resources/category/general-resources"><span itemprop="name">General Resources</span></a><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Game Programming Patterns</span><meta itemprop="position" content="2"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Game Programming Patterns</h1></header>
+<p>This section provides curated resources for improving game code structure and maintainability.</p>
+<p>Programming patterns <strong>enhance</strong> code organization, reusability, and performance while ensuring maintainability. They streamline development, making larger game projects like our 1D project more collaborative and scalable by providing structured, efficient solutions to common coding challenges. It is also easier to finetune during the User Testing stage.</p>
+<p>There are two resources that are recommended:</p>
+<ul>
+<li>Unity’s official blog post on game programming patterns.</li>
+<li><em>Game Programming Patterns</em> book by Robert Nystrom.</li>
+</ul>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="unity-blog-level-up-your-code-with-game-programming-patterns">Unity Blog: &quot;Level Up Your Code with Game Programming Patterns&quot;**<a href="#unity-blog-level-up-your-code-with-game-programming-patterns" class="hash-link" aria-label="Direct link to Unity Blog: &quot;Level Up Your Code with Game Programming Patterns&quot;**" title="Direct link to Unity Blog: &quot;Level Up Your Code with Game Programming Patterns&quot;**">​</a></h2>
+<p>📌 <strong><a href="https://unity.com/blog/games/level-up-your-code-with-game-programming-patterns" target="_blank" rel="noopener noreferrer">Link to article</a></strong></p>
+<p>This article provides an <strong>overview</strong> of how game programming patterns apply in Unity. It includes links to <strong>examples</strong> of practical implementations using Unity&#x27;s ecosystem, as well as best practices to avoid common pitfalls.</p>
+<p><a href="https://github.com/Unity-Technologies/game-programming-patterns-demo" target="_blank" rel="noopener noreferrer">The demo repository can be found here</a>, and the <a href="https://unity.com/resources/level-up-your-code-with-game-programming-patterns" target="_blank" rel="noopener noreferrer">full 100-page e-book can be found here</a>. The demo code is complementary to the book and serves as an excellent resource to explore common programming principles like SOLID and concepts such as KISS and DRY.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="highlighted-patterns--unity-applications"><strong>Highlighted Patterns &amp; Unity Applications</strong><a href="#highlighted-patterns--unity-applications" class="hash-link" aria-label="Direct link to highlighted-patterns--unity-applications" title="Direct link to highlighted-patterns--unity-applications">​</a></h3>
+<ol>
+<li>
+<p><strong>Singleton Pattern</strong></p>
+<ul>
+<li>Useful for managing global states (e.g., Game Manager, Audio Manager).</li>
+<li>Implementing in Unity: Using <code>DontDestroyOnLoad()</code>, thread-safe singletons.</li>
+<li>Caution: Avoid overusing singletons to prevent dependency issues.</li>
+</ul>
+</li>
+<li>
+<p><strong>Object Pooling</strong></p>
+<ul>
+<li>Efficient memory management for frequently spawned objects (e.g., bullets, enemies).</li>
+<li>Unity Implementation: <code>Queue&lt;T&gt;</code>, preloaded GameObjects in a pool.</li>
+<li>Performance benefits: Reduces Garbage Collection (GC) overhead.</li>
+</ul>
+</li>
+<li>
+<p><strong>Event-Driven Architecture (Observer Pattern)</strong></p>
+<ul>
+<li>Ideal for decoupling UI updates, game state changes.</li>
+<li>Unity’s approach: <code>C# Events &amp; Delegates</code>, <code>UnityEvent</code>.</li>
+<li>Example: Player health changes triggering UI updates.</li>
+</ul>
+</li>
+<li>
+<p><strong>Command Pattern</strong></p>
+<ul>
+<li>Used for input handling and undo systems.</li>
+<li>Unity Use Case: Input abstraction via <code>ScriptableObject</code> architecture.</li>
+<li>Benefits: Allows for flexible control remapping and AI-assisted gameplay.</li>
+</ul>
+</li>
+<li>
+<p><strong>State Pattern</strong></p>
+<ul>
+<li>Manages AI behavior, character animations, and game phases.</li>
+<li>Unity Integration: <code>State Machines</code>, <code>Animator Controllers</code>, <code>Switch Case</code> pattern.</li>
+<li>Example: Enemy AI transitioning between patrol, chase, and attack states.</li>
+</ul>
+</li>
+<li>
+<p><strong>Service Locator Pattern</strong></p>
+<ul>
+<li>Alternative to Singletons for dependency management.</li>
+<li>Unity Use Case: Centralized service retrieval (e.g., Audio, UI, Input Systems).</li>
+<li>Reduces direct dependencies and improves modularity.</li>
+</ul>
+</li>
+</ol>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="game-programming-patterns-by-robert-nystrom">Game Programming Patterns by Robert Nystrom<a href="#game-programming-patterns-by-robert-nystrom" class="hash-link" aria-label="Direct link to Game Programming Patterns by Robert Nystrom" title="Direct link to Game Programming Patterns by Robert Nystrom">​</a></h2>
+<p>📌 <strong><a href="https://gameprogrammingpatterns.com/contents.html" target="_blank" rel="noopener noreferrer">Link to book</a></strong></p>
+<p>Game Programming Patterns is a collection of patterns the author found in games that make code <strong>cleaner</strong>, <strong>easier</strong> to understand, and <strong>faster</strong>. He found that many programmers don&#x27;t usually go past Singleton in terms of game architecture, which is a decent architecture but there are far better ones. He curated and polished the best patterns he&#x27;s found in games, listed below.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="recommended-patterns--their-unity-applications"><strong>Recommended Patterns &amp; Their Unity Applications</strong><a href="#recommended-patterns--their-unity-applications" class="hash-link" aria-label="Direct link to recommended-patterns--their-unity-applications" title="Direct link to recommended-patterns--their-unity-applications">​</a></h3>
+<ol>
+<li>
+<p><strong>Game Loop</strong></p>
+<ul>
+<li>Fundamental for structuring update cycles in Unity.</li>
+<li>Unity Implementation: <code>Update()</code>, <code>FixedUpdate()</code>, <code>LateUpdate()</code>.</li>
+<li>Best Practices: Avoid logic in <code>FixedUpdate()</code> unless physics-related.</li>
+</ul>
+</li>
+<li>
+<p><strong>Component Pattern</strong></p>
+<ul>
+<li>Core of Unity’s Entity-Component System (ECS).</li>
+<li>Encourages modular and reusable behaviors (<code>MonoBehaviours</code>).</li>
+<li>Example: Attaching movement, health, and AI components to different entities.</li>
+</ul>
+</li>
+<li>
+<p><strong>Event Queue</strong></p>
+<ul>
+<li>Manages asynchronous game events like cutscenes and UI transitions.</li>
+<li>Unity Implementation: <code>Coroutines</code>, <code>Event Handlers</code>, <code>ScriptableObjects</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Flyweight Pattern</strong></p>
+<ul>
+<li>Optimizes memory usage for repeated objects (e.g., tile maps, projectiles).</li>
+<li>Unity Example: Using <code>ScriptableObjects</code> for shared data instances.</li>
+</ul>
+</li>
+<li>
+<p><strong>Prototype Pattern</strong></p>
+<ul>
+<li>Useful for creating variations of objects efficiently.</li>
+<li>Unity Example: Cloning GameObjects at runtime (<code>Instantiate()</code>).</li>
+</ul>
+</li>
+<li>
+<p><strong>Spatial Partitioning</strong></p>
+<ul>
+<li>Improves performance in large worlds.</li>
+<li>Unity Use Case: Quadtrees, Grid-based partitioning for collision detection.</li>
+</ul>
+</li>
+<li>
+<p><strong>Dirty Flag</strong></p>
+<ul>
+<li>Efficiently updates only necessary changes in large-scale systems.</li>
+<li>Unity Example: UI optimizations, selective game state updates.</li>
+</ul>
+</li>
+<li>
+<p><strong>Bytecode Pattern</strong></p>
+<ul>
+<li>Useful for scripting systems within games.</li>
+<li>Unity Example: Implementing an in-game scripting engine (e.g., Lua, Ink for dialogue).</li>
+</ul>
+</li>
+</ol>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="practical-implementation-tips">Practical Implementation Tips<a href="#practical-implementation-tips" class="hash-link" aria-label="Direct link to Practical Implementation Tips" title="Direct link to Practical Implementation Tips">​</a></h2>
+<p>Here are the summarized practical implementation tips from both sources:</p>
+<ol>
+<li>Decoupling game logic using <code>C# Events &amp; Delegates</code> helps reduce tight coupling, making code more modular and easier to maintain.</li>
+<li>To optimize performance, avoid excessive <code>Update()</code> calls and use <code>Coroutines</code> where appropriate to manage tasks efficiently.</li>
+<li>For large-scale games, Unity’s <a href="https://docs.unity3d.com/Packages/com.unity.entities@1.3/manual/index.html" target="_blank" rel="noopener noreferrer">Entity Component System (ECS)</a> provides a <strong>data-oriented approach</strong> (as opposed to object-oriented) that significantly improves performance. We are talking thousands or millions of game objects components.</li>
+<li>Debugging and profiling tools like Unity’s <strong>Profiler</strong>, <strong>Deep Profiling</strong>, and <strong>Frame Debugger</strong> are essential for identifying bottlenecks and optimizing game performance.</li>
+</ol>
+<div class="theme-admonition theme-admonition-info alert alert--info admonition_WoCw"><div class="admonitionHeading_TMsN"><span class="admonitionIcon_Ibzs"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_vXIg"><p>Use <strong>ECS</strong> when you need to handle thousands of game objects efficiently (e.g., mass enemy AI, particle systems, procedural world generation). Use <strong>ScriptableObjects</strong> when you need centralized, reusable game data (e.g., character stats, ability configs, game settings). They can be used together, for example, an ECS system might <strong>process</strong> enemies, but their individual <strong>stats</strong> could be stored in ScriptableObjects.</p></div></div>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="conclusion-and-further-learning">Conclusion and Further Learning<a href="#conclusion-and-further-learning" class="hash-link" aria-label="Direct link to Conclusion and Further Learning" title="Direct link to Conclusion and Further Learning">​</a></h2>
+<p>Patterns are essential for writing scalable and maintainable game code, but knowing when<span class="orange-bold"></span> and <span class="orange-bold">how</span> to apply them is crucial for effective development.
+Understanding their pros and cons allows us to build efficient, well-structured systems.</p>
+<p>For further learning, the <strong><a href="https://docs.unity3d.com/ScriptReference/" target="_blank" rel="noopener noreferrer">Unity Scripting API</a></strong> provides in-depth documentation, while <strong><a href="https://learn.unity.com/" target="_blank" rel="noopener noreferrer">Unity Learn</a></strong> offers hands-on tutorials. Books like <em>Game Programming Gems</em> (read review on <a href="https://www.reddit.com/r/gamedev/comments/35ptf1/game_programming_gems/?rdt=53994" target="_blank" rel="noopener noreferrer">reddit here</a>) and <em>Clean Code</em> (read <a href="https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29" target="_blank" rel="noopener noreferrer">github gist</a> here) are also valuable resources for mastering game architecture and best coding practices.</p></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/50033/resources/general/tilemap"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Tilemap</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/50033/resources/general/assets-db"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Asset Library</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#unity-blog-level-up-your-code-with-game-programming-patterns" class="table-of-contents__link toc-highlight">Unity Blog: &quot;Level Up Your Code with Game Programming Patterns&quot;**</a><ul><li><a href="#highlighted-patterns--unity-applications" class="table-of-contents__link toc-highlight"><strong>Highlighted Patterns &amp; Unity Applications</strong></a></li></ul></li><li><a href="#game-programming-patterns-by-robert-nystrom" class="table-of-contents__link toc-highlight">Game Programming Patterns by Robert Nystrom</a><ul><li><a href="#recommended-patterns--their-unity-applications" class="table-of-contents__link toc-highlight"><strong>Recommended Patterns &amp; Their Unity Applications</strong></a></li></ul></li><li><a href="#practical-implementation-tips" class="table-of-contents__link toc-highlight">Practical Implementation Tips</a></li><li><a href="#conclusion-and-further-learning" class="table-of-contents__link toc-highlight">Conclusion and Further Learning</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 50.033 Game Design and Development</div></div></div></footer></div>
+</body>
+</html>
