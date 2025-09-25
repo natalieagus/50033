@@ -194,11 +194,13 @@ const config = {
             label: "Lab Docs",
           },
           {
-            to: "/resources/uidb",
+            type: "doc",
+            docsPluginId: "resources",
+            docId: "/category/general-resources",
             label: "Resources",
             position: "left",
-            activeBaseRegex: `/resources/`,
           },
+
           // {
           //   to: "/psets/intro",
           //   label: "Psets",
