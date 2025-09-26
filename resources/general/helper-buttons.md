@@ -368,4 +368,4 @@ public class CharacterCreatorAdvanced : MonoBehaviour
 
 Attach the CharacterCreatorAdvanced script to any GameObject. You should see the following interface. Hopefully that makes your testing easier:
 
-<VideoItem path={"/resources/general/images/helper-buttons/2025-09-26-10-47-19.png"} widthPercentage="100%"/>
+<ImageCard path={require("/resources/general/images/helper-buttons/2025-09-26-10-47-19.png").default} widthPercentage="100%"/>
