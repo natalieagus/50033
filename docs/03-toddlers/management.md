@@ -225,7 +225,7 @@ We can now create a script that implements these methods and attach it at `Mario
     }
 
     // triggered upon performed interaction (custom successful hold)
-    public void OnJumpHold(InputValue value)
+    public void OnJumphold(InputValue value)
     {
         Debug.Log($"OnJumpHold performed with value {value.Get()}");
         // TODO
