@@ -190,7 +190,7 @@ Then:
 
 1. Create AudioSource component at Mario GameObject, and load the `smb_jump-small` AudioClip. Ensure that you disable Play on Awake property.
 2. Then link this AudioSource component to `marioAudio` on the script from the inspector
-3. Open `mario_jump` animation clip, and create an event at timestamp `0:00` as shown in the recording below
+3. Open `mario-jump` animation clip, and create an event at timestamp `0:00` as shown in the recording below
 4. Ensure that `mario-jump` Animation clip Loop Time property is **unticked**
 
 <VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-2/anim-event.mp4"} widthPercentage="100%"/>
@@ -213,16 +213,16 @@ Here's the overview of the end product:
 
 <VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-2/mario-death.mp4"} widthPercentage="100%"/>
 
-First, create a `mario_die` animation with 4 samples, simply changing the sprite.
+First, create a `mario-die` animation with 4 samples, simply changing the sprite.
 
 - Add `gameRestart` Trigger parameter to Mario's animator
 - Remove "Has Exit Time", we want Mario to go back to `idle` state immediately when the game is restarted
-- Add transition between `mario_die` to `mario_idle`
+- Add transition between `mario-die` to `mario-idle`
 - and add the `gameRestart` condition to this newly created transition
 
 <ImageCard path={require("./images/animation/2023-08-03-10-26-52.png").default} widthPercentage="100%"/>
 
-Also, make sure to **turn off** `Loop Time` in `mario_die` animation clip. This is because we don't want the clip to loop and just play it once.
+Also, make sure to **turn off** `Loop Time` in `mario-die` animation clip. This is because we don't want the clip to loop and just play it once.
 
 <ImageCard path={require("./images/animation/2023-08-03-10-28-16.png").default} widthPercentage="50%"/>
 
@@ -289,7 +289,7 @@ Then head to `PlayerMovement.cs` and edit the `OnTriggerEnter2D` and `ResetGame`
     }
 ```
 
-The idea is not to immediately stop time when Mario collides with Goomba but to play the animation first for about 1 second before stopping time, to give enough time for the Physics engine to simulate the effect of `deathImpulse`. We also have the **state** `alive` to prevent collision with Goomba to be re-triggered. Then create **two events** in `mario_die` animation, one to trigger `PlayDeathImpulse` and the other to trigger `GameOverScene`. Hook it up to the respective functions in `PlayerMovement.cs`. Also, do not forget to link up the `AudioClip` (`MarioDeath`) in the Inspector:
+The idea is not to immediately stop time when Mario collides with Goomba but to play the animation first for about 1 second before stopping time, to give enough time for the Physics engine to simulate the effect of `deathImpulse`. We also have the **state** `alive` to prevent collision with Goomba to be re-triggered. Then create **two events** in `mario-die` animation, one to trigger `PlayDeathImpulse` and the other to trigger `GameOverScene`. Hook it up to the respective functions in `PlayerMovement.cs`. Also, do not forget to link up the `AudioClip` (`MarioDeath`) in the Inspector:
 
 <VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-2/setup-death-script.mp4"} widthPercentage="100%"/>
 
