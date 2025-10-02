@@ -371,3 +371,17 @@ Here's a quick video for your reference:
 :::caution For reference only
 Your actual implementation might differ and that's alright, so don't be alarmed. As long as the game works as intended with this new architecture, that's fine.
 :::
+
+## Summary
+
+A `UnityEvent` field on a `MonoBehaviour` is basically a container of listeners stored in that component instance. When the component is destroyed or disabled, that “container” (and all the registered listeners) goes away with it.
+
+On the other hand, the `GameEvent<T>` ScriptableObject is a **shared** event channel asset.
+
+- Listeners live inside the channel asset that _all_ scenes can share
+- The event channel asset persists across scenes and can be reused anywhere
+
+:::success Learning Point
+**UnityEvent**: _listeners live inside the scene instance_
+**ScriptableObject GameEvent**: _listeners live inside the channel asset that all scenes can share_
+:::
