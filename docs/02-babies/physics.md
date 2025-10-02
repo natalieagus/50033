@@ -66,14 +66,10 @@ The <span className="orange-bold">problem</span> is that we have **so many copie
 
 > From the [documentation](https://docs.unity3d.com/Manual/Prefabs.html): Unity’s Prefab system allows you to **create**, **configure**, and **store** a GameObject complete with all its components, property values, and child GameObjects as a <span className="orange-bold">reusable</span> Asset. The Prefab Asset acts as a template from which you can create new Prefab instances in the Scene.
 
-:::caution warning
-Please do not skip the [documentation](https://docs.unity3d.com/Manual/Prefabs.html) and read them carefully.
-:::
-
 We have the `Brick` and `Question Box` prefab now, and we can duplicate it across the Scene wherever we want to spawn it. Also, [a change made in the **Prefab** in the **Prefab Mode**](https://docs.unity3d.com/Manual/EditingInPrefabMode.html) will be applied across all prefabs. You can still however have Prefab [variants](https://docs.unity3d.com/Manual/PrefabVariants.html) or [override](https://docs.unity3d.com/Manual/PrefabInstanceOverrides.html) existing Prefab in the Scene if you want it to differ slightly from the base prefab template.
 
-:::warning
-Setting the Prefab changes via the Scene instead of Prefab Mode only applies to that instance of that Prefab. This discrepancy is highlighted clearly in the Hierarchy. You can then choose to update the prefab to follow your changes.
+:::caution warning
+Please do not skip the [documentation](https://docs.unity3d.com/Manual/Prefabs.html) and read them carefully.
 :::
 
 ### Pipes
@@ -122,6 +118,10 @@ For **layer-based rendering**, we can decide what to be rendered (only a selecti
 3. Set all `Enemies` GameObject Layer to `Enemies`.
 
 > Apply it to all their **children**.
+
+:::warning
+Setting the Prefab changes via the Scene instead of Prefab Mode only applies to that instance of that Prefab. This discrepancy is highlighted clearly in the Hierarchy. You can then choose to update the prefab to follow your changes.
+:::
 
 Then open **Project Settings** (Edit >> Project Settings) and set the collision matrix as such. If you untick the boxes that means Unity will ignore collisions between those layers:
 
