@@ -103,7 +103,13 @@ We also utilise some Scriptable Objects to manage data assets (like score) that 
 
 In this new game architecture, we take everything one step further to promote a more modular and decoupled architecture. There's **no** interaction between scripts (well, at least not between scripts of unrelated gameObjects, interaction between scripts in the same perfab is understandable).
 
-We first create various `GameEvents` based on Scriptable Objects. Each instance can subscribe to it `OnEnable()`, and unsubscribe from it `OnDisable()`. As per the previous lab, we also use SO to store persistent data so that new instances in the next scene can load values from there. This way, we do not need to implement any object as a Singleton.
+We first create various `GameEvents` based on Scriptable Objects. Each instance can subscribe to it `OnEnable()`, and unsubscribe from it `OnDisable()`. As per the previous lab, we also use SO to store persistent runtime data so that new instances in the next scene can load values from there. This way, we do not need to implement any object as a Singleton.
+
+:::note  
+Creating events and storing it in SO as opposed to creating UnityEvents allow us to _store_ references of listeners without having to tie the events onto an existing GameObject on the Scene.
+
+This is actually the main reason the ScriptableObject-based event pattern exists. It <span class="orange-bold">decouples</span> the event system from specific scene objects.
+:::
 
 A sketch of the architecture is as follows:
 
