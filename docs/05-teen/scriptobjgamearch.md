@@ -186,9 +186,26 @@ public class GameEventListener<T> : MonoBehaviour
 </TabItem>
 </Tabs>
 
-These are currently of a `generic` type because `UnityEvent` can have any varying signature: zero parameter, one parameter, etc. For the sake of the lab, we need at least three different types: no argument, a single `int` type argument, and a single `IPowerup` type argument. For each type, we need a pair of scripts: the GameEvent and the GameEventListener variant.
+These are currently of a `generic` type because `UnityEvent` can have any varying signature: zero parameter, one parameter, etc.
 
-The following creates the "no argument" variant:
+#### Create Subclasses that Pins `T`
+
+The goal of this architecture is to conveniently add the listener script as components and then drag and drop the SO events via the inspector to link up the callbacks as such:
+
+<ImageCard path={require("/docs/05-teen/images/scriptobjgamearch/2025-10-02-09-17-51.png").default} widthPercentage="100%"/>
+
+However, you <span class="red-bold">cannot</span> drag a `GameEvent<T>` into the Inspector unless `T` is already known (Unity can’t serialize open generic fields).
+
+- By subclassing, you “fix” the generic parameter at design time
+- Unity then treats IntGameEvent or `SimpleGameEvent` like any other ScriptableObject asset
+
+:::info
+Unity won’t show open generics in the Inspector. You always need to give it a **concrete** type. Therefore you need a subclass that pins `T`.
+:::
+
+For the sake of the lab, we need at least _three_ different types: no argument, a single `int` type argument, and a single `IPowerup` type argument. For each type, we need a pair of scripts: the GameEvent and the GameEventListener variant.
+
+The following creates the "no argument" (custom `Void`) variant:
 
 <Tabs>
 <TabItem value="1" label="SimpleGameEvent.cs">
@@ -197,11 +214,15 @@ The following creates the "no argument" variant:
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+public class Void { } // dummy class
 // no arguments
 [CreateAssetMenu(fileName = "SimpleGameEvent", menuName = "ScriptableObjects/SimpleGameEvent", order = 3)]
-public class SimpleGameEvent : GameEvent<Object>
+public class SimpleGameEvent : GameEvent<Void>
 {
- // leave empty
+    // create new method that doesn't accept any argument
+    // calls base' Raise with Void arg
+    public void Raise() => Raise(new Void()); // automatically create new Void data instead
 }
 ```
 
@@ -214,7 +235,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleGameEventListener : GameEventListener<Object>
+public class SimpleGameEventListener : GameEventListener<Void>
 {
 
 }
@@ -223,7 +244,7 @@ public class SimpleGameEventListener : GameEventListener<Object>
 </TabItem>
 </Tabs>
 
-Do the same for the other two types.
+Do the same for the other two types (`int` and `IPowerup`).
 
 <VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-5/setup-events.mp4"} widthPercentage="100%"/>
 
@@ -256,7 +277,11 @@ Once created, each `GameEvent` serves as a "container" that store a list of Game
 
 The `Event` field of the SimpleGameEventListener script is linked to `OnGameRestart` SO GameEvent, and as its `Response`, we register `CameraController`'s `GameRestart()` method. When another script calls `OnGameRestart.Raise()`, this will automatically cause `OnGameRestart` to loop through its `SimpleEventGameListeners` and call `OnEventRaised()` on it. This will then trigger `Response.Invoke()` where `Response` contains `GameRestart()` method from `CameraController`. Finally, the method `GameRestart()` is performed on the `CameraController`'s <span className="orange-bold">instance</span>.
 
-What is this _other_ script who can call `OnGameRestart.Raise()`? One possible candidate is the `RestartButtonController`. We can have a following script:
+### Raising the GameEvent
+
+#### Method 1: Using UnityEvent (No Params)
+
+What is this _other_ script who can call `OnGameRestart.Raise()`? One possible candidate is the `RestartButtonController`. We can have a following script that leverages on UnityEvent:
 
 ```cs title="RestartButtonController.cs"
 
@@ -273,12 +298,47 @@ Attach this to the restart Button, and set `ButtonClick()` as the callback of th
 
 <ImageCard path={require("./images/scriptobjgamearch/2023-09-22-16-25-30.png").default} widthPercentage="100%"/>
 
-Now you can ask Mario and Goomba to do the same: attach a SimpleGameEvent script to both gameObjects, with `events` field referring to SO `OnGameRestart` and a `GameRestart()` callback in each of its controller as follows. The video below also shows that each gameObject (e.g: Mario) can contain multiple `GameEventListeners` so that you can register various callbacks from any script in that gameObject.
+Basically in the Inspector, you drag in your `SimpleGameEvent` ScriptableObject instance (e.g. `OnGameRestart`):
+
+- Then you hook up `SimpleGameEvent.Raise` to be called.
+- Since SimpleGameEvent inherits from `GameEvent<Object>`, its `Raise(Object data)` method needs an argument.
+- UnityEvents can’t supply null automatically, so you usually either:
+  - Set the argument in the inspector (often just `None` if you don’t care), or
+  - Make a `Raise()` overload in `SimpleGameEvent` that ignores data and just raises with null.
+
+Now you can make Mario and Goomba GameObject to do the same: attach a SimpleGameEvent script to both gameObjects, with `events` field referring to SO `OnGameRestart` and a `GameRestart()` callback in each of its controller as follows. The video below also shows that each gameObject (e.g: Mario) can contain multiple `GameEventListeners` so that you can register various callbacks from any script in that gameObject.
 
 <VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/week-5/game-restart.mp4"} widthPercentage="100%"/>
 
+<br/>
+#### Method 2: Direct Reference Approach
+
+```cs title="PlayerController.cs"
+public GameEvent<Object> onDamagePlayer;
+
+  void OnTriggerEnter2D(Collider2D other)
+  {
+      if (other.gameObject.CompareTag("Player"))
+      {
+          onDamagePlayer.Raise();
+      }
+  }
+```
+
+Here you hold a direct reference to the `GameEvent<Object>` asset (in the inspector you assign the `OnDamagePlayer` SO).
+
+- You can now `raise` it in code directly, passing arguments as the payload: in this case since `onDamagePlayer` is an event of `Void` type then we don't pass any arguments.
+- Listeners get that reference in their callback.
+  <br/>
+
+#### Key Distinction
+
+Using `UnityEvent` decouples code from the event system. The Button just says “when clicked, call whatever I wired up in the inspector.” You can assign `SimpleGameEvent.Raise` with or without arguments. More designer-friendly.
+
+Using `GameEvent` field in code results in **tighter** coupling. You’re explicitly saying “this script raises this event.” You can pass contextual data (this, some ScriptableObject, etc.) at runtime.
+
 :::note
-It is <span className="red-bold">important</span> for you to be able to trace properly the chain of events that make this works. The following diagram illustrates what actually happened from the moment restart button is clicked to the moment all `GameRestart()` functions in the scripts attached to Mario, Camera, and all Goombas are called:
+Regardless of which method you choose, it is <span className="red-bold">important</span> for you to be able to trace properly the chain of events that make this works. The following diagram illustrates what actually happened from the moment restart button is clicked to the moment all `GameRestart()` functions in the scripts attached to Mario, Camera, and all Goombas are called:
 
 <ImageCard path={require("./images/gamerestart-soga.png").default} customClass="invert-color" widthPercentage="100%"/>
 :::
@@ -287,8 +347,8 @@ It is <span className="red-bold">important</span> for you to be able to trace pr
 
 Now that you know how ScriptableObject Event System work, carefully migrate your entire project (all scenes) to adopt this new event system.
 
-- Delete each old `GameManager.instance.[event].AddListener(CallbackMethod)` line, and replace it by attaching the corresponding `GameEventListener` script to the GameObject
-- Ensure that you select the correct `GameEventListener` type (no argument, `int`, or `IPowerup` type argument)
+- Delete <span class="orange-bold">each</span> old `GameManager.instance.[event].AddListener(CallbackMethod)` line, and replace it by attaching the corresponding `GameEventListener` script to the GameObject
+- Ensure that you select the correct `GameEventListener` type (no argument `Void`, `int`, or `IPowerup` type argument)
 - Link up the right `GameEvent` in the Inspector to match that `[event]` you are replacing
 - Link up `CallbackMethod` at the `GameEventListener` Inspector. Make sure that this method is <span className="orange-bold">public</span>
 
