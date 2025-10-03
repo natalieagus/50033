@@ -179,7 +179,7 @@ For instance, let's say we want to play a sound effect whenever Mario jumps. Fir
     // for audio
     public AudioSource marioAudio;
 
-        void PlayJumpSound()
+    void PlayJumpSound()
     {
         // play jump sound
         marioAudio.PlayOneShot(marioAudio.clip);
