@@ -231,9 +231,31 @@ Then, **serialize** the three events: Jump, JumpHold, and MoveCheck at the inspe
 
 <ImageCard path={require("./images/management/2023-08-11-16-09-48.png").default} widthPercentage="100%"/>
 
+### Unity EventSystem Argument Binding Modes
+
 Don't forget to use **Dynamic** parameter:
 
 <ImageCard path={require("./images/management/2023-08-11-16-10-15.png").default} widthPercentage="100%"/>
+
+Formally, Unity refers to this behavior as _Dynamic_ vs _Persistent_ (**Static**) parameter binding in the Inspector UnityEvent drawer.
+
+| Term                           | Unity’s internal concept                       | Description                                                                                                                                                                                                                                                                                                                                                                                    |
+| ------------------------------ | ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Dynamic**                    | **Dynamic Listener**                           | The listener method’s parameter <span class="orange-bold">matches</span> the event’s generic type (e.g. `UnityEvent<float>` calls `void OnChange(float value)`). The event system automatically <span class="orange-bold">injects the runtime argument</span> when the event fires. We use this when ou method should respond to the event’s runtime value (e.g., slider value, score update). |
+| **Static** (or **Persistent**) | **Persistent Listener with Constant Argument** | The method doesn’t consume the event’s argument (or you choose to override it). The Inspector exposes an input field so you can supply a <span class="orange-bold">constant</span>, serialized value. We use this if we always want the same fixed parameter (e.g., always set score to 0 when reset button clicked).                                                                          |
+
+You’ll see both whenever:
+
+- The `UnityEvent` is **generic** (e.g. `UnityEvent<int>`, `UnityEvent<float>`, etc.), _and_
+- The target method has a **matching parameter type**
+
+If the event is non-generic (plain `UnityEvent` with no parameters), then only the static binding makes sense. We won’t see a “Dynamic” section because there’s no argument to pass.
+
+:::info Not the C# Static Keyword
+The "static" keyword here has absolutely _nothing_ to do with the C# static keyword. “Static” just means “use a fixed constant value, not the dynamic event argument.” It does not mean the method itself is a static class method, nor does it relate to C#’s static concept of memory/shared class scope.
+:::
+
+### Callbacks Must be Public
 
 If we did not set `MoveCheck` to be **public**, then we would not be able to select that function from the inspector. What we did above is declare three events that will be **invoked** whenever there's **interaction**. for instance, we call `jump.Invoke()` under `OnJumpAction` callback, but only when `context.performed` is `true`. This will in turn call the method `Jump()` defined in `PlayerMovement.cs`.
 
