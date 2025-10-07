@@ -20,6 +20,8 @@ The requirement(s) for the lab checkoff can be found [here](./checkoff.md).
 
 :::note
 This [amazing talk](https://www.youtube.com/watch?v=raQ3iHhE_Kk) inspires the existence of this section. We simply do not have enough time (unfortunately) to go into every single detailed implementation of common concepts such as game inventory, skill tree, etc but we hope that this quick introduction will point you into the right direction in the future.
+
+If you like this architecture, we suggest checking out [this Unity Devlogs](https://github.com/UnityTechnologies/open-project-1/tree/devlogs/2-scriptable-objects).
 :::
 
 This topic covers an entirely new game architecture which separates data from code to make your game more maintainable and all around pleasant to work with. You can choose to go down the Singleton Pattern Path for some appropriate parts of your project and utilise SO Architecture for others. The SO Architecture is <span className="orange-bold">not</span> strictly a replacement for the Singleton Pattern.
