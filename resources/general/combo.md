@@ -1223,7 +1223,29 @@ This class is Compositional because:
 
 :::
 
-#### `FinisherEvaluator.cs`
+### Setting Combo Window Open and Close Timing
+
+Right now there are three methods to do so: via Animation Event, via `ComboStep` window override or via global `CombatConfig` (order of decreasing priority).
+
+#### Animation Events (Highest Priority)
+
+In this method, each animation clip of that attack move (defined in `AttackData`) must have created two events that is connected to the callback: `ComboManager.OpenComboWindow` and `ComboManager.CloseComboWindow`. This way, `ComboManager` will <span class="orange-bold">not</span> manually keep track of the combo window time via `Update()` or call the Open/Close methods manually.
+
+#### `ComboStep` Override
+
+You can optionally set your own combo window (in terms of % of the clip length) for each Combat Step:
+
+<ImageCard path={require("/resources/general/images/combo/2025-10-10-10-23-49.png").default} widthPercentage="100%"/>
+ComboManager will manually call `Open/CloseComboWindow` methods and track combo window time via` Update()` with these values.
+
+#### `CombatConfig` global value (Lowest Priority)
+
+If you didn't set the Animation Events or set the override in the Combo Step, then the system will use the values in `CombatConfig`:
+
+<ImageCard path={require("/resources/general/images/combo/2025-10-10-10-25-24.png").default} widthPercentage="100%"/>
+ComboManager will also manually call `Open/CloseComboWindow` methods and track combo window time via` Update()` with these values.
+
+### `FinisherEvaluator.cs`
 
 The **FinisherEvaluator** is a lightweight component that decides _when and how_ to trigger a finisher animation.
 It doesn’t contain combo resolution or timing logic as those are handled by `ComboManager` (later).
@@ -1321,7 +1343,7 @@ It <span class="orange-bold">delegates</span> to the `Resolver`, `Executor`, `Co
 This separation makes it compositional and testable and ensures designers can balance timing, stamina, or even entire combo trees without writing a single line of code.
 :::
 
-#### `ComboManager.cs`
+### `ComboManager.cs`
 
 ```cs title="ComboManager.cs"
 using UnityEngine;
