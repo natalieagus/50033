@@ -347,7 +347,7 @@ Attach the ObjectPooler script to a gameobject, and set up the initial values li
 To test, we can create an object spawner script as such:
 
 :::note
-It relies on custom InspectorButton attribute so that we can conveniently call the function via a button on the inspector. Read this [guide](https://natalieagus.github.io/50033/resources/general/helper-buttons#generic-debut-button-generator-editor-script) to find out more.
+It relies on custom InspectorButton attribute so that we can conveniently call the function via a button on the inspector. Read this [guide](/resources/general/helper-buttons#generic-debut-button-generator-editor-script) to find out more.
 :::
 
 ```cs title="ObjectSpawner.cs"
