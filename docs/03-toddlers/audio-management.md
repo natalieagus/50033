@@ -110,7 +110,7 @@ SFX Reverb has many properties, and it is best if you find presets online to get
 
 ### Duck Volume
 
-Another very useful effect to know is **duck volume.** This allows the group’s volume to automatically reduce when something else is playing **above** a certain threshold. For example, if we want to reduce the background music whenever the player is jumping, we add a Duck Volume effect in Background Sound group, and set its threshold to be -65 dB:
+Another very useful effect to know is **duck volume.** This allows the group’s volume to automatically reduce when something else is playing **above** a certain threshold. For example, if we want to reduce the background music whenever the player is jumping, we add a Duck Volume effect in Background Music group, and set its threshold to be -65 dB:
 
 This configuration means:
 
@@ -125,7 +125,7 @@ Leave the other properties as is unless you know what they mean. Right now we do
 
 #### Send Effect
 
-Now the final thing to do is to Send an input to this Duck Volume effect, which is the source that can cause this audio group’s volume to duck. Add a new group called Player Dies under SFX and add the Send effect. Select **Background Sound** as its Receive target and set its send level to 0.00 dB (so the background sound unit can receive the full amount of Player Dies SFX output).
+Now the final thing to do is to Send an input to this Duck Volume effect, which is the source that can cause this audio group’s volume to duck. Add a new group called Player Dies under SFX and add the Send effect. Select **Background Music** as its Receive target and set its send level to 0.00 dB (so the Background Music unit can receive the full amount of Player Dies SFX output).
 
 <ImageCard path={require("./images/audio-management/2023-08-16-17-42-02.png").default} widthPercentage="100%"/>
 
