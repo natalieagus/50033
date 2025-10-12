@@ -29,8 +29,8 @@ The key idea is **separation of responsibility**:
 
 | Aspect                    | Description                                                                                       | Storage                          |
 | ------------------------- | ------------------------------------------------------------------------------------------------- | -------------------------------- |
-| **Static Configuration**  | Defines what the player _is_ — max health, stamina, regeneration rate, etc.                       | ScriptableObject (`PlayerStats`) |
-| **Runtime State**         | Tracks what the player _is doing now_ — current stamina, active timers, temporary effects.        | C# class (`PlayerRuntimeStats`)  |
+| **Static Configuration**  | Defines what the player _is_: max health, stamina, regeneration rate, etc.                        | ScriptableObject (`PlayerStats`) |
+| **Runtime State**         | Tracks what the player _is doing now_: current stamina, active timers, temporary effects.         | C# class (`PlayerRuntimeStats`)  |
 | **Context and Ownership** | Provides centralized access to player systems, ensuring all components operate on the same state. | MonoBehaviour (`PlayerContext`)  |
 
 This separation has several design goals:
@@ -176,6 +176,10 @@ This class ensures every subsystem operates with **consistent** data:
 The pattern mirrors an **Entity-Component-System (ECS)** mindset: to centralize state ownership, distribute functionality through components.
 :::
 
+:::caution Script Order of Instantiation
+Ensure that `GameManager` or whatever instance `Context` rely on at runtime is already instantiated before it. It would be best to explicitly state the order in Unity (Script Order Reference).
+:::
+
 ## Use Cases and Benefits
 
 This design is deceptively simple but foundational for building **scalable** and **maintainable** gameplay architecture. The separation between static data (`PlayerStats`) and runtime state (`PlayerRuntimeStats`) unlocks a level of flexibility that benefits both designers and programmers. Below are several reflections on how these advantages manifest in practice.
@@ -232,7 +236,7 @@ if (Input.GetKeyDown(KeyCode.R))
 }
 ```
 
-In `play` mode, this change affects only the current session; the underlying `PlayerStats` asset remains pristine. This makes it easy to test stamina usage, regeneration, or combo flow without ever editing design data.
+In `play` mode, this change affects only the current session; the underlying `PlayerStats` asset remains <span class="red-bold">pristine</span>. This makes it easy to test stamina usage, regeneration, or combo flow without ever editing design data.
 
 ### Extensibility: Adding New Stats Effortlessly
 
