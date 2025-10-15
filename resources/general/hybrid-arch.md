@@ -241,11 +241,11 @@ In a game project, we need certain "manager" components that fit into service an
 | **Service** | Shared functionality, global lifetime           | AudioService, SaveService, GameStateSO        |
 | **Adapter** | Translate external signals into gameplay events | InputAdapter, NetworkAdapter, DialogueAdapter |
 
-Both can be implemented as `ScriptableObject`, giving us: data driven config, global availability, scene-independent lifetime and inspector visibility for designers to tweak.
-
 :::info
-Together they form the backbone of the Hybrid Service–Adapter Architecture, where each ScriptableObject can be both a runtime provider (Service) and translator (Adapter).
+In this hybrid, the Service & Adapter ScriptableObjects act as “shared instances”: we drag the same asset into many serialized fields, so everyone talks to the same object. That gives us the benefit of a singleton (one shared service) without static globals or Instance access. We have data driven config, global availability, scene-independent lifetime (singleton benefits) and inspector visibility for designers to tweak.
 :::
+
+Together they form the backbone of the Hybrid Service–Adapter Architecture, where each ScriptableObject can be both a runtime provider (Service) and translator (Adapter).
 
 ## Building the Hybrid System Architecture in Layers
 
