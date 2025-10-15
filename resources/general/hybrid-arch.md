@@ -19,8 +19,8 @@ They work at small scale but break down when you need cross-scene communication,
 If you're reading this, you should be familiar with:
 
 1. [Observer Pattern](https://natalieagus.github.io/50033/docs/03-toddlers/observer-pattern): decoupled communication between sender and receiver (using C# delegates & events or UnityEvent/UnityAction)
-2. [ScriptableObject Game Architecture (SOGA)](https://natalieagus.github.io/docs/05-teen/scriptobjgamearch): events and variables as reusable assets
-3. [Data-Driven Player Stats Architecture](https://natalieagus.github.io/resources/general/data-driven-stats): separating configuration (static SOs) from runtime state
+2. [ScriptableObject Game Architecture (SOGA)](https://natalieagus.github.io/50033/docs/05-teen/scriptobjgamearch): events and variables as reusable assets
+3. [Data-Driven Player Stats Architecture](https://natalieagus.github.io/50033/resources/general/data-driven-stats): separating configuration (static SOs) from runtime state
 
 Now we <span class="orange-bold">unify</span> those into one runtime system that supports:
 
