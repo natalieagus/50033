@@ -847,6 +847,7 @@ public class ChestSaveable : MonoBehaviour, ISaveable
         {
             isOpen = s.open;
             transform.position = new Vector3(s.x, s.y, s.z);
+            // add more logic to restore closed/open offset etc
         }
     }
 
@@ -857,6 +858,7 @@ public class ChestSaveable : MonoBehaviour, ISaveable
         transform.position += isOpen ? openOffset : -openOffset;
     }
 
+     // edit state as needed to store more things
     [System.Serializable]
     private struct State { public bool open; public float x, y, z; }
 }
