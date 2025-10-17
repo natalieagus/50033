@@ -91,7 +91,9 @@ Debug logs trace: Bootstrap → Channel subscriptions → Button raises → Brid
 
 **Bridge/Manager ScriptableObject (per subsystem)**: subscribes to its channel in `OnEnable`, performs actions when events fire, and unsubscribes in `OnDisable`. This keeps runtime logic centralized and scene-agnostic.
 
-**Bootstrap Config SO**: holds references to all Bridges and Channels. `InitializeAll()` touches _each_ reference to force Unity to deserialize the assets and trigger their `OnEnable` so subscriptions are active before play.
+**Bootstrap class**: provides a single, global registry that remembers every important ScriptableObject at runtime.
+
+**Bootstrap Config SO**: registers references to all Bridges and Channels into `Bootstrap`. `InitializeAll()` touches _each_ reference to force Unity to deserialize the assets and trigger their `OnEnable` so subscriptions are active before play.
 
 **GameBootstrap MonoBehaviour**: a <span class="orange-bold">single</span> scene entry point that invokes the config’s `InitializeAll()` in `Awake()`.
 
@@ -116,6 +118,7 @@ Assets/
  ├── Scripts/
  │   ├── Bootstrap/
  │   │   ├── GameBootstrap.cs
+ │   │   ├── Bootstrap.cs
  │   │   └── BootstrapConfigSO.cs
  │   ├── Systems/
  │   │   ├── Save/
@@ -143,51 +146,87 @@ Assets/
      └── SceneButtonUI.cs
 ```
 
-### Bootstrapper (Config SO + Runner MB)
+### Bootstrapper (Config SO + Runner MonoBehavior + Static Registry)
 
-This is a single ScriptableObject that holds references to all Bridges and Event Channels.
+This is a system that resets, initializes, and holds references to all Bridges and Event Channels. Unity only keeps ScriptableObjects in memory if something in a scene or prefab references them. Otherwise, they remain serialized data on disk—essentially text describing field values.
 
-It acts as the one source of truth for global subsystems. The scene-level `GameBootstrap` (MonoBehaviour) calls `bootstrapConfig.InitializeAll()` in `Awake()` to:
+When the game starts, Unity “deserializes” referenced assets: _it reads that serialized data and recreates the ScriptableObject in memory_. Anything not referenced <span class="orange-bold">stays unloaded</span>.
 
-1. Force asset deserialization (so Bridges/Channels are “alive” and `OnEnable()` subscriptions attach),
-   - Assigning SOs in the Inspector only stores references. It doesn’t guarantee when they’re “live” for this play session, nor that any runtime-only setup has happened in the right order.
-   - This `BootstrapConfigSO.InitializeAll()` call gives us a deterministic, one-shot kickoff at runtime.
-2. Invoke any runtime-only initialization for systems that need it (e.g., Audio creating an `AudioSource` GameObject).
+In small projects this is fine, but in larger systems we often need global ScriptableObjects—such as `GameStateSO`, `InputReader`, or event channels—to exist _even when no scene directly references them_. Without a mechanism to keep track of these, developers end up manually dragging the same assets into every prefab, which quickly becomes tedious and fragile.
 
-<Tabs>
-<TabItem value="1" label="BootstrapConfigSO.cs">
+#### The Bootstrap Class
 
-```cs
-// Assets/Scripts/Bootstrap/BootstrapConfigSO.cs
+```cs title="Bootstrap.cs"
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Game/Bootstrap Config")]
-public class BootstrapConfigSO : ScriptableObject
+public static class Bootstrap
 {
-    [Header("Subsystem Bridges")]
-    [SerializeField] private SaveBridgeSO saveBridge;
-    [SerializeField] private AudioBridgeSO audioBridge;
-    [SerializeField] private SceneBridgeSO sceneBridge;
+    private static readonly Dictionary<Type, ScriptableObject> registry = new();
 
-    [Header("Event Channels")]
-    [SerializeField] private SaveEventChannelSO saveChannel;
-    [SerializeField] private AudioEventChannelSO audioChannel;
-    [SerializeField] private SceneEventChannelSO sceneChannel;
+    public static void Register(ScriptableObject instance)
+    {
+        if (instance == null) return;
+        var type = instance.GetType();
+        registry[type] = instance;
+        Debug.Log($"[Bootstrap] Registered {type.Name}");
+    }
 
-public void InitializeAll()
-{
-    // force deserialize
-    _ = saveBridge; _ = audioBridge; _ = sceneBridge;
-    _ = saveChannel; _ = audioChannel; _ = sceneChannel;
+    // a simple runtime lookup that returns the globally registered instance of a ScriptableObject type T.
+    public static T Resolve<T>() where T : ScriptableObject
+    {
+        if (registry.TryGetValue(typeof(T), out var so))
+            return so as T;
 
-    // runtime inits for bridges that need it
-    if (audioBridge is IRuntimeInitializable r1) r1.RuntimeInit();
-    if (saveBridge  is IRuntimeInitializable r2) r2.RuntimeInit();   // currently no-op (not implemented)
-    if (sceneBridge is IRuntimeInitializable r3) r3.RuntimeInit();   // currently no-op (not implemented)
-
-    Debug.Log("[BootstrapConfigSO] Initialized Save, Audio, and Scene systems");
+        Debug.LogWarning($"[Bootstrap] {typeof(T).Name} not registered");
+        return null;
+    }
 }
+```
 
+`Bootstrap.cs` solves this by providing a single, global registry that remembers every important ScriptableObject at runtime.
+
+- It contains a static dictionary mapping a **type** to a **ScriptableObject instance**.
+- When the game starts, a separate setup script (`BootstrapConfigSO`) loads and registers all systems by calling `Bootstrap.Register(instance)`.
+- Any other script can later call `Bootstrap.Resolve<T>()` to <span class="orange-bold">retrieve</span> that instance without an inspector reference.
+
+:::note Register and Resolve
+`Register()` simply stores the object in the dictionary and logs its name.
+
+`Resolve<T>()` looks up the type key and returns the corresponding instance; if none was registered, it prints a warning.
+
+Together they form a lightweight <span class="orange-bold">service locator</span> for global `ScriptableObjects`.
+:::
+
+This also <span class="red-bold">removes the need for repeated drag-and-drop linking</span>, ensures all shared systems refer to the same instance, and makes dependencies explicit in code rather than hidden in the editor. The registry lives across scene loads, so every system registered once at startup can be accessed anywhere during the game.
+
+_It acts as the one source of truth for global subsystems._
+
+#### The Bridge abstract class
+
+The base class BridgeSO provides a common foundation for all bridges.
+
+<Tabs>
+
+<TabItem value="1" label="BridgeSO.cs">
+
+```cs title="BridgeSO.cs"
+using UnityEngine;
+
+// Bridges are the active connectors that:
+// listen to Event Channels,
+// perform actions,
+// or coordinate between systems (e.g., save, audio, scene, UI).
+// They always implement IRuntimeInitializable, because they must subscribe to events or systems at startup.
+public abstract class BridgeSO : ScriptableObject, IRuntimeInitializable
+{
+    // Optional to override
+    public virtual void RuntimeInit()
+    {
+        // Default no-op
+        Debug.Log($"[BridgeSO] {name} has no RuntimeInit override (skipped).");
+    }
 }
 ```
 
@@ -197,36 +236,178 @@ public void InitializeAll()
 ```cs
 public interface IRuntimeInitializable
 {
+    // Set up live connections or subscriptions: prepare it to interact with other systems.
+    // Example: connect to other systems or events
+    //     public void RuntimeInit()
+    // {
+    //     var input = Bootstrap.Resolve<InputReader>();
+    //     input.pauseEvent += OnPause;
+    //     Debug.Log("[GameStateSO] Initialized and listening for pause events");
+    // }
     void RuntimeInit();
 }
+
+```
+
+</TabItem>
+</Tabs>
+
+#### BootstrapConfigSO
+
+:::info
+BootstrapConfigSO is the manifest and initializer for the game’s core systems. It controls deserialization, registration, and startup order, ensuring consistent behavior across all scenes without manual drag-and-drop references.
+:::
+
+When the game first launches, Unity hasn’t yet deserialized or initialized most of the global ScriptableObjects, only the ones referenced directly by a scene are alive. `BootstrapConfigSO` fixes that by _keeping a serialized list of bridges_ (and optionally shared states or event channels) that must always be <span class="orange-bold">active</span>.
+
+<Tabs>
+<TabItem value="1" label="BootstrapConfigSO.cs">
+
+```cs
+using UnityEngine;
+using System.Collections.Generic;
+using System.Reflection;
+
+[CreateAssetMenu(menuName = "Game/Bootstrap Config")]
+public class BootstrapConfigSO : ScriptableObject
+{
+    [Header("Active Systems (Bridges)")]
+
+    // only serialize bridges
+    // channels have no side effects when loaded, no onEnable and no runtime code unless someone calls the methods like RaiseEventX()
+    [SerializeField] private List<BridgeSO> bridges = new();
+
+    [Header("Shared States (Data)")]
+    [SerializeField] private List<ScriptableObject> sharedStates = new();
+
+    /// <summary>
+    /// Initializes all runtime systems that implement IRuntimeInitializable.
+    /// </summary>
+    public void InitializeAll()
+    {
+        // this forces unity to deserialize
+        // meaning: “make Unity actually load this ScriptableObject’s data into memory right now,” not just have a file reference to it.
+        foreach (var bridge in bridges)
+        {
+            if (bridge == null) continue;
+
+            Bootstrap.Register(bridge);
+
+            AutoRegisterSOFields(bridge);
+
+            if (bridge is IRuntimeResettable reset)
+            {
+                reset.RuntimeReset();
+                Debug.Log($"[BootstrapConfigSO] Reset {bridge.name}");
+            }
+
+            if (bridge is IRuntimeInitializable init)
+            {
+                init.RuntimeInit();
+                Debug.Log($"[BootstrapConfigSO] Initialized {bridge.name}");
+            }
+        }
+        Debug.Log($"[BootstrapConfigSO] Bootstrap complete for {bridges.Count} bridge systems");
+
+        // this registers state objects and reset them before start
+        foreach (var so in sharedStates)
+        {
+            Bootstrap.Register(so);
+            if (so is IRuntimeResettable reset)
+            {
+                reset.RuntimeReset();
+                Debug.Log($"[BootstrapConfigSO] Reset {so.name}");
+            }
+        }
+        Debug.Log($"[BootstrapConfigSO] Bootstrap complete for {sharedStates.Count} state systems");
+
+    }
+
+    private void AutoRegisterSOFields(ScriptableObject parent)
+    {
+        var fields = parent.GetType().GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
+
+        foreach (var f in fields)
+        {
+            if (typeof(ScriptableObject).IsAssignableFrom(f.FieldType))
+            {
+                var value = f.GetValue(parent) as ScriptableObject;
+                if (value != null)
+                {
+                    Bootstrap.Register(value);
+                    Debug.Log($"[BootstrapConfigSO] Auto-registered {value.name} (from {parent.name})");
+                }
+            }
+        }
+    }
+}
+
+```
+
+</TabItem>
+
+<TabItem value="3" label="IRuntimeResettable.cs">
+
+```cs
+public interface IRuntimeResettable
+{
+    // Clear any leftover data: bring the ScriptableObject back to a neutral “blank slate.”
+    // Example: clear transient values from the last play session or scene
+    //     public void RuntimeReset()
+    // {
+    //     isDialogueActive = false;
+    //     isPaused = false;
+    // }
+
+    void RuntimeReset();
+}
+
 ```
 
 </TabItem>
 </Tabs>
 
 :::note
-AudioBridgeSO implements `IRuntimeInitializable` (spawns its `[AudioBridge] GO`).
+The interfaces should be used whenever applicable. For example, `AudioBridgeSO` implements `IRuntimeInitializable` (spawns its `[AudioBridge] GO`).
 `SaveBridgeSO` and `SceneBridgeSO` don’t implement it (no runtime objects needed).
 :::
 
+When its `InitializeAll() `method runs, it iterates through those listed systems and does three things in order:
+
+1. Register each `ScriptableObject` with the <span class="orange-bold">global</span> registry (`Bootstrap.Register(so)`), so other scripts can later retrieve it using `Bootstrap.Resolve<T>()`.
+2. Reset any system that implements `IRuntimeResettable`, clearing leftover or “ghost” values from previous runs.
+3. Initialize any system that implements IRuntimeInitializable, allowing bridges to subscribe to event channels or set up internal references.
+
 ### GameBootstrap (Monobehavior Script)
 
-Place a `GameBootstrap` in `Scene_Main` and assign `BootstrapConfig.asset`. The purpose of this script is simply to initialize the bridges and channels in the project.
+The scene-level `GameBootstrap` (MonoBehaviour) calls `bootstrapConfig.InitializeAll()` in `Awake()` to:
+
+1. Force asset deserialization (so Bridges/Channels are “alive” and `OnEnable()` subscriptions attach),
+   - Assigning SOs in the Inspector only stores references. It doesn’t guarantee when they’re “live” for this play session, nor that any runtime-only setup has happened in the right order.
+   - This `BootstrapConfigSO.InitializeAll()` call gives us a deterministic, one-shot kickoff at runtime.
+2. Invoke any runtime-only initialization for systems that need it (e.g., Audio creating an `AudioSource` GameObject).
+
+Place a `GameBootstrap` in `Scene_Bootstrap` and assign `BootstrapConfig.asset` to an empty gameobject. The purpose of this script is simply to initialize the bridges and channels in the project, <span class="orange-bold">before we load</span> the first scene in our project. This is to ensure everything is ready before any scripts tried to access any SOs, etc.
 
 ```cs title="GameBootstrap.cs"
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameBootstrap : MonoBehaviour
 {
     [SerializeField] private BootstrapConfigSO bootstrapConfig;
+    [SerializeField] private string nextSceneName = "BootstrapDemo_Main";
 
     private void Awake()
     {
         Debug.Log("[GameBootstrap] Starting initialization");
         bootstrapConfig.InitializeAll();
         Debug.Log("[GameBootstrap] Bootstrap complete");
+
+        SceneManager.LoadSceneAsync(nextSceneName);
     }
 }
+
 ```
 
 ### Save system (Channel + Bridge + Registry + ISaveable)
@@ -236,6 +417,40 @@ This system is a <span class="orange-bold">centralized</span> capture/restore su
 The _Bridge_ wires the channel to registry calls.
 
 <Tabs>
+
+<TabItem value="2" label="SaveBridgeSO.cs">
+
+```cs
+// SaveBridgeSO.cs
+using UnityEngine;
+
+[CreateAssetMenu(menuName = "Game/Save Bridge")]
+public class SaveBridgeSO : BridgeSO
+{
+    [SerializeField] private SaveEventChannelSO saveChannel;
+
+    private void OnEnable()
+    {
+        saveChannel.OnSaveRequested += OnSaveRequested;  // instance methods
+        saveChannel.OnLoadRequested += OnLoadRequested;
+        Debug.Log("[SaveBridgeSO] Subscribed to save/load events");
+    }
+
+    private void OnDisable()
+    {
+        saveChannel.OnSaveRequested -= OnSaveRequested;
+        saveChannel.OnLoadRequested -= OnLoadRequested;
+        Debug.Log("[SaveBridgeSO] Unsubscribed");
+    }
+
+    // we subscribe with instance methods (from this SO) and not static method from SaveRegistry directly
+    private void OnSaveRequested() => SaveRegistry.SaveAll();
+    private void OnLoadRequested() => SaveRegistry.LoadAll();
+}
+
+```
+
+</TabItem>
 <TabItem value="1" label="SaveEventChannelSO.cs">
 
 ```cs
@@ -265,41 +480,6 @@ public event Action OnLoadRequested;
 ```
 
 </TabItem>
-
-<TabItem value="2" label="SaveBridgeSO.cs">
-
-```cs
-// SaveBridgeSO.cs
-using UnityEngine;
-
-[CreateAssetMenu(menuName = "Game/Save Bridge")]
-public class SaveBridgeSO : ScriptableObject
-{
-    [SerializeField] private SaveEventChannelSO saveChannel;
-
-    private void OnEnable()
-    {
-        saveChannel.OnSaveRequested += OnSaveRequested;  // instance methods
-        saveChannel.OnLoadRequested += OnLoadRequested;
-        Debug.Log("[SaveBridgeSO] Subscribed to save/load events");
-    }
-
-    private void OnDisable()
-    {
-        saveChannel.OnSaveRequested -= OnSaveRequested;
-        saveChannel.OnLoadRequested -= OnLoadRequested;
-        Debug.Log("[SaveBridgeSO] Unsubscribed");
-    }
-
-    // we subscribe with instance methods (from this SO) and not static method from SaveRegistry directly
-    private void OnSaveRequested() => SaveRegistry.SaveAll();
-    private void OnLoadRequested() => SaveRegistry.LoadAll();
-}
-
-```
-
-</TabItem>
-
 <TabItem value="3" label="SaveRegistry.cs">
 
 ```cs
@@ -452,40 +632,6 @@ This audio system is a persistent, scene-independent audio management. We always
 :::
 
 <Tabs>
-<TabItem value="1" label="AudioEventChannelSO.cs">
-
-```cs
-using UnityEngine;
-using System;
-
-[CreateAssetMenu(menuName = "Events/Audio Event Channel")]
-public class AudioEventChannelSO : ScriptableObject, IRuntimeInitializable
-{
-    public event Action<AudioClip> OnSFXRequested;
-    public event Action<AudioClip> OnBGMRequested;
-    public event Action OnStopBGMRequested;
-
-    public void RaiseSFX(AudioClip clip)
-    {
-        Debug.Log($"[AudioEventChannelSO] Play SFX: {clip?.name}");
-        OnSFXRequested?.Invoke(clip);
-    }
-
-    public void RaiseBGM(AudioClip clip)
-    {
-        Debug.Log($"[AudioEventChannelSO] Play BGM: {clip?.name}");
-        OnBGMRequested?.Invoke(clip);
-    }
-
-    public void RaiseStopBGM()
-    {
-        Debug.Log("[AudioEventChannelSO] Stop BGM");
-        OnStopBGMRequested?.Invoke();
-    }
-}
-```
-
-</TabItem>
 
 <TabItem value="2" label="AudioBridgeSO.cs">
 
@@ -494,7 +640,7 @@ public class AudioEventChannelSO : ScriptableObject, IRuntimeInitializable
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Game/Audio Bridge")]
-public class AudioBridgeSO : ScriptableObject
+public class AudioBridgeSO : BridgeSO
 {
     [SerializeField] private AudioEventChannelSO audioChannel;
 
@@ -561,6 +707,41 @@ public class AudioBridgeSO : ScriptableObject
 ```
 
 </TabItem>
+
+<TabItem value="1" label="AudioEventChannelSO.cs">
+
+```cs
+using UnityEngine;
+using System;
+
+[CreateAssetMenu(menuName = "Events/Audio Event Channel")]
+public class AudioEventChannelSO : ScriptableObject, IRuntimeInitializable
+{
+    public event Action<AudioClip> OnSFXRequested;
+    public event Action<AudioClip> OnBGMRequested;
+    public event Action OnStopBGMRequested;
+
+    public void RaiseSFX(AudioClip clip)
+    {
+        Debug.Log($"[AudioEventChannelSO] Play SFX: {clip?.name}");
+        OnSFXRequested?.Invoke(clip);
+    }
+
+    public void RaiseBGM(AudioClip clip)
+    {
+        Debug.Log($"[AudioEventChannelSO] Play BGM: {clip?.name}");
+        OnBGMRequested?.Invoke(clip);
+    }
+
+    public void RaiseStopBGM()
+    {
+        Debug.Log("[AudioEventChannelSO] Stop BGM");
+        OnStopBGMRequested?.Invoke();
+    }
+}
+```
+
+</TabItem>
 </Tabs>
 
 ### Scene System (Channel + Bridge)
@@ -569,34 +750,6 @@ This scene system is a centralized scene transitions so gameplay/UI simply reque
 
 <Tabs>
 
-<TabItem value="1" label="SceneEventChannelSO.cs">
-
-```cs
-using UnityEngine;
-using System;
-
-[CreateAssetMenu(menuName = "Events/Scene Event Channel")]
-public class SceneEventChannelSO : ScriptableObject
-{
-    public event Action<string> OnSceneLoadRequested;
-    public event Action<string> OnSceneUnloadRequested;
-
-    public void RaiseLoad(string sceneName)
-    {
-        Debug.Log($"[SceneEventChannelSO] Load requested: {sceneName}");
-        OnSceneLoadRequested?.Invoke(sceneName);
-    }
-
-    public void RaiseUnload(string sceneName)
-    {
-        Debug.Log($"[SceneEventChannelSO] Unload requested: {sceneName}");
-        OnSceneUnloadRequested?.Invoke(sceneName);
-    }
-}
-
-```
-
-</TabItem>
 <TabItem value="2" label="SceneBridgeSO.cs">
 
 ```cs
@@ -604,7 +757,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(menuName = "Game/Scene Bridge")]
-public class SceneBridgeSO : ScriptableObject
+public class SceneBridgeSO : BridgeSO
 {
     [SerializeField] private SceneEventChannelSO sceneChannel;
 
@@ -639,12 +792,42 @@ public class SceneBridgeSO : ScriptableObject
 ```
 
 </TabItem>
+<TabItem value="1" label="SceneEventChannelSO.cs">
 
+```cs
+using UnityEngine;
+using System;
+
+[CreateAssetMenu(menuName = "Events/Scene Event Channel")]
+public class SceneEventChannelSO : ScriptableObject
+{
+    public event Action<string> OnSceneLoadRequested;
+    public event Action<string> OnSceneUnloadRequested;
+
+    public void RaiseLoad(string sceneName)
+    {
+        Debug.Log($"[SceneEventChannelSO] Load requested: {sceneName}");
+        OnSceneLoadRequested?.Invoke(sceneName);
+    }
+
+    public void RaiseUnload(string sceneName)
+    {
+        Debug.Log($"[SceneEventChannelSO] Unload requested: {sceneName}");
+        OnSceneUnloadRequested?.Invoke(sceneName);
+    }
+}
+
+```
+
+</TabItem>
 </Tabs>
 
 ### Minimal UI Triggers (for demo)
 
-These are lightweight `MonoBehaviours` to wire to Unity UI Buttons and call the channels only.
+These are lightweight `MonoBehaviours` to wire to Unity UI Buttons and call the channels only. There are two ways to do this:
+
+1. Via `Bootstrap` registry, or
+2. Reference the channel SO on inspector. Either way works.
 
 <Tabs>
 <TabItem value="1" label="SaveButtonUI.cs">
@@ -654,11 +837,18 @@ using UnityEngine;
 
 public class SaveButtonUI : MonoBehaviour
 {
-    [SerializeField] private SaveEventChannelSO saveChannel;
+    private SaveEventChannelSO saveChannel;
+
+    private void Awake()
+    {
+        // Automatically gets the globally registered SaveEventChannelSO bridge or channel
+        saveChannel = Bootstrap.Resolve<SaveEventChannelSO>();
+    }
 
     public void DoSave() => saveChannel.RaiseSave();
     public void DoLoad() => saveChannel.RaiseLoad();
 }
+
 
 ```
 
@@ -670,6 +860,7 @@ using UnityEngine;
 
 public class AudioButtonUI : MonoBehaviour
 {
+    // serialize in inspector
     [SerializeField] private AudioEventChannelSO audioChannel;
     [SerializeField] private AudioClip sfxClip;
     [SerializeField] private AudioClip bgmClip;
@@ -690,6 +881,7 @@ using UnityEngine;
 
 public class SceneButtonUI : MonoBehaviour
 {
+    // serialize in inspector
     [SerializeField] private SceneEventChannelSO sceneChannel;
     [SerializeField] private string sceneToLoad = "Scene_Level1";
     [SerializeField] private string sceneToUnload = "Scene_Level1";
@@ -888,49 +1080,55 @@ Create `Assets/Game/BootstrapConfig.asset` and assign:
 - **Bridges**: SaveBridge, AudioBridge, SceneBridge
 - **Channels**: SaveEventChannel, AudioEventChannel, SceneEventChannel
 
-<ImageCard path={require("/resources/general/images/bootstrap/2025-10-16-10-58-39.png").default} widthPercentage="100%"/>
+<ImageCard path={require("/resources/general/images/bootstrap/2025-10-17-15-17-39.png").default} widthPercentage="100%"/>
 
 ### Create Scenes
 
-Create at least two scenes, e.g: Main and Level 1. Here's one ugly but functional setup:
+Create at least three scenes, e.g: Bootstrap, Main and Level 1. Here's one ugly but functional setup:
 
-<ImageCard path={require("/resources/general/images/bootstrap/2025-10-16-11-00-30.png").default} widthPercentage="100%"/>
+<ImageCard path={require("/resources/general/images/bootstrap/2025-10-17-15-18-18.png").default} widthPercentage="100%"/>
+
+<ImageCard path={require("/resources/general/images/bootstrap/2025-10-17-15-18-48.png").default} widthPercentage="100%"/>
 
 <ImageCard path={require("/resources/general/images/bootstrap/2025-10-16-11-01-34.png").default} widthPercentage="100%"/>
 
-We made the button groups a prefab (this is like a HUD in the game), and both scenes have the same Player and Chest prefab.
+#### The Bootstrap Scene
 
-Attach the GameBoostrap script to GameBoostrap empty gameobject. This will initialize the config upon run.
+Attach the `GameBoostrap` script an empty gameobject in the Bootstrap scene. This will initialize the config upon run, and immediately load the Main scene.
+
+#### UI
+
+We made the button groups a prefab (this is like a HUD in the game), and both scenes have the same Player and Chest prefab.
 
 Then for each UI group, attach the corresponding Button UI script:
 
-<ImageCard path={require("/resources/general/images/bootstrap/2025-10-16-11-22-46.png").default} widthPercentage="100%"/>
+<ImageCard path={require("/resources/general/images/bootstrap/2025-10-17-15-20-41.png").default} widthPercentage="100%"/>
 
 And set the callbacks accordingly:
 
-<ImageCard path={require("/resources/general/images/bootstrap/2025-10-16-11-23-01.png").default} widthPercentage="100%"/>
+<ImageCard path={require("/resources/general/images/bootstrap/2025-10-17-15-20-53.png").default} widthPercentage="100%"/>
 
 Do the same for scene load button, audio-related buttons, as well as load.
 
 For the Player, attach the PlayerHealtSaveable component:
-<ImageCard path={require("/resources/general/images/bootstrap/2025-10-16-11-23-43.png").default} widthPercentage="100%"/>
+<ImageCard path={require("/resources/general/images/bootstrap/2025-10-17-15-21-08.png").default} widthPercentage="100%"/>
 
 Whereas for the "chest", try using the AutoRegister component:
 
-<ImageCard path={require("/resources/general/images/bootstrap/2025-10-16-11-24-16.png").default} widthPercentage="100%"/>
+<ImageCard path={require("/resources/general/images/bootstrap/2025-10-17-15-21-22.png").default} widthPercentage="100%"/>
 
-Finally, dont forget to add both scenes until the Build Profiles, otherwise scene transition wont work:
-<ImageCard path={require("/resources/general/images/bootstrap/2025-10-16-11-25-38.png").default} widthPercentage="100%"/>
+Finally, dont forget to add all scenes until the Build Profiles, otherwise scene transition wont work:
+<ImageCard path={require("/resources/general/images/bootstrap/2025-10-17-15-21-53.png").default} widthPercentage="100%"/>
 
 ### Running the Demo
 
 Upon `Play`, you should see the bootstrap system works: all bridges subscribe to the events, player and chest registered to SaveRegistry, AudioBridge is initialized and runtime AudioRoot is created.
 
-<ImageCard path={require("/resources/general/images/bootstrap/2025-10-16-11-27-36.png").default} widthPercentage="100%"/>
+<ImageCard path={require("/resources/general/images/bootstrap/2025-10-17-15-23-45.png").default} widthPercentage="100%"/>
 
 When you load the another level, the save registry is updated based on which object is present at this level:
 
-<ImageCard path={require("/resources/general/images/bootstrap/2025-10-16-11-28-19.png").default} widthPercentage="100%"/>
+<ImageCard path={require("/resources/general/images/bootstrap/2025-10-17-15-24-15.png").default} widthPercentage="100%"/>
 
 :::note test
 You can try adding other chests like Chest_B, etc and see how the save system handles this
@@ -943,7 +1141,115 @@ All systems are live in the second scene. There's no need to set them up. There'
 - The SO will be disabled _if there's no more reference to it_ anymore in the following scene.
 
 Here's a full demo recording of the Bootstrap system in action:
-<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/tutorials/bootstrap.mov"} widthPercentage="100%"/>
+
+<VideoItem path={"https://50033.s3.ap-southeast-1.amazonaws.com/tutorials/bootstrap-demo.mov"} widthPercentage="100%"/>
+
+## Using Bootstrap in the Hybrid Architecture
+
+:::note
+This section explains how we can implement the Bootstrap system into the Hybrid architecture explained [here](https://natalieagus.github.io/50033/resources/general/hybrid-arch), and greatly reduce inspector-linking.
+:::
+
+We can now register `GameStateSO` inside `BootstrapConfigSO` `sharedStates` list, so that it enters the `Bootstrap` registry.
+
+To make things easier, it should also implement the `IRuntimeResettable` and remove any reset gameObject, and remove the use of `GameStateResetter.cs`.
+
+```cs
+using UnityEngine;
+using System;
+
+[CreateAssetMenu(menuName = "Game/Game State")]
+public class GameStateSO : ScriptableObject, IRuntimeResettable
+{
+    public bool InDialogue { get; private set; }
+    public event Action<bool> OnDialogueChanged;
+
+    public void SetDialogue(bool active)
+    {
+        if (InDialogue == active) return;
+        InDialogue = active;
+        OnDialogueChanged?.Invoke(active);
+        Debug.Log($"[GameStateSO] Dialogue {(active ? "started" : "ended")}");
+    }
+
+    public void RuntimeReset()
+    {
+        InDialogue = false;
+        OnDialogueChanged = null;
+        Debug.Log("[GameStateSO] Reset");
+    }
+}
+```
+
+Then `DialogueController` can utilise the Registry:
+
+```cs
+using UnityEngine;
+
+public class DialogueController : MonoBehaviour
+{
+    [Header("Data (Optional, can be passed at runtime)")]
+    [SerializeField] private DialogueData currentDialogue;
+
+    private InputReader inputReader;
+    private GameStateSO gameState;
+
+    private int currentIndex = 0;
+    private bool isActive = false;
+
+    private void Awake()
+    {
+        // Resolve global systems & state
+        inputReader = Bootstrap.Resolve<InputReader>();
+        gameState   = Bootstrap.Resolve<GameStateSO>();
+
+        if (inputReader == null)
+            Debug.LogError("[DialogueController] Missing InputReader in registry!");
+        if (gameState == null)
+            Debug.LogError("[DialogueController] Missing GameStateSO in registry!");
+    }
+
+     // other methods as usual
+
+}
+
+```
+
+### Unifying the Systems
+
+When the game launches, the **BootstrapConfigSO** asset executes its initialization sequence. It registers all bridges such as `AudioBridgeSO`, `SaveBridgeSO`, and `SceneBridgeSO`, and through reflection it automatically registers every referenced ScriptableObject found inside them—this includes event channels and shared states like `GameStateSO`. Each system that implements `IRuntimeResettable` is reset first, ensuring a clean startup, and then any class that implements `IRuntimeInitializable` is initialized. By the time the scene loads, every subsystem exists in a unified runtime registry called `Bootstrap`.
+
+Because of this, there is <span class="orange-bold">no need</span> to drag ScriptableObjects into individual prefabs or scene objects. Every component can access shared data or channels directly through the same global registry. For instance, a gameplay script such as a `DialogueController`, `PlayerHealth`, or `SaveButtonUI` can simply resolve what it needs during `Awake()`:
+
+```csharp
+private GameStateSO gameState;
+private AudioEventChannelSO audioChannel;
+
+private void Awake()
+{
+    gameState = Bootstrap.Resolve<GameStateSO>();
+    audioChannel = Bootstrap.Resolve<AudioEventChannelSO>();
+}
+```
+
+Once resolved, these references behave exactly like serialized ones. You can call any event or update state as usual:
+
+```csharp
+gameState.SetDialogue(true);
+audioChannel.RaiseSFX(hitClip);
+```
+
+All systems remain decoupled, yet share the same single source of truth.
+The benefit of this design is that **BootstrapConfigSO** controls initialization order and lifetime deterministically while every other script relies on the same lightweight API:
+
+```csharp
+var audio = Bootstrap.Resolve<AudioEventChannelSO>();
+audio.RaiseBGM(musicClip);
+```
+
+:::note
+In practice, this means no dragging, no duplicate references across prefabs, and no confusion about which instance of `GameStateSO` or `AudioEventChannelSO` is active. One bootstrap initializes everything once; every other script simply resolves and uses it.
+:::
 
 ## Epilogue
 

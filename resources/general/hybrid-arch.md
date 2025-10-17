@@ -1426,7 +1426,7 @@ The following diagram summarizes the input flow in this architecture and the cha
 
 ### Demo & Scene Setup
 
-To test the hybrid architecture quickly, your project folder structure should roughly follow this construct. You should add more files as necessary to control dialogues, pause menu, etc (see [other helper code ](#other-helper-scripts)below).
+To test the hybrid architecture quickly, your project folder structure should roughly follow this construct. You should add more files as necessary to control dialogues, pause menu, etc (see [other helper code ](#other-demo-scripts)below).
 
 ```
 Assets/
@@ -1884,6 +1884,29 @@ public class ParticleEffectResponse : MonoBehaviour
 ```
 
 Then attach a `GameEventListener` to this gameObject and hook up the callback `PlayEffect` accordingly when player jump/attack.
+
+#### GameStateResetter.cs
+
+A hacky-but-working way to reset `gameState` in our scene: attach this script to any MonoBehaviour.
+
+```cs title="GameStateResetter.cs"
+using UnityEngine;
+
+public class GameStateResetter : MonoBehaviour
+{
+    [SerializeField] private GameStateSO gameState;
+
+    private void Awake()
+    {
+        if (gameState != null)
+        {
+            gameState.ResetState();
+            Debug.Log("[GameStateResetter] GameStateSO reset on play start.");
+        }
+    }
+}
+
+```
 
 ### Debug Trace
 
