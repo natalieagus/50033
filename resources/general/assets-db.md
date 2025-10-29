@@ -65,17 +65,18 @@ Use these for prototyping, polishing, or exploring game ideas. All sources are U
 
 ### 🆓 Free Sound Libraries
 
-| Source                          | Link                                                              | Best For                                             |
-| ------------------------------- | ----------------------------------------------------------------- | ---------------------------------------------------- |
-| **Freesound**                   | [freesound.org](https://freesound.org/)                           | Huge open sound library (requires attribution)       |
-| **Zapsplat**                    | [zapsplat.com](https://www.zapsplat.com/sound-effect-categories/) | Game-ready SFX (interface, environment, movement)    |
-| **Mixkit**                      | [mixkit.co](https://mixkit.co/free-sound-effects/)                | Music + SFX, commercial-use friendly                 |
-| **ProductionCrate (Free Tier)** | [productioncrate.com](https://www.productioncrate.com/)           | Game SFX, UI sounds, and audio stingers              |
-| **SoundGator**                  | [soundgator.com](https://www.soundgator.com/)                     | Interface and ambient effects                        |
-| **SoundDogs**                   | [sounddogs.com](https://www.sounddogs.com/)                       | Searchable sound library                             |
-| **Sonniss GDC Packs**           | [sonniss.com/gameaudiogdc](https://sonniss.com/gameaudiogdc)      | Massive pro sound libraries (free annual GDC bundle) |
-| **WeLoveIndies**                | [weloveindies.com](https://www.weloveindies.com/en)               | Free + paid indie game audio bundles                 |
-| **PacDV**                       | [pacdv.com/sounds](https://www.pacdv.com/sounds/index.html)       | UI, ambient, mechanical, voice SFX                   |
+| Source                          | Link                                                                  | Best For                                             |
+| ------------------------------- | --------------------------------------------------------------------- | ---------------------------------------------------- |
+| **Freesound**                   | [freesound.org](https://freesound.org/)                               | Huge open sound library (requires attribution)       |
+| **Zapsplat**                    | [zapsplat.com](https://www.zapsplat.com/sound-effect-categories/)     | Game-ready SFX (interface, environment, movement)    |
+| **Mixkit**                      | [mixkit.co](https://mixkit.co/free-sound-effects/)                    | Music + SFX, commercial-use friendly                 |
+| **ProductionCrate (Free Tier)** | [productioncrate.com](https://www.productioncrate.com/)               | Game SFX, UI sounds, and audio stingers              |
+| **SoundGator**                  | [soundgator.com](https://www.soundgator.com/)                         | Interface and ambient effects                        |
+| **SoundDogs**                   | [sounddogs.com](https://www.sounddogs.com/)                           | Searchable sound library                             |
+| **Sonniss GDC Packs**           | [sonniss.com/gameaudiogdc](https://sonniss.com/gameaudiogdc)          | Massive pro sound libraries (free annual GDC bundle) |
+| **WeLoveIndies**                | [weloveindies.com](https://www.weloveindies.com/en)                   | Free + paid indie game audio bundles                 |
+| **PacDV**                       | [pacdv.com/sounds](https://www.pacdv.com/sounds/index.html)           | UI, ambient, mechanical, voice SFX                   |
+| **The Sounds Resource**         | [sounds.spriters-resource.com](https://sounds.spriters-resource.com/) | SFX, retro                                           |
 
 ## ✅ **Best All-Around Starter Packs**
 
