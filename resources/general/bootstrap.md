@@ -148,11 +148,11 @@ Assets/
 
 ### Bootstrapper (Config SO + Runner MonoBehavior + Static Registry)
 
-This is a system that resets, initializes, and holds references to all Bridges and Event Channels. Unity only keeps ScriptableObjects in memory if something in a scene or prefab references them. Otherwise, they remain serialized data on disk—essentially text describing field values.
+This is a system that resets, initializes, and holds references to all Bridges and Event Channels. Unity only keeps ScriptableObjects in memory if something in a scene or prefab references them. Otherwise, they remain serialized data on disk, essentially text describing field values.
 
 When the game starts, Unity “deserializes” referenced assets: _it reads that serialized data and recreates the ScriptableObject in memory_. Anything not referenced <span class="orange-bold">stays unloaded</span>.
 
-In small projects this is fine, but in larger systems we often need global ScriptableObjects—such as `GameStateSO`, `InputReader`, or event channels—to exist _even when no scene directly references them_. Without a mechanism to keep track of these, developers end up manually dragging the same assets into every prefab, which quickly becomes tedious and fragile.
+In small projects this is fine, but in larger systems we often need global ScriptableObjects: such as `GameStateSO`, `InputReader`, or event channels to exist _even when no scene directly references them_. Without a mechanism to keep track of these, developers end up manually dragging the same assets into every prefab, which quickly becomes tedious and fragile.
 
 #### The Bootstrap Class
 
@@ -594,7 +594,7 @@ public class BridgeSO : ScriptableObject
 }
 ```
 
-If you _truly_ need static subscriptions (e.g., calling a static registry directly), then also keep a <span class="orange-bold">strong</span> reference to the Bridge/Channel assets for the whole run—otherwise Unity can unload them on scene transitions. One tidy way is a tiny persistent holder created at bootstrap:
+If you _truly_ need static subscriptions (e.g., calling a static registry directly), then also keep a <span class="orange-bold">strong</span> reference to the Bridge/Channel assets for the whole run, otherwise Unity can unload them on scene transitions. One tidy way is a tiny persistent holder created at bootstrap:
 
 ```cs title="CoreRefsHolder.cs"
 // CoreRefsHolder.cs
@@ -1255,7 +1255,7 @@ In practice, this means no dragging, no duplicate references across prefabs, and
 
 In this demo, we never really see `OnDisable` being called on the bridges.
 
-`OnDisable()` on a ScriptableObject runs whenever Unity _unloads_ that SO instance: exiting Play Mode (domain reload on), assembly reload/recompile, asset unload (because no strong references), addressable/references released, or an explicit unload call. In our current setup, we keep Bridges referenced for the <span class="orange-bold">whole</span> session (instance-event subscriptions + optional keep-alive holder), so they rarely unload mid-game—hence you don’t see `OnDisable()`.
+`OnDisable()` on a ScriptableObject runs whenever Unity _unloads_ that SO instance: exiting Play Mode (domain reload on), assembly reload/recompile, asset unload (because no strong references), addressable/references released, or an explicit unload call. In our current setup, we keep Bridges referenced for the <span class="orange-bold">whole</span> session (instance-event subscriptions + optional keep-alive holder), so they rarely unload mid-game, hence you don’t see `OnDisable()`.
 
 Below are two small, controlled demos we can add to **force** an SO to unload and watch `OnDisable()` fire.
 
@@ -1353,7 +1353,7 @@ Addressables is Unity’s built-in system for loading content on demand by a str
 :::
 
 ```csharp
-// SceneScopedBootstrap.cs — lives in your additive scene (e.g., DungeonPack)
+// SceneScopedBootstrap.cs, lives in your additive scene (e.g., DungeonPack)
 // Loads the bridge via Addressables and releases it when the scene unloads.
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -1388,7 +1388,7 @@ public class SceneScopedBootstrap : MonoBehaviour
 ```
 
 ```csharp
-// DungeonSpawnBridgeSO.cs — the feature-specific bridge.
+// DungeonSpawnBridgeSO.cs, the feature-specific bridge.
 // Subscribes with instance methods; unsubscribes on disable.
 using UnityEngine;
 
