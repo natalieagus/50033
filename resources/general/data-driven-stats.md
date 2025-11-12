@@ -280,6 +280,65 @@ This unified access layer eliminates the need for fragile cross-component refere
 
 We utilise `PlayerContext` in our [Combo System tutorial](/resources/general/combo).
 
+## Caveat
+
+Since `PlayerRuntimeStats` is an instance, it will <span class="orange-bold">not</span> persist between scenes. If you need the runtime values to persist between scenes then you need to have some kind of Service that does this, or put each `PlayerRunTimeStats` in `DontDestroyOnLoad` (make it a Singleton).
+
+:::note-title
+
+> The Idea
+>
+> A small runtime service holds `PlayerRuntimeStats`. New `PlayerContext` instances bind to it on `Awake` instead of creating fresh stats.
+
+```cs
+// 1) Runtime store (created once, lives in memory only)
+public class PlayerStateStore
+{
+    private PlayerRuntimeStats _stats;
+    public PlayerRuntimeStats GetOrCreate(PlayerStats baseStats)
+        => _stats ??= new PlayerRuntimeStats(baseStats);
+
+    public void ResetRuntime() => _stats = null;
+}
+
+// 2) Bootstrap creates and registers the store (no ScriptableObject on disk needed)
+public class GameStateHost : MonoBehaviour
+{
+    public static PlayerStateStore Store { get; private set; }
+
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+        Store ??= new PlayerStateStore();
+    }
+}
+
+// 3) PlayerContext binds to the shared runtime stats
+public class PlayerContext : MonoBehaviour
+{
+    public PlayerStats baseStats;
+    public PlayerRuntimeStats runtimeStats { get; private set; }
+
+    void Awake()
+    {
+        runtimeStats = GameStateHost.Store.GetOrCreate(baseStats);
+    }
+}
+```
+
+Explanation:
+
+- Add `GameStateHost` (persistent, `DontDestroyOnLoad`) that constructs a `PlayerStateStore` once
+- In `PlayerContext.Awake()`, `GetOrCreate` runtime stats from the store (no new each time)
+  - This does not write to disk assets, we keep store <span class="orange-bold">in memory</span> only.
+- Expose `ResetRuntime()` on the store for level restarts/tests.
+
+If co-op needed, key **multiple** stats (`Dictionary<string, PlayerRuntimeStats>` with stable `playerId`).
+
+:::important
+Ensure systems read/write via `context.runtimeStats` only (**single source of trut**h).
+:::
+
 ## Summary
 
 In short, the **data-driven player stats system** defines a clean architecture where:
@@ -292,4 +351,4 @@ In short, the **data-driven player stats system** defines a clean architecture w
 Each system remains modular, predictable, and extensible. Designers gain direct control over balance through data assets; programmers gain reliable state isolation and clarity; and the overall gameplay codebase becomes cleaner and easier to evolve as new mechanics are introduced.
 :::
 
-By drawing a clear line between configuration and state, this approach prevents a host of common Unity pitfalls—shared data corruption, duplicated logic, and tangled dependencies—and lays the groundwork for more advanced gameplay systems like stamina-driven combat, hit confirmation, or combo chaining. It’s an elegant, extensible foundation for any game architecture that values modularity, designer control, and clean state management.
+By drawing a clear line between configuration and state, this approach prevents a host of common Unity pitfalls: shared data corruption, duplicated logic, and tangled dependencies—and lays the groundwork for more advanced gameplay systems like stamina-driven combat, hit confirmation, or combo chaining. It’s an elegant, extensible foundation for any game architecture that values modularity, designer control, and clean state management.
