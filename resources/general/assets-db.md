@@ -21,9 +21,10 @@ Use these for prototyping, polishing, or exploring game ideas. All sources are U
 | **OpenGameArt**           | [opengameart.org](https://opengameart.org)                     | Community-made pixel art, icons, tilesets, RPG packs       |
 | **CraftPix Freebies**     | [craftpix.net/freebies](https://craftpix.net/freebies/)        | High-quality 2D vector + pixel art (tilesets, UI, sprites) |
 | **Itch.io (Free Assets)** | [itch.io/game-assets/free](https://itch.io/game-assets/free)   | Tons of tilesets, characters, UI kits                      |
-| **Quaternius**            | [quaternius.com](https://quaternius.com)                       | Some 2D packs, mostly 3D — simple & modular                |
+| **Quaternius**            | [quaternius.com](https://quaternius.com)                       | Some 2D packs, mostly 3D, simple & modular                 |
 | **Kaylousberg**           | [kaylousberg.itch.io](https://kaylousberg.itch.io)             | Whimsical pixel art environments and characters            |
 | **Kevins-Moms-House**     | [kevins-moms-house.itch.io](https://kevins-moms-house.itch.io) | Clean 1-bit and retro pixel assets                         |
+| **Spriters Resource**     | [spriters-resource.com](https://www.spriters-resource.com)     | Massive free sprite collection                             |
 
 ### 💲 Cheap 2D Assets (Under $10)
 
@@ -40,7 +41,7 @@ Use these for prototyping, polishing, or exploring game ideas. All sources are U
 
 | Source                       | Link                                                  | Best For                                                  |
 | ---------------------------- | ----------------------------------------------------- | --------------------------------------------------------- |
-| **Kenney 3D Packs**          | [kenney.nl/assets](https://www.kenney.nl/assets)      | Modular 3D props, levels, UI – great for prototyping      |
+| **Kenney 3D Packs**          | [kenney.nl/assets](https://www.kenney.nl/assets)      | Modular 3D props, levels, UI                              |
 | **Quaternius**               | [quaternius.com](https://quaternius.com)              | Large collection of stylized, rigged 3D models (low-poly) |
 | **Unity Asset Store (Free)** | [assetstore.unity.com](https://assetstore.unity.com/) | Prototype packs, particles, simple environments           |
 
