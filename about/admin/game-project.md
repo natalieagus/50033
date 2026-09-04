@@ -301,9 +301,6 @@ to:
 4. Live checkpoint demonstration
 
 The submitted executable should be suitable for testing by someone who is **not part of your development team**.
-
-[**Checkpoint 4 Rubric**](LINK-TO-RUBRIC)
-
 :::
 
 #### Expected Development Stage
@@ -395,13 +392,13 @@ Avoid adding large new systems unless they are genuinely necessary.
 
 **Presentation:** Friday, 11 December 2026, 11:30–15:30
 
-[**Final Project Rubric**](LINK-TO-RUBRIC)
+[**Final Project Rubric**](https://docs.google.com/spreadsheets/d/1Wkg6RepJ_qm4G0Imsajb_64UxfumRszM5iDtrIPaoUo/edit?usp=sharing)
 
 :::
 
 The final executable represents the version of the game that will be graded.
 
-:::danger
+:::danger[Minimum Requirements]
 
 The final game must be **functional, compilable and playable**.
 
