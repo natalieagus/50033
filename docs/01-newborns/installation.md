@@ -15,15 +15,15 @@ import TabItem from '@theme/TabItem'
 :::caution Versions
 We are using the following versions of Unity editor, `dotnet`, and VSCode extensions:
 
-- [Unity Hub 3.14.0](https://unity.com/download)
-- [Unity 6000.0.56f1 LTS](https://unity.com/releases/editor/whats-new/6000.0.56f1#installs)
+- [Unity Hub](https://unity.com/download)
+- [Unity 6.3 LTS](https://unity.com/blog/unity-6-3-lts-is-now-available)
   - Released on August 2025
   - Installed via Unity Hub
   - Sign in to Unity Hub first and manage your personal license
-- [.NET 9.0 Framework](https://dotnet.microsoft.com/en-us/download)
+- [.NET Framework](https://dotnet.microsoft.com/en-us/download)
   - Or if you prefer to used managed .NET version: [.NET Install Tool](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.vscode-dotnet-runtime)
-- [VSCode C# Dev Kit v1.50.33](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)
-- [VSCode Unity v1.1.3 Extension](https://marketplace.visualstudio.com/items?itemName=VisualStudioToolsForUnity.vstuc)
+- [VSCode C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)
+- [VSCode Unity Extension](https://marketplace.visualstudio.com/items?itemName=VisualStudioToolsForUnity.vstuc)
   :::
 
 Please install all of the above tools before proceeding.
@@ -41,7 +41,7 @@ Windows users are recommended to use Visual Studio instead of VSC. It will be th
 ### Basic Setup
 
 :::note
-**Download the starter asset** from your **course handout**, under "Class Calendar" heading, _Week 1 Lab Session_ row. We do not own any of the assets distributed in this lab, they can all be freely obtained from the Internet, credits are all indicated in the individual sheet/resources.
+**Download the starter asset** from eDimension. We do not own any of the assets distributed in this lab, they can all be freely obtained from the Internet, credits are all indicated in the individual sheet/resources.
 
 This is a **starter** asset for this week that you can import to your project and complete the lab. It contains all required images, sound files, etc so we can save time without having to search for all these assets.
 :::

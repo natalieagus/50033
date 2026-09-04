@@ -22,6 +22,10 @@ There are also basic overviews of topics including:
 - Audio for game,
 - Prototyping and playtesting
 
+:::important
+Install [Unity 6.3 LTS](https://unity.com/blog/unity-6-3-lts-is-now-available) before coming to the first cohort session (lab) of the week.
+:::
+
 ### Learning Objectives
 
 By the end of 14 weeks, students should be able to:
