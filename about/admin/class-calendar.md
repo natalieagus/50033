@@ -19,9 +19,9 @@ All lecture slides and submmission links can be found on eDimension. All lab mat
 |   [3](#week-3) | 28 Sep | NO CLASS                                                                            |
 |   [4](#week-4) | 5 Oct  | Rules of play, game balance, homework due                                           |
 |   [5](#week-5) | 12 Oct | UI/UX, level design                                                                 |
-|   [6](#week-6) | 19 Oct | Game polish, GDD due (Checkpoint 1), Midterm Examination                            |
+|   [6](#week-6) | 19 Oct | Game polish, GDD due (Checkpoint 1)                                                 |
 |   [7](#week-7) | 26 Oct | Recess Week                                                                         |
-|   [8](#week-8) | 2 Nov  | Draft GDD feedback                                                                  |
+|   [8](#week-8) | 2 Nov  | Draft GDD feedback, Midterm Examination                                             |
 |   [9](#week-9) | 9 Nov  | Checkpoint 2                                                                        |
 | [10](#week-10) | 16 Nov | Checkpoint 3                                                                        |
 | [11](#week-11) | 23 Nov | Project work and consultations                                                      |
@@ -156,39 +156,7 @@ There's no in-person lessons this week.
 | ------------- | -------------------------------------------------------------------------------------------------- |
 | **Lecture 1** | **Game Polish:** juice, feedback, smoothing rough edges, aesthetic finish, and live demonstration. |
 | **Lecture 2** | **Week 5 Lab Presentation:** 30 minutes. **Lab 5 Review**                                          |
-| **Lab**       | Midterm Examination                                                                                |
-
-### Midterm Examination
-
-#### Part A: Concepts · 15%
-
-**Thursday, 22 October 2026**
-
-| Item              | Details                                 |
-| ----------------- | --------------------------------------- |
-| **Duration**      | 90 minutes                              |
-| **Start time**    | TBC                                     |
-| **Venue**         | Our classroom                           |
-| **Seating**       | Free seating                            |
-| **Attendance**    | Compulsory                              |
-| **Coverage**      | Week 1–6 materials (theory and Unity)   |
-| **Format**        | Paper-based, closed-book, no cheatsheet |
-| **What to bring** | Pen                                     |
-
-#### Part B: Game Jam · 15%
-
-**Due: Sunday, 25 October 2026, 23:59**
-
-- Handout and answer template released **Thursday, 22 October after exam ends** on eDimension
-- Select a theme and create a game based on that theme
-- Starter assets are provided, but you may use your own assets
-- Rubric will be **released** on the day
-- **Individual work**
-- A **secondary requirement** will be released on **Saturday, 24 October at 12:00**
-- Complete a concise **README** outlining your game
-- Post questions on Game Dev Whatsapp group so everyone can see the question
-- **No private communication with instructors or TAs regarding the examination**
-- Submission link will be available on eDimension
+| **Lab**       |                                                                                                    |
 
 ## Week 7
 
@@ -216,9 +184,39 @@ No regular classes.
 - Make a **submission entry** on eDimension so that your team can be graded
 - [**Rubric**](https://docs.google.com/spreadsheets/d/1Wkg6RepJ_qm4G0Imsajb_64UxfumRszM5iDtrIPaoUo/edit?usp=sharing)
 
-### Schedule TBC
+### Checkoff Schedule TBC
 
-**Thursday:** No class. Consultations are available upon request.
+### Midterm Examination
+
+#### Part A: Concepts · 15%
+
+**Thursday, 5 November 2026, 0900-1030 AM**
+
+| Item              | Details                                 |
+| ----------------- | --------------------------------------- |
+| **Duration**      | 90 minutes                              |
+| **Start time**    | TBC                                     |
+| **Venue**         | Our classroom                           |
+| **Seating**       | Free seating                            |
+| **Attendance**    | Compulsory                              |
+| **Coverage**      | Week 1–6 materials (theory and Unity)   |
+| **Format**        | Paper-based, closed-book, no cheatsheet |
+| **What to bring** | Pen                                     |
+
+#### Part B: Game Jam · 15%
+
+**Due: Sunday, 8 November 2026, 23:59**
+
+- Handout and answer template released **Thursday, 5 Nov 2026 after Part A ends** on eDimension
+- Select a theme and create a game based on that theme
+- Starter assets are provided, but you may use your own assets
+- Rubric will be **released** on the day
+- **Individual work**
+- A **secondary requirement** will be released on **Saturday, 7 November at 12:00**
+- Complete a concise **README** outlining your game
+- Post questions on Game Dev Whatsapp group so everyone can see the question
+- **No private communication with instructors or TAs regarding the examination**
+- Submission link will be available on eDimension
 
 ## Week 9
 
@@ -229,7 +227,7 @@ No regular classes.
 - Make a **submission entry** on eDimension so that your team can be graded
 - [**Rubric**](https://docs.google.com/spreadsheets/d/1Wkg6RepJ_qm4G0Imsajb_64UxfumRszM5iDtrIPaoUo/edit?usp=sharing)
 
-### Schedule TBC
+### Checkoff Schedule TBC
 
 ## Week 10
 
@@ -240,7 +238,7 @@ No regular classes.
 - Make a **submission entry** on eDimension so that your team can be graded
 - [**Rubric**](https://docs.google.com/spreadsheets/d/1Wkg6RepJ_qm4G0Imsajb_64UxfumRszM5iDtrIPaoUo/edit?usp=sharing)
 
-### Schedule TBC
+### Checkoff Schedule TBC
 
 ## Week 11
 
@@ -259,7 +257,7 @@ No regular classes.
 - Make a **submission entry** on eDimension so that your team can be graded
 - [**Rubric**](https://docs.google.com/spreadsheets/d/1Wkg6RepJ_qm4G0Imsajb_64UxfumRszM5iDtrIPaoUo/edit?usp=sharing)
 
-### Schedule TBC
+### Checkoff Schedule TBC
 
 ## Week 13
 
@@ -275,13 +273,15 @@ No regular classes.
 | **Venue**        | Regular cohort classroom |
 | **Food**         | Provided at TBC          |
 
-### Code Submission TBC
+### Code Submission Procedure TBC
 
 ### eDimension Submission
 
 Submit:
 
 - **PDF of your final GDD**
+- **Link to your public repo**
+- Your game executable
 - **Recorded gameplay video**, uploaded directly or provided through a downloadable link
 - Do **not** submit a YouTube link
 

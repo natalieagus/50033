@@ -27,3 +27,23 @@ import ChatBaseBubble from "@site/src/components/ChatBaseBubble";
 | -------------------- | ------: | ----------------------------------------------------------------------------------------------------------- |
 | **Lab Submissions**  | **15%** | Five submissions, worth **3% each**. Optional **pair work**. Submit a recording + repo link via eDimension. |
 | **Lab Presentation** |  **5%** | One lab presentation, marks are group-based. Randomly selected during **Weeks 2–6**.                        |
+
+#### Lab Presentation (1x per project group)
+
+**When:** Week 2-6 Lab session, randomly selected at least 1 week prior
+**Grading:** 0-25 pts (5%)  
+**Format:** Group-based  
+**Duration:** 10 minutes (exact)
+**Submission:** Slides as PDF
+
+**Task:** Explain **one** code feature/challenge/peculiar bug from the lab that you **discovered** and **solved**, and connect it to a design principle, either a **game design principle** or a **programming principle**.
+
+You might need to take the liberty to read ahead or search online if relevant game design principles have not yet been covered in class.
+
+| **Criteria**           | **0**                                            | **1**                                            | **2**                                   | **3**                                                        | **4**                                                | **5**                                                                                          |
+| ---------------------- | ------------------------------------------------ | ------------------------------------------------ | --------------------------------------- | ------------------------------------------------------------ | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| **Lab Understanding**  | No clear explanation                             | Minimal, unclear                                 | Partially correct                       | Mostly correct                                               | Correct, clear, and insightful                       | Correct, clear, and insightful                                                                 |
+| **Code Insight**       | No code feature discussed                        | Feature vague/irrelevant                         | Basic mention, little detail            | Explained but shallow                                        | Clear, relevant detail                               | Deep, well-chosen insight or challenge                                                         |
+| **Design Connection**  | No principle mentioned                           | Incorrect/misapplied                             | Weak or vague link                      | Correct link but not explained                               | Clear explanation of principle relevance             | Strong, convincing link showing real understanding                                             |
+| **Clarity & Delivery** | Disorganized, unreadable slides                  | Slides barely usable                             | Slides/readout somewhat messy           | Understandable, some issues                                  | Clear and organized                                  | Very clear, concise, professional                                                              |
+| **Group Preparation**  | No evidence of joint work, looks thrown together | One member did it all, others unaware of content | Some input from others but weak overall | At least two contributed (content + slides), uneven but okay | Clear shared prep, presenter(s) represent group well | Highly coordinated prep, content polished and everyone understands it, even if only one speaks |
