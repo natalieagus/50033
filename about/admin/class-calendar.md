@@ -17,8 +17,8 @@ All lecture slides and submmission links can be found on eDimension. All lab mat
 |   [1](#week-1) | 14 Sep | Introduction, core mechanics, formal elements, game design process, group formation |
 |   [2](#week-2) | 21 Sep | Game genres, design principles, octalysis                                           |
 |   [3](#week-3) | 28 Sep | NO CLASS                                                                            |
-|   [4](#week-4) | 5 Oct  | Rules of play, game balance, homework due                                           |
-|   [5](#week-5) | 12 Oct | UI/UX, level design                                                                 |
+|   [4](#week-4) | 5 Oct  | Rules of play, game balance                                                         |
+|   [5](#week-5) | 12 Oct | UI/UX, level design, homework due                                                   |
 |   [6](#week-6) | 19 Oct | Game polish, GDD due (Checkpoint 1)                                                 |
 |   [7](#week-7) | 26 Oct | Recess Week                                                                         |
 |   [8](#week-8) | 2 Nov  | Draft GDD feedback, Midterm Examination                                             |
