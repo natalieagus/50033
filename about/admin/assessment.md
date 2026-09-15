@@ -21,6 +21,10 @@ import ChatBaseBubble from "@site/src/components/ChatBaseBubble";
 | **Part A: Concepts** | **15%** | 1.5-hour, paper-based examination covering both game design concepts and Unity Lab concepts.                                                                                                                                                                                                  |
 | **Part B: Game Jam** | **15%** | Take-home assessment, to be completed within **48 hours**. You will be given a starter Unity asset and a list of requirements. You may implement the game in any way you choose, but must be prepared to justify selected features using game-design concepts taught in the first five weeks. |
 
+:::important[No Cheat Sheet]
+No cheat sheet is allowed for Part A of the examination. We will not be asking you trivial memory-based questions such as _=Write exactly the definition of X_.
+:::
+
 ### Lab Checkoffs
 
 | Component            |  Weight | Details                                                                                                     |
