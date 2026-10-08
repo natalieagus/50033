@@ -19,8 +19,8 @@ All lecture slides and submmission links can be found on eDimension. All lab mat
 |   [3](#week-3) | 28 Sep | NO CLASS                                                                            |
 |   [4](#week-4) | 5 Oct  | Rules of play, game balance                                                         |
 |   [5](#week-5) | 12 Oct | UI/UX, level design, homework due                                                   |
-|   [6](#week-6) | 19 Oct | Game polish, GDD due (Checkpoint 1)                                                 |
-|   [7](#week-7) | 26 Oct | Recess Week                                                                         |
+|   [6](#week-6) | 19 Oct | Game polish                                                                         |
+|   [7](#week-7) | 26 Oct | Recess Week, , GDD due (Checkpoint 1)                                               |
 |   [8](#week-8) | 2 Nov  | Draft GDD feedback, Midterm Examination                                             |
 |   [9](#week-9) | 9 Nov  | Checkpoint 2                                                                        |
 | [10](#week-10) | 16 Nov | Checkpoint 3                                                                        |
@@ -148,19 +148,23 @@ There's no in-person lessons this week.
 
 ### Happenings
 
-**Week 5 Lab checkoff is due Thursday, 09:00.**
+Nothing is due this week.
 
 ### Lessons
 
 | Session       | Topics / Materials                                                                                 |
 | ------------- | -------------------------------------------------------------------------------------------------- |
 | **Lecture 1** | **Game Polish:** juice, feedback, smoothing rough edges, aesthetic finish, and live demonstration. |
-| **Lecture 2** | **Week 5 Lab Presentation:** 30 minutes. **Lab 5 Review**                                          |
-| **Lab**       |                                                                                                    |
+| **Lecture 2** | **Reserved Slot**: to cover leftover materials that cannot otherwise be covered on time.           |
+| **Lab**       | Exam review + GDD tips                                                                             |
 
 ## Week 7
 
 **Monday, 26 October 2026**
+
+### Happenings
+
+**Week 5 Lab checkoff is due Thursday, 09:00.**
 
 ### Recess Week
 
@@ -168,8 +172,9 @@ No regular classes.
 
 ### Game Project Checkpoint 1: Draft GDD
 
-**Due: Thursday, 29 October 2026, 23:59**
+**Due: <span class="orange-bold">Thursday</span>, 29 October 2026, 23:59**
 
+- It is due on Thursday, <span class="orange-bold">not</span> Sunday. This give instructor some time before giving feedback the following Mon/Tue
 - Use the [**GDD template**](https://docs.google.com/document/d/1lHJUf-IeGTzXYDUF9l9ziWfCnvAeJA3BWRWDzdTA6vY/edit?usp=sharing) and make your own copy
 - Export your GDD as a **PDF**
 - [**Rubric**](https://docs.google.com/spreadsheets/d/1Wkg6RepJ_qm4G0Imsajb_64UxfumRszM5iDtrIPaoUo/edit?usp=sharing)
@@ -178,6 +183,12 @@ No regular classes.
 ## Week 8
 
 **Monday, 2 November 2026**
+
+We have Exam this week and also <span class="orange-bold">Lab 5 Presentation</span> at the end of Part A exam on Thursday.
+
+:::info
+The slides for Lab 5 Presentation is not included as part of possible "problems" that might come out in exam. The case studies pertaining Lab 5 that might appear in exam can all be found on the lab handout instead.
+:::
 
 ### Draft GDD Feedback & Game Project Checkpoint 2
 
