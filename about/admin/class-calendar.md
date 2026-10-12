@@ -160,7 +160,7 @@ Nothing is due this week.
 
 ### Happenings
 
-**Week 5 Lab checkoff is due Thursday, 09:00.**
+**Week 5 Lab checkoff is due Sunday, 23:59.**
 
 ### Recess Week
 
