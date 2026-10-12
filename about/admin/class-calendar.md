@@ -117,8 +117,6 @@ There's no in-person lessons this week.
 | **Lecture 2** | **Game Balance:** balancing games by encouraging player agency and creating asymmetry while maintaining fair play.                                                                  |
 | **Lab**       | **Week 2 and 3 Lab Presentation**: 30 minutes. [**Unity for Children**](https://natalieagus.github.io/50033/docs/category/unity-for-children) · **Lab 2 Review** · **Lab 3 Review** |
 
----
-
 ## Week 5
 
 **Monday, 12 October 2026**
@@ -139,8 +137,6 @@ There's no in-person lessons this week.
 | **Lecture 1** | **Level Design:** state of flow, core principles of level design, and various mechanisms used in level design.                                                              |
 | **Lecture 2** | **Video Game UI Design:** UI versus UX, non-diegetic, diegetic, meta, and spatial UI.                                                                                       |
 | **Lab**       | **Week 4 Lab Presentation**: 30 minutes. Sample GDD discussion. [**Unity for Teens**](https://natalieagus.github.io/50033/docs/category/unity-for-teens) · **Lab 4 Review** |
-
----
 
 ## Week 6
 

@@ -119,7 +119,7 @@ The GDD should explain not only **what** you intend to build, but also **why** y
 
 #### Checkpoint 1: Draft GDD
 
-**Week 6 · 10%**
+**Week 7 · 10%**
 
 :::info[Checkpoint 1 Release]
 
@@ -127,7 +127,7 @@ The GDD should explain not only **what** you intend to build, but also **why** y
 
 Submit the **proposal-stage draft of your Game Design Document**.
 
-**Due:** Friday, 23 October 2026, 09:00  
+**Due:** Thursday, 29 October 2026, 23:59
 **Executable release:** Not required
 
 [**GDD Template**](https://docs.google.com/document/d/1lHJUf-IeGTzXYDUF9l9ziWfCnvAeJA3BWRWDzdTA6vY/edit?usp=sharing)
@@ -155,7 +155,7 @@ This checkpoint is primarily about validating your **idea and scope** before sig
 
 **Weeks 5–8**
 
-Begin implementing your digital prototype.
+Begin implementing your digital prototype even as you are making the GDD.
 
 At this stage, focus on making the fundamental interaction work. Placeholder artwork, models, UI, and audio are acceptable.
 
