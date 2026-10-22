@@ -58,7 +58,7 @@ Starting from **Checkpoint 2**, every checkpoint must include an **executable re
 | Checkpoint                                                 |    Week |  Weight | Expected Stage                             | Executable Release |
 | ---------------------------------------------------------- | ------: | ------: | ------------------------------------------ | ------------------ |
 | [**Checkpoint 1**](#checkpoint-1-draft-gdd)                |  Week 6 | **10%** | Game concept and design                    | Not required       |
-| [**Checkpoint 2**](#checkpoint-2-first-playable-prototype) |  Week 8 |  **3%** | First playable prototype                   | **Required**       |
+| [**Checkpoint 2**](#checkpoint-2-first-playable-prototype) |  Week 9 |  **3%** | First playable prototype                   | **Required**       |
 | [**Checkpoint 3**](#checkpoint-3-internal-testing-build)   | Week 10 |  **3%** | Core game loop and internal testing        | **Required**       |
 | [**Checkpoint 4**](#checkpoint-4-user-testing-build)       | Week 12 |  **4%** | Near-final build and external user testing | **Required**       |
 | [**Checkpoint 5**](#checkpoint-5-final-release)            | Week 13 | **25%** | Final game, GDD and presentation           | **Required**       |
@@ -165,7 +165,7 @@ The important question is:
 
 #### Checkpoint 2: First Playable Prototype
 
-**Week 8 · 3%**
+**Week 9 · 3%**
 
 :::info[Checkpoint 2 Release]
 
@@ -211,7 +211,7 @@ The focus is on proving that the **game concept is technically viable**.
 
 ### Stage 3: Core Game Loop and Internal Testing
 
-**Weeks 9–10**
+**Weeks 9-10**
 
 Development should now move beyond isolated mechanics.
 

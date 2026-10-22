@@ -186,7 +186,7 @@ We have Exam this week and also <span class="orange-bold">Lab 5 Presentation</sp
 The slides for Lab 5 Presentation is not included as part of possible "problems" that might come out in exam. The case studies pertaining Lab 5 that might appear in exam can all be found on the lab handout instead.
 :::
 
-### Draft GDD Feedback & Game Project Checkpoint 2
+### Draft GDD Feedback
 
 - Make a **submission entry** on eDimension so that your team can be graded
 - [**Rubric**](https://docs.google.com/spreadsheets/d/1Wkg6RepJ_qm4G0Imsajb_64UxfumRszM5iDtrIPaoUo/edit?usp=sharing)
@@ -229,7 +229,7 @@ The slides for Lab 5 Presentation is not included as part of possible "problems"
 
 **Monday, 9 November 2026**
 
-### Game Project Checkpoint 3
+### Game Project Checkpoint 2
 
 - Make a **submission entry** on eDimension so that your team can be graded
 - [**Rubric**](https://docs.google.com/spreadsheets/d/1Wkg6RepJ_qm4G0Imsajb_64UxfumRszM5iDtrIPaoUo/edit?usp=sharing)
