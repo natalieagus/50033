@@ -219,7 +219,7 @@ The slides for Lab 5 Presentation is not included as part of possible "problems"
 - Starter assets are provided, but you may use your own assets
 - Rubric will be **released** on the day
 - **Individual work**
-- A **secondary requirement** will be released on **Saturday, 7 November at 12:00**
+- A **secondary requirement** will be released on **Saturday, 7 November at 18:00**
 - Complete a concise **README** outlining your game
 - Post questions on Game Dev Whatsapp group so everyone can see the question
 - **No private communication with instructors or TAs regarding the examination**
@@ -253,7 +253,7 @@ The slides for Lab 5 Presentation is not included as part of possible "problems"
 
 ### Happenings
 
-**Project time. Consultations are available upon request. There's no in-person classes. **
+**Project time. Consultations are available upon request. There's no in-person classes.**
 
 ## Week 12
 
